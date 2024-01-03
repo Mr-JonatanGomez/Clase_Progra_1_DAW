@@ -44,9 +44,9 @@ public class InicioString {
         System.out.println("\n es igual la palabra?");
         palabra="felipe";
         if (palabra.equals("Felipe")){
-            System.out.println("Si es igual(diferencia mayus)");
+            System.out.println("Si es igual (diferencia mayus)");
         }else{
-            System.out.println("No es igual(diferencia mayus)");
+            System.out.println("No es igual (diferencia mayus)");
         }
 
         // Saber si una palabra es igual que otra INDISTINTA MAYUS-> if(frase.equals("un");
@@ -58,6 +58,18 @@ public class InicioString {
             System.out.println("No es igual(indistinto mayus)");
         }
 
+        //CONVERTIR EN MAYUS/MINUS
+        System.out.println("\nConvertir Mayus o minus con toUpperCase o toLowerCase");
+        System.out.println(frase.toUpperCase());
+        System.out.println(frase.toLowerCase());
+
+        //obtener el char de una posicion concreta, para ultima importante poner -1 al length
+        System.out.println("\nLa posicion 7 de la frase es: "+frase.charAt(7));
+        System.out.println("La posicion ULTIMA de la frase es: "+frase.charAt(frase.length()-1));
+
+        //USAR BANDERAS DE FORMATEO %s donde sustituimos la bandera por lo de detras de la coma
+        System.out.printf("\nEsto es un formateo %s","BANDERA");
+        System.out.printf(String.format("\nEsto es un %s de %s formateada","ejemplillo","palabra"));
 
 
 
