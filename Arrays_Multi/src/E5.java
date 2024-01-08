@@ -87,12 +87,12 @@ public class E5 {
     }
     public static void intercambioPos() {// CASI LO TENGO
         //-  Intercambiar el primero con el segundo, el tercero con el cuarto, ..., el penúltimo con el último.
-        for (int i = 0; i < arrayPos.length-1; i++) {
-            if (arrayPos[i]%2==0){
+        for (int i = 0; i < arrayPos.length-1; i+=2) {
+            //if (arrayPos[i]%2!=0){  // asi me salio sin ayuda de chat, pero fallaba en 2 parejas de 5, al quitar esta linea sale perfecto
                 int temp =arrayPos[i];
                 arrayPos[i]=arrayPos[i+1];
                 arrayPos[i+1]=temp;
-            }
+           // }
         }
         System.out.println("\n\nintercambio posiciones: "); // comprobador del ultimo valor
     }
