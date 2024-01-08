@@ -38,7 +38,6 @@ public class E5 {
             arrayPos[i] = (int) (Math.random() * 10);
         }
     }
-
     public static void incrementoDecremento() {
         for (int i = 0; i < arrayPos.length; i++) {
             if (arrayPos[i] % 2 == 0) {
@@ -46,21 +45,16 @@ public class E5 {
             } else if (arrayPos[i] % 2 != 0) {
                 arrayPos[i] -= 1;
             }
-
         }
         System.out.println("\n\nArray tras aumentar en 1 los numeros pares y decrementar en 1 los impares:");
     }
-
     public static void mostrarArray() {
 
 
         for (int i = 0; i < arrayPos.length; i++) {
             System.out.print(arrayPos[i] + ", ");
-
         }
-
     }
-
     public static void duplicadoMenor5() {
         for (int i = 0; i < arrayPos.length; i++) {
             if (arrayPos[i] >= 0 && arrayPos[i] < 5) {
@@ -70,7 +64,6 @@ public class E5 {
         }
         System.out.println("\n\nArray tras duplicar los positivos menores de 5:");
     }
-
     public static void sumaMasMenos5Aleatorio() {
         //- Sumar a cada valor un valor entero aleatorio entre -5 y 5.
         for (int i = 0; i < arrayPos.length; i++) {
@@ -83,15 +76,4 @@ public class E5 {
         }
         System.out.println("\n\nArray tras sumar enteros entre +-5:");
     }
-
 }
-
-
-/*for (int i = 0; i < arrayPos.length; i++) {
-            arrayPos[i]= (int) (Math.random()*9)+1;
-            System.out.print(arrayPos[i]);
-            if (arrayPos[arrayPos.length-1]!= arrayPos[i]){
-                System.out.print(", ");
-            }
-
-        }*/
