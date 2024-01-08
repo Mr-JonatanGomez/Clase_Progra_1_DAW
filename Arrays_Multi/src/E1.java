@@ -13,7 +13,7 @@ public class E1 {
         int sumaDeI=0;
         int sumaDeJ=0;
         int sumaTotal;
-        float mediaTotal= (float) 0f;
+        float mediaTotal;
         System.out.println("introduce 5 numeros");
         for (int i = 0; i < numeros.length; i++) {
             numeros[i] = sc.nextInt();
