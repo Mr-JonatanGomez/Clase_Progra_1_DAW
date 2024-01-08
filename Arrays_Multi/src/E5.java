@@ -10,7 +10,8 @@
     v- Sumar a cada valor un valor entero aleatorio entre -5 y 5.
     v- Mover los datos una posición hacia la derecha (el primero pasa al segundo, el
       segundo al tercero, ..., y el último al primero).
-    - Intercambiar el primero con el segundo, el tercero con el cuarto, ..., el penúltimo con el último.
+    v- (yo solo excepto pequeña ayuda chatGPT) - Intercambiar el primero con el
+      segundo, el tercero con el cuarto, ..., el penúltimo con el último.
     - Invertir el array
     - Mostrar la posición del primer par y del último impar.
 
