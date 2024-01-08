@@ -8,7 +8,7 @@
     v- Incrementar en 1 los valores pares y en -1 los impares.
     v- Duplicar los valores positivos menores que 5
     v- Sumar a cada valor un valor entero aleatorio entre -5 y 5.
-    - Mover los datos una posición hacia la derecha (el primero pasa al segundo, el
+    v- Mover los datos una posición hacia la derecha (el primero pasa al segundo, el
       segundo al tercero, ..., y el último al primero).
     - Intercambiar el primero con el segundo, el tercero con el cuarto, ..., el penúltimo con el último.
     - Invertir el array
@@ -17,7 +17,6 @@
 **hay que hacer todo de golpe, pero opcionalmente se puede hacer un menú que indique cada una de las opciones***/
 public class E5 {
     private static int[] arrayPos = new int[10];
-
     public static void main(String[] args) {
         rellenarArray();
         mostrarArray();
@@ -27,10 +26,11 @@ public class E5 {
         mostrarArray();
         sumaMasMenos5Aleatorio();
         mostrarArray();
-
-
+        rotacionDerecha();
+        mostrarArray();
+        intercambioPos();
+        mostrarArray();
     }
-
     public static void rellenarArray() {
         arrayPos = new int[10];
         System.out.println("\nEl array actualmente es: ");
@@ -76,4 +76,25 @@ public class E5 {
         }
         System.out.println("\n\nArray tras sumar enteros entre +-5:");
     }
+    public static void rotacionDerecha() {
+        //- Mover los datos una posición hacia la derecha (1º almacenar ultimo valor, para darselo a posicion 0 más tarde
+        int ultimoValor = arrayPos[arrayPos.length - 1];
+        for (int i = arrayPos.length - 1; i > 0; i--) {
+            arrayPos[i] = arrayPos[i - 1];
+        }
+        arrayPos[0] = ultimoValor;
+        System.out.println("\n\nRotacion derecha: "); // comprobador del ultimo valor
+    }
+    public static void intercambioPos() {// CASI LO TENGO
+        //-  Intercambiar el primero con el segundo, el tercero con el cuarto, ..., el penúltimo con el último.
+        for (int i = 0; i < arrayPos.length-1; i++) {
+            if (arrayPos[i]%2==0){
+                int temp =arrayPos[i];
+                arrayPos[i]=arrayPos[i+1];
+                arrayPos[i+1]=temp;
+            }
+        }
+        System.out.println("\n\nintercambio posiciones: "); // comprobador del ultimo valor
+    }
+
 }

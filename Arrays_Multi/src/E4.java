@@ -86,3 +86,15 @@ public class E4 {
         }}
 
 }
+/*
+public static void intercambioPos() {
+        //-  Intercambiar el primero con el segundo, el tercero con el cuarto, ..., el penúltimo con el último.
+        for (int i = 0; i < arrayPos.length-1; i++) {
+            if (arrayPos[i]%2==0){
+                int temp =arrayPos[i];
+                arrayPos[i]=arrayPos[i+1];
+                arrayPos[i+1]=temp;
+            }
+        }
+    }
+*/
