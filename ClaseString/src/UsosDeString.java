@@ -19,6 +19,35 @@ public class UsosDeString {
         System.out.println("\n\nCuantas palabras tenemos en: \nEsta frase es un ejemplo de analisis o un truño");
         System.out.println("El numero de palabras es: "+numeroPalabras);
 
-        // SABER CUANTAS VOCALES Y CONSONANTES
+        // LEETRAS (replace espacio por nada) SIN ESPACIOS
+
+        frase = frase.replaceAll(" ","");
+        int numeroLetras = frase.split("").length;
+        System.out.println("numero de letras es:"+ numeroLetras);
+
+
+        // SABER CUANTAS ORACIONES TENGO
+        //      -En la oracion principal
+
+
+        String oracionPrincipal = "Oracion para analizar, como ejemplo de clase, en programacion";
+        String [] numeroOraciones = oracionPrincipal.split(",");
+        System.out.println("Tengo " +numeroOraciones.length+ " oraciones");//meter LENGTH importante
+
+
+        //      -cuantas palabras en cada oracion ( foreach para recorrer numero de oraciones)
+        for (String item:numeroOraciones ) {   //item sera cada palabra
+            int numeroPalabraOracion=0;
+            numeroPalabraOracion += item.split(" ").length;
+
+            System.out.println("El numero de palabras de la oracion es: "+numeroPalabraOracion);
+        }
+
+
+
+
+
+
+
     }
 }
