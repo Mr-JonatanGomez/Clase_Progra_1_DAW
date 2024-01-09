@@ -38,24 +38,8 @@ public class E5Menu {
                 "    6- Invertir el array\n" +
                 "    7- Mostrar la posición del primer par y del último impar.\n" +
                 "    0- SALIR.\n");
-
+// solo con menú hacemos lo que queremos
         menu();
-        /*incrementoDecremento();
-        mostrarArray();
-        duplicadoMenor5();
-        mostrarArray();
-        sumaMasMenos5Aleatorio();
-        mostrarArray();
-        rotacionDerecha();
-        mostrarArray();
-        intercambioPos();
-        mostrarArray();
-        invertirArray();
-        mostrarArray();
-        invertirArray();
-        mostrarArray();
-        mostrarPrimParUltImpar();
-        //mostrarArrayInverso();*/
     }
 
     public static void menu(){
