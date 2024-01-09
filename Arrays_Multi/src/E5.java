@@ -19,18 +19,12 @@
 public class E5 {
     private static int[] arrayPos = new int[10];
     public static void main(String[] args) {
-        rellenarArray();
-        mostrarArray();
-        incrementoDecremento();
-        mostrarArray();
-        duplicadoMenor5();
-        mostrarArray();
-        sumaMasMenos5Aleatorio();
-        mostrarArray();
-        rotacionDerecha();
-        mostrarArray();
-        intercambioPos();
-        mostrarArray();
+        rellenarArray(); mostrarArray();
+        incrementoDecremento(); mostrarArray();
+        duplicadoMenor5(); mostrarArray();
+        sumaMasMenos5Aleatorio(); mostrarArray();
+        rotacionDerecha(); mostrarArray();
+        intercambioPos(); mostrarArray();
     }
     public static void rellenarArray() {
         arrayPos = new int[10];
@@ -67,15 +61,15 @@ public class E5 {
     }
     public static void sumaMasMenos5Aleatorio() {
         //- Sumar a cada valor un valor entero aleatorio entre -5 y 5.
+        System.out.println("\n\nArray tras sumar enteros entre +-5:");
+        System.out.println("Los aleatorios a sumar son:");
         for (int i = 0; i < arrayPos.length; i++) {
             int aleatorio;
             aleatorio = (int) (Math.random() * 11) - 5;
-            System.out.print(" aleat." + aleatorio);
+            System.out.print(+ aleatorio+", ");
             arrayPos[i] += aleatorio;
-
-
         }
-        System.out.println("\n\nArray tras sumar enteros entre +-5:");
+        System.out.println("\n");
     }
     public static void rotacionDerecha() {
         //- Mover los datos una posición hacia la derecha (1º almacenar ultimo valor, para darselo a posicion 0 más tarde
