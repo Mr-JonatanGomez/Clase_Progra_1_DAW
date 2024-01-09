@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 /*1.    (OperacionesArray)
     v- Crear un array con 10 posiciones y asígnale
         números enteros entre 0 y 9, ambos inclusive (de forma automática).
@@ -5,24 +7,35 @@
 
     Una vez hecho esto se modificará el array del de la manera indicada
     en cada apartado, y se mostrará de nuevo.
-    v- Incrementar en 1 los valores pares y en -1 los impares.
-    v- Duplicar los valores positivos menores que 5
-    v- Sumar a cada valor un valor entero aleatorio entre -5 y 5.
-    v- Mover los datos una posición hacia la derecha (el primero pasa al segundo, el
+    1- Incrementar en 1 los valores pares y en -1 los impares.
+    2- Duplicar los valores positivos menores que 5
+    3- Sumar a cada valor un valor entero aleatorio entre -5 y 5.
+    4- Mover los datos una posición hacia la derecha (el primero pasa al segundo, el
       segundo al tercero, ..., y el último al primero).
-    v- (yo solo excepto pequeña ayuda chatGPT) - Intercambiar el primero con el
+    5- (yo solo excepto pequeña ayuda chatGPT) - Intercambiar el primero con el
       segundo, el tercero con el cuarto, ..., el penúltimo con el último.
-    v- (hacer el intercambio en el mismo bucle, separado por coma chatGPT) Invertir el array
-    - Mostrar la posición del primer par y del último impar.
+    6- (hacer el intercambio en el mismo bucle, separado por coma chatGPT) Invertir el array
+    7 Mostrar la posición del primer par y del último impar.
 
 **hay que hacer todo de golpe, pero opcionalmente se puede hacer un menú que indique cada una de las opciones***/
-public class E5 {
-    private static int[] arrayPos = new int[10];
-    private static int[] inverso = new int[10];
+public class E5Menu {
 
+    private static int[] arrayPos = new int[10];
+
+    private static int[] inverso = new int[10];
     public static void main(String[] args) {
+        System.out.println("\t MENÚ PRINCIPAL\n\n Tras mostrar el array inicial, podra elegir que hacer");
+
         rellenarArray();
         mostrarArray();
+        System.out.println("\n\n1- Sumar 1 a los valores pares, restar 1 los impares.\n" +
+                "    2- Duplicar los valores positivos < 5\n" +
+                "    3- Sumar a cada valor un valor entero aleatorio entre -5 y 5.\n" +
+                "    4- Mover los datos una posición hacia la derecha.\n" +
+                "    5- Intercambiar posiciones 0-1, 2-3, ...,8-9\n" +
+                "    6- Invertir el array\n" +
+                "    7 Mostrar la posición del primer par y del último impar.");
+        menu();
         incrementoDecremento();
         mostrarArray();
         duplicadoMenor5();
@@ -40,7 +53,41 @@ public class E5 {
         mostrarPrimParUltImpar();
         //mostrarArrayInverso();
     }
+
     public static void menu(){
+        Scanner sc = new Scanner(System.in);
+        int numeroMenu = sc.nextInt();
+        System.out.println("\n\n1- Sumar 1 a los valores pares, restar 1 los impares.\n" +
+                "    2- Duplicar los valores positivos < 5\n" +
+                "    3- Sumar a cada valor un valor entero aleatorio entre -5 y 5.\n" +
+                "    4- Mover los datos una posición hacia la derecha.\n" +
+                "    5- Intercambiar posiciones 0-1, 2-3, ...,8-9\n" +
+                "    6- Invertir el array\n" +
+                "    7- Mostrar la posición del primer par y del último impar.\n" +
+                "    0- SALIR.");
+        do {
+            switch (numeroMenu) {
+                case 1:
+                    incrementoDecremento();mostrarArray();
+                case 2:
+                    duplicadoMenor5();mostrarArray();
+                case 3:
+                    sumaMasMenos5Aleatorio();mostrarArray();
+                case 4:
+                    rotacionDerecha();mostrarArray();
+                case 5:
+                    intercambioPos();mostrarArray();
+                case 6:
+                    invertirArray();mostrarArray();
+                case 7:
+                    mostrarArray();mostrarPrimParUltImpar();
+                case 0:
+                    System.out.println("\t\t FIN DEL PROGRAMA ");
+                    break;
+            }
+        }while (sc.nextInt()!=0);
+
+
 
     }
 
