@@ -24,19 +24,23 @@ public class E5Menu {
 
     private static int[] inverso = new int[10];
     public static void main(String[] args) {
-        System.out.println("\t MENÚ PRINCIPAL\n\n Tras mostrar el array inicial, podra elegir que hacer");
+        System.out.println("\t\n\n Tras mostrar el array inicial, podra elegir que hacer");
 
         rellenarArray();
         mostrarArray();
-        System.out.println("\n\n1- Sumar 1 a los valores pares, restar 1 los impares.\n" +
+        System.out.println("\n\n\t\t MENÚ PRINCIPAL");
+        System.out.println("\n" +
+                "    1- Sumar 1 a los valores pares, restar 1 los impares.\n" +
                 "    2- Duplicar los valores positivos < 5\n" +
                 "    3- Sumar a cada valor un valor entero aleatorio entre -5 y 5.\n" +
                 "    4- Mover los datos una posición hacia la derecha.\n" +
                 "    5- Intercambiar posiciones 0-1, 2-3, ...,8-9\n" +
                 "    6- Invertir el array\n" +
-                "    7 Mostrar la posición del primer par y del último impar.");
+                "    7- Mostrar la posición del primer par y del último impar.\n" +
+                "    0- SALIR.\n");
+
         menu();
-        incrementoDecremento();
+        /*incrementoDecremento();
         mostrarArray();
         duplicadoMenor5();
         mostrarArray();
@@ -51,41 +55,54 @@ public class E5Menu {
         invertirArray();
         mostrarArray();
         mostrarPrimParUltImpar();
-        //mostrarArrayInverso();
+        //mostrarArrayInverso();*/
     }
 
     public static void menu(){
         Scanner sc = new Scanner(System.in);
-        int numeroMenu = sc.nextInt();
-        System.out.println("\n\n1- Sumar 1 a los valores pares, restar 1 los impares.\n" +
-                "    2- Duplicar los valores positivos < 5\n" +
-                "    3- Sumar a cada valor un valor entero aleatorio entre -5 y 5.\n" +
-                "    4- Mover los datos una posición hacia la derecha.\n" +
-                "    5- Intercambiar posiciones 0-1, 2-3, ...,8-9\n" +
-                "    6- Invertir el array\n" +
-                "    7- Mostrar la posición del primer par y del último impar.\n" +
-                "    0- SALIR.");
+        int numeroMenu;
+        System.out.println(" ");
+        System.out.println("Introduce una opcion");
         do {
+            numeroMenu = sc.nextInt();
+
             switch (numeroMenu) {
                 case 1:
                     incrementoDecremento();mostrarArray();
+                    System.out.println("\nIntroduce otra opcion");
+                    break;
                 case 2:
                     duplicadoMenor5();mostrarArray();
+                    System.out.println("\nIntroduce otra opcion");
+                    break;
                 case 3:
                     sumaMasMenos5Aleatorio();mostrarArray();
+                    System.out.println("\nIntroduce otra opcion");
+                    break;
                 case 4:
                     rotacionDerecha();mostrarArray();
+                    System.out.println("\nIntroduce otra opcion");
+                    break;
                 case 5:
                     intercambioPos();mostrarArray();
+                    System.out.println("\nIntroduce otra opcion");
+                    break;
                 case 6:
                     invertirArray();mostrarArray();
+                    System.out.println("\nIntroduce otra opcion");
+                    break;
                 case 7:
                     mostrarArray();mostrarPrimParUltImpar();
+                    System.out.println("\nIntroduce otra opcion");
+                    break;
                 case 0:
                     System.out.println("\t\t FIN DEL PROGRAMA ");
                     break;
+                default:
+                    System.out.println("Elija una opcion valida");
+                    break;
             }
-        }while (sc.nextInt()!=0);
+        }while (numeroMenu!=0);
 
 
 
