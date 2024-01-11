@@ -27,7 +27,6 @@ public class E5Menu {
         System.out.println("\t\n\n Tras mostrar el array inicial, podra elegir que hacer");
 
         rellenarArray();
-        mostrarArray();
         System.out.println("\n\n\t\t MENÚ PRINCIPAL");
         System.out.println("\n" +
                 "    1- Sumar 1 a los valores pares, restar 1 los impares.\n" +
@@ -52,31 +51,31 @@ public class E5Menu {
 
             switch (numeroMenu) {
                 case 1:
-                    incrementoDecremento();mostrarArray();
+                    incrementoDecremento();
                     System.out.println("\nIntroduce otra opcion");
                     break;
                 case 2:
-                    duplicadoMenor5();mostrarArray();
+                    duplicadoMenor5();
                     System.out.println("\nIntroduce otra opcion");
                     break;
                 case 3:
-                    sumaMasMenos5Aleatorio();mostrarArray();
+                    sumaMasMenos5Aleatorio();
                     System.out.println("\nIntroduce otra opcion");
                     break;
                 case 4:
-                    rotacionDerecha();mostrarArray();
+                    rotacionDerecha();
                     System.out.println("\nIntroduce otra opcion");
                     break;
                 case 5:
-                    intercambioPos();mostrarArray();
+                    intercambioPos();
                     System.out.println("\nIntroduce otra opcion");
                     break;
                 case 6:
-                    invertirArray();mostrarArray();
+                    invertirArray();
                     System.out.println("\nIntroduce otra opcion");
                     break;
                 case 7:
-                    mostrarArray();mostrarPrimParUltImpar();
+                    mostrarPrimParUltImpar();
                     System.out.println("\nIntroduce otra opcion");
                     break;
                 case 0:
@@ -98,6 +97,7 @@ public class E5Menu {
         for (int i = 0; i < arrayPos.length; i++) {
             arrayPos[i] = (int) (Math.random() * 10);
         }
+        mostrarArray();
     }
 
     public static void incrementoDecremento() {
@@ -109,6 +109,7 @@ public class E5Menu {
             }
         }
         System.out.println("\n\nArray tras aumentar en 1 los numeros pares y decrementar en 1 los impares:");
+        mostrarArray();
     }
 
     public static void mostrarArray() {
@@ -127,11 +128,11 @@ public class E5Menu {
 
         }
         System.out.println("\n\nArray tras duplicar los positivos menores de 5:");
+        mostrarArray();
     }
 
     public static void sumaMasMenos5Aleatorio() {
         //- Sumar a cada valor un valor entero aleatorio entre -5 y 5.
-        System.out.println("\n\nArray tras sumar enteros entre +-5:");
         System.out.println("Los aleatorios a sumar son:");
         for (int i = 0; i < arrayPos.length; i++) {
             int aleatorio;
@@ -140,6 +141,8 @@ public class E5Menu {
             arrayPos[i] += aleatorio;
         }
         System.out.println("\n");
+        System.out.println("\n\nArray tras sumar enteros entre +-5:");
+        mostrarArray();
     }
 
     public static void rotacionDerecha() {
@@ -150,6 +153,7 @@ public class E5Menu {
         }
         arrayPos[0] = ultimoValor;
         System.out.println("\n\nRotacion derecha: "); // comprobador del ultimo valor
+        mostrarArray();
     }
 
     public static void intercambioPos() {
@@ -162,6 +166,7 @@ public class E5Menu {
             // }
         }
         System.out.println("\n\nintercambio posiciones: "); // comprobador del ultimo valor
+        mostrarArray();
     }
 
     public static void invertirArray() {
@@ -176,10 +181,12 @@ public class E5Menu {
             arrayPos[i] = inverso[i];
         }
         arrayPos[arrayPos.length - 1] = auxiliar0; // colocar aux 0 en ultima pos
+        mostrarArray();
     }
 
     public static void mostrarPrimParUltImpar() {
         //- Mostrar la posición del primer par y del último impar.
+        mostrarArray();
         System.out.println("\n\nPosicion Primer Par y ultimo Impar: ");
         for (int i = 0; i< arrayPos.length-1; i++) {
             if (arrayPos[i]%2==0){
