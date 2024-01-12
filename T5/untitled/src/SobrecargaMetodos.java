@@ -19,6 +19,7 @@ public class SobrecargaMetodos {
         float []arrayD = {1.17F, 1, 1.94f, 3};
         System.out.println("la suma de enteros es: "+ suma(arrayEnteros));
         System.out.println("la suma de decimales es: "+ suma(arrayD));
+        suma(arrayEnteros);
     }
 
 }
