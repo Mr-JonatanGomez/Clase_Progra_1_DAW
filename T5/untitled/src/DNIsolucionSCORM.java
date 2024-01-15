@@ -1,7 +1,11 @@
 import java.util.Scanner;
 
-public class DNIsol {
-
+public class DNIsolucionSCORM {
+/*
+DUDAS
+1- No seria mejor tener el metodo MAIN, al principio del codigo? en este ejemplo aparece antes el metodo del DNI
+2- En metodo LETRADNI, como sabe el MAIN que numeroDNI(del otro metodo) es el DNI introducido por Scanner?
+*/
     public static char letraDNI(int numeroDNI) {
         char[] letras={'T', 'R', 'W', 'A', 'G', 'M', 'Y', 'F', 'P', 'D', 'X', 'B',
                 'N', 'J', 'Z', 'S', 'Q', 'V', 'H', 'L', 'C', 'K', 'E'};
