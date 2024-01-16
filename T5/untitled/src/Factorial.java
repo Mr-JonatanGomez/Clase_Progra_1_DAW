@@ -7,6 +7,7 @@ public class Factorial {
         Scanner sc = new Scanner(System.in);
         valorInicial = sc.nextInt();
         System.out.println("factorial es: "+factorial(valorInicial));
+
     }
 
     public static int factorial (int numeroINI){
