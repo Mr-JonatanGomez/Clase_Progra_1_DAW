@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4fbb421d-4147-4ec4-8490-c34a474bbc4a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../T5/untitled/src/BingoEnero.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../T5/untitled/src/DNITest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../T3" beforeDir="false" afterPath="$PROJECT_DIR$/../T3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../T5/Entrenamiento/untitled/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../T5/Entrenamiento/untitled/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../T5/untitled/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../T5/untitled/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../T5/untitled/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../T5/untitled/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../T5/untitled/src/DNI_ULTI.java" beforeDir="false" afterPath="$PROJECT_DIR$/../T5/untitled/src/DNI_ULTI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../T5/untitled/untitled.iml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
