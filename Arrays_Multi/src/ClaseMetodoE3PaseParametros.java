@@ -10,15 +10,44 @@ public class ClaseMetodoE3PaseParametros {
     public static void main(String[] args) {
         System.out.println("Ejercicio con 3 metodos");
         Scanner sc = new Scanner(System.in);
-        System.out.println("De cuantos numeros quieres el array");
+
+
+        System.out.println("De cuantos numeros quieres el array1");
         int numerosArray= sc.nextInt();
-
-
         int[]numeros=rellenarArray(numerosArray);
-        //lenarArray(numerosArray);// al pasar parametros se piden al hacerlo
+
+        System.out.println("De cuantos numeros quieres el array2");
+        numerosArray= sc.nextInt();
+        int[]numeros2=rellenarArray(numerosArray);
+
+        //llenarArray(numerosArray);// al pasar parametros se piden al hacerlo
+
+        /*
+        System.out.println("Que array quieres mostrar (1 o 2)");
+        int opcionElegida= sc.nextInt();
+        System.out.println("Que orden quieres mostrarlo (normal o inverso");
+        String ordenElegido = sc.next();
+
+        if (opcionElegida==1){
+            if (ordenElegido.equalsIgnoreCase("normal")){
+                mostrarArray(numeros);
+            }else {
+                mostrarInverso(numeros);
+            }
+        }else {
+            if (ordenElegido.equalsIgnoreCase("normal")){
+                mostrarArray(numeros2);
+            }else {
+                mostrarInverso(numeros2);
+            }
+        }
+
+*/ // LO DE ARRIBA ES UN MENU CON OPCION
         mostrarArray(numeros);
         mostrarInverso(numeros);
-        mostrarInverso(numeros);
+        mostrarArray(numeros2);
+        mostrarInverso(numeros2);
+        mostrarArray(numeros2);
        // mostrarInverso();
 
     }
