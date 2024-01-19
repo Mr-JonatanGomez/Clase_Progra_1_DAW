@@ -47,16 +47,18 @@ public class E7 {
         System.out.println("Con que letra quieres probar?");
         char letra;
         letra = sc.next().charAt(0); // charAt (0) es para tomar la primera posicion de lo que pase por teclado
-        if (palabraEscogida.indexOf(letra) != -1) {//si es diferente a -1 es que está
-            for (int i = 0; i < palabraEscogida.length(); i++) {
-                if (palabraEscogida.indexOf(i)== letra){
-                    System.out.print(" "+letra+" ");
-                }else {
-                    System.out.print(" _ ");
-                }
+
+
+        for (int i = 0; i < palabraEscogida.length(); i++) {
+            if (palabraEscogida.charAt(i)==letra){
+                System.out.print(" "+letra+" ");
+            }else {
+                System.out.print(" _ ");
+            }
+            //if (palabraEscogida.length()!=letra){
+                numeroVidas--;
             }
         }
-
 
         System.out.println("Numero de Vidas Restantes: "+numeroVidas );
 
@@ -84,3 +86,12 @@ public class E7 {
 
     }
 }
+/*if (palabraEscogida.indexOf(letra) != -1) {//si es diferente a -1 es que está
+            for (int i = 0; i < palabraEscogida.length(); i++) {
+                if (palabraEscogida.indexOf(i)== letra){
+                    System.out.print(" "+letra+" ");
+                }else {
+                    System.out.print(" _ ");
+                }
+            }
+        }*/
