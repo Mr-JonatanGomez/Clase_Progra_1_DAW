@@ -41,14 +41,16 @@ public class ClaseMetodoE3PaseParametros {
                 mostrarInverso(numeros2);
             }
         }
-
 */ // LO DE ARRIBA ES UN MENU CON OPCION
+
         mostrarArray(numeros);
         mostrarInverso(numeros);
         mostrarArray(numeros2);
         mostrarInverso(numeros2);
         mostrarArray(numeros2);
-       // mostrarInverso();
+        System.out.println("indica cuantas posciones de ARRAY en esta linea de mostrar lo rellenado");
+        mostrarArray(rellenarArray(sc.nextInt()));
+
 
     }
     // rellenar array

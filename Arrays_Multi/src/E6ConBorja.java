@@ -15,13 +15,17 @@ public class E6ConBorja {
     }
 
     public static String generarPalabras(char[] l, int longitud) {
-        String palabra = "";
+        String palabra = "" ; // declarar una palabra sin valor, tambien String palabra = new String("")
         for (int i = 0; i < longitud; i++) {
             char letra = l[(int) (Math.random() * longitud)];
             palabra += letra;
         }
         return palabra;
     }
+
+   /* public static String mostrar(String palabras){
+
+    }*/
 
     public static void main(String[] args) {
 
