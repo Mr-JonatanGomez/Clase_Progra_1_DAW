@@ -58,9 +58,9 @@ public class E7 {
             //if (palabraEscogida.length()!=letra){
                 numeroVidas--;
             }
-        }
+        System.out.println("Numero de Vidas Restantes: "+numeroVidas);
+    }
 
-        System.out.println("Numero de Vidas Restantes: "+numeroVidas );
 
 
         /*
@@ -68,7 +68,7 @@ public class E7 {
         - En el caso de acertar se mostrará la letra en la posición correspondiente
         - En el caso de falla se restará una vida
     */
-    }
+
 
     public static void main(String[] args) {
 
