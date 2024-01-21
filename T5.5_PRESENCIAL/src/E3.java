@@ -10,36 +10,29 @@ public class E3 {
      (nota_examen2 * 60)) / 100*/
 
 
-    static double notaExamen1;
-    static double valorExamen1;
-    static double notaDeseada;
+    static float notaExamen1;
+    static float notaPonderado1;
+    static float notaDeseadaGlobal;
+    static float notaPonderada2n;
+    static float notaExamen2;
 
     static Scanner sc = new Scanner(System.in);
 
-    public static void sacadoExamen1(){
-        System.out.println("Introduce nota sacada en primer examen");
-        notaExamen1= sc.nextDouble();
-        valorExamen1= notaExamen1 *0.4;
-        System.out.println("Valor de tu nota 1(40%) "+valorExamen1);
-    }
+    public static float calculoNecesitado(float ponderada1, float ponderada2) {
+        notaPonderado1 = notaExamen1 * 0.4f;
+        notaPonderada2n = notaDeseadaGlobal - notaPonderado1;
+        notaExamen2 = notaPonderada2n / 0.6f;
 
-    public static void notaQuieres(){
-        System.out.println("Introduce nota media deseada");
-        notaDeseada= sc.nextDouble();
-    }
-
-    public static void calculoNecesito(){
-        double valor2Necesitado = notaDeseada - valorExamen1;
-        System.out.println("necesito sacar ponderado:" +valor2Necesitado);
-        double notanecesitadaExamen2 = valor2Necesitado/0.6;
-
-        System.out.println(" NECESITAS SACAR UN:"+notanecesitadaExamen2+" PARA UNA MEDIA DE: ");
+        return notaExamen2;
     }
 
     public static void main(String[] args) {
-        sacadoExamen1();
-        notaQuieres();
-        calculoNecesito();
-    }
+        System.out.println("Introduce nota sacada en primer examen");
+        notaExamen1 = sc.nextFloat();
+        System.out.println("Introduce nota media deseada");
+        notaDeseadaGlobal = sc.nextFloat();
 
+        calculoNecesitado(notaPonderado1, notaPonderada2n);// aqui le paso los parametros
+        System.out.println(" NECESITAS SACAR UN: " + notaExamen2 + " PARA UNA MEDIA DE: " + notaDeseadaGlobal);
+    }
 }
