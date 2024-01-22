@@ -26,6 +26,7 @@ Nota: para generar los números aleatorios podemos utilizar n = (int)(Math.rando
         for (int items : arrayAleatorio) {
             System.out.print(items + ", ");
         }
+        System.out.println();
     }
 
     public static void maximoMinimo() {
@@ -37,17 +38,58 @@ Nota: para generar los números aleatorios podemos utilizar n = (int)(Math.rando
             }
         }
     }
+    public static void operacionEleccion (){
+        String max = "MAX";
+        String min = "MIN";
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Quieres mostrar el numero máximo o el minimo contenido en el array?" +
+                "\n Introduzca MAX o MIN");
+        String eleccion = sc.next();
+        boolean terminar = false;
+        do {
 
+            if (eleccion.equalsIgnoreCase(max)){
+                System.out.println("El numero menor es: "+ numeroMaximo);
+                terminar=true;
+
+            }
+            else if (eleccion.equalsIgnoreCase(min)){
+                System.out.println("El numero menor del array es: "+ numeroMinimo);
+                terminar =true;
+
+            } else  {
+                System.out.println("introduce opcion valida");
+                terminar = true;
+            }
+        }while (!terminar);
+    }//POR AQUI
+
+    public static void operacionEleccion2() {
+        Scanner sc = new Scanner(System.in);
+        boolean terminar = false;
+
+        do {
+            System.out.println("Quieres mostrar el numero máximo o el mínimo contenido en el array?" +
+                    "\n Introduzca MAX o MIN");
+            String eleccion = sc.next();
+
+            if (eleccion.equalsIgnoreCase("MAX")) {
+                System.out.println("El numero máximo es: " + numeroMaximo);
+                terminar = true;  // Terminar después de mostrar el número máximo
+            } else if (eleccion.equalsIgnoreCase("MIN")) {
+                System.out.println("El numero mínimo del array es: " + numeroMinimo);
+                terminar = true;  // Terminar después de mostrar el número mínimo
+            } else {
+                System.out.println("Entrada no válida. Por favor, introduce MAX o MIN.");
+            }
+        } while (!terminar);  // La condición debe ser !terminar para que el bucle se repita si terminar es false
+    }
     public static void main(String[] args) {
         rellenarArray();
         mostrarArray();
         maximoMinimo();
-        System.out.println("Quieres mostrar el numero máximo o el minimo contenido en el array?" +
-                "\n Introduzca MAX o MIN");
-        Scanner sc= new Scanner(System.in);
-        if (sc.next().equalsIgnoreCase(String maximo)){
+        operacionEleccion();
 
-        }
     }
 
 }
