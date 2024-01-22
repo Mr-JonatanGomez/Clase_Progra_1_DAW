@@ -7,10 +7,12 @@ quiere destacar el máximo o el mínimo. Seguidamente se volverá a mostrar el a
 destacado entre dobles asteriscos.
 Nota: para generar los números aleatorios podemos utilizar n = (int)(Math.random() * 501);*/
 
-    static int[] arrayAleatorio = new int[10];//cambiar a 100
-    static int rangoMaximo = 5;//cambiar a 500
+    static int[] arrayAleatorio = new int[100];//cambiar a 100
+    static int rangoMaximo = 500;//cambiar a 500
     static int numeroMaximo = 0;
     static int numeroMinimo = rangoMaximo;
+
+    static String eleccion;
 
 
     public static void rellenarArray() {
@@ -25,6 +27,21 @@ Nota: para generar los números aleatorios podemos utilizar n = (int)(Math.rando
     public static void mostrarArray() {
         for (int items : arrayAleatorio) {
             System.out.print(items + ", ");
+        }
+        System.out.println();
+
+    }
+
+    public static void mostrarArray2() {
+        for (int i = 0; i < arrayAleatorio.length; i++) {
+            if (i % 25 == 0){
+                System.out.println();
+            }
+            else if (arrayAleatorio.length% i !=1)
+            System.out.print(arrayAleatorio[i] + ", ");
+            else if (i== (arrayAleatorio.length-1)){
+                System.out.print(arrayAleatorio[i]+". ");
+            }
         }
         System.out.println();
     }
@@ -44,51 +61,67 @@ Nota: para generar los números aleatorios podemos utilizar n = (int)(Math.rando
         Scanner sc= new Scanner(System.in);
         System.out.println("Quieres mostrar el numero máximo o el minimo contenido en el array?" +
                 "\n Introduzca MAX o MIN");
-        String eleccion = sc.next();
         boolean terminar = false;
         do {
+            eleccion = sc.next();
 
             if (eleccion.equalsIgnoreCase(max)){
-                System.out.println("El numero menor es: "+ numeroMaximo);
-                terminar=true;
+                System.out.println("El numero mayor es: "+ numeroMaximo);
+                terminar = true;
 
             }
             else if (eleccion.equalsIgnoreCase(min)){
                 System.out.println("El numero menor del array es: "+ numeroMinimo);
-                terminar =true;
+                terminar = true;
 
             } else  {
                 System.out.println("introduce opcion valida");
-                terminar = true;
+
             }
         }while (!terminar);
-    }//POR AQUI
-
-    public static void operacionEleccion2() {
-        Scanner sc = new Scanner(System.in);
-        boolean terminar = false;
-
-        do {
-            System.out.println("Quieres mostrar el numero máximo o el mínimo contenido en el array?" +
-                    "\n Introduzca MAX o MIN");
-            String eleccion = sc.next();
-
-            if (eleccion.equalsIgnoreCase("MAX")) {
-                System.out.println("El numero máximo es: " + numeroMaximo);
-                terminar = true;  // Terminar después de mostrar el número máximo
-            } else if (eleccion.equalsIgnoreCase("MIN")) {
-                System.out.println("El numero mínimo del array es: " + numeroMinimo);
-                terminar = true;  // Terminar después de mostrar el número mínimo
-            } else {
-                System.out.println("Entrada no válida. Por favor, introduce MAX o MIN.");
-            }
-        } while (!terminar);  // La condición debe ser !terminar para que el bucle se repita si terminar es false
     }
+    public static void destacarEleccion() {
+        if (eleccion.equalsIgnoreCase("max")){
+            for (int i = 0; i < arrayAleatorio.length; i++) {
+                if (i % 25 == 0){
+                    System.out.println();
+                } else if (arrayAleatorio[i]== numeroMaximo) {
+                    System.out.print("**"+arrayAleatorio[i]+"** ");
+                } else if (arrayAleatorio.length% i !=1)
+                    System.out.print(arrayAleatorio[i] + ", ");
+                else if (i== (arrayAleatorio.length-1)){
+                    System.out.print(arrayAleatorio[i]+". ");
+                }
+            }
+            System.out.println();
+
+        } else if (eleccion.equalsIgnoreCase("min")){
+            for (int i = 0; i < arrayAleatorio.length; i++) {
+                if (i % 25 == 0){
+                    System.out.println();
+                } else if (arrayAleatorio[i]== numeroMinimo) {
+                    System.out.print("**"+arrayAleatorio[i]+"** ");
+                } else if (arrayAleatorio.length% i !=1)
+                    System.out.print(arrayAleatorio[i] + ", ");
+                else if (i== (arrayAleatorio.length-1)){
+                    System.out.print(arrayAleatorio[i]+". ");
+                }
+            }
+            System.out.println();
+
+        }
+    }
+
     public static void main(String[] args) {
         rellenarArray();
-        mostrarArray();
+        mostrarArray2();
         maximoMinimo();
         operacionEleccion();
+        destacarEleccion();
+
+        System.out.println("COMPROBADOR:");
+        System.out.println("MINIMO: "+numeroMinimo);
+        System.out.println("MAXIMO: "+numeroMaximo);
 
     }
 
