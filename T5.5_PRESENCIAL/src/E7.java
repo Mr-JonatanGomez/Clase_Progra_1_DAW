@@ -100,7 +100,7 @@ Nota: para generar los números aleatorios podemos utilizar n = (int)(Math.rando
                 if (i % 25 == 0){
                     System.out.println();
                 } else if (arrayAleatorio[i]== numeroMinimo) {
-                    System.out.print("**"+arrayAleatorio[i]+"** ");
+                    System.out.print("***"+arrayAleatorio[i]+"*** ");
                 } else if (arrayAleatorio.length% i !=1)
                     System.out.print(arrayAleatorio[i] + ", ");
                 else if (i== (arrayAleatorio.length-1)){
