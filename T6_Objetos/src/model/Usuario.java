@@ -9,7 +9,17 @@ public class Usuario {
     // y se colocan primero, todos son privados(por el encapsulamiento), solo el mismo puede ver sus cualidades
 
 
-    // para dar por defecto a todos una contraseña. root1234 se pone el valor en el constructor
+    /*
+     para dar por defecto a todos una contraseña.
+     root1234 se pone el valor en el constructor
+     NO ES NECESARIO TENER PASSWORD dentro del constructor
+
+     this.password = "root1234";
+
+     tambien se puede igualar a DNI por ejemplo
+
+     this.password = this.dni;
+     */
     private String nombre, apellido, dni, correo, password;
     private int telefono;
 
@@ -24,7 +34,9 @@ public class Usuario {
 
     // CON THIS.nombre hacemos referencia al STRING principal, y es para diferenciar del parametro
 
-    public Usuario(){}// recomendable TENER CONSTRUCTOR VACIO
+    public Usuario(){
+        this.password= this.dni;
+    }// recomendable TENER CONSTRUCTOR VACIO
     /*
     MUY IMPORTANTE, si creamos un constructor de USUARIO, con dos String (Nombre y Apellidos),
     ya no podemos crear otro con dos String (Nombre y Correo), tendriamos que crear al usuario
@@ -36,13 +48,14 @@ public class Usuario {
         this.nombre = nombre; // con el this.nombre coge String de clase, = nombre (referenciado)
         this.apellido = apellido;
         this.dni=dni;
-        this.password= "root1234";
+        this.password= this.dni;
     }
     public Usuario (String nombre, String apellido, String dni, String correo){
         this.nombre=nombre;
         this.apellido=apellido;
         this.dni=dni;
         this.correo=correo;
+        this.password= this.dni;
     }
     public Usuario (String nombre, String apellido, String dni, String correo, int telefono){
         this.nombre=nombre;
@@ -50,17 +63,19 @@ public class Usuario {
         this.dni=dni;
         this.correo=correo;
         this.telefono=telefono;
+        this.password= this.dni;
     }
     public Usuario (String nombre, int telefono){
         this.nombre=nombre;
         this.telefono=telefono;
+        this.password= this.dni;
     }
 
     public Usuario(String nombre, String correo){
         // si no metemos estas igualaciones, en el main luego aunque este puesto el nombre sigue sin hacer efecto
         this.nombre = nombre;
         this.correo = correo;
-
+        this.password= this.dni;
     }
 
     // cosas que puede hacer un usuario

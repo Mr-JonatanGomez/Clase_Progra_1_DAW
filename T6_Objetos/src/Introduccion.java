@@ -18,11 +18,11 @@ public class Introduccion {
         Usuario usuario4= new Usuario("Calimero",652951);
         Usuario usuario3= new Usuario("Liam","Gomez","j200001","Liam@mail",6529511);
 
-        Usuario usuario5= new Usuario("Sebas",)
-        Usuario usuarioSeteado= new Usuario();
+
+        Usuario usuarioSeteado= new Usuario();//user 2 string diferentes al constructor que hay con 2 string (nombre/correo)
         usuarioSeteado.setNombre("Seteado");
         usuarioSeteado.setApellido("Setillas");
-
+        Usuario usuario5= new Usuario("Sebas","Sebas@sebas");
 
         /*Para imprimir, necesitamos setter y getter, porque el objeto es privado,
         esto se hace en el objeto
@@ -30,9 +30,10 @@ public class Introduccion {
         Scanner sc = new Scanner(System.in);
         System.out.println(usuario1.getNombre());//asi se imprime con el get
         usuario1.setNombre("Felipe");// cambia el nombre a usuario1
+
         System.out.println(usuario1.getNombre());
         System.out.println(usuario2.getNombre());
-
+        usuario1.setNombre("JoseJonatan");
         System.out.println(usuario0.getNombre());
         System.out.println(usuario3.getNombre());
         System.out.println(usuario4.getNombre());
@@ -41,6 +42,11 @@ public class Introduccion {
         usuario4.saludar("'Bienvenidos al apasionante mundo de la PROGRAMACION'");
         //usamos la accion mostrar datos
         usuario1.mostrarDatos();
+        usuario5.mostrarDatos();
+        usuario0.mostrarDatos();
+        usuario4.mostrarDatos();
+        usuarioSeteado.mostrarDatos();
+        usuario2.mostrarDatos();
 
 
 
