@@ -18,6 +18,10 @@ public class Introduccion {
         Usuario usuario4= new Usuario("Calimero",652951);
         Usuario usuario3= new Usuario("Liam","Gomez","j200001","Liam@mail",6529511);
 
+        Usuario usuario5= new Usuario("Sebas",)
+        Usuario usuarioSeteado= new Usuario();
+        usuarioSeteado.setNombre("Seteado");
+        usuarioSeteado.setApellido("Setillas");
 
 
         /*Para imprimir, necesitamos setter y getter, porque el objeto es privado,

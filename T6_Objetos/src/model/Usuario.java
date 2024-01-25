@@ -25,7 +25,12 @@ public class Usuario {
     // CON THIS.nombre hacemos referencia al STRING principal, y es para diferenciar del parametro
 
     public Usuario(){}// recomendable TENER CONSTRUCTOR VACIO
+    /*
+    MUY IMPORTANTE, si creamos un constructor de USUARIO, con dos String (Nombre y Apellidos),
+    ya no podemos crear otro con dos String (Nombre y Correo), tendriamos que crear al usuario
+    desde main, y setearlo
 
+     */
     public Usuario(String nombre, String apellido, String dni){
         // si no metemos estas igualaciones, en el main luego aunque este puesto el nombre sigue sin hacer efecto
         this.nombre = nombre; // con el this.nombre coge String de clase, = nombre (referenciado)
@@ -50,6 +55,14 @@ public class Usuario {
         this.nombre=nombre;
         this.telefono=telefono;
     }
+
+    public Usuario(String nombre, String correo){
+        // si no metemos estas igualaciones, en el main luego aunque este puesto el nombre sigue sin hacer efecto
+        this.nombre = nombre;
+        this.correo = correo;
+
+    }
+
     // cosas que puede hacer un usuario
     public void saludar(String mensaje){
         System.out.println("El user con nombre "+this.nombre+" te está diciendo "+mensaje);
@@ -79,12 +92,45 @@ public class Usuario {
 
 
     */
-    public String getNombre(){
-        return this.nombre;
+
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setNombre (String nombre){
+    public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public int getTelefono() {
