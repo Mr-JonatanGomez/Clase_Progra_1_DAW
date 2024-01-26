@@ -1,3 +1,4 @@
+import model.Aula;
 import model.Usuario;
 
 import java.util.Scanner;
@@ -23,6 +24,13 @@ public class Introduccion {
         usuarioSeteado.setNombre("Seteado");
         usuarioSeteado.setApellido("Setillas");
         Usuario usuario5= new Usuario("Sebas","Sebas@sebas");
+        /*CREACION DEL AULA*/
+
+        Aula aula= new Aula(usuario1,usuario5);// dentro meteremos los usuarios que queremos en el aula
+
+
+
+
 
         /*Para imprimir, necesitamos setter y getter, porque el objeto es privado,
         esto se hace en el objeto
@@ -48,7 +56,8 @@ public class Introduccion {
         usuarioSeteado.mostrarDatos();
         usuario2.mostrarDatos();
 
-
+        System.out.println();
+        aula.mostrarDatosUsuariosAula();
 
     }
 }
