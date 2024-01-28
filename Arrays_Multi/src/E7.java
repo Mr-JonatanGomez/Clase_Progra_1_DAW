@@ -50,7 +50,7 @@ public class E7 {
 
 
         for (int i = 0; i < palabraEscogida.length(); i++) {
-            if (String.valueOf(palabraEscogida.charAt(i)).equalsIgnoreCase(METER SC)==letra){
+            if (String.valueOf(palabraEscogida.charAt(i)).equalsIgnoreCase(letra)){
                 System.out.print(" "+letra+" ");
             }else {
                 System.out.print(" _ ");
