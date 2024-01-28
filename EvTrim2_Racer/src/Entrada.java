@@ -7,7 +7,7 @@ public class Entrada {
         Coche coche2 = new Coche ("Hyundai","i30","03SNG",110,182,0);
 
         Carrera carrera1 = new Carrera(coche1,coche2);
-        Carrera.
+        carrera1.iniciarCarrera();
 
 
     }

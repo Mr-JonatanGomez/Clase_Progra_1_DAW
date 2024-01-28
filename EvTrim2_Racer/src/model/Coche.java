@@ -24,6 +24,8 @@ public class Coche {
         int aceleracion=0;
         int velocidadConseguida;
 
+
+        // AQUI TENEMOS EL PROBLEMA
         System.out.println("Indica cuanto quieres acelerar (minimo 10km/h, máximo 100km/h");
         do {
             aceleracion= sc.nextInt();
@@ -37,7 +39,7 @@ public class Coche {
             velocidadConseguida= (int) (Math.random()*aceleracion)+10;
             kmRecorridos+= velocidadConseguida*0.5;
         }
-
+        kmRecorridos+=kmRecorridos;
 
         System.out.println("Los kilometros recorridos hasta ahora: "+kmRecorridos);
     return kmRecorridos;
