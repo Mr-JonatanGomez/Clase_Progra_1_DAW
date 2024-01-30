@@ -6,7 +6,7 @@ public class Carrera {
 
     private Coche coche1, coche2;
     private String ganador;
-    private int numeroVueltas=10, kmCircuito=637;
+    private int numeroVueltas=10, kmCircuito=637, numeroVueltasDadas=0;
 
     public Carrera() {
     }
@@ -25,24 +25,33 @@ public class Carrera {
         System.out.println();
         coche2.mostrarDatos();
 
+        numeroVueltasDadas=0;
+
         // esta hecho solo por km, tengo que implementar las vueltas quizas con un fori de vueltas y aceleron
         do {
 
             System.out.println("Introduce que aceleracion tendrán los coches");
             int aceleracion= sc.nextInt();
+
             coche1.aceleron(aceleracion);
             coche2.aceleron(aceleracion);
-        }while (coche1.getKmRecorridos()<kmCircuito || coche2.getKmRecorridos()<kmCircuito);
+
+            numeroVueltasDadas++;
+            System.out.println("Km recorriodps por coche1 son:"+coche1.getKmRecorridos());
+            System.out.println("Km recorriodps por coche2 son: "+coche2.getKmRecorridos());
+            System.out.println("Llevamos "+numeroVueltasDadas+" vueltas terminadas");
+
+        }while (numeroVueltasDadas <numeroVueltas|| coche1.getKmRecorridos()<kmCircuito || coche2.getKmRecorridos()<kmCircuito);
 
         if (coche1.getKmRecorridos()>= kmCircuito && coche2.getKmRecorridos()>= kmCircuito){
             System.out.println("The Race is DRAW");
             coche1.mostrarDatos();
         } else if (coche1.getKmRecorridos()>= kmCircuito) {
-            System.out.println("The WINNER is ");
+            System.out.println("The WINNER is "+coche1);
             coche1.mostrarDatos();
             System.out.println("Realizó "+coche1.getKmRecorridos());
         } else if (coche2.getKmRecorridos()>= kmCircuito) {
-            System.out.println("The WINNER is ");
+            System.out.println("The WINNER is "+coche2);
             coche2.mostrarDatos();
             System.out.println("Realizó "+coche2.getKmRecorridos());
         }

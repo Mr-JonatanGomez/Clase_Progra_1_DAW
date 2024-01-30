@@ -5,51 +5,54 @@ import java.util.Scanner;
 public class Coche {
     //las opciones que tiene el coche
     private String marca, modelo, matricula;
-    private int cv, velocidadMaxima, kmRecorridos;
+    private int cv, velocidad, kmRecorridos;
 
     public Coche() {
     }// Coche default
 
-    public Coche(String marca, String modelo, String matricula,int cv, int velocidadMaxima, int kmRecorridos){
+    public Coche(String marca, String modelo, String matricula, int cv) {
         this.marca = marca;
         this.modelo = modelo;
-        this.matricula=matricula;
-        this.cv=cv;
-        this.velocidadMaxima=velocidadMaxima;
-        this.kmRecorridos=kmRecorridos;
+        this.matricula = matricula;
+        this.cv = cv;
+        this.velocidad = velocidad;
+        this.kmRecorridos = kmRecorridos;
     }
 
-    public int aceleron (int kmRecorridos){
-        Scanner sc= new Scanner(System.in);
-        int aceleracion=0;
-        int velocidadConseguida;
+    public int aceleron(int aceleracion) {
+        Scanner sc = new Scanner(System.in);
 
 
-        // AQUI TENEMOS EL PROBLEMA
-        System.out.println("Indica cuanto quieres acelerar (minimo 10km/h, máximo 100km/h");
-        do {
-            aceleracion= sc.nextInt();
-        }while (aceleracion <10 || aceleracion>100);
+        int kmPorRecorrer;
 
-        if (cv <100){
-            velocidadConseguida= (int) Math.random()*aceleracion;
-            kmRecorridos+= velocidadConseguida*0.5;
+
+/*
+        System.out.println("Indica cuanto quieres acelerar esta vuelta");
+        aceleracion = sc.nextInt();
+*/
+
+        if (cv < 100) {
+            velocidad += (int) (Math.random() * aceleracion);
+            kmPorRecorrer = velocidad / 2;
+            System.out.println("entra por -100 los km:"+kmPorRecorrer);
+
+        } else {
+            velocidad += (int) (Math.random() * aceleracion)+10;
+            kmPorRecorrer = velocidad / 2;
+            System.out.println("entra por +100 los km:"+kmPorRecorrer);
         }
-        if (cv >=100){
-            velocidadConseguida= (int) (Math.random()*aceleracion)+10;
-            kmRecorridos+= velocidadConseguida*0.5;
-        }
-        kmRecorridos+=kmRecorridos;
 
-        System.out.println("Los kilometros recorridos hasta ahora: "+kmRecorridos);
-    return kmRecorridos;
+        kmRecorridos += kmPorRecorrer;
+
+        System.out.println("Los kilometros recorridos hasta ahora por coche son" + kmRecorridos);
+        return kmRecorridos;// ESTO ES OK, funciona bien
     }
-    public void mostrarDatos(){
-        System.out.println("Marca: "+this.marca);// o nombre sin this, cuando acostumbremos
-        System.out.println("Modelo: "+modelo);
-        System.out.println("Potencia: "+cv+" cv");
-        System.out.println("Velocidad Máxima: "+velocidadMaxima+" km/h");
-        System.out.println("Matricula: "+matricula);
+
+    public void mostrarDatos() {
+        System.out.println("Marca: " + this.marca);// o nombre sin this, cuando acostumbremos
+        System.out.println("Modelo: " + modelo);
+        System.out.println("Potencia: " + cv + " cv");
+        System.out.println("Matricula: " + matricula);
 
     }
 
@@ -85,12 +88,12 @@ public class Coche {
         this.cv = cv;
     }
 
-    public int getVelocidadMaxima() {
-        return velocidadMaxima;
+    public int getVelocidad() {
+        return velocidad;
     }
 
-    public void setVelocidadMaxima(int velocidadMaxima) {
-        this.velocidadMaxima = velocidadMaxima;
+    public void setVelocidadMaxima(int velocidad) {
+        this.velocidad = velocidad;
     }
 
     public int getKmRecorridos() {
