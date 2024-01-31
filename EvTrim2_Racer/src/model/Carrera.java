@@ -64,11 +64,13 @@ public class Carrera {
 
 
         if (coche1.getKmRecorridos() > kmCircuito && coche1.getKmRecorridos()>coche2.getKmRecorridos()) {
-            System.out.println("The WINNER is " + coche1.getMatricula());
+            ganador=coche1.getMatricula();
+            System.out.println("The WINNER is \uD83C\uDFC6" + ganador);
             coche1.mostrarDatos();
             coche1.getKmRecorridos();
         } else if (coche2.getKmRecorridos() > kmCircuito && coche2.getKmRecorridos()>coche1.getKmRecorridos()) {
-            System.out.println("The WINNER is " + coche2.getMatricula());
+            ganador=coche2.getMatricula();
+            System.out.println("The WINNER is \uD83C\uDFC6" + ganador);
             coche2.mostrarDatos();
             coche2.getKmRecorridos();
         }
