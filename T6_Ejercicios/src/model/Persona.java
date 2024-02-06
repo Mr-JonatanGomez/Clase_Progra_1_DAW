@@ -55,7 +55,7 @@ el resto de datos los pondrá a 0, excepto el dni que lo pondrá a 111111111X*/
 
         double alturaEnMetros = altura / 100;
         double indiceMasaCorporal = peso / (alturaEnMetros * alturaEnMetros);
-        System.out.println("El IMC es:" + indiceMasaCorporal);
+        System.out.println("El IMC es:❤ ❤\uFE0F" + indiceMasaCorporal);
         return indiceMasaCorporal;
     }
 
