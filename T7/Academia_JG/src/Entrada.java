@@ -1,5 +1,6 @@
 import model.Alumno;
 import model.Asignatura;
+import model.Profesor;
 
 public class Entrada {
     public static void main(String[] args) {
@@ -17,6 +18,10 @@ public class Entrada {
         // alumno creado por id inicializando asignatura con id en la clase
         // esto evitaria tener declaradas las asignaturas aqui??
         Alumno alumno1 = new Alumno("dkk",1,53,1);
+
+        Profesor borjaMartin = new Profesor();
+        borjaMartin.ponerNotas(alumno2);
+        alumno2.mostrarDatos();
     }
 
 
