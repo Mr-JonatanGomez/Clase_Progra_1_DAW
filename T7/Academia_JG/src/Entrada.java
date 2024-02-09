@@ -53,7 +53,8 @@ public class Entrada {
         universidad.matricularAlumno(alumno4);
 
         universidad.calificarAlumnos();
-        //universidad.mostrarAlumnos();
+        universidad.mostrarAlumnos();
+        System.out.println("Mostrando solo los aprobados");
         universidad.mostrarTodoAprobados();
 
 
