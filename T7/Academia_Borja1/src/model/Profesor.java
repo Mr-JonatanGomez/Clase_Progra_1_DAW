@@ -8,6 +8,7 @@ public class Profesor {
         alumno.getAsignatura1().setCalificacion(Math.random() * 11);
         alumno.getAsignatura2().setCalificacion(Math.random() * 11);
         alumno.getAsignatura3().setCalificacion(Math.random() * 11);
+
     }
 
     public void calcularMedia(Alumno alumno) {

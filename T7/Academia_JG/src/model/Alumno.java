@@ -28,15 +28,17 @@ public class Alumno {
         this.nombre = nombre;
     }
     public void mostrarDatos (){
-        System.out.println("mostrando las calificaciones del alumno");
+        System.out.println("Mostrando las calificaciones del alumno: "+nombre);
         System.out.println("Asignatura con id: "+asignatura1.getIdAsignatura());
         System.out.println("\tCalificacion: "+asignatura1.getCalificacion());
-        System.out.println("mostrando las calificaciones del alumno");
         System.out.println("Asignatura con id: "+asignatura2.getIdAsignatura());
         System.out.println("\tCalificacion: "+asignatura2.getCalificacion());
-        System.out.println("mostrando las calificaciones del alumno");
         System.out.println("Asignatura con id: "+asignatura3.getIdAsignatura());
         System.out.println("\tCalificacion: "+asignatura3.getCalificacion());
+
+        //System.out.println("Calificacion media es: "+get+"\n");
+
+
     }
 
 
