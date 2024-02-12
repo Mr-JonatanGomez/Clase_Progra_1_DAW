@@ -10,7 +10,7 @@ public class Entrada {
 
 
         // meter (coche,coche, vueltas y km??)
-        Carrera carrera1 = new Carrera("Circuito de Corcega",coche2,coche4);
+        Carrera carrera1 = new Carrera("Circuito de Corcega",coche1,coche3);
         carrera1.mostrarDatos();
         carrera1.iniciarCarrera();
 
