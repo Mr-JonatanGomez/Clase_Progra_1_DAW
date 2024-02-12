@@ -26,26 +26,19 @@ public class Coche {
         int kmPorRecorrer;
 
 
-/*
-        System.out.println("Indica cuanto quieres acelerar esta vuelta");
-        aceleracion = sc.nextInt();
-*/
+
 
         if (cv < 100) {
             velocidad += (int) (Math.random() * aceleracion);
             kmPorRecorrer = velocidad / 2;
-            System.out.println("entra por -100 los km:"+kmPorRecorrer);
 
         } else {
             velocidad += (int) (Math.random() * aceleracion)+10;
             kmPorRecorrer = velocidad / 2;
-            System.out.println("entra por +100 los km:"+kmPorRecorrer);
         }
 
         kmRecorridos += kmPorRecorrer;
-
-        System.out.println("Los kilometros recorridos hasta ahora por coche son" + kmRecorridos);
-        return kmRecorridos;// ESTO ES OK, funciona bien
+        return kmRecorridos;
     }
 
     public void mostrarDatos() {
