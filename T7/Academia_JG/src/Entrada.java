@@ -26,10 +26,11 @@ public class Entrada {
 
         /*El constructor de asignaturas por id, hace propia del alumno cada nota,
         del modo anterior, se califica a la asignatura, por eso repite los valores */
-        Alumno alumno1 = new Alumno("Jonatan",1,6,3);
-        Alumno alumno2 = new Alumno("Liam",2,1,5);
-        Alumno alumno3 = new Alumno("Sandra",3,4,1);
-        Alumno alumno4 = new Alumno("Eustaquio",9,12,1);
+        Alumno alumno1 = new Alumno("Jonatan",1,6,3, 9);
+        Alumno alumno2 = new Alumno("Liam",2,1,5,9);
+        Alumno alumno3 = new Alumno("Sandra",3,4,1,2);
+        Alumno alumno4 = new Alumno("Eustaquio",9,12,1,11);
+        Alumno alumno5 = new Alumno("Anastasio",2,1,7,21);
 
         /*CREACION DE UN ARRAYLIST
         ArrayList<Alumno>listaAlumnos = new ArrayList();
@@ -51,11 +52,13 @@ public class Entrada {
         universidad.matricularAlumno(alumno2);
         universidad.matricularAlumno(alumno3);
         universidad.matricularAlumno(alumno4);
+        universidad.matricularAlumno(alumno5);
 
         universidad.calificarAlumnos();
+        universidad.ordenarPorExpediente();// ordenar no devuelve nada por eso se hace antes de mostrar
         universidad.mostrarAlumnos();
         System.out.println("Mostrando solo los aprobados");
-        universidad.mostrarTodoAprobados();
+        //universidad.mostrarTodoAprobados();
 
 
         //Profesor borjaMartin = new Profesor();

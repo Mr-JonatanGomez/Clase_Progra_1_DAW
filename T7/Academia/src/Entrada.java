@@ -15,14 +15,15 @@ public class Entrada {  // public String get nombre en 1.32.00 de clase
         Asignatura Entornos = new Asignatura( 5);
         Asignatura fol = new Asignatura( 6);
 
-        Alumno alumno1 = new Alumno("Pepe",programacion,sistemas,lenguajeMarcas);
-        Alumno alumno2 = new Alumno("Sulivan",programacion,fol,lenguajeMarcas);
-        Alumno alumno3 = new Alumno("Manola",1,2,4);
+        Alumno alumno1 = new Alumno("Pepe",programacion,sistemas,lenguajeMarcas,75);
+        Alumno alumno2 = new Alumno("Sulivan",programacion,fol,lenguajeMarcas,51);
+        Alumno alumno3 = new Alumno("Manola",1,2,4,26);
 
         Profesor borja = new Profesor();
         borja.ponerNotas(alumno3);
         alumno3.mostrarDatos();
         borja.calcularMedia(alumno3);
+
 
 
 
@@ -59,6 +60,7 @@ public class Entrada {  // public String get nombre en 1.32.00 de clase
         universidad.matricularAlumno(alumno1);
         universidad.matricularAlumno(alumno2);
         universidad.matricularAlumno(alumno3);
+        universidad.mostrarAlumnos();
 
     }
 

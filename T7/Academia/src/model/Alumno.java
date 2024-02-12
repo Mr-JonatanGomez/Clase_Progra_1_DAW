@@ -3,20 +3,24 @@ package model;
 public class Alumno {
     private String nombre;
     private Asignatura asignatura1, asignatura2,asignatura3;
+    private int nExpediente;
 
     public Alumno() {
     }
 
-    public Alumno(String nombre, Asignatura asignatura1, Asignatura asignatura2, Asignatura asignatura3) {
+    public Alumno(String nombre, Asignatura asignatura1, Asignatura asignatura2, Asignatura asignatura3, int nExpediente) {
         this.nombre= nombre;
         this.asignatura1 = asignatura1;
         this.asignatura2 = asignatura2;
         this.asignatura3 = asignatura3;
+        this.nExpediente=nExpediente;
+
     }
 
-    public Alumno (String nombre, int id1, int id2, int id3){// poder elegir asignaturas por id
+    public Alumno (String nombre, int id1, int id2, int id3, int nExpediente){// poder elegir asignaturas por id
         //iniciar 3 atributos
         this.nombre= nombre;
+        this.nExpediente=nExpediente;
         this.asignatura1= new Asignatura(id1);
         this.asignatura2= new Asignatura(id2);
         this.asignatura3= new Asignatura(id3);
@@ -26,6 +30,7 @@ public class Alumno {
 
     public void mostrarDatos(){
         System.out.println("Mostrar calificaciiones alumno con nombre"+nombre);
+        System.out.println("NºExpediente: "+nExpediente);
         System.out.println("Asignatura con id "+asignatura1.getId());
         System.out.println("Calificacion "+asignatura1.getCalificacion());
         System.out.println("Asignatura con id "+asignatura2.getId());

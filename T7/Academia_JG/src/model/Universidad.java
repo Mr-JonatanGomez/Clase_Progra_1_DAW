@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class Universidad {
     private ArrayList<Alumno> listaAlumnos;// aquí hay listas de alumnos NO INICIALIZAR AQUI ARRIBA
@@ -52,13 +53,37 @@ public class Universidad {
 
         }
     }
-public void mostrarTodoAprobados (){
-    for (Alumno alumno:listaAlumnos) {
-        if(alumno.getAsignatura1().getCalificacion()>=5
-                && alumno.getAsignatura2().getCalificacion()>=5
-                && alumno.getAsignatura3().getCalificacion()>=5){
-            alumno.mostrarDatos();
+
+    public void mostrarTodoAprobados() {
+        for (Alumno alumno : listaAlumnos) {
+            if (alumno.getAsignatura1().getCalificacion() >= 5
+                    && alumno.getAsignatura2().getCalificacion() >= 5
+                    && alumno.getAsignatura3().getCalificacion() >= 5) {
+                alumno.mostrarDatos();
+            }
         }
     }
-}
+
+    public void ordenarPorExpediente (){
+        listaAlumnos.sort(new Comparator<Alumno>() {
+            /* compara posicion 0 y 1  si o1 es menor lo coloca antes (-1),
+            si o1 es mayor lo coloca despues (1)
+            si o1 y 02 son iguales los deja como estan (0)
+
+            Tras esto, pasa a comparar posicion 1 y 2, 2 y 3 ...hasta acabar
+            */
+            @Override
+            public int compare(Alumno o1, Alumno o2) {
+
+                if (o1.getnExpediente()<o2.getnExpediente()){
+                    return -1; // si o1 es menor -1 deja los valores como estan
+                } else if (o1.getnExpediente()>o2.getnExpediente()) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+
+            }
+        });
+    }
 }
