@@ -55,15 +55,14 @@ public class Carrera {
             }
 
 //COMIENZO DE PRUEBA
-            if (coche1.getKmRecorridos() > kmCircuito && numeroVueltasDadas >= numeroVueltas) {
+            if (coche1.getKmRecorridos() > kmCircuito || numeroVueltasDadas == numeroVueltas) {
                 raceOver = true;
-            } else if (coche2.getKmRecorridos() > kmCircuito && numeroVueltasDadas >= numeroVueltas) {
+            } else if (coche2.getKmRecorridos() > kmCircuito || numeroVueltasDadas == numeroVueltas) {
                 raceOver = true;
             }//else?
             System.out.println();
 
         } while (!raceOver);
-        //} while (numeroVueltasDadas < numeroVueltas); VOY A PROBAR OTRAS
 
         System.out.println("\uD83C\uDFC1 LA CARRERA HA FINALIZADO \uD83C\uDFC1");
 
