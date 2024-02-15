@@ -8,8 +8,6 @@ public class Entrada {
         Coche coche3 = new Coche ("Seat","Panda","\uD83D\uDE99 M.Fibonnacci_332",30);
         Coche coche4 = new Coche ("Toyota","Corolla","\uD83D\uDE99 C.Sainz_123",150);
 
-
-        // meter (coche,coche, vueltas y km??)
         Carrera carrera1 = new Carrera("Circuito de Corcega",coche1,coche3);
         carrera1.mostrarDatos();
         carrera1.iniciarCarrera();
