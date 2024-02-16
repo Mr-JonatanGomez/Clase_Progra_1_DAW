@@ -34,6 +34,7 @@ public class Equipo {
         int ataque = (nivelAtaque * (int) (Math.random() * 2)) + ((nivelMedia * (int) (Math.random() * 2) / 2));
 
         if (ataque > 90) {
+            goles++;
             return true;
         } return false;
 
@@ -53,10 +54,11 @@ public class Equipo {
         }
     }
     public void mostrarPlantilla(){
-        System.out.println("MOSTRANDO PLANTILLA");
+        System.out.println("MOSTRANDO PLANTILLA DEL "+getNombre());
         for (Jugador item:listaJugadores) {
                 item.mostrarDatos(item);
         }
+        System.out.println();
     }
 
 
@@ -98,5 +100,13 @@ public class Equipo {
 
     public void setGoles(int goles) {
         this.goles = goles;
+    }
+
+    public ArrayList<Jugador> getListaJugadores() {
+        return listaJugadores;
+    }
+
+    public void setListaJugadores(ArrayList<Jugador> listaJugadores) {
+        this.listaJugadores = listaJugadores;
     }
 }

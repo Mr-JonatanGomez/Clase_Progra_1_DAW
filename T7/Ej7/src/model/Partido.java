@@ -29,7 +29,7 @@ public class Partido {
                 System.out.println("\nResultado tras la " + parte + " parte es de: \n"
                         + equipoLocal.getNombre() + " " + equipoLocal.getGoles() + " - " + equipoVisitante.getNombre() + " " + equipoVisitante.getGoles());
 
-                if (i > 2) {
+                if (i == 2) {
                     parte++;
                 }
             }
@@ -44,4 +44,36 @@ public class Partido {
 
     }
 
+
+    public Equipo getEquipoLocal() {
+        return equipoLocal;
+    }
+
+    public void setEquipoLocal(Equipo equipoLocal) {
+        this.equipoLocal = equipoLocal;
+    }
+
+    public Equipo getEquipoVisitante() {
+        return equipoVisitante;
+    }
+
+    public void setEquipoVisitante(Equipo equipoVisitante) {
+        this.equipoVisitante = equipoVisitante;
+    }
+
+    public boolean isFinalizado() {
+        return finalizado;
+    }
+
+    public void setFinalizado(boolean finalizado) {
+        this.finalizado = finalizado;
+    }
+
+    public int getParte() {
+        return parte;
+    }
+
+    public void setParte(int parte) {
+        this.parte = parte;
+    }
 }

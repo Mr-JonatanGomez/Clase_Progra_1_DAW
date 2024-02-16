@@ -1,12 +1,13 @@
 import model.Equipo;
 import model.Jugador;
+import model.Partido;
 
 public class Entrada {
     public static void main(String[] args) {
 
         Equipo barcelona = new Equipo("Barcelona", 90, 85, 80);
         Equipo atleticoDeMadrid = new Equipo("Atlético de Madrid");
-        Equipo realMadrid = new Equipo("Atlético de Madrid");
+        Equipo realMadrid = new Equipo("Real Madrid");
 
 
         System.out.println("ATAQUE atleti "+atleticoDeMadrid.getNivelAtaque()+" , "+atleticoDeMadrid.getNivelMedia()+" , "+atleticoDeMadrid.getNivelDefensa());
@@ -18,7 +19,7 @@ public class Entrada {
         // CON LA ACTU
 
         Jugador oblak = new Jugador("Oblak","portero",92);
-        Jugador courtois = new Jugador("Oblak","portero",90);
+        Jugador courtois = new Jugador("curtis","portero",90);
         Jugador  jugador3 = new Jugador("1","2",2);
 
 
@@ -35,5 +36,10 @@ public class Entrada {
 
 
         realMadrid.mostrarPlantilla();
+
+        Partido jornada1 = new Partido(atleticoDeMadrid,realMadrid);
+        jornada1.iniciarPartido();
+        jornada1.mostrarResultado();
+
     }
 }
