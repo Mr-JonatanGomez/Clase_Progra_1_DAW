@@ -1,9 +1,13 @@
 package model;
 
+import java.util.ArrayList;
+
 public class Equipo {
     private String nombre;
     private int nivelAtaque, nivelMedia, nivelDefensa;
     private int goles;
+
+    private ArrayList<Jugador>listaJugadores;
 
 
     public Equipo() {
@@ -15,6 +19,7 @@ public class Equipo {
         this.nivelMedia = (int) (Math.random() * 101);
         this.nivelAtaque = (int) (Math.random() * 101);
         this.goles = 0;
+        this.listaJugadores=new ArrayList<>();
     }
 
     public Equipo(String nombre, int nivelAtaque, int nivelMedia, int nivelDefensa) {
@@ -22,16 +27,35 @@ public class Equipo {
         this.nivelDefensa = nivelDefensa;
         this.nivelMedia = nivelMedia;
         this.nivelAtaque = nivelAtaque;
+        this.listaJugadores=new ArrayList<>();
     }
 
     public boolean atacar() {
         int ataque = (nivelAtaque * (int) (Math.random() * 2)) + ((nivelMedia * (int) (Math.random() * 2) / 2));
 
         if (ataque > 90) {
-            goles++;
             return true;
-        }else {
-        return false;
+        } return false;
+
+    }
+
+    public void ficharJugador (Jugador jugador){
+        listaJugadores.add(jugador);//añade jugador
+    }
+
+    public void mostrarDelanteros(){
+        System.out.println("MOSTRANDO DELANTEROS");
+        for (Jugador item:listaJugadores) {
+            if (item.getPosicion().equalsIgnoreCase("delantero")){
+                item.mostrarDatos(item);
+            }else {
+            }
+        }
+    }
+    public void mostrarPlantilla(){
+        System.out.println("MOSTRANDO PLANTILLA");
+        for (Jugador item:listaJugadores) {
+                item.mostrarDatos(item);
         }
     }
 
