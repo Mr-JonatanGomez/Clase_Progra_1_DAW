@@ -51,6 +51,7 @@ public class Partido {
             equipoVisitante.setPuntos(equipoVisitante.getPuntos() + 1);
 
         }
+        System.out.println();
     }
 
 

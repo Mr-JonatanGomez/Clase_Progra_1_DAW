@@ -70,7 +70,7 @@ public class Entrada {
 
         System.out.println("Clasificacion Primera Vuelta");
         primeraDivision.hacerClasificacion();
-        primeraDivision.mostrarEquipos();
+
 
         Partido j4a = new Partido(realMadrid,atleticoDeMadrid);
         j4a.iniciarPartido();
@@ -89,7 +89,7 @@ public class Entrada {
 
         System.out.println("Clasificacion FINAL");
         primeraDivision.hacerClasificacion();
-        primeraDivision.mostrarEquipos();
+
 
 
     }

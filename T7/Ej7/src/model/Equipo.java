@@ -79,7 +79,7 @@ public class Equipo {
     }
 
     public void mostrarDatos(){
-        System.out.println(getNombre());
+        System.out.print(getNombre()+" ");
         System.out.println(getPuntos()+" Puntos");
     }
 
