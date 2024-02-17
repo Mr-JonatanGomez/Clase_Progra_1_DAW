@@ -3,10 +3,11 @@ package model;
 public class Jugador {
     private String nombre, posicion;
     private boolean estrella;
-    private int calidad;
+    private int calidad, idJugador;
 
     public Jugador (){}//VACIO
-    public Jugador(String nombre, String posicion, int calidad){
+    public Jugador(int idJugador, String nombre, String posicion, int calidad){
+        this.idJugador=idJugador;
         this.nombre=nombre;
         this.posicion=posicion;
         this.calidad=calidad;
