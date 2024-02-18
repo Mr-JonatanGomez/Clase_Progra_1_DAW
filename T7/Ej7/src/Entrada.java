@@ -1,7 +1,6 @@
-import model.Equipo;
-import model.Jugador;
-import model.Liga;
-import model.Partido;
+import model.*;
+
+import java.util.ArrayList;
 
 public class Entrada {
     public static void main(String[] args) {
@@ -19,6 +18,10 @@ public class Entrada {
         Equipo realMadrid = new Equipo("REAL MADRID");
         Equipo barcelona = new Equipo("BARCELONA");
         Equipo valencia = new Equipo("VALENCIA");
+        Equipo bilbao = new Equipo ("ATH. BILBAO");
+        Equipo sevilla = new Equipo("BARCELONA");
+        Equipo betis = new Equipo("VALENCIA");
+        Equipo osasuna = new Equipo ("OSASUNA");
 
         // DECLARACION JUGADORES * OBSOLETO*
             /*
@@ -49,6 +52,26 @@ public class Entrada {
         barcelona.ficharJugador(new Jugador(15,"Lewandovski","delantero",90));
         barcelona.ficharJugador(new Jugador(16,"Ter Stegen","portero",92));
 
+        osasuna.ficharJugador(new Jugador(17,"David Garcia","defensa",80));
+        osasuna.ficharJugador(new Jugador(18,"Aimar","centrocampista",79));
+        osasuna.ficharJugador(new Jugador(19,"Budimir","delantero",81));
+        osasuna.ficharJugador(new Jugador(20,"Sergio","portero",78));
+
+        betis.ficharJugador(new Jugador(27,"Luis","defensa",80));
+        betis.ficharJugador(new Jugador(28,"Carvalho","centrocampista",80));
+        betis.ficharJugador(new Jugador(21,"Borja","delantero",79));
+        betis.ficharJugador(new Jugador(22,"Bravo","portero",81));
+
+        sevilla.ficharJugador(new Jugador(23,"Ramos","defensa",82));
+        sevilla.ficharJugador(new Jugador(24,"Rakitic","centrocampista",79));
+        sevilla.ficharJugador(new Jugador(25,"Isaac Romero","delantero",82));
+        sevilla.ficharJugador(new Jugador(26,"Nyjhland","portero",82));
+
+        bilbao.ficharJugador(new Jugador(29,"Yerai","defensa",82));
+        bilbao.ficharJugador(new Jugador(30,"Sancet","centrocampista",84));
+        bilbao.ficharJugador(new Jugador(31,"Williams","delantero",86));
+        bilbao.ficharJugador(new Jugador(32,"Unai Simon","portero",84));
+
         // MOSTRAMOS EQUIPOS Y CALIDAD
         atleticoDeMadrid.calcularNivelHabilidad();
         atleticoDeMadrid.mostrarDatosCalidad();
@@ -62,6 +85,17 @@ public class Entrada {
         valencia.calcularNivelHabilidad();
         valencia.mostrarDatosCalidad();
 
+        sevilla.calcularNivelHabilidad();
+        sevilla.mostrarDatosCalidad();
+
+        osasuna.calcularNivelHabilidad();
+        osasuna.mostrarDatosCalidad();
+
+        bilbao.calcularNivelHabilidad();
+        bilbao.mostrarDatosCalidad();
+
+        betis.calcularNivelHabilidad();
+        betis.mostrarDatosCalidad();
 
         //creamos la liga
         Liga primeraDivision = new Liga();
@@ -70,8 +104,13 @@ public class Entrada {
         primeraDivision.inscribirEquipos(atleticoDeMadrid);
         primeraDivision.inscribirEquipos(barcelona);
         primeraDivision.inscribirEquipos(valencia);
+        primeraDivision.inscribirEquipos(osasuna);
+        primeraDivision.inscribirEquipos(sevilla);
+        primeraDivision.inscribirEquipos(betis);
+        primeraDivision.inscribirEquipos(bilbao);
 
-
+// JORNADA *PRUEBAS PARA OBSOLETAR*
+        /*
         Partido j1a = new Partido(atleticoDeMadrid,realMadrid);
         j1a.iniciarPartido();
         Partido j1b = new Partido(valencia,barcelona);
@@ -106,8 +145,17 @@ public class Entrada {
         Partido j6b = new Partido(valencia,realMadrid);
         j6b.iniciarPartido();
 
+
+         */
+        Jornada temporada= new Jornada(primeraDivision.getListaEquipos());//DECLARA LA TEMPORADA
+
+
+        temporada.realizarPartidos();
+
+
         System.out.println("Clasificacion FINAL");
         primeraDivision.hacerClasificacion();
+
 
 
 

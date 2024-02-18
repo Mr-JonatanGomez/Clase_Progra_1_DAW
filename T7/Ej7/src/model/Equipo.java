@@ -7,7 +7,7 @@ public class Equipo {
     private int idEquipo;
     private String nombre;
     private int nivelAtaque, nivelCentrocampista, nivelDefensa, nivelPorteria;
-    private int goles, puntos;
+    private int goles, puntos,golesFavor, golesContra;
 
     private ArrayList<Jugador>listaJugadores;
 
@@ -21,6 +21,8 @@ public class Equipo {
         this.puntos=0;
         this.listaJugadores=new ArrayList<>();
         this.idEquipo=idEquipo;
+        this.golesFavor=golesFavor;
+        this.golesContra=golesContra;
 
 
 
@@ -107,8 +109,11 @@ public class Equipo {
     }
 
     public void mostrarDatosParaClasificacion(){
-        System.out.print(getNombre()+" ");
-        System.out.println(getPuntos()+" Puntos");
+        System.out.print(getNombre()+", ");
+        System.out.print(getPuntos()+" Puntos, ");
+        System.out.print(getGolesFavor()+" GF, ");
+        System.out.println(getGolesContra()+" GC");
+
     }
     public void mostrarDatosCalidad(){
         System.out.println(getNombre()+" ");
@@ -189,5 +194,21 @@ public class Equipo {
 
     public void setIdEquipo(int idEquipo) {
         this.idEquipo = idEquipo;
+    }
+
+    public int getGolesFavor() {
+        return golesFavor;
+    }
+
+    public void setGolesFavor(int golesFavor) {
+        this.golesFavor = golesFavor;
+    }
+
+    public int getGolesContra() {
+        return golesContra;
+    }
+
+    public void setGolesContra(int golesContra) {
+        this.golesContra = golesContra;
     }
 }

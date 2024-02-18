@@ -26,6 +26,8 @@ public class Liga {
             equipo.mostrarDatosParaClasificacion();
         }
     }
+
+
     public void hacerClasificacion(){// incluye mostrarEq
         listaEquipos.sort(new Comparator<Equipo>() {// sort solo ordena, luego un mostrarEquipos
             @Override
@@ -50,5 +52,43 @@ public class Liga {
         }
     }
 
+    public String getNombre() {
+        return nombre;
+    }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public ArrayList<Equipo> getListaEquipos() {
+        return listaEquipos;
+    }
+
+    public void setListaEquipos(ArrayList<Equipo> listaEquipos) {
+        this.listaEquipos = listaEquipos;
+    }
+
+    public ArrayList<Partido> getListaJornadas() {
+        return listaJornadas;
+    }
+
+    public void setListaJornadas(ArrayList<Partido> listaJornadas) {
+        this.listaJornadas = listaJornadas;
+    }
+
+    public int getClasificacion() {
+        return clasificacion;
+    }
+
+    public void setClasificacion(int clasificacion) {
+        this.clasificacion = clasificacion;
+    }
+
+    public int getCampeon() {
+        return campeon;
+    }
+
+    public void setCampeon(int campeon) {
+        this.campeon = campeon;
+    }
 }

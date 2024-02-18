@@ -39,6 +39,13 @@ public class Partido {
                 }
             }
         }
+        // zona de suma de goles
+        equipoLocal.setGolesFavor(equipoLocal.getGolesFavor() + equipoLocal.getGoles());
+        equipoLocal.setGolesContra(equipoVisitante.getGoles() + equipoLocal.getGolesContra());
+
+        equipoVisitante.setGolesFavor(equipoVisitante.getGolesFavor() + equipoVisitante.getGoles());
+        equipoVisitante.setGolesContra(equipoLocal.getGoles() + equipoVisitante.getGolesContra());
+
         System.out.println("\t FINAL DEL PARTIDO");
         System.out.println(equipoLocal.getNombre() + " " + equipoLocal.getGoles() + " - " + equipoVisitante.getNombre() + " " + equipoVisitante.getGoles());
         finalizado = true;
