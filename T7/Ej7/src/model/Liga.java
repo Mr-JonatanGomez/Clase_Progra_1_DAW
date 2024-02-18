@@ -23,7 +23,7 @@ public class Liga {
     }
     public void mostrarEquipos() {
         for (Equipo equipo : listaEquipos) {
-            equipo.mostrarDatos();
+            equipo.mostrarDatosParaClasificacion();
         }
     }
     public void hacerClasificacion(){// incluye mostrarEq
@@ -44,8 +44,9 @@ public class Liga {
         int posicion =1;
         for (Equipo equipo : listaEquipos) {
             System.out.print(posicion+"º");
-            equipo.mostrarDatos();
+            equipo.mostrarDatosParaClasificacion();
             posicion++;
+
         }
     }
 

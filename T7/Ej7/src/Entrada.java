@@ -7,42 +7,61 @@ public class Entrada {
     public static void main(String[] args) {
 
 
-        //DECLARACION EQUIPOS
+        //DECLARACION EQUIPOS CON CALIDAD *OBSOLETO*
+        /*
         Equipo barcelona = new Equipo(101,"Barcelona", 90, 87, 84);
-        Equipo atleticoDeMadrid = new Equipo(102,"Atlético de Madrid",86,85,95);
         Equipo realMadrid = new Equipo(103,"Real Madrid",96,88,80);
         Equipo valencia = new Equipo(104,"Valencia",75,84,80);
+        */
 
+        //DECLARACION EQUIPOS * CALIDAD COGIDA DE MEDIA DE SUS JUGADORES
+        Equipo atleticoDeMadrid = new Equipo("ATLETICO de MADRID");
+        Equipo realMadrid = new Equipo("REAL MADRID");
+        Equipo barcelona = new Equipo("BARCELONA");
+        Equipo valencia = new Equipo("VALENCIA");
 
-
-        // DECLARACION JUGADORES
-
+        // DECLARACION JUGADORES * OBSOLETO*
+            /*
         Jugador oblak = new Jugador(1,"Oblak","portero",92);
         Jugador courtois = new Jugador(2,"curtis","portero",90);
         Jugador  jugador3 = new Jugador(3,"Jugador","portero",2);
-
+*/
 
         //UNION JUGADORES A EQUIPO ( CON CREACION AL MOMENTO)
 
-        atleticoDeMadrid.ficharJugador(new Jugador(1,"Godin","defensa",87));
+        atleticoDeMadrid.ficharJugador(new Jugador(1,"Witsel","defensa",82));
         atleticoDeMadrid.ficharJugador(new Jugador(2,"Koke","centrocampista",86));
-        atleticoDeMadrid.ficharJugador(new Jugador(3,"Forlan","delantero",88));
+        atleticoDeMadrid.ficharJugador(new Jugador(3,"Griezmann","delantero",91));
+        atleticoDeMadrid.ficharJugador(new Jugador(4,"Oblak","portero",90));
 
-        atleticoDeMadrid.mostrarPlantilla();
+        realMadrid.ficharJugador(new Jugador(4,"Nacho","defensa",84));
+        realMadrid.ficharJugador(new Jugador(5,"Bellingham","centrocampista",94));
+        realMadrid.ficharJugador(new Jugador(6,"Vinicius","delantero",90));
+        realMadrid.ficharJugador(new Jugador(7,"Lunin","portero",80));
 
-        realMadrid.ficharJugador(new Jugador(4,"Hierro","defensa",87));
-        realMadrid.ficharJugador(new Jugador(5,"Gago","centrocampista",84));
-        realMadrid.ficharJugador(new Jugador(6,"Raul","delantero",87));
+        valencia.ficharJugador(new Jugador(9,"Guillamon","defensa",80));
+        valencia.ficharJugador(new Jugador(10,"Pepelu","centrocampista",82));
+        valencia.ficharJugador(new Jugador(11,"Hugo Duro","delantero",79));
+        valencia.ficharJugador(new Jugador(12,"Mamardasvhili","portero",88));
 
+        barcelona.ficharJugador(new Jugador(13,"Kounde","defensa",82));
+        barcelona.ficharJugador(new Jugador(14,"Pedri","centrocampista",86));
+        barcelona.ficharJugador(new Jugador(15,"Lewandovski","delantero",90));
+        barcelona.ficharJugador(new Jugador(16,"Ter Stegen","portero",92));
 
-        realMadrid.mostrarPlantilla();
-        barcelona.mostrarPlantilla();
+        // MOSTRAMOS EQUIPOS Y CALIDAD
+        atleticoDeMadrid.calcularNivelHabilidad();
+        atleticoDeMadrid.mostrarDatosCalidad();
 
+        realMadrid.calcularNivelHabilidad();
+        realMadrid.mostrarDatosCalidad();
 
+        barcelona.calcularNivelHabilidad();
+        barcelona.mostrarDatosCalidad();
 
-        atleticoDeMadrid.mostrarDatos();
-        realMadrid.mostrarDatos();
-        barcelona.mostrarDatos();
+        valencia.calcularNivelHabilidad();
+        valencia.mostrarDatosCalidad();
+
 
         //creamos la liga
         Liga primeraDivision = new Liga();

@@ -6,7 +6,7 @@ public class Equipo {
 
     private int idEquipo;
     private String nombre;
-    private int nivelAtaque, nivelCentrocampista, nivelDefensa;
+    private int nivelAtaque, nivelCentrocampista, nivelDefensa, nivelPorteria;
     private int goles, puntos;
 
     private ArrayList<Jugador>listaJugadores;
@@ -17,15 +17,17 @@ public class Equipo {
 
     public Equipo(String nombre) {
         this.nombre = nombre;
-        this.nivelDefensa = (int) (Math.random() * 101);
-        this.nivelCentrocampista = (int) (Math.random() * 101);
-        this.nivelAtaque = (int) (Math.random() * 101);
         this.goles = 0;
         this.puntos=0;
         this.listaJugadores=new ArrayList<>();
+        this.idEquipo=idEquipo;
+
+
+
     }
 
     public Equipo(int idEquipo,String nombre, int nivelAtaque, int nivelCentrocampista, int nivelDefensa) {
+        this.idEquipo=idEquipo;
         this.nombre = nombre;
         this.nivelDefensa = nivelDefensa;
         this.nivelCentrocampista = nivelCentrocampista;
@@ -44,11 +46,11 @@ public class Equipo {
             return true;
         } return false;
 
-    }
+    }// obsoleto con la mejora
 
     public boolean atacarDefendido(Equipo equipo1,Equipo equipo2){
         int ataque=(equipo1.getNivelAtaque() * (int) (Math.random() * 2)) + ((equipo1.getNivelCentrocampista() * (int) (Math.random() * 2) / 2));
-        int defensa=(equipo2.getNivelDefensa() * (int) (Math.random() * 2)) + ((equipo2.getNivelCentrocampista() * (int) (Math.random() * 2) / 2));
+        int defensa=(equipo2.getNivelDefensa() * (int) (Math.random() * 2)) + ((equipo2.getNivelCentrocampista() * (int) (Math.random() * 2) / 2))+((int)(Math.random()*(nivelPorteria/10)+1));
 
         if (ataque > defensa) {
             goles++;
@@ -61,15 +63,41 @@ public class Equipo {
         listaJugadores.add(jugador);//añade jugador
     }
 
-    /*public void mostrarDelanteros(){
-        System.out.println("MOSTRANDO DELANTEROS");
-        for (Jugador item:listaJugadores) {
-            if (item.getPosicion().equalsIgnoreCase("delantero")){
-                item.mostrarDatos(item);
-            }else {
+    public void calcularNivelHabilidad(){
+        int sumaAtaque=0;
+        int sumaCentrocampo=0;
+        int sumaDefensa=0;
+        int sumaPortero=0;
+
+        int contadorDelantero=0;
+        int contadorDefensa=0;
+        int contadorCentrocampista=0;
+        int contadorPortero=0;
+
+        for (Jugador jugador:listaJugadores) {
+            if (jugador.getPosicion().equalsIgnoreCase("delantero")){
+                sumaAtaque+= jugador.getCalidad();
+                contadorDelantero++;
+            } else if (jugador.getPosicion().equalsIgnoreCase("centrocampista")){
+                sumaCentrocampo+= jugador.getCalidad();
+                contadorCentrocampista++;
+            } else if (jugador.getPosicion().equalsIgnoreCase("defensa")){
+                sumaDefensa+= jugador.getCalidad();
+                contadorDefensa++;
+            } else if (jugador.getPosicion().equalsIgnoreCase("portero")){
+                sumaPortero+= jugador.getCalidad();
+                contadorPortero++;
             }
         }
-    }*/ // metodo mostrar delantero no sirve para NADA
+        nivelAtaque=sumaAtaque/contadorDelantero;
+        nivelCentrocampista=sumaCentrocampo/contadorCentrocampista;
+        nivelDefensa=sumaDefensa/contadorDefensa;
+        nivelPorteria=sumaPortero/contadorPortero;// para math random sumar a defensa
+        //
+
+    }
+
+
     public void mostrarPlantilla(){
         System.out.println("MOSTRANDO PLANTILLA DEL "+getNombre());//nombre equipo
         for (Jugador item:listaJugadores) {
@@ -78,11 +106,18 @@ public class Equipo {
         System.out.println();
     }
 
-    public void mostrarDatos(){
+    public void mostrarDatosParaClasificacion(){
         System.out.print(getNombre()+" ");
         System.out.println(getPuntos()+" Puntos");
     }
-
+    public void mostrarDatosCalidad(){
+        System.out.println(getNombre()+" ");
+        System.out.println("Calidad portería "+getNivelPorteria());
+        System.out.println("Calidad defensa "+getNivelDefensa());
+        System.out.println("Calidad centrocampo "+getNivelCentrocampista());
+        System.out.println("Calidad delantera "+getNivelAtaque());
+        System.out.println(getPuntos()+" Puntos");
+    }
 
     public String getNombre() {
         return nombre;
@@ -114,6 +149,14 @@ public class Equipo {
 
     public void setNivelDefensa(int nivelDefensa) {
         this.nivelDefensa = nivelDefensa;
+    }
+
+    public int getNivelPorteria() {
+        return nivelPorteria;
+    }
+
+    public void setNivelPorteria(int nivelPorteria) {
+        this.nivelPorteria = nivelPorteria;
     }
 
     public int getGoles() {
