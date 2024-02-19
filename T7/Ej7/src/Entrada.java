@@ -32,10 +32,10 @@ public class Entrada {
 
         //UNION JUGADORES A EQUIPO ( CON CREACION AL MOMENTO)
 
-        atleticoDeMadrid.ficharJugador(new Jugador(1,"Witsel","defensa",82));
-        atleticoDeMadrid.ficharJugador(new Jugador(2,"Koke","centrocampista",86));
-        atleticoDeMadrid.ficharJugador(new Jugador(3,"Griezmann","delantero",91));
-        atleticoDeMadrid.ficharJugador(new Jugador(4,"Oblak","portero",90));
+        atleticoDeMadrid.ficharJugador(new Jugador(1,"Gímenez","defensa",84));
+        atleticoDeMadrid.ficharJugador(new Jugador(2,"Griezmann","centrocampista",91));
+        atleticoDeMadrid.ficharJugador(new Jugador(3,"Morata","delantero",87));
+        atleticoDeMadrid.ficharJugador(new Jugador(4,"Oblak","portero",94));
 
         realMadrid.ficharJugador(new Jugador(4,"Nacho","defensa",84));
         realMadrid.ficharJugador(new Jugador(5,"Bellingham","centrocampista",94));
