@@ -19,8 +19,8 @@ public class Entrada {
         Equipo barcelona = new Equipo("BARCELONA");
         Equipo valencia = new Equipo("VALENCIA");
         Equipo bilbao = new Equipo ("ATH. BILBAO");
-        Equipo sevilla = new Equipo("BARCELONA");
-        Equipo betis = new Equipo("VALENCIA");
+        Equipo sevilla = new Equipo("SEVILLA");
+        Equipo betis = new Equipo("BETIS");
         Equipo osasuna = new Equipo ("OSASUNA");
 
         // DECLARACION JUGADORES * OBSOLETO*
@@ -72,7 +72,22 @@ public class Entrada {
         bilbao.ficharJugador(new Jugador(31,"Williams","delantero",86));
         bilbao.ficharJugador(new Jugador(32,"Unai Simon","portero",84));
 
-        // MOSTRAMOS EQUIPOS Y CALIDAD
+
+
+        //creamos la liga
+        Liga primeraDivision = new Liga();
+
+        primeraDivision.inscribirEquipos(realMadrid);
+        primeraDivision.inscribirEquipos(atleticoDeMadrid);
+        primeraDivision.inscribirEquipos(barcelona);
+        primeraDivision.inscribirEquipos(valencia);
+        primeraDivision.inscribirEquipos(osasuna);
+        primeraDivision.inscribirEquipos(sevilla);
+        primeraDivision.inscribirEquipos(betis);
+        primeraDivision.inscribirEquipos(bilbao);
+
+        // MOSTRAMOS EQUIPOS Y CALIDAD // OBSOLETO??
+        /*
         atleticoDeMadrid.calcularNivelHabilidad();
         atleticoDeMadrid.mostrarDatosCalidad();
 
@@ -97,17 +112,10 @@ public class Entrada {
         betis.calcularNivelHabilidad();
         betis.mostrarDatosCalidad();
 
-        //creamos la liga
-        Liga primeraDivision = new Liga();
 
-        primeraDivision.inscribirEquipos(realMadrid);
-        primeraDivision.inscribirEquipos(atleticoDeMadrid);
-        primeraDivision.inscribirEquipos(barcelona);
-        primeraDivision.inscribirEquipos(valencia);
-        primeraDivision.inscribirEquipos(osasuna);
-        primeraDivision.inscribirEquipos(sevilla);
-        primeraDivision.inscribirEquipos(betis);
-        primeraDivision.inscribirEquipos(bilbao);
+         */
+
+        primeraDivision.calcularYMostrarCalidad();
 
 // JORNADA *PRUEBAS PARA OBSOLETAR*
         /*

@@ -121,7 +121,7 @@ public class Equipo {
         System.out.println("Calidad defensa "+getNivelDefensa());
         System.out.println("Calidad centrocampo "+getNivelCentrocampista());
         System.out.println("Calidad delantera "+getNivelAtaque());
-        System.out.println(getPuntos()+" Puntos");
+
     }
 
     public String getNombre() {
