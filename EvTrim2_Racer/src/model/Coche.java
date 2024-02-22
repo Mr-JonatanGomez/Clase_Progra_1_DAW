@@ -20,33 +20,32 @@ public class Coche {
     }
 
     public int aceleron(int aceleracion) {
-        Scanner sc = new Scanner(System.in);
 
 
-        int kmPorRecorrer;
+
+        int kmHechosConAcelerar;
 
 
 
 
         if (cv < 100) {
             velocidad += (int) (Math.random() * aceleracion);
-            kmPorRecorrer = velocidad / 2;
+            kmHechosConAcelerar = velocidad / 2;
 
         } else {
             velocidad += (int) (Math.random() * aceleracion)+10;
-            kmPorRecorrer = velocidad / 2;
+            kmHechosConAcelerar = velocidad / 2;
         }
 
-        kmRecorridos += kmPorRecorrer;
+        kmRecorridos += kmHechosConAcelerar;
         return kmRecorridos;
     }
 
     public void mostrarDatos() {
+        System.out.println("Matricula: " + matricula);
         System.out.println("Marca: " + this.marca);// o nombre sin this, cuando acostumbremos
         System.out.println("Modelo: " + modelo);
         System.out.println("Potencia: " + cv + " cv");
-        System.out.println("Matricula: " + matricula);
-
     }
 
     public String getMarca() {

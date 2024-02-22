@@ -23,15 +23,6 @@ public class Jornada {
 
         }
 
-        for (int i = 0; i < equipos.size(); i++) {
-            for (int j = equipos.size() - 1; j > i; j--) { // Comienza desde el último equipo y termina en i + 1
-                Equipo equipoLocal = equipos.get(i);
-                Equipo equipoVisitante = equipos.get(j);
-                Partido partido = new Partido(equipoLocal, equipoVisitante);
-                partidos.add(partido);
-            }
-        }
-
         return partidos;
     }
 
@@ -39,7 +30,11 @@ public class Jornada {
     public void realizarPartidos (){
         for (Partido partido : getListaJornadas()) {
             partido.iniciarPartido();
-            listaJornadas.add(partido);
+
+        }
+        for (Partido partido : getListaJornadas()) {
+            partido.iniciarPartido();
+
         }
 
     }

@@ -88,6 +88,7 @@ public class Entrada {
         primeraDivision.inscribirEquipos(bilbao);
 
 
+
         // MOSTRAMOS EQUIPOS Y CALIDAD // OBSOLETO??
         /*
         atleticoDeMadrid.calcularNivelHabilidad();
