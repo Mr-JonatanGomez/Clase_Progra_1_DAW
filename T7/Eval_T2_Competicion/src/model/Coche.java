@@ -2,7 +2,7 @@ package model;
 
 public class Coche {
     private String marca, modelo, matricula;
-    private int cv, velocidad, kmRecorridos;
+    private int cv, velocidad, kmRecorridos, puntosGeneral;
 
     public Coche(){}
     public Coche(String marca,String modelo, String matricula, int cv){
@@ -12,6 +12,7 @@ public class Coche {
         this.cv=cv;
         this.velocidad= 0;
         this.kmRecorridos=0;
+        this.puntosGeneral=0;
     }
 
     public int acelerar (int aceleracion ){
@@ -36,13 +37,65 @@ public class Coche {
         return kmRecorridos;
     }
 
-    public void mostrarDatos() {
+    public void mostrarDatosCoche() {
         System.out.println("Matricula: " + matricula);
-        System.out.println("Marca: " + this.marca);// o nombre sin this, cuando acostumbremos
-        System.out.println("Modelo: " + modelo);
-        System.out.println("Potencia: " + cv + " cv");
+        System.out.println("Marca y modelo: " + this.marca+ this.modelo);// o nombre sin this, cuando acostumbremos
+        System.out.println("Potencia: " + cv + "cv\n");
     }
 
+    public String getMarca() {
+        return marca;
+    }
 
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
 
+    public String getModelo() {
+        return modelo;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+
+    public int getCv() {
+        return cv;
+    }
+
+    public void setCv(int cv) {
+        this.cv = cv;
+    }
+
+    public int getVelocidad() {
+        return velocidad;
+    }
+
+    public void setVelocidad(int velocidad) {
+        this.velocidad = velocidad;
+    }
+
+    public int getKmRecorridos() {
+        return kmRecorridos;
+    }
+
+    public void setKmRecorridos(int kmRecorridos) {
+        this.kmRecorridos = kmRecorridos;
+    }
+
+    public int getPuntosGeneral() {
+        return puntosGeneral;
+    }
+
+    public void setPuntosGeneral(int puntosGeneral) {
+        this.puntosGeneral = puntosGeneral;
+    }
 }

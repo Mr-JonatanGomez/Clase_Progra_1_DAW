@@ -6,28 +6,39 @@ public class Entrada {
     public static void main(String[] args) {
 
         //DECLARAR COCHES
-        Coche coche1 = new Coche ("Citroen","Xsara","\uD83D\uDE97 C.McRae_1",80);
-        Coche coche2 = new Coche ("Hyundai","i30","\uD83C\uDFCE\uFE0F B.Codd_2",110);
-        Coche coche3 = new Coche ("Seat","Panda","\uD83D\uDE99 M.Fibonnacci_3",30);
-        Coche coche4 = new Coche ("Citroen","2CV_Trucado","\uD83D\uDE99 B.Martin_4",201);
-        Coche coche5 = new Coche ("Toyota","Corolla","\uD83D\uDE99 C.Sainz_5",150);
-        Coche coche6 = new Coche ("Subaru","Impreza","\uD83D\uDE99 J.Gomez_6",221);
+
 
         //DECLARAR CARRERAS
 
-        CarreraCircuito carrera1 =new CarreraCircuito("RallyRACC Catalonia",457,7);
-        CarreraCircuito carrera2 =new CarreraCircuito("Wales Rally GB",471,10);
-        CarreraCircuito carrera3 =new CarreraCircuito("Rally Italy Sardegna",552,8);
-        CarreraCircuito carrera4 =new CarreraCircuito("Rally New Zealand",720,4);
-        CarreraCircuito carrera5 =new CarreraCircuito("Rally Monte Carlo",312,3);
-        CarreraCircuito carrera6 =new CarreraCircuito("Safari Rally Kenya",1157,10);
-        CarreraCircuito carrera7 =new CarreraCircuito("Rally Argentina",883,9);
-        CarreraCircuito carrera8 =new CarreraCircuito("Rally Japan",661,7);
 
-        //DECLARAR CAMPEONATO
+        // DECLARAR CAMPEONATO
+        // AGREGAR CARRERA(MetodoMostrardatos incluido)
+        // AGREGAR COCHES (MetodoMostrar datos incluido)
 
         CampeonatoMundial mundial = new CampeonatoMundial();
-        mundial.agregarCarrera(carrera1);
+
+        mundial.agregarCarrera(new CarreraCircuito("RallyRACC Catalonia",457,7));
+        mundial.agregarCarrera(new CarreraCircuito("Wales Rally GB",471,10));
+        mundial.agregarCarrera(new CarreraCircuito("Rally Italy Sardegna",552,8));
+        mundial.agregarCarrera(new CarreraCircuito("Rally New Zealand",720,4));
+        mundial.agregarCarrera(new CarreraCircuito("Rally Monte Carlo",312,3));
+        mundial.agregarCarrera(new CarreraCircuito("Safari Rally Kenya",1157,10));
+        mundial.agregarCarrera(new CarreraCircuito("Rally Argentina",883,9));
+        mundial.agregarCarrera(new CarreraCircuito("Rally Japan",661,7));
+
+
+        mundial.inscribirCoche(new Coche("Citroen","Xsara","\uD83D\uDE99 C.McRae_1",80));
+        mundial.inscribirCoche(new Coche("Hyundai","i30","\uD83D\uDE97 B.Codd_2",110));
+        mundial.inscribirCoche(new Coche("Seat","Panda","\uD83D\uDE99 M.Fibonnacci_3",30));
+        mundial.inscribirCoche(new Coche("Citroen","2CV_Trucado","\uD83C\uDFCE\uFE0F B.Martin_4",201));
+        mundial.inscribirCoche(new Coche("Toyota","Corolla","\uD83D\uDE97 C.Sainz_5",150));
+        mundial.inscribirCoche(new Coche("Subaru","Impreza","\uD83C\uDFCE\uFE0F J.Gomez_6",221));
+
+
+
+
+
+
 
 
     }

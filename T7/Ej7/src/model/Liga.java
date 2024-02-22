@@ -45,7 +45,7 @@ public class Liga {
                 }
             }
         });
-        //equipo.getIdEquipo
+
 
         int posicion =1;
         for (Equipo equipo : listaEquipos) {

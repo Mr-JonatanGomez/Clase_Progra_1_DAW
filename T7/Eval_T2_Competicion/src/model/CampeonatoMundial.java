@@ -8,11 +8,34 @@ public class CampeonatoMundial {
 
 
 
-    public CampeonatoMundial (){}
+
+    public CampeonatoMundial (){
+        this.listaCircuitos=new ArrayList<>();
+        this.listaCoches= new ArrayList<>();
+    }
     public void inscribirCoche(Coche coche){
         this.listaCoches.add(coche);
+        coche.mostrarDatosCoche();
     }
     public void agregarCarrera(CarreraCircuito carrera){
         this.listaCircuitos.add(carrera);
+        carrera.mostrarDatosCircuito();
+    }
+
+
+    public ArrayList<Coche> getListaCoches() {
+        return listaCoches;
+    }
+
+    public void setListaCoches(ArrayList<Coche> listaCoches) {
+        this.listaCoches = listaCoches;
+    }
+
+    public ArrayList<CarreraCircuito> getListaCircuitos() {
+        return listaCircuitos;
+    }
+
+    public void setListaCircuitos(ArrayList<CarreraCircuito> listaCircuitos) {
+        this.listaCircuitos = listaCircuitos;
     }
 }
