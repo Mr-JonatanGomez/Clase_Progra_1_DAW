@@ -32,7 +32,7 @@ public class Partido {
 
 
                 if (i == 2) {
-                    System.out.println("\nFINAL DEL PRIMER TIEMPO: \n"
+                    System.out.println("\nRESULTADO AL DESCANSO: \t"
                             + equipoLocal.getNombre() + " " + equipoLocal.getGoles() + " - " + equipoVisitante.getNombre() + " " + equipoVisitante.getGoles());
 
                     parte++;
@@ -46,8 +46,8 @@ public class Partido {
         equipoVisitante.setGolesFavor(equipoVisitante.getGolesFavor() + equipoVisitante.getGoles());
         equipoVisitante.setGolesContra(equipoLocal.getGoles() + equipoVisitante.getGolesContra());
 
-        System.out.println("\t FINAL DEL PARTIDO");
-        System.out.println(equipoLocal.getNombre() + " " + equipoLocal.getGoles() + " - " + equipoVisitante.getNombre() + " " + equipoVisitante.getGoles());
+        System.out.print("RESULTADO AL FINALIZAR: ");
+        System.out.print(equipoLocal.getNombre() + " " + equipoLocal.getGoles() + " - " + equipoVisitante.getNombre() + " " + equipoVisitante.getGoles());
         finalizado = true;
         if (equipoLocal.getGoles() > equipoVisitante.getGoles()) {
             equipoLocal.setPuntos(equipoLocal.getPuntos() + 3);
@@ -59,6 +59,7 @@ public class Partido {
 
         }
         System.out.println();
+
     }
 
 

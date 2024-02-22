@@ -23,7 +23,7 @@ public class Liga {
     }
    //EN PRUEBAS
 
-    public void calcularYMostrarCalidad() {
+    public void calcularMostrarCalidadEquipos() {
         for (Equipo equipo : listaEquipos) {
             equipo.calcularNivelHabilidad();
             equipo.mostrarDatosCalidad();
@@ -54,6 +54,8 @@ public class Liga {
 
         }
     }
+
+
 
     public String getNombre() {
         return nombre;
@@ -94,4 +96,6 @@ public class Liga {
     public void setCampeon(int campeon) {
         this.campeon = campeon;
     }
+
+
 }

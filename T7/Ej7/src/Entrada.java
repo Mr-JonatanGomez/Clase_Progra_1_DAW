@@ -115,7 +115,7 @@ public class Entrada {
 
          */
 
-        primeraDivision.calcularYMostrarCalidad();
+        primeraDivision.calcularMostrarCalidadEquipos();
 
 // JORNADA *PRUEBAS PARA OBSOLETAR*
         /*
@@ -161,9 +161,10 @@ public class Entrada {
         temporada.realizarPartidos();
 
 
-        System.out.println("Clasificacion FINAL");
+        System.out.println("\n\tClasificacion FINAL\n");
         primeraDivision.hacerClasificacion();
 
+        primeraDivision.mostrarPartidosEquipos();
 
 
 

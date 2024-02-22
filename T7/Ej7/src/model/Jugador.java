@@ -1,14 +1,14 @@
 package model;
 
 public class Jugador {
-    private String nombre, posicion;
+    private String nombreJ, posicion;
     private boolean estrella;
     private int calidad, idJugador;
 
     public Jugador (){}//VACIO
     public Jugador(int idJugador, String nombre, String posicion, int calidad){
         this.idJugador=idJugador;
-        this.nombre=nombre;
+        this.nombreJ=nombre;
         this.posicion=posicion;
         this.calidad=calidad;
         if (calidad>90){
@@ -27,11 +27,11 @@ public class Jugador {
 
 
     public String getNombre() {
-        return nombre;
+        return nombreJ;
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        this.nombreJ = nombre;
     }
 
     public String getPosicion() {

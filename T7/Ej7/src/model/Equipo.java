@@ -124,6 +124,7 @@ public class Equipo {
 
     }
 
+
     public String getNombre() {
         return nombre;
     }
@@ -211,4 +212,6 @@ public class Equipo {
     public void setGolesContra(int golesContra) {
         this.golesContra = golesContra;
     }
+
+
 }

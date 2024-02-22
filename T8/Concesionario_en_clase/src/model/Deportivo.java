@@ -9,21 +9,25 @@ public class Deportivo extends Vehiculo{
 
     public Deportivo(){}
 
-    @Override
-    public void acelerar(int velocidad) {
-        setVelocidad(getVelocidad()+velocidad+(int)(Math.random()*30)+20);
-    }
-
     public Deportivo(int bastidor, String marca, String modelo, int cc, int cv, int par){
         super(bastidor, marca, modelo, cc, cv);//SIEMPRE EN PRIMERA LINEA
         this.par=par;
 
     }
 
+    @Override
+    public void acelerar(int velocidad) {
+        setVelocidad(getVelocidad()+velocidad+(int)(Math.random()*30)+20);
+    }
+
+    public void activarSportMode (){
+        System.out.println("Estás en modo Sport");
+    }
+
     @Override // sobreescribe el metodo
     public void mostrarDatos(){
         super.mostrarDatos();// para no volver a meter todos los Sout
-        System.out.println("Par"+par);
+        System.out.println("Par"+par+"\n");
     }
 
     public int getPar() {
