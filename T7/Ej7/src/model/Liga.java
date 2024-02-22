@@ -21,6 +21,7 @@ public class Liga {
     public void inscribirEquipos(Equipo equipo){
         this.listaEquipos.add(equipo);
     }
+
    //EN PRUEBAS
 
     public void calcularMostrarCalidadEquipos() {

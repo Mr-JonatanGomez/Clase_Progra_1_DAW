@@ -77,6 +77,7 @@ public class Entrada {
         //creamos la liga
         Liga primeraDivision = new Liga();
 
+
         primeraDivision.inscribirEquipos(realMadrid);
         primeraDivision.inscribirEquipos(atleticoDeMadrid);
         primeraDivision.inscribirEquipos(barcelona);
@@ -85,6 +86,7 @@ public class Entrada {
         primeraDivision.inscribirEquipos(sevilla);
         primeraDivision.inscribirEquipos(betis);
         primeraDivision.inscribirEquipos(bilbao);
+
 
         // MOSTRAMOS EQUIPOS Y CALIDAD // OBSOLETO??
         /*
@@ -155,16 +157,16 @@ public class Entrada {
 
 
          */
-        Jornada temporada= new Jornada(primeraDivision.getListaEquipos());//DECLARA LA TEMPORADA
+        Jornada jornadas= new Jornada(primeraDivision.getListaEquipos());//DECLARA LA TEMPORADA
 
 
-        temporada.realizarPartidos();
+        jornadas.realizarPartidos();
 
 
         System.out.println("\n\tClasificacion FINAL\n");
         primeraDivision.hacerClasificacion();
 
-        primeraDivision.mostrarPartidosEquipos();
+
 
 
 

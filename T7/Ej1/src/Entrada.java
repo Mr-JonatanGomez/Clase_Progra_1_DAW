@@ -16,4 +16,7 @@ public class Entrada {
         Coche coche1 = new Coche("opel","corsa");
         Coche coche2 = new Coche("renault","megane");
     }
+
+
+
 }
