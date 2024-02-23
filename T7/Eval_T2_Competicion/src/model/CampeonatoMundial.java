@@ -13,10 +13,7 @@ public class CampeonatoMundial {
         this.listaCircuitos=new ArrayList<>();
         this.listaCoches= new ArrayList<>();
     }
-    public void inscribirCoche(Coche coche){
-        this.listaCoches.add(coche);
-        coche.mostrarDatosCoche();
-    }
+
     public void agregarCarrera(CarreraCircuito carrera){
         this.listaCircuitos.add(carrera);
         carrera.mostrarDatosCircuito();

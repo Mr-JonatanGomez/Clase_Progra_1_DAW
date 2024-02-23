@@ -2,7 +2,9 @@ package model;
 
 public class Coche {
     private String marca, modelo, matricula;
-    private int cv, velocidad, kmRecorridos, puntosGeneral;
+    private int cv, velocidad, kmRecorridos, puntosGeneral, puntosCarrera;
+
+    private int posicionCarrera;
 
     public Coche(){}
     public Coche(String marca,String modelo, String matricula, int cv){
@@ -13,6 +15,8 @@ public class Coche {
         this.velocidad= 0;
         this.kmRecorridos=0;
         this.puntosGeneral=0;
+        this.puntosCarrera=0;
+        this.posicionCarrera=0;
     }
 
     public int acelerar (int aceleracion ){
@@ -43,6 +47,21 @@ public class Coche {
         System.out.println("Potencia: " + cv + "cv\n");
     }
 
+    public void mostrarDatosCocheClasfCarrera() {
+        if (posicionCarrera==1){
+            System.out.println("🥇 "+posicionCarrera+"º "+matricula+" "+puntosCarrera+" puntos 🥇");
+        } else if (posicionCarrera==2){
+            System.out.println("🥈 "+posicionCarrera+"º "+matricula+" "+puntosCarrera+" puntos 🥈");
+        }else if (posicionCarrera==3){
+            System.out.println("🥉 "+posicionCarrera+"º "+matricula+" "+puntosCarrera+" puntos 🥉");
+        }
+        System.out.println("Prueba para ver km: " + kmRecorridos);
+        System.out.println("Prueba para ver vueltas: \n" );
+
+    }
+
+
+    ////////////////GETTERS Y SETTERS/////////////////////
     public String getMarca() {
         return marca;
     }
@@ -97,5 +116,21 @@ public class Coche {
 
     public void setPuntosGeneral(int puntosGeneral) {
         this.puntosGeneral = puntosGeneral;
+    }
+
+    public int getPosicionCarrera() {
+        return posicionCarrera;
+    }
+
+    public void setPosicionCarrera(int posicionCarrera) {
+        this.posicionCarrera = posicionCarrera;
+    }
+
+    public int getPuntosCarrera() {
+        return puntosCarrera;
+    }
+
+    public void setPuntosCarrera(int puntosCarrera) {
+        this.puntosCarrera = puntosCarrera;
     }
 }
