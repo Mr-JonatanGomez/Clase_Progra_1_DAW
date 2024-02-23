@@ -9,7 +9,7 @@ public class Carrera {
 
     private Coche coche1, coche2, coche3;
     private String ganador, nombreCircuito;
-    private int numeroVueltas, kmCircuito, numeroVueltasDadas;
+    private int numeroVueltas, kmCircuito, numeroJornadasRealizadas;
 
     private ArrayList<Coche> listadoCoches;
 
@@ -26,10 +26,11 @@ public class Carrera {
 
 // CONSTRUCTOR PARA ARRAY
     public Carrera (String nombreCircuito, int kmCircuito, int numeroVueltas,ArrayList<Coche> listadoCoches){
+        //metido por parametro ArrayList Coche, consultar con BORJA
         this.nombreCircuito=nombreCircuito;
         this.kmCircuito=kmCircuito;
         this.numeroVueltas=numeroVueltas;
-        this.numeroVueltasDadas=0;
+        this.numeroJornadasRealizadas=0;
         this.listadoCoches = listadoCoches;
     }
 
@@ -38,7 +39,7 @@ public class Carrera {
 
     public void iniciarCarrera(Carrera carrera) {
         boolean raceOver = false;
-        numeroVueltasDadas = 0;
+        numeroJornadasRealizadas = 0;
 
         //foreach para poner los kmRecorridos de coche a 0 y posicion tambien
         for (Coche coche : listadoCoches) {
@@ -55,13 +56,21 @@ public class Carrera {
                 coche.acelerar((int) Math.random() * 45);
                 System.out.println("km recorridos " + coche.getKmRecorridos() + "por el coche de " + coche.getMatricula());
             }
-            numeroVueltasDadas++;
-            System.out.println(numeroVueltasDadas + " numero vueltas dadas");
+            numeroJornadasRealizadas++;
+            System.out.println(numeroJornadasRealizadas + " jornadas realizadas");
 
             // Condición para terminar la carrera
-            if (numeroVueltasDadas >= numeroVueltas) {
-                raceOver = true;
+            for (Coche coche:listadoCoches) {
+                if (coche.getKmRecorridos()>=getKmCircuito()){
+                    raceOver=true;
+                } else if (numeroJornadasRealizadas >= numeroVueltas ) {
+                    raceOver = true;
+                }
+
             }
+
+
+            // CORREGIR QUE TERMINE LA CARRERA SI algun coche llegó a los km,
         } while (!raceOver);
 
 
@@ -81,6 +90,14 @@ public class Carrera {
         });
 
         clasificacionCarrera(carrera);
+        //VOLVEMOS A RESETEAR VALORES
+        for (Coche coche : listadoCoches) {
+            coche.setKmRecorridos(0);
+            coche.setPosicionCarrera(0);
+            coche.setPuntosCarrera(0);
+            coche.setVelocidad(0);
+
+        }
     }
 
     public void clasificacionCarrera(Carrera carrera){
@@ -195,11 +212,11 @@ public class Carrera {
     }
 
     public int getNumeroVueltasDadas() {
-        return numeroVueltasDadas;
+        return numeroJornadasRealizadas;
     }
 
     public void setNumeroVueltasDadas(int numeroVueltasDadas) {
-        this.numeroVueltasDadas = numeroVueltasDadas;
+        this.numeroJornadasRealizadas = numeroVueltasDadas;
     }
 
     public ArrayList<Coche> getListadoCoches() {
