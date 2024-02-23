@@ -52,7 +52,7 @@ public class Coche {
     }
 
     public void mostrarDatosCocheClasfCarrera() {
-        System.out.println();
+
         if (posicionCarrera == 1) {
             System.out.println("🥇 " + posicionCarrera + "º " + matricula + " " + puntosCarrera + " puntos 🥇");
         } else if (posicionCarrera == 2) {

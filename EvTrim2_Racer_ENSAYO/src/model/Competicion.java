@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.Comparator;
 
 public class Competicion {
-    private ArrayList<Coche>listadoCoches;// no se inicializa aquí
-    private ArrayList<Carrera>listadoCarreras;
+    private ArrayList<Coche> listadoCoches;// no se inicializa aquí
+    private ArrayList<Carrera> listadoCarreras;
 
     public Competicion() {
         this.listadoCoches = new ArrayList<>();//aqui inicializo, si no no puedo gestionar coches
@@ -22,29 +22,49 @@ public class Competicion {
         listadoCarreras.add(new Carrera("🏁 SAFARI RALLY KENYA 🏁", 1157, 12, listadoCoches));
         listadoCarreras.add(new Carrera("🏁 RALLY ARGENTINA 🏁", 883, 9, listadoCoches));
         listadoCarreras.add(new Carrera("🏁 RALLY JAPAN 🏁", 661, 7, listadoCoches));
-        listadoCarreras.add(new Carrera("🏁 RALLY LEMANS 🏁", 1883, 29, listadoCoches));
+        listadoCarreras.add(new Carrera("🏁 RALLY LEMANS 🏁", 2400, 24, listadoCoches));
 
     }
 
-    public void apuntarCoche(Coche coche){
+    public void apuntarCoche(Coche coche) {
         this.listadoCoches.add(coche);
         coche.mostrarDatosCoche();
     }
-    public void agregarCarrera(Carrera carrera){
+
+    public void agregarCarrera(Carrera carrera) {
         this.listadoCarreras.add(carrera);
         carrera.mostrarDatosCarrera();
     }
 
-    public void mostrarCarreras(){
-        for (Carrera carrera:listadoCarreras) {
+    public void mostrarCarreras() {
+        for (Carrera carrera : listadoCarreras) {
             carrera.mostrarDatosCarrera();
         }
     }
 
+    public void clasificacionGeneral() {
+        listadoCoches.sort(new Comparator<Coche>() {
+            @Override
+            public int compare(Coche o1, Coche o2) {
+                if (o1.getPuntosGeneral() > o2.getPuntosGeneral()) {
+                    return -1;
+                } else if (o1.getPuntosGeneral() < o2.getPuntosGeneral()) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            }
+        });
+        mostrarDatosClasGen();
+    }
 
 
-    public void generarCompeticion() {
-
+    public void mostrarDatosClasGen() {
+        int posicion = 1;
+        for (Coche coche : listadoCoches) {
+            System.out.println("\uD83C\uDFC6 " + posicion + "º " + coche.getMatricula() + coche.getPuntosGeneral() + " puntos\uD83C\uDFC6");
+            posicion++;
+        }
     }
 
 

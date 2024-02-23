@@ -77,7 +77,7 @@ public class Carrera {
 
 
 
-            System.out.println("\t\t\tFIN DE LA ETAPA "+ numeroJornadasRealizadas);
+            System.out.println("\n\t\t\t\t\tFIN DE LA ETAPA "+ numeroJornadasRealizadas+"\n");
 
             // Condición para terminar la carrera
             for (Coche coche:listadoCoches) {
@@ -159,7 +159,8 @@ public class Carrera {
                 }
             }
         });
-        System.out.println(getNombreCircuito());
+        System.out.println("\t\tCLASIFICACIÓN");
+        System.out.println("\n\t"+getNombreCircuito()+"\n");
         for (Coche coche:listadoCoches) {
             coche.mostrarDatosCocheClasfCarrera();
 
