@@ -49,16 +49,36 @@ public class Carrera {
             coche.setVelocidad(0);
 
         }
-        System.out.println("\n\t\uD83D\uDEA5 COMIENZA LA CARRERA " + carrera.getNombreCircuito()+"\uD83D\uDEA5");
+        System.out.println("\n\t\t\uD83D\uDEA5 COMIENZA LA CARRERA " + carrera.getNombreCircuito()+"\uD83D\uDEA5\n");
 
         do {
             for (Coche coche : listadoCoches) {
                 coche.acelerar((int) Math.random() * 45);
-                System.out.println(coche.getMatricula()+" ha recorrido " + coche.getKmRecorridos() + "kilometros está etapa " );
             }
             numeroJornadasRealizadas++;
-            System.out.println("FIN DE LA ETAPA "+ numeroJornadasRealizadas);
 //METER AQUI LA CLASIFICACION DE JORNADA, QUIZAS NO SACANDOLA EN LA LINEA 57
+
+            listadoCoches.sort(new Comparator<Coche>() {
+                @Override
+                public int compare(Coche o1, Coche o2) {
+                    if (o1.getKmRecorridos()> o2.getKmRecorridos()) {
+                        return -1;
+                    }else if (o1.getKmRecorridos()< o2.getKmRecorridos()) {
+                        return 1;
+                    } else {
+                        return 0;
+                    }
+                }
+            });
+
+            clasificacionJornada(carrera);
+
+
+
+
+
+            System.out.println("\t\t\tFIN DE LA ETAPA "+ numeroJornadasRealizadas);
+
             // Condición para terminar la carrera
             for (Coche coche:listadoCoches) {
                 if (coche.getKmRecorridos()>=getKmCircuito()){
@@ -89,6 +109,7 @@ public class Carrera {
             }
         });
 
+
         clasificacionCarrera(carrera);
         //VOLVEMOS A RESETEAR VALORES
         for (Coche coche : listadoCoches) {
@@ -98,6 +119,7 @@ public class Carrera {
             coche.setVelocidad(0);
 
         }
+        System.out.println("\t"+carrera.getNombreCircuito()+" FINALIZADO");
     }
 
     public void clasificacionCarrera(Carrera carrera){
@@ -142,6 +164,29 @@ public class Carrera {
             coche.mostrarDatosCocheClasfCarrera();
 
         }
+
+    }
+    public void clasificacionJornada(Carrera carrera){
+        int posicion = 1;
+        for (Coche coche:listadoCoches) {
+            coche.setPosicionCarrera(posicion);
+            System.out.println(coche.getPosicionCarrera()+"º "+ coche.getMatricula()+"\t\t lleva recorridos "+coche.getKmRecorridos()+" kilometros está etapa");
+            posicion++;
+
+        }
+        listadoCoches.sort(new Comparator<Coche>() {
+            @Override
+            public int compare(Coche o1, Coche o2) {
+                if (o1.getPosicionCarrera()< o2.getPosicionCarrera()) {
+                    return -1;
+                }else if (o1.getPosicionCarrera()> o2.getPosicionCarrera()) {
+                    return 1;
+                } else {
+                    return 0;
+                }
+            }
+        });
+
 
     }
 
