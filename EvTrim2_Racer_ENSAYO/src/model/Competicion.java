@@ -65,17 +65,17 @@ public class Competicion {
             coche.setPosicionGeneral(posicionGen);
             posicionGen++;
             if(coche.getPosicionGeneral()==1) {
-                System.out.println("\uD83C\uDFC6 " + coche.getPosicionGeneral() + "º " + coche.getMatricula() + coche.getPuntosGeneral() + " puntos \uD83C\uDFC6");
+                System.out.println("\uD83C\uDFC6 " + coche.getPosicionGeneral() + "º " + coche.getMatricula()+" "  + coche.getPuntosGeneral() + " puntos \uD83C\uDFC6");
             } else if (coche.getPosicionGeneral()==2) {
-                System.out.println("🥈 " + coche.getPosicionGeneral() + "º " + coche.getMatricula() + coche.getPuntosGeneral() + " puntos 🥈");
+                System.out.println("🥈 " + coche.getPosicionGeneral() + "º " + coche.getMatricula()+" "  + coche.getPuntosGeneral() + " puntos 🥈");
             } else if (coche.getPosicionGeneral()==3) {
-                System.out.println("🥉 " + coche.getPosicionGeneral() + "º " + coche.getMatricula() + coche.getPuntosGeneral() + " puntos 🥉");
+                System.out.println("🥉 " + coche.getPosicionGeneral() + "º " + coche.getMatricula()+" "  + coche.getPuntosGeneral() + " puntos 🥉");
             } else if(coche.getPosicionGeneral()==9){
-                System.out.println("💩 " + coche.getPosicionGeneral() + "º " + coche.getMatricula() + coche.getPuntosGeneral() + " puntos 💩");
+                System.out.println("💩 " + coche.getPosicionGeneral() + "º " + coche.getMatricula()+" "  + coche.getPuntosGeneral() + " puntos 💩");
             }else if(coche.getPosicionGeneral()==8){
-                System.out.println("😭 " + coche.getPosicionGeneral() + "º " + coche.getMatricula() + coche.getPuntosGeneral() + " puntos 😭");
+                System.out.println("😭 " + coche.getPosicionGeneral() + "º " + coche.getMatricula()+" "  + coche.getPuntosGeneral() + " puntos 😭");
             }else {
-                System.out.println("😐 " + coche.getPosicionGeneral() + "º " + coche.getMatricula() + coche.getPuntosGeneral() + " puntos 😐");
+                System.out.println("😐 " + coche.getPosicionGeneral() + "º " + coche.getMatricula()+" " + coche.getPuntosGeneral() + " puntos 😐");
             }
 
 

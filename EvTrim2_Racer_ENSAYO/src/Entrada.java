@@ -12,7 +12,7 @@ public class Entrada {
         Coche coche1 = new Coche("Citroen", "Xsara", "\uD83D\uDE99 C.McRae", 80);
         Coche coche2 = new Coche("Hyundai", "i30", "\uD83D\uDE97 M.Villanueva", 110);
         Coche coche3 = new Coche("Seat", "Panda", "\uD83D\uDE99 M.Fibonnacci", 30);
-        Coche coche4 = new Coche("Citroen", "2CV_Trucado", "\uD83C\uDFCE\uFE0F B.Martin_4", 201);
+        Coche coche4 = new Coche("Citroen", "2CV_Trucado", "\uD83C\uDFCE\uFE0F B.Martin", 201);
         Coche coche5 = new Coche("Toyota", "Corolla", "\uD83D\uDE97 A.Lisbeth", 150);
         Coche coche6 = new Coche("Subaru", "Impreza", "\uD83C\uDFCE\uFE0F J.Gomez", 221);
         Coche coche7 = new Coche("Opel", "Corsa", "\uD83D\uDE97 V.Bullido", 162);
