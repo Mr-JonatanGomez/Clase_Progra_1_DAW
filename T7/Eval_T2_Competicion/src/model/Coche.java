@@ -60,6 +60,19 @@ public class Coche {
 
     }
 
+    public void mostrarDatosCocheClasfFinal() {
+        if (posicionCarrera==1){
+            System.out.println("🥇 "+posicionCarrera+"º "+matricula+" "+puntosGeneral+" puntos 🥇");
+        } else if (posicionCarrera==2){
+            System.out.println("🥈 "+posicionCarrera+"º "+matricula+" "+puntosGeneral+" puntos 🥈");
+        }else if (posicionCarrera==3){
+            System.out.println("🥉 "+posicionCarrera+"º "+matricula+" "+puntosGeneral+" puntos 🥉");
+        }
+        System.out.println("Prueba para ver km: " + kmRecorridos);
+        System.out.println("Prueba para ver vueltas: \n" );
+
+    }
+
 
     ////////////////GETTERS Y SETTERS/////////////////////
     public String getMarca() {
