@@ -7,36 +7,37 @@ public class Coche {
     private int cv, velocidad, kmRecorridos, puntosGeneral, puntosCarrera;
 
     private int posicionCarrera;
+
     public Coche() {
     }// Coche default
 
-    public Coche(String marca,String modelo, String matricula, int cv){
-        this.marca=marca;
-        this.modelo=modelo;
-        this.matricula=matricula;
-        this.cv=cv;
-        this.velocidad= 0;
-        this.kmRecorridos=0;
-        this.puntosGeneral=0;
-        this.puntosCarrera=0;
-        this.posicionCarrera=0;
+    public Coche(String marca, String modelo, String matricula, int cv) {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.matricula = matricula;
+        this.cv = cv;
+        this.velocidad = 0;
+        this.kmRecorridos = 0;
+        this.puntosGeneral = 0;
+        this.puntosCarrera = 0;
+        this.posicionCarrera = 0;
     }
 
-    public void acelerar (int aceleracion ){
+    public void acelerar(int aceleracion) {
 
         int kmHechosConAcelerar;
-        aceleracion= (int) (Math.random() * 50) + 10;
+        aceleracion = (int) (Math.random() * 50) + 10;
 
 
         if (cv < 100) {
             velocidad += (int) (Math.random() * aceleracion);
             kmHechosConAcelerar = velocidad / 2;
 
-        } else if (cv>=100 && cv <=200) {
-            velocidad += (int) (Math.random() * aceleracion)+10;
+        } else if (cv >= 100 && cv <= 200) {
+            velocidad += (int) (Math.random() * aceleracion) + 10;
             kmHechosConAcelerar = velocidad / 2;
         } else {
-            velocidad += (int) (Math.random() * aceleracion)+20;
+            velocidad += (int) (Math.random() * aceleracion) + 20;
             kmHechosConAcelerar = velocidad / 2;
         }
 
@@ -46,21 +47,22 @@ public class Coche {
 
     public void mostrarDatosCoche() {
         System.out.println("Matricula: " + matricula);
-        System.out.println("Marca y modelo: " + this.marca+ this.modelo);// o nombre sin this, cuando acostumbremos
+        System.out.println("Marca y modelo: " + this.marca + this.modelo);// o nombre sin this, cuando acostumbremos
         System.out.println("Potencia: " + cv + "cv\n");
     }
 
     public void mostrarDatosCocheClasfCarrera() {
-        if (posicionCarrera==1){
-            System.out.println("🥇 "+posicionCarrera+"º "+matricula+" "+puntosCarrera+" puntos 🥇");
-        } else if (posicionCarrera==2){
-            System.out.println("🥈 "+posicionCarrera+"º "+matricula+" "+puntosCarrera+" puntos 🥈");
-        }else if (posicionCarrera==3){
-            System.out.println("🥉 "+posicionCarrera+"º "+matricula+" "+puntosCarrera+" puntos 🥉");
-        }
-        System.out.println("Prueba para ver km: " + kmRecorridos);
-        System.out.println("Prueba para ver vueltas: \n" );
+        System.out.println();
+        if (posicionCarrera == 1) {
+            System.out.println("🥇 " + posicionCarrera + "º " + matricula + " " + puntosCarrera + " puntos 🥇");
+        } else if (posicionCarrera == 2) {
+            System.out.println("🥈 " + posicionCarrera + "º " + matricula + " " + puntosCarrera + " puntos 🥈");
+        } else if (posicionCarrera == 3) {
+            System.out.println("🥉 " + posicionCarrera + "º " + matricula + " " + puntosCarrera + " puntos 🥉");
+        } else {
+            System.out.println(posicionCarrera + "º " + matricula + " " + puntosCarrera + " puntos");
 
+        }
     }
 
     public String getMarca() {

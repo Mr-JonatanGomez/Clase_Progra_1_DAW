@@ -45,6 +45,7 @@ public class Carrera {
             coche.setKmRecorridos(0);
             coche.setPosicionCarrera(0);
             coche.setPuntosCarrera(0);
+            coche.setVelocidad(0);
 
         }
         System.out.println("\uD83D\uDEA5 COMIENZA LA CARRERA \uD83D\uDEA5" + carrera.getNombreCircuito());
@@ -119,6 +120,7 @@ public class Carrera {
                 }
             }
         });
+        System.out.println(getNombreCircuito());
         for (Coche coche:listadoCoches) {
             coche.mostrarDatosCocheClasfCarrera();
 
@@ -207,6 +209,7 @@ public class Carrera {
     public void setListadoCoches(ArrayList<Coche> listadoCoches) {
         this.listadoCoches = listadoCoches;
     }
+
 }
 
 
