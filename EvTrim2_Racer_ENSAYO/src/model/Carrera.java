@@ -9,7 +9,7 @@ public class Carrera {
 
     private Coche coche1, coche2, coche3;
     private String ganador, nombreCircuito;
-    private int numeroVueltas, kmCircuito, numeroJornadasRealizadas;
+    private int numeroJornadas, kmCircuito, numeroJornadasRealizadas;
 
     private ArrayList<Coche> listadoCoches;
 
@@ -25,11 +25,11 @@ public class Carrera {
     }
 
 // CONSTRUCTOR PARA ARRAY
-    public Carrera (String nombreCircuito, int kmCircuito, int numeroVueltas,ArrayList<Coche> listadoCoches){
+    public Carrera (String nombreCircuito, int kmCircuito, int numeroJornadas,ArrayList<Coche> listadoCoches){
         //metido por parametro ArrayList Coche, consultar con BORJA
         this.nombreCircuito=nombreCircuito;
         this.kmCircuito=kmCircuito;
-        this.numeroVueltas=numeroVueltas;
+        this.numeroJornadas=numeroJornadas;
         this.numeroJornadasRealizadas=0;
         this.listadoCoches = listadoCoches;
     }
@@ -49,21 +49,21 @@ public class Carrera {
             coche.setVelocidad(0);
 
         }
-        System.out.println("\uD83D\uDEA5 COMIENZA LA CARRERA \uD83D\uDEA5" + carrera.getNombreCircuito());
+        System.out.println("\n\t\uD83D\uDEA5 COMIENZA LA CARRERA " + carrera.getNombreCircuito()+"\uD83D\uDEA5");
 
         do {
             for (Coche coche : listadoCoches) {
                 coche.acelerar((int) Math.random() * 45);
-                System.out.println("km recorridos " + coche.getKmRecorridos() + "por el coche de " + coche.getMatricula());
+                System.out.println(coche.getMatricula()+" ha recorrido " + coche.getKmRecorridos() + "kilometros está etapa " );
             }
             numeroJornadasRealizadas++;
-            System.out.println(numeroJornadasRealizadas + " jornadas realizadas");
-
+            System.out.println("FIN DE LA ETAPA "+ numeroJornadasRealizadas);
+//METER AQUI LA CLASIFICACION DE JORNADA, QUIZAS NO SACANDOLA EN LA LINEA 57
             // Condición para terminar la carrera
             for (Coche coche:listadoCoches) {
                 if (coche.getKmRecorridos()>=getKmCircuito()){
                     raceOver=true;
-                } else if (numeroJornadasRealizadas >= numeroVueltas ) {
+                } else if (numeroJornadasRealizadas >= numeroJornadas ) {
                     raceOver = true;
                 }
 
@@ -147,7 +147,7 @@ public class Carrera {
 
     public void mostrarDatosCarrera() {
         System.out.println("\uD83C\uDFC1"+nombreCircuito+"\uD83C\uDFC1");
-        System.out.println(kmCircuito + " km - " + numeroVueltas + " vueltas\n");
+        System.out.println(kmCircuito + " km - " + numeroJornadas + " jornadas\n");
 
     }
 
@@ -195,12 +195,12 @@ public class Carrera {
         this.nombreCircuito = nombreCircuito;
     }
 
-    public int getNumeroVueltas() {
-        return numeroVueltas;
+    public int getNumeroJornadas() {
+        return numeroJornadas;
     }
 
-    public void setNumeroVueltas(int numeroVueltas) {
-        this.numeroVueltas = numeroVueltas;
+    public void setNumeroJornadas(int numeroJornadas) {
+        this.numeroJornadas = numeroJornadas;
     }
 
     public int getKmCircuito() {
@@ -211,12 +211,12 @@ public class Carrera {
         this.kmCircuito = kmCircuito;
     }
 
-    public int getNumeroVueltasDadas() {
+    public int getNumeroJornadasRealizadas() {
         return numeroJornadasRealizadas;
     }
 
-    public void setNumeroVueltasDadas(int numeroVueltasDadas) {
-        this.numeroJornadasRealizadas = numeroVueltasDadas;
+    public void setNumeroJornadasRealizadas(int numeroJornadasRealizadas) {
+        this.numeroJornadasRealizadas = numeroJornadasRealizadas;
     }
 
     public ArrayList<Coche> getListadoCoches() {

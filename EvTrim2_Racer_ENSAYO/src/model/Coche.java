@@ -61,7 +61,6 @@ public class Coche {
             System.out.println("🥉 " + posicionCarrera + "º " + matricula + " " + puntosCarrera + " puntos 🥉");
         } else {
             System.out.println(posicionCarrera + "º " + matricula + " " + puntosCarrera + " puntos");
-
         }
 
     }
