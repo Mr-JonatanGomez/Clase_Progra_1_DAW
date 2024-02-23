@@ -6,7 +6,7 @@ public class Coche {
     private String marca, modelo, matricula;
     private int cv, velocidad, kmRecorridos, puntosGeneral, puntosCarrera;
 
-    private int posicionCarrera;
+    private int posicionCarrera, posicionGeneral;
 
     public Coche() {
     }// Coche default
@@ -142,7 +142,13 @@ public class Coche {
         this.posicionCarrera = posicionCarrera;
     }
 
+    public int getPosicionGeneral() {
+        return posicionGeneral;
+    }
 
+    public void setPosicionGeneral(int posicionGeneral) {
+        this.posicionGeneral = posicionGeneral;
+    }
 }
 
 
