@@ -20,10 +20,11 @@ public class Entrada {
         Coche coche9 = new Coche("Subaru", "Impreza", "\uD83C\uDFCE\uFE0F Edu.AdR", 275);
 
 
-        Competicion mundial = new Competicion();//ya estan añadidas las carreras
+        Competicion mundial = new Competicion();//ya estan añadidas las carreras desde la CLASE COMPETICION
 
         // añado coches al mundial
-
+//AQUI COMO NO SUPE VINCULAR CARRERA AL MUNDIAL Y COCHES AL MUNDIAL, AL METER LAS CARRERAS EN LA CLASE,
+// AL APUNTAR LOS COCHES AL MUNDIAL, YA ESTAN VINCULADOS
         mundial.apuntarCoche(coche1);
         mundial.apuntarCoche(coche2);
         mundial.apuntarCoche(coche3);
