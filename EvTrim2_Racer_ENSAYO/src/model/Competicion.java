@@ -23,6 +23,11 @@ public class Competicion {
         listadoCarreras.add(new Carrera("🏁 RALLY ARGENTINA 🏁", 883, 9, listadoCoches));
         listadoCarreras.add(new Carrera("🏁 RALLY JAPAN 🏁", 661, 7, listadoCoches));
         listadoCarreras.add(new Carrera("🏁 RALLY LEMANS 🏁", 2400, 24, listadoCoches));
+        listadoCarreras.add(new Carrera("🏁 RALLY DELTA 🏁", 25, 1, listadoCoches));
+        listadoCarreras.add(new Carrera("🏁 GRAND PRIX SPRINT 🏁", 150, 3, listadoCoches));
+        listadoCarreras.add(new Carrera("🏁 THUNDER CIRCUIT 🏁", 160, 4, listadoCoches));
+        listadoCarreras.add(new Carrera("🏁 SUNSET SPEEDWAY 🏁", 120, 2, listadoCoches));
+        listadoCarreras.add(new Carrera("🏁 WILLOW RACEWAY 🏁", 140, 3, listadoCoches));
 
     }
 
@@ -66,7 +71,7 @@ public class Competicion {
             coche.setPosicionGeneral(posicionGen);
             posicionGen++;
             if(coche.getPosicionGeneral()==1) {
-                System.out.println("\uD83C\uDFC6 " + coche.getPosicionGeneral() + "º " + coche.getMatricula()+" "  + coche.getPuntosGeneral() + " puntos \uD83C\uDFC6"+ "\tCarreras ganadas 🥇: "+coche.getCarrerasGanadas()+ ", Carreras segundo: "+coche.getCarrerasSegundo()+ ", Carreras tercero 🥉: "+coche.getCarrerasTercero()+", Podios conseguidos: "+coche.getNumeroPodios());
+                System.out.println("\uD83C\uDFC6 " + coche.getPosicionGeneral() + "º " + coche.getMatricula()+" "  + coche.getPuntosGeneral() + " puntos \uD83C\uDFC6"+ "\tCarreras ganadas 🥇: "+coche.getCarrerasGanadas()+ ", Carreras segundo 🥈: "+coche.getCarrerasSegundo()+ ", Carreras tercero 🥉: "+coche.getCarrerasTercero()+", Podios conseguidos: "+coche.getNumeroPodios());
             } else if (coche.getPosicionGeneral()==2) {
                 System.out.println("🥈 " + coche.getPosicionGeneral() + "º " + coche.getMatricula()+" "  + coche.getPuntosGeneral() + " puntos 🥈"+ "\tCarreras ganadas 🥇: "+coche.getCarrerasGanadas()+ ", Carreras segundo 🥈: "+coche.getCarrerasSegundo()+ ", Carreras tercero 🥉: "+coche.getCarrerasTercero()+", Podios conseguidos: "+coche.getNumeroPodios());
             } else if (coche.getPosicionGeneral()==3) {
