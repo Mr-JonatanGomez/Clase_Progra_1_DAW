@@ -130,13 +130,19 @@ public class Carrera {
             //REPARTO DE PUNTOS
             if (coche.getPosicionCarrera()==1){
                 coche.setPuntosCarrera(10);
+                coche.setCarrerasGanadas(coche.getCarrerasGanadas()+1);
+                coche.setNumeroPodios(coche.getNumeroPodios()+1);
                 coche.setPuntosGeneral(coche.getPuntosGeneral()+10);
                 //edito los puntos, cogiendo los puntos que tiene y sumando los nuevos
             } else if (coche.getPosicionCarrera()==2) {
                 coche.setPuntosCarrera(6);
+                coche.setCarrerasSegundo(coche.getCarrerasSegundo()+1);
+                coche.setNumeroPodios(coche.getNumeroPodios()+1);
                 coche.setPuntosGeneral(coche.getPuntosGeneral()+6);
             } else if (coche.getPosicionCarrera()==3) {
                 coche.setPuntosCarrera(4);
+                coche.setCarrerasTercero(coche.getCarrerasTercero()+1);
+                coche.setNumeroPodios(coche.getNumeroPodios()+1);
                 coche.setPuntosGeneral(coche.getPuntosGeneral()+4);
             } else if (coche.getPosicionCarrera()==4) {
                 coche.setPuntosCarrera(2);

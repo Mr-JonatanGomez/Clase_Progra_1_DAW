@@ -60,22 +60,23 @@ public class Competicion {
 
 
     public void mostrarDatosClasGen() {
+        System.out.println("\n\t CLASIFICACION FINAL WRC");
         int posicionGen = 1;
         for (Coche coche : listadoCoches) {
             coche.setPosicionGeneral(posicionGen);
             posicionGen++;
             if(coche.getPosicionGeneral()==1) {
-                System.out.println("\uD83C\uDFC6 " + coche.getPosicionGeneral() + "º " + coche.getMatricula()+" "  + coche.getPuntosGeneral() + " puntos \uD83C\uDFC6");
+                System.out.println("\uD83C\uDFC6 " + coche.getPosicionGeneral() + "º " + coche.getMatricula()+" "  + coche.getPuntosGeneral() + " puntos \uD83C\uDFC6"+ "\tCarreras ganadas 🥇: "+coche.getCarrerasGanadas()+ ", Carreras segundo: "+coche.getCarrerasSegundo()+ ", Carreras tercero 🥉: "+coche.getCarrerasTercero()+", Podios conseguidos: "+coche.getNumeroPodios());
             } else if (coche.getPosicionGeneral()==2) {
-                System.out.println("🥈 " + coche.getPosicionGeneral() + "º " + coche.getMatricula()+" "  + coche.getPuntosGeneral() + " puntos 🥈");
+                System.out.println("🥈 " + coche.getPosicionGeneral() + "º " + coche.getMatricula()+" "  + coche.getPuntosGeneral() + " puntos 🥈"+ "\tCarreras ganadas 🥇: "+coche.getCarrerasGanadas()+ ", Carreras segundo 🥈: "+coche.getCarrerasSegundo()+ ", Carreras tercero 🥉: "+coche.getCarrerasTercero()+", Podios conseguidos: "+coche.getNumeroPodios());
             } else if (coche.getPosicionGeneral()==3) {
-                System.out.println("🥉 " + coche.getPosicionGeneral() + "º " + coche.getMatricula()+" "  + coche.getPuntosGeneral() + " puntos 🥉");
+                System.out.println("🥉 " + coche.getPosicionGeneral() + "º " + coche.getMatricula()+" "  + coche.getPuntosGeneral() + " puntos 🥉"+ "\tCarreras ganadas 🥇: "+coche.getCarrerasGanadas()+ ", Carreras segundo 🥈: "+coche.getCarrerasSegundo()+ ", Carreras tercero 🥉: "+coche.getCarrerasTercero()+", Podios conseguidos: "+coche.getNumeroPodios());
             } else if(coche.getPosicionGeneral()==9){
-                System.out.println("💩 " + coche.getPosicionGeneral() + "º " + coche.getMatricula()+" "  + coche.getPuntosGeneral() + " puntos 💩");
+                System.out.println("💩 " + coche.getPosicionGeneral() + "º " + coche.getMatricula()+" "  + coche.getPuntosGeneral() + " puntos 💩"+ "\tCarreras ganadas 🥇: "+coche.getCarrerasGanadas()+ ", Carreras segundo 🥈: "+coche.getCarrerasSegundo()+ ", Carreras tercero 🥉: "+coche.getCarrerasTercero()+", Podios conseguidos: "+coche.getNumeroPodios());
             }else if(coche.getPosicionGeneral()==8){
-                System.out.println("😭 " + coche.getPosicionGeneral() + "º " + coche.getMatricula()+" "  + coche.getPuntosGeneral() + " puntos 😭");
+                System.out.println("😭 " + coche.getPosicionGeneral() + "º " + coche.getMatricula()+" "  + coche.getPuntosGeneral() + " puntos 😭"+ "\tCarreras ganadas 🥇: "+coche.getCarrerasGanadas()+ ", Carreras segundo 🥈: "+coche.getCarrerasSegundo()+ ", Carreras tercero 🥉: "+coche.getCarrerasTercero()+", Podios conseguidos: "+coche.getNumeroPodios());
             }else {
-                System.out.println("😐 " + coche.getPosicionGeneral() + "º " + coche.getMatricula()+" " + coche.getPuntosGeneral() + " puntos 😐");
+                System.out.println("😐 " + coche.getPosicionGeneral() + "º " + coche.getMatricula()+" " + coche.getPuntosGeneral() + " puntos 😐"+ "\tCarreras ganadas 🥇: "+coche.getCarrerasGanadas()+ ", Carreras segundo 🥈: "+coche.getCarrerasSegundo()+ ", Carreras tercero 🥉: "+coche.getCarrerasTercero()+", Podios conseguidos: "+coche.getNumeroPodios());
             }
 
 

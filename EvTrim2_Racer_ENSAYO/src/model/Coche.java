@@ -6,7 +6,7 @@ public class Coche {
     private String marca, modelo, matricula;
     private int cv, velocidad, kmRecorridos, puntosGeneral, puntosCarrera;
 
-    private int posicionCarrera, posicionGeneral;
+    private int posicionCarrera, posicionGeneral, carrerasGanadas, carrerasSegundo, carrerasTercero, numeroPodios, mundialesGanados;
 
     public Coche() {
     }// Coche default
@@ -148,6 +148,46 @@ public class Coche {
 
     public void setPosicionGeneral(int posicionGeneral) {
         this.posicionGeneral = posicionGeneral;
+    }
+
+    public int getCarrerasGanadas() {
+        return carrerasGanadas;
+    }
+
+    public void setCarrerasGanadas(int carrerasGanadas) {
+        this.carrerasGanadas = carrerasGanadas;
+    }
+
+    public int getCarrerasSegundo() {
+        return carrerasSegundo;
+    }
+
+    public void setCarrerasSegundo(int carrerasSegundo) {
+        this.carrerasSegundo = carrerasSegundo;
+    }
+
+    public int getCarrerasTercero() {
+        return carrerasTercero;
+    }
+
+    public void setCarrerasTercero(int carrerasTercero) {
+        this.carrerasTercero = carrerasTercero;
+    }
+
+    public int getMundialesGanados() {
+        return mundialesGanados;
+    }
+
+    public void setMundialesGanados(int mundialesGanados) {
+        this.mundialesGanados = mundialesGanados;
+    }
+
+    public int getNumeroPodios() {
+        return numeroPodios;
+    }
+
+    public void setNumeroPodios(int numeroPodios) {
+        this.numeroPodios = numeroPodios;
     }
 }
 
