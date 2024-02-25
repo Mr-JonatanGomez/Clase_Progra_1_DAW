@@ -6,8 +6,10 @@ public class Coche {
     private String marca, modelo, matricula;
     private int cv, velocidad, kmRecorridos, puntosGeneral, puntosCarrera;
 
-    private int posicionCarrera, posicionGeneral, carrerasGanadas, carrerasSegundo, carrerasTercero, numeroPodios, mundialesGanados;
+    private int posicionCarrera, posicionGeneral, carrerasGanadas, carrerasSegundo, carrerasTercero, numeroPodios;
     private int carrerasGanadasTotales, carrerasSegundoTotales, carrerasTerceroTotales, podiosTotales;
+
+    private int  mundialesGanados, mundialesSegundo, mundialesTercero;
 
     public Coche() {
     }// Coche default
@@ -23,6 +25,8 @@ public class Coche {
         this.puntosCarrera = 0;
         this.posicionCarrera = 0;
         this.mundialesGanados = 0;
+        this.mundialesSegundo = 0;
+        this.mundialesTercero = 0;
     }
 
     public void acelerar(int aceleracion) {
@@ -71,9 +75,16 @@ public class Coche {
 
     public void mostrarDatosEstadistica() {//ENLAZAR con mostrarestadistica -Competicion
 
-        System.out.println( matricula+"\t  🏆 Campeonatos GANADOS: "+ mundialesGanados +" 🏆;\t🥇 Carreras ganadas: "+carrerasGanadasTotales+ " 🥇;  🥈 Carreras segundo: "+carrerasSegundoTotales+" 🥈;  🥉 Carreras tercero: "+carrerasTerceroTotales+" 🥉;  📦deporte Podios totales: "+podiosTotales+" 📦");
+        System.out.println("\t"+matricula);
+        System.out.println("🏆 CAMPEÓN WRC: "+ mundialesGanados +" veces 🏆;\t 2\uFE0F⃣  SUBCAMPEON WRC: "
+                + mundialesSegundo +" veces 2\uFE0F⃣ ;\t 3\uFE0F⃣  TERCERO WRC: "+ mundialesTercero + " veces 3\uFE0F⃣ ");
+        System.out.println("🥇 Carreras ganadas: "+carrerasGanadasTotales+ " 🥇;  🥈 Carreras segundo: "
+                +carrerasSegundoTotales+" 🥈;  🥉 Carreras tercero: "+carrerasTerceroTotales+" 🥉;  📦deporte Podios totales: "
+                +podiosTotales+" 📦");
     }
 
+
+    // GETTER Y SETTER //
 
     public String getMarca() {
         return marca;
@@ -229,6 +240,22 @@ public class Coche {
 
     public void setPodiosTotales(int podiosTotales) {
         this.podiosTotales = podiosTotales;
+    }
+
+    public int getMundialesSegundo() {
+        return mundialesSegundo;
+    }
+
+    public void setMundialesSegundo(int mundialesSegundo) {
+        this.mundialesSegundo = mundialesSegundo;
+    }
+
+    public int getMundialesTercero() {
+        return mundialesTercero;
+    }
+
+    public void setMundialesTercero(int mundialesTercero) {
+        this.mundialesTercero = mundialesTercero;
     }
 }
 

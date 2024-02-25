@@ -13,12 +13,12 @@ public class Entrada {
         Coche coche1 = new Coche("Citroen", "Xsara", "\uD83D\uDE99 JuanJ.A", 87);
         Coche coche2 = new Coche("Hyundai", "i30", "\uD83D\uDE97 Mario.V", 112);
         Coche coche3 = new Coche("Seat", "Panda", "\uD83D\uDE99 Paco.DP", 72);
-        Coche coche4 = new Coche("Citroen", "2CV_Trucado", "\uD83C\uDFCE\uFE0F Borja.M", 211);
+        Coche coche4 = new Coche("Citroen", "2CV_Trucado", "\uD83C\uDFCE\uFE0F Borja.M", 205);
         Coche coche5 = new Coche("Toyota", "Corolla", "\uD83D\uDE97 Ale.Lis", 150);
         Coche coche6 = new Coche("Subaru", "Impreza", "\uD83C\uDFCE\uFE0F J.Gomez", 189);
         Coche coche7 = new Coche("Opel", "Corsa", "\uD83D\uDE97 Vic.Bul", 162);
         Coche coche8 = new Coche("Renault", "5 CopaTurbo", "\uD83D\uDE99 J.Ventu", 70);
-        Coche coche9 = new Coche("Subaru", "Impreza", "\uD83C\uDFCE\uFE0F Edu.AdR", 199);
+        Coche coche9 = new Coche("Subaru", "Impreza", "\uD83C\uDFCE\uFE0F Edu.AdR", 191);
 
 
         Competicion mundial = new Competicion();//ya estan añadidas las carreras desde la CLASE COMPETICION

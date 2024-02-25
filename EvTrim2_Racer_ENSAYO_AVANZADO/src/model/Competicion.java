@@ -72,10 +72,15 @@ public class Competicion {
             posicionGen++;
             if(coche.getPosicionGeneral()==1) {
                 coche.setMundialesGanados(coche.getMundialesGanados()+1);
+                coche.setPodiosTotales(coche.getPodiosTotales()+1);
                 System.out.println("\uD83C\uDFC6 " + coche.getPosicionGeneral() + "º " + coche.getMatricula()+" "  + coche.getPuntosGeneral() + " puntos \uD83C\uDFC6"+ "\tCarreras ganadas 🥇: "+coche.getCarrerasGanadas()+ ", Carreras segundo 🥈: "+coche.getCarrerasSegundo()+ ", Carreras tercero 🥉: "+coche.getCarrerasTercero()+", Podios conseguidos: "+coche.getNumeroPodios());
             } else if (coche.getPosicionGeneral()==2) {
+                coche.setMundialesSegundo(coche.getMundialesSegundo()+1);
+                coche.setPodiosTotales(coche.getPodiosTotales()+1);
                 System.out.println("🥈 " + coche.getPosicionGeneral() + "º " + coche.getMatricula()+" "  + coche.getPuntosGeneral() + " puntos 🥈"+ "\tCarreras ganadas 🥇: "+coche.getCarrerasGanadas()+ ", Carreras segundo 🥈: "+coche.getCarrerasSegundo()+ ", Carreras tercero 🥉: "+coche.getCarrerasTercero()+", Podios conseguidos: "+coche.getNumeroPodios());
             } else if (coche.getPosicionGeneral()==3) {
+                coche.setMundialesTercero(coche.getMundialesTercero()+1);
+                coche.setPodiosTotales(coche.getPodiosTotales()+1);
                 System.out.println("🥉 " + coche.getPosicionGeneral() + "º " + coche.getMatricula()+" "  + coche.getPuntosGeneral() + " puntos 🥉"+ "\tCarreras ganadas 🥇: "+coche.getCarrerasGanadas()+ ", Carreras segundo 🥈: "+coche.getCarrerasSegundo()+ ", Carreras tercero 🥉: "+coche.getCarrerasTercero()+", Podios conseguidos: "+coche.getNumeroPodios());
             } else if(coche.getPosicionGeneral()==9){
                 System.out.println("💩 " + coche.getPosicionGeneral() + "º " + coche.getMatricula()+" "  + coche.getPuntosGeneral() + " puntos 💩"+ "\tCarreras ganadas 🥇: "+coche.getCarrerasGanadas()+ ", Carreras segundo 🥈: "+coche.getCarrerasSegundo()+ ", Carreras tercero 🥉: "+coche.getCarrerasTercero()+", Podios conseguidos: "+coche.getNumeroPodios());
