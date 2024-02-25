@@ -8,6 +8,7 @@ public class Coche {
 
     private int posicionCarrera, posicionGeneral, carrerasGanadas, carrerasSegundo, carrerasTercero, numeroPodios, mundialesGanados;
     private int carrerasGanadasTotales, carrerasSegundoTotales, carrerasTerceroTotales, podiosTotales;
+
     public Coche() {
     }// Coche default
 
@@ -21,25 +22,25 @@ public class Coche {
         this.puntosGeneral = 0;
         this.puntosCarrera = 0;
         this.posicionCarrera = 0;
-        this.mundialesGanados= 0;
+        this.mundialesGanados = 0;
     }
 
     public void acelerar(int aceleracion) {
 
         int kmHechosConAcelerar;
         //para que las carreras vayan más acorde a los caballos, la aceleracion por aleatorio 0->cv
-        aceleracion = (int) (Math.random() * (getCv()/3));
-System.out.println(getMatricula()+"   "+aceleracion+" acelerado");
+        aceleracion = (int) (Math.random() * (getCv() / 3));
+        System.out.println(getMatricula() + "   " + aceleracion + " acelerado");
 
         if (cv < 100) {
-            velocidad += (int) (Math.random() * aceleracion)+10;
+            velocidad += (int) (Math.random() * aceleracion) + 10;
             kmHechosConAcelerar = velocidad / 2;
 
         } else if (cv >= 100 && cv <= 200) {
             velocidad += (int) (Math.random() * aceleracion) + 5;
             kmHechosConAcelerar = velocidad / 2;
         } else {
-            velocidad += (int) (Math.random() * aceleracion) ;
+            velocidad += (int) (Math.random() * aceleracion);
             kmHechosConAcelerar = velocidad / 2;
         }
 
@@ -51,7 +52,7 @@ System.out.println(getMatricula()+"   "+aceleracion+" acelerado");
         System.out.println("Matricula: " + matricula);
         System.out.println("Marca y modelo: " + this.marca + this.modelo);// o nombre sin this, cuando acostumbremos
         System.out.println("Potencia: " + cv + "cv\n");
-        System.out.println("Campeonatos mundiales ganados: "+mundialesGanados);
+        System.out.println("Campeonatos mundiales ganados: " + mundialesGanados);
     }
 
     public void mostrarDatosCocheClasfCarrera() {
@@ -68,7 +69,10 @@ System.out.println(getMatricula()+"   "+aceleracion+" acelerado");
 
     }
 
+    public void mostrarDatosEstadistica() {//ENLAZAR con mostrarestadistica -Competicion
 
+        System.out.println( matricula+"\t  🏆 Campeonatos GANADOS: "+ mundialesGanados +" 🏆;\t🥇 Carreras ganadas: "+carrerasGanadasTotales+ " 🥇;  🥈 Carreras segundo: "+carrerasSegundoTotales+" 🥈;  🥉 Carreras tercero: "+carrerasTerceroTotales+" 🥉;  📦deporte Podios totales: "+podiosTotales+" 📦");
+    }
 
 
     public String getMarca() {
@@ -195,7 +199,37 @@ System.out.println(getMatricula()+"   "+aceleracion+" acelerado");
         this.numeroPodios = numeroPodios;
     }
 
+    public int getCarrerasGanadasTotales() {
+        return carrerasGanadasTotales;
+    }
 
+    public void setCarrerasGanadasTotales(int carrerasGanadasTotales) {
+        this.carrerasGanadasTotales = carrerasGanadasTotales;
+    }
+
+    public int getCarrerasSegundoTotales() {
+        return carrerasSegundoTotales;
+    }
+
+    public void setCarrerasSegundoTotales(int carrerasSegundoTotales) {
+        this.carrerasSegundoTotales = carrerasSegundoTotales;
+    }
+
+    public int getCarrerasTerceroTotales() {
+        return carrerasTerceroTotales;
+    }
+
+    public void setCarrerasTerceroTotales(int carrerasTerceroTotales) {
+        this.carrerasTerceroTotales = carrerasTerceroTotales;
+    }
+
+    public int getPodiosTotales() {
+        return podiosTotales;
+    }
+
+    public void setPodiosTotales(int podiosTotales) {
+        this.podiosTotales = podiosTotales;
+    }
 }
 
 

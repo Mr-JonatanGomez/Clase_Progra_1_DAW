@@ -97,8 +97,10 @@ public class Competicion {
 
         }
     }
-    public void mostrarDatosFINALAES (){
-
+    public void mostrarEstadistica (){
+        for (Coche coche:listadoCoches) {
+            coche.mostrarDatosEstadistica();
+        }
     }
 
     public ArrayList<Coche> getListadoCoches() {

@@ -51,7 +51,7 @@ public class Entrada {
         }while(sc.nextInt()==0);
 
         System.out.println("DATOS AL FINALIZAR TODAS LAS TEMPORADAS");
-        mundial.mostrarDatosFINALAES();// hay que implementar aqui en COMPETICION un foreach para todos coches,
+        mundial.mostrarEstadistica();// hay que implementar aqui en COMPETICION un foreach para todos coches,
         // con campeonatos, segundo puesto tercero
         // y ganadas y podios
     }
