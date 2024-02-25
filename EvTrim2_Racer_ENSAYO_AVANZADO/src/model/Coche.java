@@ -37,14 +37,14 @@ public class Coche {
         System.out.println(getMatricula() + "   " + aceleracion + " acelerado");
 
         if (cv < 100) {
-            velocidad += (int) (Math.random() * aceleracion) + 10;
+            velocidad += (int) (Math.random() * aceleracion)+13 ; // posible + ((cv/10)/3)
             kmHechosConAcelerar = velocidad / 2;
 
         } else if (cv >= 100 && cv <= 200) {
-            velocidad += (int) (Math.random() * aceleracion) + 5;
+            velocidad += (int) (Math.random() * aceleracion)+8;
             kmHechosConAcelerar = velocidad / 2;
         } else {
-            velocidad += (int) (Math.random() * aceleracion);
+            velocidad += (int) (Math.random() * aceleracion)+7;
             kmHechosConAcelerar = velocidad / 2;
         }
 
@@ -79,8 +79,8 @@ public class Coche {
         System.out.println("🏆 CAMPEÓN WRC: "+ mundialesGanados +" veces 🏆;\t 2\uFE0F⃣  SUBCAMPEON WRC: "
                 + mundialesSegundo +" veces 2\uFE0F⃣ ;\t 3\uFE0F⃣  TERCERO WRC: "+ mundialesTercero + " veces 3\uFE0F⃣ ");
         System.out.println("🥇 Carreras ganadas: "+carrerasGanadasTotales+ " 🥇;  🥈 Carreras segundo: "
-                +carrerasSegundoTotales+" 🥈;  🥉 Carreras tercero: "+carrerasTerceroTotales+" 🥉;  📦deporte Podios totales: "
-                +podiosTotales+" 📦");
+                +carrerasSegundoTotales+" 🥈;  🥉 Carreras tercero: "+carrerasTerceroTotales+" 🥉");
+        System.out.println("📦 Podios totales: " +podiosTotales+" 📦\n");
     }
 
 
