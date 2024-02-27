@@ -26,7 +26,7 @@ public class Carrera {
 
 // CONSTRUCTOR PARA ARRAY
     public Carrera (String nombreCircuito, int kmCircuito, int numeroJornadas,ArrayList<Coche> listadoCoches){
-        //metido por parametro ArrayList Coche, consultar con BORJA
+
         this.nombreCircuito=nombreCircuito;
         this.kmCircuito=kmCircuito;
         this.numeroJornadas=numeroJornadas;
@@ -53,10 +53,10 @@ public class Carrera {
 
         do {
             for (Coche coche : listadoCoches) {
-                coche.acelerar((int) Math.random() * 45);
+                coche.acelerar();
             }
             numeroJornadasRealizadas++;
-//METER AQUI LA CLASIFICACION DE JORNADA, QUIZAS NO SACANDOLA EN LA LINEA 57
+
 
             listadoCoches.sort(new Comparator<Coche>() {
                 @Override
@@ -171,7 +171,9 @@ public class Carrera {
         int posicion = 1;
         for (Coche coche:listadoCoches) {
             coche.setPosicionCarrera(posicion);
-            System.out.println(coche.getPosicionCarrera()+"º "+ coche.getMatricula()+"\t\t lleva recorridos "+coche.getKmRecorridos()+" kilometros está etapa");
+
+            //conseguir que muestre aceleracion del COCHE
+            System.out.println(coche.getPosicionCarrera()+"º "+ coche.getMatricula()+"\t\tTras acelerar "+coche.getAceleracion()+", va a "+coche.getVelocidad()+ "km/h y lleva recorridos "+coche.getKmRecorridos()+" kilometros está etapa");
             posicion++;
 
         }

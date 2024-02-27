@@ -4,10 +4,10 @@ import java.util.Scanner;
 
 public class Coche {
     private String marca, modelo, matricula;
-    private int cv, velocidad, kmRecorridos, puntosGeneral, puntosCarrera;
+    private int cv, velocidad, aceleracion, kmRecorridos, puntosGeneral, puntosCarrera;
 
     private int posicionCarrera, posicionGeneral, carrerasGanadas, carrerasSegundo, carrerasTercero, numeroPodios;
-    private int carrerasGanadasTotales, carrerasSegundoTotales, carrerasTerceroTotales, podiosTotales;
+    private int carrerasGanadasTotales, carrerasSegundoTotales, carrerasTerceroTotales, podiosTotales, recordPersonal;
 
     private int  mundialesGanados, mundialesSegundo, mundialesTercero;
 
@@ -20,6 +20,7 @@ public class Coche {
         this.matricula = matricula;
         this.cv = cv;
         this.velocidad = 0;
+        this.aceleracion = 0;
         this.kmRecorridos = 0;
         this.puntosGeneral = 0;
         this.puntosCarrera = 0;
@@ -27,14 +28,15 @@ public class Coche {
         this.mundialesGanados = 0;
         this.mundialesSegundo = 0;
         this.mundialesTercero = 0;
+        this.recordPersonal = 0;
+
     }
 
-    public void acelerar(int aceleracion) {
+    public void acelerar() {
 
         int kmHechosConAcelerar;
         //para que las carreras vayan más acorde a los caballos, la aceleracion por aleatorio 0->cv
         aceleracion = (int) (Math.random() * (getCv() / 3));
-        System.out.println(getMatricula() + "   " + aceleracion + " acelerado");
 
         if (cv < 100) {
             velocidad += (int) (Math.random() * aceleracion)+13 ; // posible + ((cv/10)/3)
@@ -81,6 +83,7 @@ public class Coche {
         System.out.println("🥇 Carreras ganadas: "+carrerasGanadasTotales+ " 🥇;  🥈 Carreras segundo: "
                 +carrerasSegundoTotales+" 🥈;  🥉 Carreras tercero: "+carrerasTerceroTotales+" 🥉");
         System.out.println("📦 Podios totales: " +podiosTotales+" 📦\n");
+        System.out.println("🚀 Record de puntos en 1 temporada: " +recordPersonal+" 🚀\n");
     }
 
 
@@ -256,6 +259,22 @@ public class Coche {
 
     public void setMundialesTercero(int mundialesTercero) {
         this.mundialesTercero = mundialesTercero;
+    }
+
+    public int getAceleracion() {
+        return aceleracion;
+    }
+
+    public void setAceleracion(int aceleracion) {
+        this.aceleracion = aceleracion;
+    }
+
+    public int getRecordPersonal() {
+        return recordPersonal;
+    }
+
+    public void setRecordPersonal(int recordPersonal) {
+        this.recordPersonal = recordPersonal;
     }
 }
 

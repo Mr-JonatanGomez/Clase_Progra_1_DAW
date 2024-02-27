@@ -5,7 +5,6 @@ import model.Competicion;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-// tengo que cambiar formula de la velocidad que no esta sumando ni sirve por ahora
 public class Entrada {
     public static void main(String[] args) {//
 
@@ -41,13 +40,13 @@ public class Entrada {
         //mundial.mostrarCarreras();
         Scanner sc = new Scanner(System.in);
         do {
-            for (Carrera carrera : mundial.getListadoCarreras()) {
+            /*for (Carrera carrera : mundial.getListadoCarreras()) {
                 carrera.iniciarCarrera(carrera);
             }
-            mundial.clasificacionGeneral();
+            mundial.clasificacionGeneral();*/ //ya implementado en metodo
 
 
-            //mundial.comenzarTemporada(); // SI FUNCIONA QUITAR LO DE ARRIBA
+            mundial.comenzarTemporada();
 
             System.out.println("Para hacer otra temporada pulse 0");
 
