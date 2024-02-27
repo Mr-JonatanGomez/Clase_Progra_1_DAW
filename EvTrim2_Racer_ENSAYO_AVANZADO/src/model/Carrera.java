@@ -86,11 +86,8 @@ public class Carrera {
                 } else if (numeroJornadasRealizadas >= numeroJornadas ) {
                     raceOver = true;
                 }
-
             }
 
-
-            // CORREGIR QUE TERMINE LA CARRERA SI algun coche llegó a los km,
         } while (!raceOver);
 
 
@@ -112,13 +109,7 @@ public class Carrera {
 
         clasificacionCarrera(carrera);
         //VOLVEMOS A RESETEAR VALORES
-        for (Coche coche : listadoCoches) {
-            coche.setKmRecorridos(0);
-            coche.setPosicionCarrera(0);
-            coche.setPuntosCarrera(0);
-            coche.setVelocidad(0);
 
-        }
         System.out.println("\t"+carrera.getNombreCircuito()+" FINALIZADO");
     }
 
@@ -168,8 +159,8 @@ public class Carrera {
                 }
             }
         });
-        System.out.println("\t\tCLASIFICACIÓN");
-        System.out.println("\n\t"+getNombreCircuito()+"\n");
+        System.out.println("\t\tCLASIFICACIÓN DEL "+getNombreCircuito());
+
         for (Coche coche:listadoCoches) {
             coche.mostrarDatosCocheClasfCarrera();
 

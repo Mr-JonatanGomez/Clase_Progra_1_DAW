@@ -47,6 +47,13 @@ public class Competicion {
         }
     }
 
+    public void comenzarTemporada(){
+        for (Carrera carrera : listadoCarreras) {
+            carrera.iniciarCarrera(carrera);
+        }
+        clasificacionGeneral();
+    }
+
     public void clasificacionGeneral() {
         listadoCoches.sort(new Comparator<Coche>() {
             @Override

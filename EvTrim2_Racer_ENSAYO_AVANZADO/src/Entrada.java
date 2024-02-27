@@ -46,6 +46,9 @@ public class Entrada {
             }
             mundial.clasificacionGeneral();
 
+
+            //mundial.comenzarTemporada(); // SI FUNCIONA QUITAR LO DE ARRIBA
+
             System.out.println("Para hacer otra temporada pulse 0");
 
         }while(sc.nextInt()==0);
