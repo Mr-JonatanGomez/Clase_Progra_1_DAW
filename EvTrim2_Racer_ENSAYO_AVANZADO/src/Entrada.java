@@ -18,6 +18,7 @@ public class Entrada {
         Coche coche7 = new Coche("Opel", "Corsa", "\uD83D\uDE97 Vic.Bul", 150);
         Coche coche8 = new Coche("Renault", "5 CopaTurbo", "\uD83D\uDE99 J.Ventu", 150);
         Coche coche9 = new Coche("Subaru", "Impreza", "\uD83C\uDFCE\uFE0F Edu.AdR", 150);
+        Coche coche10 = new Coche("Ford", "Fiesta", "\uD83C\uDFCE\uFE0F San.Dra", 155);
 
 
         Competicion mundial = new Competicion();//ya estan añadidas las carreras desde la CLASE COMPETICION
@@ -34,6 +35,7 @@ public class Entrada {
         mundial.apuntarCoche(coche7);
         mundial.apuntarCoche(coche8);
         mundial.apuntarCoche(coche9);
+        mundial.apuntarCoche(coche10);
 
 
 
