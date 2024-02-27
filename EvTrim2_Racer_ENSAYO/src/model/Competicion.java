@@ -56,6 +56,7 @@ public class Competicion {
                 } else if (o1.getPuntosGeneral() < o2.getPuntosGeneral()) {
                     return 1;
                 } else {
+                   // PARA EL DESEMPATE if (){}
                     return 0;
                 }
             }

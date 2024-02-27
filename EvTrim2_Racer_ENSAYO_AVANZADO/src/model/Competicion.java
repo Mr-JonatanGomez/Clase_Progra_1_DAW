@@ -56,6 +56,13 @@ public class Competicion {
                 } else if (o1.getPuntosGeneral() < o2.getPuntosGeneral()) {
                     return 1;
                 } else {
+                    // si no va cortar por aqui
+                    if (o1.getCarrerasGanadas() > o2.getCarrerasGanadas()) {
+                        return -1;
+                    } else if (o1.getCarrerasGanadas() < o2.getCarrerasGanadas()) {
+                        return 1;
+                    }
+                    // si no va cortar por aqui ^^
                     return 0;
                 }
             }
@@ -70,30 +77,30 @@ public class Competicion {
         for (Coche coche : listadoCoches) {
             coche.setPosicionGeneral(posicionGen);
             posicionGen++;
-            if(coche.getPosicionGeneral()==1) {
-                coche.setMundialesGanados(coche.getMundialesGanados()+1);
-                coche.setNumeroPodios(coche.getNumeroPodios()+1);
-                System.out.println("\uD83C\uDFC6 " + coche.getPosicionGeneral() + "º " + coche.getMatricula()+" "  + coche.getPuntosGeneral() + " puntos \uD83C\uDFC6"+ "\tCarreras ganadas 🥇: "+coche.getCarrerasGanadas()+ ", Carreras segundo 🥈: "+coche.getCarrerasSegundo()+ ", Carreras tercero 🥉: "+coche.getCarrerasTercero()+", Podios conseguidos: "+coche.getNumeroPodios());
-            } else if (coche.getPosicionGeneral()==2) {
-                coche.setMundialesSegundo(coche.getMundialesSegundo()+1);
-                coche.setNumeroPodios(coche.getNumeroPodios()+1);
-                System.out.println("🥈 " + coche.getPosicionGeneral() + "º " + coche.getMatricula()+" "  + coche.getPuntosGeneral() + " puntos 🥈"+ "\tCarreras ganadas 🥇: "+coche.getCarrerasGanadas()+ ", Carreras segundo 🥈: "+coche.getCarrerasSegundo()+ ", Carreras tercero 🥉: "+coche.getCarrerasTercero()+", Podios conseguidos: "+coche.getNumeroPodios());
-            } else if (coche.getPosicionGeneral()==3) {
-                coche.setMundialesTercero(coche.getMundialesTercero()+1);
-                coche.setNumeroPodios(coche.getNumeroPodios()+1);
-                System.out.println("🥉 " + coche.getPosicionGeneral() + "º " + coche.getMatricula()+" "  + coche.getPuntosGeneral() + " puntos 🥉"+ "\tCarreras ganadas 🥇: "+coche.getCarrerasGanadas()+ ", Carreras segundo 🥈: "+coche.getCarrerasSegundo()+ ", Carreras tercero 🥉: "+coche.getCarrerasTercero()+", Podios conseguidos: "+coche.getNumeroPodios());
-            } else if(coche.getPosicionGeneral()==9){
-                System.out.println("💩 " + coche.getPosicionGeneral() + "º " + coche.getMatricula()+" "  + coche.getPuntosGeneral() + " puntos 💩"+ "\tCarreras ganadas 🥇: "+coche.getCarrerasGanadas()+ ", Carreras segundo 🥈: "+coche.getCarrerasSegundo()+ ", Carreras tercero 🥉: "+coche.getCarrerasTercero()+", Podios conseguidos: "+coche.getNumeroPodios());
-            }else if(coche.getPosicionGeneral()==8){
-                System.out.println("😭 " + coche.getPosicionGeneral() + "º " + coche.getMatricula()+" "  + coche.getPuntosGeneral() + " puntos 😭"+ "\tCarreras ganadas 🥇: "+coche.getCarrerasGanadas()+ ", Carreras segundo 🥈: "+coche.getCarrerasSegundo()+ ", Carreras tercero 🥉: "+coche.getCarrerasTercero()+", Podios conseguidos: "+coche.getNumeroPodios());
-            }else {
-                System.out.println("😐 " + coche.getPosicionGeneral() + "º " + coche.getMatricula()+" " + coche.getPuntosGeneral() + " puntos 😐"+ "\tCarreras ganadas 🥇: "+coche.getCarrerasGanadas()+ ", Carreras segundo 🥈: "+coche.getCarrerasSegundo()+ ", Carreras tercero 🥉: "+coche.getCarrerasTercero()+", Podios conseguidos: "+coche.getNumeroPodios());
+            if (coche.getPosicionGeneral() == 1) {
+                coche.setMundialesGanados(coche.getMundialesGanados() + 1);
+                coche.setNumeroPodios(coche.getNumeroPodios() + 1);
+                System.out.println("\uD83C\uDFC6 " + coche.getPosicionGeneral() + "º " + coche.getMatricula() + " " + coche.getPuntosGeneral() + " puntos \uD83C\uDFC6" + "\tCarreras ganadas 🥇: " + coche.getCarrerasGanadas() + ", Carreras segundo 🥈: " + coche.getCarrerasSegundo() + ", Carreras tercero 🥉: " + coche.getCarrerasTercero() + ", Podios conseguidos: " + coche.getNumeroPodios());
+            } else if (coche.getPosicionGeneral() == 2) {
+                coche.setMundialesSegundo(coche.getMundialesSegundo() + 1);
+                coche.setNumeroPodios(coche.getNumeroPodios() + 1);
+                System.out.println("🥈 " + coche.getPosicionGeneral() + "º " + coche.getMatricula() + " " + coche.getPuntosGeneral() + " puntos 🥈" + "\tCarreras ganadas 🥇: " + coche.getCarrerasGanadas() + ", Carreras segundo 🥈: " + coche.getCarrerasSegundo() + ", Carreras tercero 🥉: " + coche.getCarrerasTercero() + ", Podios conseguidos: " + coche.getNumeroPodios());
+            } else if (coche.getPosicionGeneral() == 3) {
+                coche.setMundialesTercero(coche.getMundialesTercero() + 1);
+                coche.setNumeroPodios(coche.getNumeroPodios() + 1);
+                System.out.println("🥉 " + coche.getPosicionGeneral() + "º " + coche.getMatricula() + " " + coche.getPuntosGeneral() + " puntos 🥉" + "\tCarreras ganadas 🥇: " + coche.getCarrerasGanadas() + ", Carreras segundo 🥈: " + coche.getCarrerasSegundo() + ", Carreras tercero 🥉: " + coche.getCarrerasTercero() + ", Podios conseguidos: " + coche.getNumeroPodios());
+            } else if (coche.getPosicionGeneral() == 9) {
+                System.out.println("💩 " + coche.getPosicionGeneral() + "º " + coche.getMatricula() + " " + coche.getPuntosGeneral() + " puntos 💩" + "\tCarreras ganadas 🥇: " + coche.getCarrerasGanadas() + ", Carreras segundo 🥈: " + coche.getCarrerasSegundo() + ", Carreras tercero 🥉: " + coche.getCarrerasTercero() + ", Podios conseguidos: " + coche.getNumeroPodios());
+            } else if (coche.getPosicionGeneral() == 8) {
+                System.out.println("😭 " + coche.getPosicionGeneral() + "º " + coche.getMatricula() + " " + coche.getPuntosGeneral() + " puntos 😭" + "\tCarreras ganadas 🥇: " + coche.getCarrerasGanadas() + ", Carreras segundo 🥈: " + coche.getCarrerasSegundo() + ", Carreras tercero 🥉: " + coche.getCarrerasTercero() + ", Podios conseguidos: " + coche.getNumeroPodios());
+            } else {
+                System.out.println("😐 " + coche.getPosicionGeneral() + "º " + coche.getMatricula() + " " + coche.getPuntosGeneral() + " puntos 😐" + "\tCarreras ganadas 🥇: " + coche.getCarrerasGanadas() + ", Carreras segundo 🥈: " + coche.getCarrerasSegundo() + ", Carreras tercero 🥉: " + coche.getCarrerasTercero() + ", Podios conseguidos: " + coche.getNumeroPodios());
             }
 
 
         }
         //resetear todos los coches a 0 puntos
-        for (Coche coche:listadoCoches) {
+        for (Coche coche : listadoCoches) {
             coche.setNumeroPodios(0);
             coche.setCarrerasTercero(0);
             coche.setCarrerasSegundo(0);
@@ -102,8 +109,9 @@ public class Competicion {
 
         }
     }
-    public void mostrarEstadistica (){
-        for (Coche coche:listadoCoches) {
+
+    public void mostrarEstadistica() {
+        for (Coche coche : listadoCoches) {
             coche.mostrarDatosEstadistica();
         }
     }

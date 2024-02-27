@@ -38,6 +38,8 @@ public class Entrada {
         mundial.inscribirCoche(new Coche("Subaru","Impreza","\uD83C\uDFCE\uFE0F S.Nieves_9",275));
 */
 
+        CampeonatoMundial mundial = new CampeonatoMundial();
+
         Coche coche1 = new Coche("ka","ko","Pedro",205);
         Coche coche2 = new Coche("ki","ka","Sebas",150);
         Coche coche3 = new Coche("ku","ke","Josh",99);
@@ -49,6 +51,8 @@ public class Entrada {
         carrera1.inscribirCoche(coche2);
         carrera1.inscribirCoche(coche3);
 
+        mundial.agregarCarrera(carrera1);
+
         carrera1.iniciarCarrera(carrera1);
         carrera1.clasificacionCarrera(carrera1);
 
@@ -58,6 +62,9 @@ public class Entrada {
 
         carrera2.iniciarCarrera(carrera2);
         carrera2.clasificacionCarrera(carrera2);
+
+
+
 
 
 
