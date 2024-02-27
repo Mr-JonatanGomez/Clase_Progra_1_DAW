@@ -7,7 +7,7 @@ import java.util.Scanner;
 
 // tengo que cambiar formula de la velocidad que no esta sumando ni sirve por ahora
 public class Entrada {
-    public static void main(String[] args) {
+    public static void main(String[] args) {//
 
         //CREACION DE COCHES
         Coche coche1 = new Coche("Citroen", "Xsara", "\uD83D\uDE99 JuanJ.A", 87);
