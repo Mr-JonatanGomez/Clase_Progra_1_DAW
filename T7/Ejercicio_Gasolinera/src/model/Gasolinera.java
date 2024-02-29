@@ -8,7 +8,9 @@ public class Gasolinera {
     private int ganancias;
 
 
-    public Gasolinera() {}
+    public Gasolinera() {
+        this.listadoSurtidor= new ArrayList<>();
+    }
     public Gasolinera (String nombre){
         this.nombre=nombre;
         this.ganancias=0;
@@ -21,6 +23,12 @@ public class Gasolinera {
 
     public void agregarSurtidor(Surtidor surtidor){
         this.listadoSurtidor.add(surtidor);
+    }
+
+    public void mostrarDatosSurtidores(){
+        for (Surtidor item:listadoSurtidor) {
+            item.mostrarDatos();
+        }
     }
 
 

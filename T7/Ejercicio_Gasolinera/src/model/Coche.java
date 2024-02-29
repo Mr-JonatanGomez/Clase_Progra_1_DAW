@@ -13,19 +13,39 @@ public class Coche {
     }
 
     public void ponerCombustible (Surtidor surtidor, int cantidadLitrosARepostar){
-        Scanner sc = new Scanner(System.in);
-        System.out.println("cuantos litros quiere poner al coche");
-        int extraccion=sc.nextInt();
-        surtidor.extraerCombustible(extraccion);
-        if (surtidor.getCapacidadActual()==0 || surtidor.getCapacidadActual()<sc.nextInt()){
-            System.out.println("El surtidor no tiene suficiente combustible");
+        System.out.println("\nSURTIDOR: "+surtidor.getNumeroSurtidor());
+        System.out.println("litros que vas a intentar poner:"+cantidadLitrosARepostar);
+
+        if (surtidor.getCapacidadActual()==0 || surtidor.getCapacidadActual()<cantidadLitrosARepostar){
+            System.out.println("El surtidor no tiene suficiente combustible\n");
         } else if (!surtidor.isOperativo()) {
-            System.out.println("El surtidor ESTÁ AVERIADO");
-        } else if (surtidor.getTipoCombustible().equalsIgnoreCase(tipoCombustible)) {
+            System.out.println("El surtidor ESTÁ AVERIADO\n");
+        } else if (surtidor.getTipoCombustible()!= tipoCombustible) {
             System.out.println("⚠ Estas intentando echar un combustible equivocado ⚠");
+            System.out.println("tu vehiculo usa "+getTipoCombustible()+" y estas intentando poner "+surtidor.getTipoCombustible()+"\n");
         } else {
-            litrosDeposito+=extraccion;//habria que meter topes MAXIMOS
-            surtidor.extraerCombustible(extraccion);//este metodo resta lo extraido
+            litrosDeposito+=cantidadLitrosARepostar;//habria que meter topes MAXIMOS
+            surtidor.extraerCombustible(cantidadLitrosARepostar);//este metodo resta lo extraido
+            System.out.println("Has repostado con exito "+cantidadLitrosARepostar+" de "+tipoCombustible);
         }
+    }
+    public void mostrarDatosCoche(){
+        System.out.println("El coche tiene: "+litrosDeposito+" de "+tipoCombustible);
+    }
+
+    public String getTipoCombustible() {
+        return tipoCombustible;
+    }
+
+    public void setTipoCombustible(String tipoCombustible) {
+        this.tipoCombustible = tipoCombustible;
+    }
+
+    public int getLitrosDeposito() {
+        return litrosDeposito;
+    }
+
+    public void setLitrosDeposito(int litrosDeposito) {
+        this.litrosDeposito = litrosDeposito;
     }
 }
