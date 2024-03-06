@@ -33,7 +33,7 @@ public class Circulo {
     }
 
     public void trabajarCirculos() {
-        System.out.println("\tTRABAJANDO CON TRIANGULOS");
+        System.out.println("\tTRABAJANDO CON CIRCULOS");
 
         int opcion;
         do {
