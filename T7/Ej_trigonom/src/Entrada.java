@@ -35,11 +35,18 @@ public class Entrada {
                     triangulo.trabajarTriangulos();
                     break;
                 case 2:
-                    // trabajr con...
+                    circulo.trabajarCirculos();
+                    break;
                 case 3:
-                    // trabajar con
+                    cuadrado.trabajarCuadrados();
+                    break;
                 case 4:
                     System.out.println("APAGA Y VAMONOS");
+                    break;
+                default:
+                    System.out.println("opcion no valida");
+                    break;
+
 
             }
         }while(opcion!=4);

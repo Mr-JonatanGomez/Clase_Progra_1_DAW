@@ -12,20 +12,20 @@ public class Circulo {
 
     public double calcularArea (){
         area=Math.PI*(Math.pow(radio,2));
-        System.out.println("Un circulo con radio de "+radio+", tiene un area de "+area);
         return area; //Por si lo meto con pedida de parametros
     }
 
     public double calcularDiametro(){
         diametro=radio*2;
-        System.out.println("Un circulo con radio de "+radio+", tiene un diametro de "+diametro);
         return diametro;
     }
 
     public void mostrarDatos(){
         if (getArea()<0.001){
+            System.out.println("El diametro es "+getDiametro());
             System.out.println("El area no ha sido calculada");
         }else if (getDiametro()<0.002){
+            System.out.println("El area es "+getArea());
             System.out.println("El diametro no ha sido calculado");
         }else {
             System.out.println("El circilo tiene un area de " + getArea()+ ", y un diametro"+getDiametro());
