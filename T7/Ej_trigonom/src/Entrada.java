@@ -9,21 +9,10 @@ public class Entrada {
 
 // pasar parametros por scanner para menu
 
-        Triangulo triangulo = new Triangulo(7,3);
-        Circulo circulo = new Circulo (10.5);
-        Cuadrado cuadrado= new Cuadrado(5);
+        Triangulo triangulo = new Triangulo(0,0);
+        Circulo circulo = new Circulo (0);
+        Cuadrado cuadrado= new Cuadrado(0);
 
-/*
-        triangulo.calculaAreayMostrar();
-
-        circulo.calcularDiametroyMostrar();
-        circulo.calcularArea();
-
-        cuadrado.calcularArea();
-        cuadrado.calcularPerimetro();
-        System.out.println("DATOS CUADRA");
-        cuadrado.mostrarDatos();
-*/
         Scanner sc = new Scanner(System.in);
 
         int opcion;
