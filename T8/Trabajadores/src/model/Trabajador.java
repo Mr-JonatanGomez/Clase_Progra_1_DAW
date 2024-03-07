@@ -3,8 +3,8 @@ package model;
 import lombok.*;
 
 
-@RequiredArgsConstructor
-@AllArgsConstructor
+
+@NoArgsConstructor
 @Getter
 @Setter
 public abstract class Trabajador extends Persona{
@@ -20,5 +20,6 @@ public abstract class Trabajador extends Persona{
     @Override
     public void mostrarDatos() {
         super.mostrarDatos();
+        System.out.println("Salario: "+getSalario());
     }
 }

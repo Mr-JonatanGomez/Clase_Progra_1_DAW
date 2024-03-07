@@ -10,12 +10,12 @@ import model.Trabajador;
 
 import java.util.ArrayList;
 
-@AllArgsConstructor
+
 @NoArgsConstructor
 @Getter
 @Setter
 public class Empresa {
-    ArrayList<Persona> listaPersonas;
+    ArrayList<Persona> listaPersonas=new ArrayList<>();
 
 
     public void agregarPersona(Persona persona) {
@@ -24,7 +24,7 @@ public class Empresa {
 
     public void empezarJornada() {
         for (Persona item : listaPersonas) {
-            if (item instanceof Trabajador) {// se castra con el instance a TRABAJADOR
+            if (item instanceof Trabajador) {// se castea con el instance a TRABAJADOR
                 ((Trabajador) item).trabajar();
             }
         }

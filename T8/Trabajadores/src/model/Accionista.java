@@ -2,16 +2,21 @@ package model;
 
 import lombok.*;
 
-@AllArgsConstructor
-@RequiredArgsConstructor
 @NoArgsConstructor
 @Setter
 @Getter
-public abstract class Accionista extends Persona implements Responsable{
+public class Accionista extends Persona implements Responsable{
+
+
+    public Accionista(String dni, String nombre, String correo) {
+        super(dni, nombre, correo);
+
+    }
+
     @Override
     public void realizarVotacion() {
-        System.out.println("Accionistra tambien va a votar");
-        int aleatorio = ((int)Math.random()*10)*2;
-        System.out.println("El voto del accionista es "+aleatorio);
+        int votoAcc = (int)((int)(Math.random()*10)*2);
+        System.out.println("\nAccionista "+getNombre()+" va a votar");
+        System.out.println("El voto Supremo del accionista "+getNombre()+" es: "+votoAcc);
     }
 }

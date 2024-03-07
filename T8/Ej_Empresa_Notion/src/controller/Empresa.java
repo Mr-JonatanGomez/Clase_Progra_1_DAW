@@ -28,15 +28,13 @@ public class Empresa {
                 ((Asalariado) item).setContratado(true);
             }
         }
-
     }
     public void despedirTrabajador(Trabajador trabajador) {
-
         listaTrabajadores.remove(trabajador);
-
             if (trabajador instanceof Autonomo){
                 ((Autonomo) trabajador).setContratado(false);
             } else if (trabajador instanceof Asalariado){
+                //casteamos trabajador que es de la SUPERclase a ASALARIADO
                 ((Asalariado) trabajador).setContratado(false);
             }
 
@@ -44,7 +42,6 @@ public class Empresa {
 
     public void iniciarJornada() {
         for (Trabajador item : listaTrabajadores) {
-
             item.trabajar();
         }
     }

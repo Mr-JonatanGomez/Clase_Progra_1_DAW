@@ -7,7 +7,7 @@ import lombok.*;
 @NoArgsConstructor
 @Getter
 @Setter
-@RequiredArgsConstructor
+
 public abstract class Persona {
     protected String dni, nombre, correo;
 
@@ -17,8 +17,9 @@ public abstract class Persona {
         this.correo=correo;
     }
     public void mostrarDatos(){
-        System.out.println("dni "+dni);
-        System.out.println();
+        System.out.println("Nombre: "+nombre);
+        System.out.println("dni: "+dni);
+
     }
 
 
