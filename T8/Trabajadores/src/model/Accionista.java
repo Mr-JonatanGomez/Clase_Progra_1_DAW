@@ -1,15 +1,13 @@
 package model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @AllArgsConstructor
+@RequiredArgsConstructor
 @NoArgsConstructor
 @Setter
 @Getter
-public class Accionista extends Persona implements Responsable{
+public abstract class Accionista extends Persona implements Responsable{
     @Override
     public void realizarVotacion() {
         System.out.println("Accionistra tambien va a votar");

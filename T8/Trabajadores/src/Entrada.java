@@ -5,6 +5,6 @@ public class Entrada {
     public static void main(String[] args) {
         //Persona persona = new Persona("122222","pedro","pedro@hick");
         //persona.mostrarDatos();
-        Asalariado asalariado= new Asalariado();
+        Asalariado asalariado= new Asalariado("ppp",",,,,","cscscv",1400,15);
     }
 }

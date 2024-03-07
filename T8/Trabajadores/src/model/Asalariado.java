@@ -1,16 +1,23 @@
 package model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-@AllArgsConstructor
+
+@RequiredArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 public class Asalariado extends Trabajador{
 public int numeroPagas;
+
+    public Asalariado(String dni, String nombre, String correo, int salario, int numeroPagas) {
+        super(dni, nombre, correo, salario);
+        this.setSalario(1000);
+        this.numeroPagas = numeroPagas;
+    }
+
+
+
     @Override
     public void trabajar() {
         System.out.println("inicia jornada");

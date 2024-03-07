@@ -1,20 +1,25 @@
 package model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
-@AllArgsConstructor
+
+
 @NoArgsConstructor
 @Getter
 @Setter
+@RequiredArgsConstructor
 public abstract class Persona {
     protected String dni, nombre, correo;
 
+    public Persona (String dni, String nombre, String correo){
+        this.dni=dni;
+        this.nombre=nombre;
+        this.correo=correo;
+    }
     public void mostrarDatos(){
         System.out.println("dni "+dni);
         System.out.println();
     }
+
 
 }
