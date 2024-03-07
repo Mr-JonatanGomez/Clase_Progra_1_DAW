@@ -45,5 +45,11 @@ public class Empresa {
             item.trabajar();
         }
     }
+
+    public void mostrarPlantillaActual(){
+        for (Trabajador item:listaTrabajadores) {
+            item.mostrarDatos();
+        }
+    }
 }
 
