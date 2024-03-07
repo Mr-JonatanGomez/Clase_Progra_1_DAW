@@ -9,11 +9,11 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Asalariado extends Trabajador{
 
-    private int salario, numeroPagas;//salario compartido con autonomo
+    private int salarioMes, numeroPagas;//salario compartido con autonomo
     private boolean contratado;//compartido con Autonomo
-    public Asalariado(String nombre, String apellido, String dni,int salario, int numeroPagas, boolean contratado){
+    public Asalariado(String nombre, String apellido, String dni,int salarioMes, int numeroPagas, boolean contratado){
         super(nombre, apellido, dni);
-        this.salario=salario;
+        this.salarioMes=salarioMes;
         this.numeroPagas=numeroPagas;
         this.contratado=false;
     }
@@ -31,7 +31,7 @@ public class Asalariado extends Trabajador{
         System.out.println(getNombre());
         System.out.println(getApellido());
         System.out.println(getDni());
-        System.out.println(getSalario());
+        System.out.println(getSalarioMes());
         System.out.println(isContratado());
     }
 }

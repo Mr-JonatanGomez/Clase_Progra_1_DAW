@@ -8,11 +8,11 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Autonomo extends  Trabajador {
-    private int salario;//salario compartido con autonomo
+    private int salarioAnual;//salario compartido con autonomo
     private boolean contratado;//compartido con Autonomo
-    public Autonomo (String nombre, String apellido, String dni,int salario){
+    public Autonomo (String nombre, String apellido, String dni,int salarioAnual){
         super(nombre, apellido, dni);
-        this.salario=salario;
+        this.salarioAnual=salarioAnual;
         this.contratado=false;
     }
     @Override
@@ -30,7 +30,7 @@ public class Autonomo extends  Trabajador {
         System.out.println(getNombre());
         System.out.println(getApellido());
         System.out.println(getDni());
-        System.out.println(getSalario());
+        System.out.println(getSalarioAnual());
         System.out.println(isContratado());
     }
 }
