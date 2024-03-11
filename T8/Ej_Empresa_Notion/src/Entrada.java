@@ -6,7 +6,7 @@ import model.Trabajador;
 
 public class Entrada {
     public static void main(String[] args) {
-        Empresa empresa1 = new Empresa();
+        Empresa empresa1 = new Empresa("los percha");
 
         Jefe jefe = new Jefe("Liam","Gomez","1234a",12,5);
         Asalariado asalariado1=new Asalariado("Pepe","Gotera","2345b",1100,12);
@@ -37,8 +37,9 @@ public class Entrada {
 
         empresa1.mostrarPlantillaActual();
 */
-        Empresa empresa2 = new Empresa();
+        Empresa empresa2 = new Empresa("Los Panderos");
         empresa2.menuRegistro();
         empresa2.mostrarPlantillaActual();
+        empresa2.mostrarDatosEmpresa();
     }
 }

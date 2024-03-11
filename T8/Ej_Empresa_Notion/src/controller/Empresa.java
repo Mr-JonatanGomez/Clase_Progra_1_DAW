@@ -16,11 +16,13 @@ import java.util.Scanner;
 @Getter
 public class Empresa {
     private ArrayList<Trabajador> listaTrabajadores;
+    private String nombre;
     private int numeroJefes = 0;
     private int numeroAutonomos = 0;
     private int numeroAsalariados = 0;
 
-    public Empresa() {
+    public Empresa(String nombre) {
+        this.nombre=nombre;
         this.listaTrabajadores = new ArrayList<>();
     }
 
@@ -72,28 +74,31 @@ public class Empresa {
 
                 case 1:
                     boolean dniRepe = false;
-                    Jefe jefe = new Jefe();
-                    jefe.agregarDatos();
-                    for (Trabajador itemDni : listaTrabajadores) {
-                        if (itemDni.getDni().equalsIgnoreCase(jefe.getDni())) {
-                            dniRepe = true;
-                        } else {
-                            dniRepe = false;
+                    if (numeroJefes < 1) {
+                        Jefe jefe = new Jefe();
+                        jefe.agregarDatos();
+                        for (Trabajador itemDni : listaTrabajadores) {
+                            if (itemDni.getDni().equalsIgnoreCase(jefe.getDni())) {
+                                dniRepe = true;
+                            } else {
+                                dniRepe = false;
+                            }
                         }
-                    }
 
-                    if (numeroJefes < 1 && !dniRepe) {
-                        listaTrabajadores.add(jefe);
-                        numeroJefes++;
+                        if (!dniRepe) {
+                            listaTrabajadores.add(jefe);
+                            numeroJefes++;
+                            break;
+                        } else {
+                            if (dniRepe) {
+                                System.out.println("⚠ No puede repetirse el dni ⚠");
+                            }
+                        }
                         break;
                     } else {
-                        if (dniRepe) {
-                            System.out.println("⚠ No puede haber más de un jefe ⚠");
-                        } else {
-                            System.out.println("⚠ No puede repetirse el dni ⚠");
-                        }
-                        break;
+                        System.out.println("⚠ No puede haber más de un jefe ⚠");
                     }
+                    break;
 
                 case 2:
                     dniRepe = false;
@@ -146,6 +151,13 @@ public class Empresa {
         } while (opcion != 4);
 
 
+    }
+
+    public void mostrarDatosEmpresa(){
+        System.out.println("\nLa empresa "+nombre+" tiene");
+        System.out.println("Numero de Jefes: "+numeroJefes);
+        System.out.println("Numero de Autonomos: "+numeroAutonomos);
+        System.out.println("Numero de Asalariados: "+numeroAsalariados);
     }
 
 }

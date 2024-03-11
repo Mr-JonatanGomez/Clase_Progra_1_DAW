@@ -9,7 +9,7 @@ import java.util.Scanner;
 @Setter
 @Getter
 @NoArgsConstructor
-public class Jefe extends Trabajador implements ResponsableDespidos{
+public class Jefe extends Trabajador /*implements ResponsableDespidos*/{
     private int percAcciones, percBenef;
 
     public Jefe (String nombre, String apellido, String dni, int percAcciones, int percBenef){
