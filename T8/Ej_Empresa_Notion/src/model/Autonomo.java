@@ -4,6 +4,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Scanner;
+
 @NoArgsConstructor
 @Getter
 @Setter
@@ -27,10 +29,15 @@ public class Autonomo extends  Trabajador {
 
     @Override
     public void mostrarDatos() {
-        System.out.println(getNombre());
-        System.out.println(getApellido());
-        System.out.println(getDni());
-        System.out.println(getSalarioAnual());
-        System.out.println(isContratado());
+        super.mostrarDatos();
+        System.out.println("Salario anual: "+getSalarioAnual());
+        //System.out.println(isContratado());
+    }
+    @Override
+    public void agregarDatos() {
+        Scanner sc = new Scanner(System.in);
+        super.agregarDatos();
+        //datos automaticos ⬇⬇
+        setSalarioAnual(15000);
     }
 }

@@ -4,6 +4,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Scanner;
+
 @Setter
 @Getter
 @NoArgsConstructor
@@ -17,5 +19,21 @@ public abstract class Trabajador {
     }
 
     public abstract void trabajar();
-    public abstract void mostrarDatos();
+    public void mostrarDatos(){
+        System.out.println("\nNombre: "+getNombre());
+        System.out.println("Apellido: "+getApellido());
+        System.out.println("DNI: "+getDni());
+    }
+
+    public void agregarDatos() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Introduce nombre");
+        setNombre(sc.next());
+        System.out.println("Introduce apelliedo");
+        setApellido(sc.next());
+        System.out.println("Introduce DNI");
+
+        setDni(sc.next());
+
+    }
 }

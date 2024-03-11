@@ -4,6 +4,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Scanner;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -11,7 +13,7 @@ public class Asalariado extends Trabajador{
 
     private int salarioMes, numeroPagas;//salario compartido con autonomo
     private boolean contratado;//compartido con Autonomo
-    public Asalariado(String nombre, String apellido, String dni,int salarioMes, int numeroPagas, boolean contratado){
+    public Asalariado(String nombre, String apellido, String dni,int salarioMes, int numeroPagas){
         super(nombre, apellido, dni);
         this.salarioMes=salarioMes;
         this.numeroPagas=numeroPagas;
@@ -28,10 +30,19 @@ public class Asalariado extends Trabajador{
 
     @Override
     public void mostrarDatos() {
-        System.out.println(getNombre());
-        System.out.println(getApellido());
-        System.out.println(getDni());
-        System.out.println(getSalarioMes());
-        System.out.println(isContratado());
+        super.mostrarDatos();
+        System.out.println("Salario mensual: "+getSalarioMes());
+        System.out.println("Numero de Pagas: "+getNumeroPagas());
+        //System.out.println(isContratado());
+    }
+
+    @Override
+    public void agregarDatos(){
+        Scanner sc =new Scanner(System.in);
+        super.agregarDatos();
+        //datos automaticos ⬇⬇
+        setSalarioMes(1100);
+        setNumeroPagas(14);
+
     }
 }
