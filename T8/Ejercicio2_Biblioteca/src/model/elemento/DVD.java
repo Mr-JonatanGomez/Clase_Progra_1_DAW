@@ -3,6 +3,8 @@ package model.elemento;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Scanner;
+
 @Setter
 @Getter
 public class DVD extends Media{
@@ -21,5 +23,25 @@ public class DVD extends Media{
         super.mostrarDatos();
         System.out.println("Director: "+getDirector());
         System.out.println("Actores: "+getActores());
+    }
+
+    @Override
+    public void crearDatos() {
+        super.crearDatos();
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Introduce nombre de Director:");
+        setDirector(sc.next());
+        System.out.println("Introduce nombre de Actores:");
+        setActores(sc.next());
+    }
+
+    @Override
+    public boolean prestar() {
+        return false;
+    }
+
+    @Override
+    public boolean devolver() {
+        return false;
     }
 }

@@ -13,4 +13,19 @@ public class Revista extends Lectura{
     public void mostrarDatos() {
         super.mostrarDatos();
     }
+
+    @Override
+    public void crearDatos() {
+        super.crearDatos();
+    }
+
+    @Override
+    public boolean prestar() {
+        return false;
+    }
+
+    @Override
+    public boolean devolver() {
+        return false;
+    }
 }

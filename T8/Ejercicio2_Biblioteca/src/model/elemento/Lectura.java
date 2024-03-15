@@ -3,6 +3,8 @@ package model.elemento;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Scanner;
+
 @Setter
 @Getter
 public abstract class Lectura extends Elemento {
@@ -20,5 +22,13 @@ public abstract class Lectura extends Elemento {
     public void mostrarDatos() {
         super.mostrarDatos();
         System.out.println("ISBN: "+getISBN());
+    }
+
+    @Override
+    public void crearDatos() {
+        Scanner sc = new Scanner(System.in);
+        super.crearDatos();
+        System.out.println("Introduce ISBN:");
+        setISBN(sc.nextInt());
     }
 }

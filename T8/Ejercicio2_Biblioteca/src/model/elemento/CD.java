@@ -17,4 +17,14 @@ public class CD extends Media{
     public void mostrarDatos() {
         super.mostrarDatos();
     }
+
+    @Override
+    public boolean prestar() {
+        return false;
+    }
+
+    @Override
+    public boolean devolver() {
+        return false;
+    }
 }

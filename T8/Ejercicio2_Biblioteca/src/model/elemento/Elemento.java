@@ -2,11 +2,14 @@ package model.elemento;
 
 import lombok.Getter;
 import lombok.Setter;
+import model.Prestable;
+
+import java.util.Scanner;
 
 @Setter
 @Getter
-public abstract class Elemento {
-    private int id;
+public abstract class Elemento implements Prestable {
+    private int id = 1;
     private String titulo, seccion;
     boolean disponible;
 
@@ -24,6 +27,16 @@ public abstract class Elemento {
         System.out.println("Nº Identificador: "+getId());
         System.out.println("Seccion: "+getId());
         System.out.println("Estado de disponibilidad: "+isDisponible());
+
+    }
+    public void crearDatos(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Introduce titulo");
+        setTitulo(sc.next());
+        id+=id;
+        System.out.println("Introduce sección");
+        setSeccion(sc.next());
+        setDisponible(true);
 
     }
 }
