@@ -15,4 +15,11 @@ public class DVD extends Media{
         this.director = director;
         this.actores = actores;
     }
+
+    @Override
+    public void mostrarDatos() {
+        super.mostrarDatos();
+        System.out.println("Director: "+getDirector());
+        System.out.println("Actores: "+getActores());
+    }
 }

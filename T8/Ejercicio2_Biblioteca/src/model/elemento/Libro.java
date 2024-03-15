@@ -17,4 +17,12 @@ public class Libro extends Lectura{
         this.autor = autor;
         this.editorial = editorial;
     }
+
+    @Override
+    public void mostrarDatos() {
+        super.mostrarDatos();
+        System.out.println("Autor del libro: "+getAutor());
+        System.out.println("Editorial: "+getEditorial());
+        System.out.println("Nº de paginas: "+getPaginas());
+    }
 }

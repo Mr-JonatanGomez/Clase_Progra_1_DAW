@@ -18,4 +18,12 @@ public abstract class Elemento {
         this.seccion = seccion;
         this.disponible = disponible;
     }
+
+    public void mostrarDatos(){
+        System.out.println("Titulo: "+getTitulo());
+        System.out.println("Nº Identificador: "+getId());
+        System.out.println("Seccion: "+getId());
+        System.out.println("Estado de disponibilidad: "+isDisponible());
+
+    }
 }

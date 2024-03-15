@@ -14,4 +14,10 @@ public abstract class Media extends Elemento {
         super(id, titulo, seccion, disponible);
         this.yearEdicion = yearEdicion;
     }
+
+    @Override
+    public void mostrarDatos() {
+        super.mostrarDatos();
+        System.out.println("Año de edición: "+getYearEdicion());
+    }
 }

@@ -15,4 +15,10 @@ public abstract class Lectura extends Elemento {
         super(id, titulo, seccion, disponible);
         this.iSBN = iSBN;
     }
+
+    @Override
+    public void mostrarDatos() {
+        super.mostrarDatos();
+        System.out.println("ISBN: "+getISBN());
+    }
 }

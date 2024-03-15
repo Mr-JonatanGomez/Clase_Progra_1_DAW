@@ -12,4 +12,9 @@ public class CD extends Media{
     public CD(int id, String titulo, String seccion, boolean disponible, int yearEdicion) {
         super(id, titulo, seccion, disponible, yearEdicion);
     }
+
+    @Override
+    public void mostrarDatos() {
+        super.mostrarDatos();
+    }
 }
