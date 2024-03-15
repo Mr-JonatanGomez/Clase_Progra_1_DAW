@@ -4,6 +4,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -11,12 +13,17 @@ import lombok.Setter;
 public class Mueble extends Producto implements Inventariable{
     private String material;
     private int peso;
+    private ArrayList<Mueble>listaMuebles;
 
+    public Mueble() {
+        this.listaMuebles=new ArrayList<>();
 
+    }
     public Mueble(double precio, String material, int peso) {
         super(precio);
         this.material = material;
         this.peso = peso;
+        this.listaMuebles=new ArrayList<>();
     }
 
     public String mostrarDatos(){

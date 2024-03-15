@@ -9,14 +9,14 @@ import model.Mueble;
 import model.Producto;
 
 import java.util.ArrayList;
-@NoArgsConstructor
+
 @Setter
 @Getter
 public class Supermercado {
     private ArrayList<Producto>listaProducto;
 
-    public Supermercado(ArrayList<Producto> listaProducto) {
-        this.listaProducto = listaProducto;
+    public Supermercado() {
+        this.listaProducto = new ArrayList<>();
     }
 
     public void registrarProducto(Producto producto){

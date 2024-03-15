@@ -4,17 +4,24 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.ArrayList;
+
 @Getter
 @Setter
-@NoArgsConstructor
+
 
 public class Alimento extends Producto implements Inventariable{
     private String calidad, origen;
+    private ArrayList<Alimento>listaAlimentos;
 
+    public Alimento(){
+        this.listaAlimentos=new ArrayList<>();
+    }
     public Alimento(double precio, String calidad, String origen) {
         super(precio);
         this.calidad = calidad;
         this.origen = origen;
+        this.listaAlimentos= new ArrayList<>();
     }
 
     public String mostrarDatos(){
