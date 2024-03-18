@@ -46,6 +46,7 @@ public abstract class Media {
     }
     public void mostrarDaatosResumen(){
         System.out.println("\nTitulo: " + titulo);
+        System.out.println("\nAutor: " + autor);
 
     }
 

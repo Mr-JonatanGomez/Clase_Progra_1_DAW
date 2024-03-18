@@ -78,7 +78,7 @@ public class AplicacionMultimedia {
         sc.nextLine();
         if (opcionMas == 1) {
             agregarAColeccion();
-        }else {
+        } else {
             menuOpciones();
         }
 
@@ -105,7 +105,8 @@ public class AplicacionMultimedia {
                     } else if (items instanceof Video) {
                         listadoVideos.remove(items);
                         System.out.println("Producto eliminado de Video Correctamente");
-                    }break;
+                    }
+                    break;
                 }
 
             }
@@ -115,7 +116,7 @@ public class AplicacionMultimedia {
         opcionMas = sc.nextInt();
         if (opcionMas == 1) {
             eliminarDeColeccion();
-        }else{
+        } else {
             menuOpciones();
         }
     }
@@ -167,12 +168,34 @@ public class AplicacionMultimedia {
         menuOpciones();
     }
 
+    public void buscarPorAutor() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("¿Los elementos de quien quieres mostrar?");
+        String autorParaMostrar= sc.next();
+        int contadorItems=0;
+        for (Media item:listadoColeccion) {
+            if (item.getAutor().equalsIgnoreCase(autorParaMostrar)) {
+                item.mostrarDaatosResumen();
+                contadorItems++;
+            }
+        }
+        if (contadorItems<1){
+            System.out.println("El autor especificado no tiene videos o no se escribió bien su nombre");
+        }
 
+        System.out.println(" ¿QUIERES HACER OTRA BUSQUEDA?\n1- SI\n2- NO");
+        int buesquedaNueva= sc.nextInt();
+        if( buesquedaNueva ==1){
+            buscarPorAutor();
+        }else {
+            menuOpciones();
+        }
+    }
 
     public void menuOpciones() {
         System.out.println("\t\n¿QUE OPCION QUIERES REALIZAR?" +
                 "\n 1- AGREGAR A LA COLECCION\n 2- ELIMINAR DE LA COLECCION" +
-                "\n 3- LISTAR ELEMENTOS\n 4- SALIR");
+                "\n 3- LISTAR ELEMENTOS\n 4- BUSQUEDA POR AUTOR\n 5- SALIR");
         Scanner sc = new Scanner(System.in);
         int opcion = sc.nextByte();
         switch (opcion) {
@@ -186,6 +209,9 @@ public class AplicacionMultimedia {
                 listarElementosDeLaColeccion();
                 break;
             case 4:
+                buscarPorAutor();
+                break;
+            case 5:
 
                 break;
             default:
