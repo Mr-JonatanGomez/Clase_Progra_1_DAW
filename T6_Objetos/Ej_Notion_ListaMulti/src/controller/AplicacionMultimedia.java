@@ -122,7 +122,7 @@ public class AplicacionMultimedia {
     }
 
     public void listarElementosDeLaColeccion() {
-        int contadorElementos = 0;
+        //int contadorElementos = 0; listadoLibros.size() que ahorra codigo
         System.out.println("¿QUE ELEMENTOS QUIERES MOSTRAR?" +
                 "\n1- LIBROS\n2- AUDIOS\n3- VIDEOS\n4- TODOS");
         Scanner sc = new Scanner(System.in);
@@ -132,35 +132,38 @@ public class AplicacionMultimedia {
                 for (Media item : listadoColeccion) {
                     if (item instanceof Libro) {
                         item.mostrarDaatosResumen();
-                        contadorElementos++;
+
                     }
                 }
-                System.out.println("\n\tEn total hay " + contadorElementos + " Libros");
+
+                System.out.println("\n\tEn total hay " +listadoLibros.size()+ " Libros");
                 break;
             case 2:
                 for (Media item : listadoColeccion) {
                     if (item instanceof Audio) {
                         item.mostrarDaatosResumen();
-                        contadorElementos++;
                     }
                 }
-                System.out.println("\n\tEn total hay " + contadorElementos + " Audios");
+                System.out.println("\n\tEn total hay " +listadoAudios.size()+ " audios");
                 break;
             case 3:
                 for (Media item : listadoColeccion) {
                     if (item instanceof Video) {
                         item.mostrarDaatosResumen();
-                        contadorElementos++;
+
                     }
                 }
-                System.out.println("\n\tEn total hay " + contadorElementos + " Vídeos");
+                System.out.println("\n\tEn total hay " +listadoVideos.size()+ " videos");
                 break;
             case 4:
                 for (Media item : listadoColeccion) {
                     item.mostrarDaatosResumen();
-                    contadorElementos++;
+
                 }
-                System.out.println("\n\tEn total hay " + contadorElementos + " entre todos los elementos de la coleccion");
+                System.out.println("\n\tEn total hay " +listadoColeccion.size()+ " Elementos: desgranados en:");
+                System.out.println("\n\tEn total hay " +listadoLibros.size()+ " Libros");
+                System.out.println("\n\tEn total hay " +listadoAudios.size()+ " audios");
+                System.out.println("\n\tEn total hay " +listadoVideos.size()+ " videos");
                 break;
             default:
                 System.out.println("La opcion no está entre las contempladas");
@@ -220,6 +223,7 @@ public class AplicacionMultimedia {
 
         }
     }
+
 
 
 }
