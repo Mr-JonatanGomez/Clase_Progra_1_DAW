@@ -8,8 +8,8 @@ public class Entrada {
         // Media media2 = new Libro(2,75,"titulo2","autor2","formato2",9876,133);
         // media1.mostrarDatos();
         // media2.mostrarDatos();
-        AplicacionMultimedia Jontify = new AplicacionMultimedia();
+        AplicacionMultimedia superApp = new AplicacionMultimedia();
 
-        Jontify.menuOpciones();
+        superApp.menuOpciones();
     }
 }

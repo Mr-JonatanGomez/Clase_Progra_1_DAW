@@ -65,6 +65,9 @@ public class Competicion {
     }
 
 
+
+
+
     public void mostrarDatosClasGen() {
         System.out.println("\n\t CLASIFICACION FINAL WRC");
         int posicionGen = 1;

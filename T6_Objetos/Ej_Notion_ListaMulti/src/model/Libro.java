@@ -9,13 +9,12 @@ import java.util.Scanner;
 public class Libro extends Media{
     private int iSBN, paginas;
 
+    public Libro() {}
+
     public Libro(int id, int tamano, String titulo, String autor, String formato, int iSBN, int paginas) {
         super(id, tamano, titulo, autor, formato);
         this.iSBN = iSBN;
         this.paginas = paginas;
-    }
-
-    public Libro() {
     }
 
     @Override

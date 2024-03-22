@@ -137,6 +137,7 @@ public class AplicacionMultimedia {
                 }
 
                 System.out.println("\n\tEn total hay " +listadoLibros.size()+ " Libros");
+
                 break;
             case 2:
                 for (Media item : listadoColeccion) {
