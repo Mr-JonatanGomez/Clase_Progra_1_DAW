@@ -45,6 +45,8 @@ public class Entrada {
 
         mundial.clasificacionGeneral();
 
+        mundial.mostrarContain();
+
 
     }
 }

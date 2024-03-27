@@ -174,7 +174,7 @@ public class AplicacionMultimedia {
 
     public void buscarPorAutor() {
         Scanner sc = new Scanner(System.in);
-        System.out.println("¿Los elementos de quien quieres mostrar?");
+        System.out.println("¿Los elementos de que AUTOR quieres buscar?");
         String autorParaMostrar= sc.next();
         int contadorItems=0;
         for (Media item:listadoColeccion) {
