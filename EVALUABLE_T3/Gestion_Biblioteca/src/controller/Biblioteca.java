@@ -13,10 +13,10 @@ public class Biblioteca {
     private String nombre;
     private String director;
     private Catalogo catalogo;
-    private ArrayList<Libro>listaLibrosBiblio;
+    private ArrayList<Libro> listaLibrosBiblio;
 
 
-    public Biblioteca(){
+    public Biblioteca() {
         this.listaLibrosBiblio = new ArrayList<>();
     }
 
@@ -28,19 +28,32 @@ public class Biblioteca {
 
     }
 
-    public void agregarLibro(Libro libro){
-        libro.s
+    public void agregarLibroBiblio(Libro libro) {
+        listaLibrosBiblio.add(libro);
     }
 
-    public void construirCatalogo(){
+    public void mostrarDatosLibros(){
+        for (Libro libro:listaLibrosBiblio) {
+            libro.mostrarDatos();
+        }
+    }
+
+    public void construirCatalogo() {
         Scanner sc = new Scanner(System.in);
         System.out.println("¿Que capacidad de libros tendrá el catalogo?");
         //catalogo.setCapacidadMaxima(sc.nextInt());
-        this.catalogo= new Catalogo(sc.nextInt());
-        System.out.println("Catalogo creado con una capacidad para "+getCatalogo().capacidadMaxima+" libros");
+        this.catalogo = new Catalogo(sc.nextInt());
+        System.out.println("Catalogo creado con una capacidad para " + getCatalogo().capacidadMaxima + " libros");
     }
 
-    public void agregarLibroBiblio(Libro libro){//separar en insertar datos, y luego agregar con los instanceOf
+    public void agregarLibroCatalogo() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Introduce el ISBN del libro que quieres agregar");
+        int isbnAgregar = sc.nextInt();
+
+    }
+
+    /*public void agregarLibroBiblio(Libro libro){//separar en insertar datos, y luego agregar con los instanceOf
         Scanner sc = new Scanner(System.in);
         System.out.println("Agregando libro a coleccion, inserte los datos:\n Titulo: ");
         libro.setTitulo(sc.next());
@@ -94,16 +107,21 @@ public class Biblioteca {
                 }break;
         }
     }
+
+     *///AGREGARLIBRO EXTENSO A LA BIBLIO
     public void consultarCatalogo() {
         System.out.println("El catalogo tiene actualmente ");
     }
-    @Getter@Setter
-    //CLASE ANIDADA CATALOGO
-    class Catalogo{
-        private int capacidadMaxima;
-        private ArrayList<Libro>listaLibrosCatalogo;
 
-        public Catalogo() {}
+    @Getter
+    @Setter
+            //CLASE ANIDADA CATALOGO
+    class Catalogo {
+        private int capacidadMaxima;
+        private ArrayList<Libro> listaLibrosCatalogo;
+
+        public Catalogo() {
+        }
 
         public Catalogo(int capacidadMaxima) {
             this.capacidadMaxima = capacidadMaxima;
