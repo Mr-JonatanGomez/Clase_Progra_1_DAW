@@ -33,7 +33,7 @@ public class AplicacionMultimedia {
         this.productoMedia = productoMedia;
     }
 
-    public void agregarAColeccion() {
+    public void agregarAColeccion(){
         Scanner sc = new Scanner(System.in);
         int opcionMas;
 

@@ -23,6 +23,7 @@ public final class Biblioteca {
         this.director = director;
         this.librosBiblio = new ArrayList<>();
 //TOCHACO DE LIBROS
+        /*
         librosBiblio.add(new LibroTerror("It", "Stephen King", "0001t", 317, 16));
         LibroTerror l2 = new LibroTerror("Misery", "Stephen King", "0002t", 405, 16);
         LibroTerror l3 = new LibroTerror("Joyland", "Stephen King", "0003t", 370, 14);
@@ -45,7 +46,7 @@ public final class Biblioteca {
         LibroComedia l18 = new LibroComedia("El gran libro de la tontería", "Terry Jones", "0018c", 281, TipoHumor.negro);
         LibroComedia l19 = new LibroComedia("Las crónicas marcianas", "Ray Bradbury", "0019c", 368, TipoHumor.negro);
         LibroComedia l20 = new LibroComedia("Diario de Greg", "Jeff Kinney", "0020c", 217, TipoHumor.negro);
-
+        */
     }
 
 
@@ -53,11 +54,11 @@ public final class Biblioteca {
         System.out.println("DATOS BIBLIOTECA");
         System.out.println("nombre = " + nombre);
         System.out.println("director = " + director);
-        catalogo.mostrarDatosCatalogo();
+        this.catalogo.mostrarDatosCatalogo();
     }
 
     public void agregarLibroBiblio(Libro l) {
-        librosBiblio.add(l);
+      //  librosBiblio.add(l);
     }
 
     public void crearCatalogo() {
@@ -67,16 +68,18 @@ public final class Biblioteca {
         this.catalogo = new Catalogo(capacidad);
     }
 
-    public void agregarLibroEnCatalogo() {
-        catalogo.agregarLibroAlCatalogo();
+    public void agregarLibroEnCatalogo(Libro libro) {//En catalogo es de biblio // al catalogo de catalogo
+        this.catalogo.agregarLibroAlCatalogo(libro);
     }
 
-    public void crearBiblioteca(String nombre, String director) {
+    public void crearBiblioteca(String nombre, String director) {//quizas inservible
         Scanner sc = new Scanner(System.in);
+        System.out.println("HAS CREADO UNA BIBLIOTECA");
+        System.out.println("introduce sus datos");
         System.out.println("Nombre de Biblioteca");
-        nombre = sc.next();
+        setNombre(sc.next());
         System.out.println("Nombre del Director");
-        director = sc.next();
+        setDirector(sc.next());
     }
 
     public void busquedaISBN() {
@@ -90,7 +93,7 @@ public final class Biblioteca {
         }
     }
 ///////////////////////////////////SECTOR CATALOGO/////////////////////////////////////////
-
+//////////////////////////////////////////////////////////////////////////////////////////
     // CATALOGO ANIDADO
     @Setter
     @Getter
@@ -101,45 +104,58 @@ public final class Biblioteca {
 
 
         public Catalogo() {
+            this.librosEnCatalogo = new ArrayList<>();
         }
 
         public Catalogo(int capacidad) {
+
             this.capacidad = capacidad;
             this.capacidadMaxAlcanzada = false;
             this.librosEnCatalogo = new ArrayList<>();
         }
 
 
-        public void agregarLibroAlCatalogo() {
+        public void agregarLibroAlCatalogo(Libro libro) {
+            Scanner sc = new Scanner(System.in);
+            //librosEnCatalogo.add(libro);// funciona
+            System.out.println("Comprobando capacidad del catalogo actual:..." +
+                    "\n ahora mismo hay "+librosEnCatalogo.size() +" libros en catalogo");
+            if(librosEnCatalogo.size()>=capacidad){
+                isCapacidadMaxAlcanzada();
 
-            /*Scanner sc = new Scanner(System.in);
-            System.out.println("Introduce ISBN que quieres agregar al catalogo");
-            String isbnP = sc.next();
-            for (Libro item : librosBiblio) {
-                if (item.getIsbn().equalsIgnoreCase(isbnP)) {
-                    System.out.println("El libro está en bliblio y puede añadirse...");
-                    if (catalogo.isCapacidadMaxAlcanzada()) {
-                        System.out.println("NO SE PUEDE AGREGAR ESTA LLENO EL CATALOGO");//LANZAR EXCEPTION
-                    } else {
-                        for (Libro item2 : librosEnCatalogo) {
-                            if (item2.getIsbn().equalsIgnoreCase(isbnP)) {
-                                System.out.println("NO SE PUEDE AGREGAR, ESTÁ REPETIDO");
-                            } else {
-                                librosEnCatalogo.add(item2);
-                            }
-                        }
+            } else if (!isCapacidadMaxAlcanzada()){//CONDICION SI CABEN MAS LIBROS
+                System.out.println("Introduce ISBN del libro que quieres agregar al catalogo");
+                String isbnP = sc.next();
+                boolean repetido = false;
+
+                for (Libro item:librosEnCatalogo) {
+                    if(item.getIsbn().equalsIgnoreCase(isbnP)){
+                        System.out.println("El libro ya existe en catalogo");//lanzar exception
+                        repetido = true;
+                        break;
                     }
                 }
+                if (!repetido){
+                    librosEnCatalogo.add(libro);
+                    System.out.println("Se agregó el libro: "+libro.getTitulo()+" al catalogo");
+                }
 
+            }else{
+                //cazar exception
+                System.out.println("No caben más libros");
             }
-            for (Libro libro : librosEnCatalogo) {
-                libro.mostrarDatos();
-            }*/
+
         }
 
         public void mostrarDatosCatalogo() {
             System.out.println("DATOS DEL CATALOGO");
             System.out.println("Este catalogo tiene una capacidad de " + capacidad + " libros");
+
+            for (Libro item:librosEnCatalogo) {
+                System.out.println("MOSTRANDO DATOS DE LIBRO");
+                item.mostrarDatos();
+                System.out.println("Capacidad actual es"+librosEnCatalogo.size());
+            }
            // System.out.println(librosEnCatalogo);
 
         }

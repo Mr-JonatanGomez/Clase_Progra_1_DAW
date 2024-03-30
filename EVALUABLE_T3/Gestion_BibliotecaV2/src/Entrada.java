@@ -2,10 +2,11 @@ import controller.Biblioteca;
 import model.*;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Entrada {
     public static void main(String[] args) {
-
+        Scanner sc = new Scanner(System.in);
 
         //LIBROS DISPONIBLES
         LibroTerror l1 = new LibroTerror("It", "Stephen King", "0001t", 317, 16);
@@ -40,6 +41,9 @@ public class Entrada {
 
         b.crearCatalogo();
 
+        b.agregarLibroEnCatalogo(l1);
+        b.agregarLibroEnCatalogo(l3);
+        b.agregarLibroEnCatalogo(l4);
         b.mostrarDatosBiblio();
 
 
