@@ -2,23 +2,26 @@ package controller;
 
 import lombok.Getter;
 import lombok.Setter;
-import model.*;
+import model.Libro;
+import model.LibroComedia;
+import model.LibroPoliciaco;
+import model.LibroTerror;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
 @Setter
 @Getter
-public final class Biblioteca {
+public final class BibliotecaSINPARAM {
     private String nombre, director;
     private ArrayList<Libro> librosBiblio;
     private Catalogo catalogo;
 
-    public Biblioteca() {
+    public BibliotecaSINPARAM() {
         this.librosBiblio = new ArrayList<>();
     }
 
-    public Biblioteca(String nombre, String director) {
+    public BibliotecaSINPARAM(String nombre, String director) {
         this.nombre = nombre;
         this.director = director;
         this.librosBiblio = new ArrayList<>();
@@ -58,7 +61,7 @@ public final class Biblioteca {
     }
 
     public void agregarLibroBiblio(Libro l) {
-        //  librosBiblio.add(l);
+      //  librosBiblio.add(l);
     }
 
     public void crearCatalogo() {
@@ -69,7 +72,7 @@ public final class Biblioteca {
     }
 
     public void agregarLibroEnCatalogo(Libro libro) {//En catalogo es de biblio // al catalogo de catalogo
-        this.catalogo.agregarLibroAlCatalogo(libro);
+      //  this.catalogo.agregarLibroAlCatalogo(libro);
     }
 
     public void crearBiblioteca(String nombre, String director) {//quizas inservible
@@ -92,7 +95,7 @@ public final class Biblioteca {
             }
         }
     }
-    ///////////////////////////////////SECTOR CATALOGO/////////////////////////////////////////
+///////////////////////////////////SECTOR CATALOGO/////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
     // CATALOGO ANIDADO
     @Setter
@@ -115,32 +118,107 @@ public final class Biblioteca {
         }
 
 
-        public void agregarLibroAlCatalogo(Libro libro) {
+        public void agregarLibroAlCatalogo() {
+
             Scanner sc = new Scanner(System.in);
             //librosEnCatalogo.add(libro);// funciona
             System.out.println("Comprobando capacidad del catalogo actual:..." +
                     "\n ahora mismo hay "+librosEnCatalogo.size() +" libros en catalogo");
 
-            if (librosEnCatalogo.size()<capacidad){//CONDICION SI CABEN MAS LIBROS
-                System.out.println("Introduce ISBN del libro que quieres agregar al catalogo");
-                String isbnP = sc.next();
-                boolean repetido = false;
 
-                for (Libro item:librosEnCatalogo) {
-                    if(item.getIsbn().equalsIgnoreCase(isbnP)){
-                        System.out.println("El libro ya existe en catalogo");//lanzar exception
-                        repetido = true;
-                        break;
+            System.out.println("\t¿¿QUE TIPO DE LIBRO VAS A AGREGAR??" +
+                    "\n\t1- TERROR.\t2- POLICIACO.\t3- COMEDIA.");
+
+            int opcion = sc.nextInt();
+            switch (opcion){
+                case 1:
+                    LibroTerror lt = new LibroTerror();
+                    if(librosEnCatalogo.size()>=capacidad){
+                        isCapacidadMaxAlcanzada();
+                        System.out.println("CAPACIDAD MAXIMA ALCANZADA");
+
+                    } else if (!isCapacidadMaxAlcanzada()){//CONDICION SI CABEN MAS LIBROS
+                        System.out.println("Introduce ISBN del libro que quieres agregar al catalogo");
+                        String isbnP = sc.next();
+                        boolean repetido = false;
+
+                        for (Libro item:librosEnCatalogo) {
+                            if(item.getIsbn().equalsIgnoreCase(isbnP)){
+                                System.out.println("El libro ya existe en catalogo");//lanzar exception
+                                repetido = true;
+                                break;
+                            }
+                        }
+                        if (!repetido){
+                            librosEnCatalogo.add(lt);
+                            System.out.println("Se agregó el libro: "+lt.getTitulo()+" al catalogo");
+                        }
+
+                    }else{
+                        //cazar exception
+                        System.out.println("No caben más libros");
                     }
-                }
-                if (!repetido){
-                    librosEnCatalogo.add(libro);
-                }
+                    break;
+                case 2:
+                    LibroPoliciaco lp = new LibroPoliciaco();
+                    if(librosEnCatalogo.size()>=capacidad){
+                        isCapacidadMaxAlcanzada();
+                        System.out.println("CAPACIDAD MAXIMA ALCANZADA");
 
-            }else{
-                //cazar exception
-                System.out.println("No caben más libros");
+                    } else if (!isCapacidadMaxAlcanzada()){//CONDICION SI CABEN MAS LIBROS
+                        System.out.println("Introduce ISBN del libro que quieres agregar al catalogo");
+                        String isbnP = sc.next();
+                        boolean repetido = false;
+
+                        for (Libro item:librosEnCatalogo) {
+                            if(item.getIsbn().equalsIgnoreCase(isbnP)){
+                                System.out.println("El libro ya existe en catalogo");//lanzar exception
+                                repetido = true;
+                                break;
+                            }
+                        }
+                        if (!repetido){
+                            librosEnCatalogo.add(lp);
+                            System.out.println("Se agregó el libro: "+lp.getTitulo()+" al catalogo");
+                        }
+
+                    }else{
+                        //cazar exception
+                        System.out.println("No caben más libros");
+                    }
+                    break;
+                case 3:
+                    LibroComedia lc = new LibroComedia();
+                    if(librosEnCatalogo.size()>=capacidad){
+                        isCapacidadMaxAlcanzada();
+                        System.out.println("CAPACIDAD MAXIMA ALCANZADA");
+
+                    } else if (!isCapacidadMaxAlcanzada()){//CONDICION SI CABEN MAS LIBROS
+                        System.out.println("Introduce ISBN del libro que quieres agregar al catalogo");
+                        String isbnP = sc.next();
+                        boolean repetido = false;
+
+                        for (Libro item:librosEnCatalogo) {
+                            if(item.getIsbn().equalsIgnoreCase(isbnP)){
+                                System.out.println("El libro ya existe en catalogo");//lanzar exception
+                                repetido = true;
+                                break;
+                            }
+                        }
+                        if (!repetido){
+                            librosEnCatalogo.add(lc);
+                            System.out.println("Se agregó el libro: "+lc.getTitulo()+" al catalogo");
+                        }
+
+                    }else{
+                        //cazar exception
+                        System.out.println("No caben más libros");
+                    }
+                    break;
+                default:
+                    break;
             }
+
 
         }
 
@@ -153,7 +231,7 @@ public final class Biblioteca {
                 item.mostrarDatos();
                 System.out.println("Capacidad actual es"+librosEnCatalogo.size());
             }
-            // System.out.println(librosEnCatalogo);
+           // System.out.println(librosEnCatalogo);
 
         }
     }

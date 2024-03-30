@@ -1,4 +1,5 @@
 import controller.Biblioteca;
+import controller.BibliotecaSINPARAM;
 import model.*;
 
 import java.util.ArrayList;
@@ -33,17 +34,17 @@ public class Entrada {
         LibroComedia l20 = new LibroComedia("Diario de Greg", "Jeff Kinney", "0020c", 217, TipoHumor.negro);
 
 
-
         //b.busquedaISBN();
 
         //Biblioteca.Catalogo catalogo = b.new Catalogo();
         Biblioteca b = new Biblioteca("Biblioteca Municipal","Cooperativa");
-
+        BibliotecaSINPARAM b1 = new BibliotecaSINPARAM("SOP","SAP");
         b.crearCatalogo();
 
-        b.agregarLibroEnCatalogo(l1);
-        b.agregarLibroEnCatalogo(l3);
-        b.agregarLibroEnCatalogo(l4);
+        b.agregarLibroEnCatalogo();
+        b.agregarLibroEnCatalogo();
+        b.agregarLibroEnCatalogo();
+        b1.agregarLibroEnCatalogo();
         b.mostrarDatosBiblio();
 
 
