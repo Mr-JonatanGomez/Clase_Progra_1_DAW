@@ -92,6 +92,7 @@ public final class Biblioteca {
             }
         }
     }
+
     ///////////////////////////////////SECTOR CATALOGO/////////////////////////////////////////
 //////////////////////////////////////////////////////////////////////////////////////////
     // CATALOGO ANIDADO
@@ -114,30 +115,44 @@ public final class Biblioteca {
             this.librosEnCatalogo = new ArrayList<>();
         }
 
+        //METODO CATALOGO LLENO
+        public void catalogoLleno() {
+            if (librosEnCatalogo.size() >= capacidad) {
+                System.out.println(" EL CATALOGO ESTÁ LLENO, PARA AGREGAR UN LIBRO, HAY QUE SACAR OTRO PRIMERO");
+                capacidadMaxAlcanzada = true;
+            } else if (librosEnCatalogo.size() < capacidad) {
+                System.out.println("EL CATALOGO DISPONE AÚN DE " + (capacidad - librosEnCatalogo.size()) + " HUECOS DISPONIBLES");
+                capacidadMaxAlcanzada = false;
+            }
+        }//METODO CATALOGO LLENO
+
+
+        //NUEVO FORMATO AGREGAR... DE LIBROS MUNDO con instancia
 
         public void agregarLibroAlCatalogo(Libro libro) {
             Scanner sc = new Scanner(System.in);
             //librosEnCatalogo.add(libro);// funciona
             System.out.println("Comprobando capacidad del catalogo actual:..." +
-                    "\n ahora mismo hay "+librosEnCatalogo.size() +" libros en catalogo");
+                    "\n ahora mismo hay " + librosEnCatalogo.size() + " libros en catalogo");
+            catalogoLleno();
 
-            if (librosEnCatalogo.size()<capacidad){//CONDICION SI CABEN MAS LIBROS
+            if (librosEnCatalogo.size() < capacidad) {//CONDICION SI CABEN MAS LIBROS
                 System.out.println("Introduce ISBN del libro que quieres agregar al catalogo");
                 String isbnP = sc.next();
                 boolean repetido = false;
 
-                for (Libro item:librosEnCatalogo) {
-                    if(item.getIsbn().equalsIgnoreCase(isbnP)){
+                for (Libro item : librosEnCatalogo) {
+                    if (item.getIsbn().equalsIgnoreCase(isbnP)) {
                         System.out.println("El libro ya existe en catalogo");//lanzar exception
                         repetido = true;
                         break;
                     }
                 }
-                if (!repetido){
+                if (!repetido) {
                     librosEnCatalogo.add(libro);
                 }
 
-            }else{
+            } else {
                 //cazar exception
                 System.out.println("No caben más libros");
             }
@@ -148,10 +163,10 @@ public final class Biblioteca {
             System.out.println("DATOS DEL CATALOGO");
             System.out.println("Este catalogo tiene una capacidad de " + capacidad + " libros");
 
-            for (Libro item:librosEnCatalogo) {
+            for (Libro item : librosEnCatalogo) {
                 System.out.println("MOSTRANDO DATOS DE LIBRO");
                 item.mostrarDatos();
-                System.out.println("Capacidad actual es"+librosEnCatalogo.size());
+                System.out.println("Capacidad actual es" + librosEnCatalogo.size());
             }
             // System.out.println(librosEnCatalogo);
 

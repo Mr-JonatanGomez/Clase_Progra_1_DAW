@@ -38,13 +38,13 @@ public class Entrada {
 
         //Biblioteca.Catalogo catalogo = b.new Catalogo();
         Biblioteca b = new Biblioteca("Biblioteca Municipal","Cooperativa");
-        BibliotecaSINPARAM b1 = new BibliotecaSINPARAM("SOP","SAP");
+
         b.crearCatalogo();
 
-        b.agregarLibroEnCatalogo();
-        b.agregarLibroEnCatalogo();
-        b.agregarLibroEnCatalogo();
-        b1.agregarLibroEnCatalogo();
+        b.agregarLibroEnCatalogo(l1);
+        b.agregarLibroEnCatalogo(l2);
+        b.agregarLibroEnCatalogo(l3);
+
         b.mostrarDatosBiblio();
 
 
