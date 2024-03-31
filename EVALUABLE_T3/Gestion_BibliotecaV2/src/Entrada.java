@@ -38,14 +38,15 @@ public class Entrada {
 
         //Biblioteca.Catalogo catalogo = b.new Catalogo();
         Biblioteca b = new Biblioteca("Biblioteca Municipal","Cooperativa");
-
+        b.mostrarGlobal();
+/*
         b.crearCatalogo();
 
         b.agregarLibroEnCatalogo(l1);
         b.agregarLibroEnCatalogo(l2);
         b.agregarLibroEnCatalogo(l3);
 
-        b.mostrarDatosBiblio();
+        b.mostrarDatosBiblio();*/
 
 
 

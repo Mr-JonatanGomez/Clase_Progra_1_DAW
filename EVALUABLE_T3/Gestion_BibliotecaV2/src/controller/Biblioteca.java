@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 @Setter
 @Getter
-public final class Biblioteca {
+public class Biblioteca extends LibrosMundo{
     private String nombre, director;
     private ArrayList<Libro> librosBiblio;
     private Catalogo catalogo;
@@ -57,8 +57,10 @@ public final class Biblioteca {
         this.catalogo.mostrarDatosCatalogo();
     }
 
-    public void agregarLibroBiblio(Libro l) {
+    public void mostrarGlobal() {
         //  librosBiblio.add(l);
+        getListaGlobalLibros();
+
     }
 
     public void crearCatalogo() {
@@ -70,6 +72,14 @@ public final class Biblioteca {
 
     public void agregarLibroEnCatalogo(Libro libro) {//En catalogo es de biblio // al catalogo de catalogo
         this.catalogo.agregarLibroAlCatalogo(libro);
+    }
+///INDAGAR AQUI LAS PRUEBAS
+    public void agregarLibroEnCatalogoDesdeBiblio() {//En catalogo es de biblio // al catalogo de catalogo
+        ArrayList<Libro> listaGlobalLibros = DepositoLibros.crearLibros();
+        for (Libro libro :listaGlobalLibros) {
+
+            this.catalogo.agregarLibroAlCatalogo(libro);
+        }
     }
 
     public void crearBiblioteca(String nombre, String director) {//quizas inservible
@@ -136,7 +146,7 @@ public final class Biblioteca {
                     "\n ahora mismo hay " + librosEnCatalogo.size() + " libros en catalogo");
             catalogoLleno();
 
-            if (librosEnCatalogo.size() < capacidad) {//CONDICION SI CABEN MAS LIBROS
+            if (!isCapacidadMaxAlcanzada()) {//CONDICION SI CABEN MAS LIBROS
                 System.out.println("Introduce ISBN del libro que quieres agregar al catalogo");
                 String isbnP = sc.next();
                 boolean repetido = false;
