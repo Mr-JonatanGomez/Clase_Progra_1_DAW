@@ -74,21 +74,8 @@ public class Biblioteca extends LibrosMundo{
         this.catalogo.agregarLibroAlCatalogo();
     }
 ///INDAGAR AQUI LAS PRUEBAS
-    public void agregarLibroEnCatalogoDesdeBiblio() {//En catalogo es de biblio // al catalogo de catalogo
-        ArrayList<Libro> listaGlobalLibros = DepositoLibros.crearLibros();
-        for (Libro libro :listaGlobalLibros) {
-            this.catalogo.agregarLibroAlCatalogo();
-        }
-    }
-
-    public void crearBiblioteca(String nombre, String director) {//quizas inservible
-        Scanner sc = new Scanner(System.in);
-        System.out.println("HAS CREADO UNA BIBLIOTECA");
-        System.out.println("introduce sus datos");
-        System.out.println("Nombre de Biblioteca");
-        setNombre(sc.next());
-        System.out.println("Nombre del Director");
-        setDirector(sc.next());
+    public void eliminarLibroEnCatalogo(){
+        this.catalogo.eliminarLibroAlCatalogo();
     }
 
     public void busquedaISBN() {
@@ -173,90 +160,55 @@ public class Biblioteca extends LibrosMundo{
                         for (Libro item : listaGlobalLibros) {
                             if (item.getIsbn().equalsIgnoreCase(isbnP)) {
                                 listaLibrosEnCatalogo.add(item);
-                                System.out.println("El libro: " + item.getTitulo() + " con ISBN: " + item.getIsbn() + ", ha sido agregado al catálogo");
+                                System.out.println("✅El libro: " + item.getTitulo() + " con ISBN: " + item.getIsbn() + ", ha sido agregado al catálogo✅");
                                 break;
                             }
                         }
                     } else {
-                        System.out.println("El libro ya está en el catálogo");
+                        System.out.println("🚫El libro ya está en el catálogo🚫");
                     }
                 } else {
-                    System.out.println("El ISBN introducido no existe en la lista de libros disponibles");
+                    System.out.println("⛔El ISBN introducido no existe en la lista de libros disponibles⛔");
                 }
             } else {
-                System.out.println("No caben más libros en el catálogo");
+                System.out.println("Catalogo lleno, No caben más libros en el catálogo");
             }
         }
-
-        public void agregarLibroAlCatalogo3() {
+        public void eliminarLibroAlCatalogo(){
+            //mostrar los isbn del catalogo actual y preguntar cual borrar
             Scanner sc = new Scanner(System.in);
-            ArrayList<Libro> listaGlobalLibros = DepositoLibros.crearLibros();
-            System.out.println("Comprobando capacidad del catalogo actual:..." +
-                    "\n ahora mismo hay " + catalogo.getListaLibrosEnCatalogo().size() + " libros en catalogo");
+            String isbnEliminar;
 
-            catalogoLleno();
-
-            if (!isCapacidadMaxAlcanzada()) {//CONDICION SI CABEN MAS LIBROS
-                System.out.println("Introduce ISBN del libro que quieres agregar al catalogo");
-                String isbnP = sc.next();
-                boolean repetido = false;
-
-                for (Libro item : listaLibrosEnCatalogo) {
-                    if (item.getIsbn().equalsIgnoreCase(isbnP)) {
-                        System.out.println("El libro ya existe en catalogo");//lanzar exception
-                        repetido = true;
-                        break;
-                    } else {
-                        listaLibrosEnCatalogo.add(item);
-                        System.out.println("El libro: "+item.getTitulo()+" con ISBN: "+item.getIsbn()+", ha sido agregado al catalogo");
-                    }
+            System.out.println("⚠\uFE0F ¡VAS A ELIMINAR UN LIBRO DEL CATALOGO!⚠\uFE0F");
+            System.out.println("Mostrando los ISBN que hay en el catalogo");
+            for (Libro libro:listaLibrosEnCatalogo) {
+                System.out.print("\t"+libro.getIsbn()+";");
+            }
+            System.out.println("\n¿¿Que ISBN quieres sacar??");
+            isbnEliminar = sc.next();
+            boolean isbnEncontrado= false;
+            for (Libro item:listaLibrosEnCatalogo) {
+                if (item.getIsbn().equalsIgnoreCase(isbnEliminar)){
+                    isbnEncontrado=true;
+                    listaLibrosEnCatalogo.remove(item);
+                    System.out.println("EL LIBRO FUE ELIMINADO CORRECTAMENTE");
+                    break;
                 }
-
-
-            } else {
-                //cazar exception
-                System.out.println("No caben más libros");
+            }
+            if(!isbnEncontrado){
+                System.out.println("El ISBN no existe en este catalogo");
             }
 
         }
-        //ESTE ES EL BUENO BUENO SI FALLA
-        public void agregarLibroAlCatalogo2(Libro libro) {
-            Scanner sc = new Scanner(System.in);
-            //librosEnCatalogo.add(libro);// funciona
-            System.out.println("Comprobando capacidad del catalogo actual:..." +
-                    "\n ahora mismo hay " + listaLibrosEnCatalogo.size() + " libros en catalogo");
-            catalogoLleno();
 
-            if (!isCapacidadMaxAlcanzada()) {//CONDICION SI CABEN MAS LIBROS
-                System.out.println("Introduce ISBN del libro que quieres agregar al catalogo");
-                String isbnP = sc.next();
-                boolean repetido = false;
-
-                for (Libro item : listaLibrosEnCatalogo) {
-                    if (item.getIsbn().equalsIgnoreCase(isbnP)) {
-                        System.out.println("El libro ya existe en catalogo");//lanzar exception
-                        repetido = true;
-                        break;
-                    }
-                }
-                if (!repetido) {
-                    listaLibrosEnCatalogo.add(libro);
-                }
-
-            } else {
-                //cazar exception
-                System.out.println("No caben más libros");
-            }
-
-        }
         public void mostrarDatosCatalogo() {
-            System.out.println("DATOS DEL CATALOGO");
-            System.out.println("Este catalogo tiene una capacidad de " + capacidad + " libros");
+            System.out.println("\nDATOS DEL CATALOGO");
+            System.out.println("Este catalogo tiene una capacidad total de " + capacidad + " libros");
+            System.out.println("El numero de libros en catalogo actualmente es: " + listaLibrosEnCatalogo.size());
 
             for (Libro item : listaLibrosEnCatalogo) {
                 System.out.println("MOSTRANDO DATOS DE LIBRO");
                 item.mostrarDatos();
-                System.out.println("Capacidad actual es" + listaLibrosEnCatalogo.size());
             }
             // System.out.println(librosEnCatalogo);
 

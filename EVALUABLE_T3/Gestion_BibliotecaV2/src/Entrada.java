@@ -45,6 +45,7 @@ public class Entrada {
         b.agregarLibroEnCatalogo();
         b.agregarLibroEnCatalogo();
         b.agregarLibroEnCatalogo();
+        b.eliminarLibroEnCatalogo();
 
         b.mostrarDatosBiblio();
 
