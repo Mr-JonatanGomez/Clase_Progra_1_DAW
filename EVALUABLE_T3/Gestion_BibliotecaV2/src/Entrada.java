@@ -1,5 +1,4 @@
 import controller.Biblioteca;
-import controller.BibliotecaSINPARAM;
 import model.*;
 
 import java.util.ArrayList;
@@ -37,8 +36,11 @@ public class Entrada {
         //b.busquedaISBN();
 
         //Biblioteca.Catalogo catalogo = b.new Catalogo();
-        Biblioteca b = new Biblioteca("Biblioteca Municipal","Cooperativa");
-        b.mostrarGlobal();
+
+        //b.mostrarGlobal(); sin implementar este metodo
+        Biblioteca biblioteca1 = new Biblioteca("Biblioteca Municipal", "Cooperativa");
+/*
+        Biblioteca b = new Biblioteca("Biblioteca Municipal", "Cooperativa");
 
         b.crearCatalogo();
 
@@ -49,7 +51,51 @@ public class Entrada {
 
         b.mostrarDatosBiblio();
 
+*/
+        int opcionMenu;
+        do {
+            System.out.println("\t\t\t\t\t\t\t\uD83C\uDFDB\uFE0F¿QUE QUIERES HACER?\uD83C\uDFDB\uFE0F" +
+                    "\n1- EDITAR BIBLIOTECA 📚\t\t3- AGREGAR LIBRO AL CATALOGO ➕📗\t\t5- MOSTRAR DATOS BIBLIOTECA 📖" +
+                    "\n2- CREAR CATALOGO \uD83D\uDDC3\uFE0F\t\t4- ELIMINAR LIBRO DEL CATALOGO ➖📕\t\t6- MOSTRAR LIBROS DEL MUNDO" +
+                    "\n9- SALIR 👋🏻");
+            opcionMenu = sc.nextInt();
+            switch (opcionMenu) {
+                case 1:
+                    //Scanner sc = new Scanner(System.in);
+                    System.out.println("Introduzca nombre de la Biblioteca");
+                    biblioteca1.setNombre(sc.next());
+                    System.out.println("Introduzca director de la Biblioteca");
+                    biblioteca1.setDirector(sc.next());
+                    break;
+                case 2:
+                    biblioteca1.crearCatalogo();
+                    break;
+                case 3:
+                    biblioteca1.agregarLibroEnCatalogo();
+                    break;
+                case 4:
+                    biblioteca1.eliminarLibroEnCatalogo();
+                    break;
+                case 5:
+                    biblioteca1.mostrarDatosBiblio();
+                    break;
+                case 6:
+                    ArrayList<Libro> listaGlobalLibros = DepositoLibros.crearLibros();
+                    for (Libro libro:listaGlobalLibros) {
+                        libro.mostrarDatos();
+                    }
+                    break;
+                case 9:
+                    System.out.println("CERRANDO PROGRAMA");
+                    break;
+                default:
+                    System.out.println("OPCION NO CONTEMPLADA");
+                    break;
+            }
+        }while (opcionMenu != 9);
+
 
 
     }
+
 }

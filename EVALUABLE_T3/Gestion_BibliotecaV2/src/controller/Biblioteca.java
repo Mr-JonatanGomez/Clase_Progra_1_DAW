@@ -98,7 +98,7 @@ public class Biblioteca extends LibrosMundo{
         private ArrayList<Libro> listaLibrosEnCatalogo;
         private int capacidad;
         private boolean capacidadMaxAlcanzada;
-
+        //private ArrayList<Libro> listaGlobalLibros = DepositoLibros.crearLibros(); //sobra esta linea o sobra en agregarLibroAlCatalogo
 
         public Catalogo() {
             this.listaLibrosEnCatalogo = new ArrayList<>();
@@ -126,11 +126,12 @@ public class Biblioteca extends LibrosMundo{
         //NUEVO FORMATO AGREGAR... DE LIBROS MUNDO con instancia
         public void agregarLibroAlCatalogo() {
             Scanner sc = new Scanner(System.in);
-            ArrayList<Libro> listaGlobalLibros = DepositoLibros.crearLibros();
-            System.out.println("Comprobando capacidad del catálogo actual:..." +
-                    "\n ahora mismo hay " + listaLibrosEnCatalogo.size() + " libros en el catálogo");
 
-            catalogoLleno(); // Actualizar el estado de capacidadMaxAlcanzada
+            ArrayList<Libro> listaGlobalLibros = DepositoLibros.crearLibros();//sobra esta linea o sobra en los atributos
+            System.out.println("Comprobando capacidad del catálogo actual:..." +
+                    "\n Actualmente hay " + listaLibrosEnCatalogo.size() + " libros en el catálogo");
+
+            catalogoLleno(); // Actualizar el estado de capacidadMaxAlcanzada con true o false
 
             if (!isCapacidadMaxAlcanzada()) {
                 System.out.println("Introduce el ISBN del libro que quieres agregar al catálogo");
