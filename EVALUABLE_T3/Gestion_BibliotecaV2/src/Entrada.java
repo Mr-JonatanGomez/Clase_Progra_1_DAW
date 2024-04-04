@@ -58,6 +58,40 @@ public class Entrada {
                 "\n2- TERROR (solo admite libros de terror)" +
                 "\n3- POLICIACA (solo admite novelas policiacas)" +
                 "\n4- COMEDIA (solo admite libros de comedia)\n");
+        opcionMenuPrin = sc.nextInt();
+        switch (opcionMenuPrin) {
+            case 1:
+                //Scanner sc = new Scanner(System.in);
+                System.out.println("Introduzca nombre de la Biblioteca");
+                biblioteca1.setNombre(sc.next());
+                System.out.println("Introduzca director de la Biblioteca");
+                biblioteca1.setDirector(sc.next());
+                break;
+            case 2:
+                biblioteca1.crearCatalogo();
+                break;
+            case 3:
+                biblioteca1.agregarLibroEnCatalogo();
+                break;
+            case 4:
+                biblioteca1.eliminarLibroEnCatalogo();
+                break;
+            case 5:
+                biblioteca1.mostrarDatosBiblio();
+                break;
+            case 6:
+                ArrayList<Libro> listaGlobalLibros = DepositoLibros.crearLibros();
+                for (Libro libro : listaGlobalLibros) {
+                    libro.mostrarDatos();
+                }
+                break;
+            case 9:
+                System.out.println("CERRANDO PROGRAMA");
+                break;
+            default:
+                System.out.println("OPCION NO CONTEMPLADA");
+                break;
+        }
 
         int opcionMenuInterior;
         do {
