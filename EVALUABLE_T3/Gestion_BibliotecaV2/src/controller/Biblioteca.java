@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 @Setter
 @Getter
-public class Biblioteca<T extends Libro>{
+public class Biblioteca<T extends Libro> {
     private String nombre, director;
     private ArrayList<T> librosBiblio;
     private Catalogo catalogo;
@@ -73,8 +73,9 @@ public class Biblioteca<T extends Libro>{
     public void agregarLibroEnCatalogo() {//En catalogo es de biblio // al catalogo de catalogo
         this.catalogo.agregarLibroAlCatalogo();
     }
-///INDAGAR AQUI LAS PRUEBAS
-    public void eliminarLibroEnCatalogo(){
+
+    ///INDAGAR AQUI LAS PRUEBAS
+    public void eliminarLibroEnCatalogo() {
         this.catalogo.eliminarLibroAlCatalogo();
     }
 
@@ -125,13 +126,14 @@ public class Biblioteca<T extends Libro>{
 
         //NUEVO FORMATO AGREGAR... DE LIBROS MUNDO con instancia
         public void agregarLibroAlCatalogo() {
+
             Scanner sc = new Scanner(System.in);
 
             ArrayList<Libro> listaGlobalLibros = DepositoLibros.crearLibros();//sobra esta linea o sobra en los atributos
             System.out.println("Comprobando capacidad del catálogo actual:..." +
                     "\n Actualmente hay " + listaLibrosEnCatalogo.size() + " libros en el catálogo");
 
-            catalogoLleno(); // Actualizar el estado de capacidadMaxAlcanzada con true o false
+                catalogoLleno(); // Actualizar el estado de capacidadMaxAlcanzada con true o false
 
             if (!isCapacidadMaxAlcanzada()) {
                 System.out.println("Introduce el ISBN del libro que quieres agregar al catálogo");
@@ -175,28 +177,29 @@ public class Biblioteca<T extends Libro>{
                 System.out.println("Catalogo lleno, No caben más libros en el catálogo");
             }
         }
-        public void eliminarLibroAlCatalogo(){
+
+        public void eliminarLibroAlCatalogo() {
             //mostrar los isbn del catalogo actual y preguntar cual borrar
             Scanner sc = new Scanner(System.in);
             String isbnEliminar;
 
             System.out.println("⚠\uFE0F ¡VAS A ELIMINAR UN LIBRO DEL CATALOGO!⚠\uFE0F");
             System.out.println("Mostrando los ISBN que hay en el catalogo");
-            for (Libro libro:listaLibrosEnCatalogo) {
-                System.out.print("\t"+libro.getIsbn()+";");
+            for (Libro libro : listaLibrosEnCatalogo) {
+                System.out.print("\t" + libro.getIsbn() + ";");
             }
             System.out.println("\n¿¿Que ISBN quieres sacar??");
             isbnEliminar = sc.next();
-            boolean isbnEncontrado= false;
-            for (Libro item:listaLibrosEnCatalogo) {
-                if (item.getIsbn().equalsIgnoreCase(isbnEliminar)){
-                    isbnEncontrado=true;
+            boolean isbnEncontrado = false;
+            for (Libro item : listaLibrosEnCatalogo) {
+                if (item.getIsbn().equalsIgnoreCase(isbnEliminar)) {
+                    isbnEncontrado = true;
                     listaLibrosEnCatalogo.remove(item);
                     System.out.println("EL LIBRO FUE ELIMINADO CORRECTAMENTE");
                     break;
                 }
             }
-            if(!isbnEncontrado){
+            if (!isbnEncontrado) {
                 System.out.println("El ISBN no existe en este catalogo");
             }
 
