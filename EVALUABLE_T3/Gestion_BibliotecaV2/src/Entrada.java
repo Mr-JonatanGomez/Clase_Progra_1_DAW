@@ -52,14 +52,21 @@ public class Entrada {
         b.mostrarDatosBiblio();
 
 */
-        int opcionMenu;
+        int opcionMenuPrin;
+        System.out.println("BIENVENIDO, ¿QUE TIPO DE BIBLIOTECA QUIERES CREAR?" +
+                "\n1- GENERAL (admite todo tipo de tematicas)" +
+                "\n2- TERROR (solo admite libros de terror)" +
+                "\n3- POLICIACA (solo admite novelas policiacas)" +
+                "\n4- COMEDIA (solo admite libros de comedia)");
+
+        int opcionMenuInterior;
         do {
             System.out.println("\t\t\t\t\t\t\t\uD83C\uDFDB\uFE0F¿QUE QUIERES HACER?\uD83C\uDFDB\uFE0F" +
                     "\n1- EDITAR BIBLIOTECA 📚\t\t3- AGREGAR LIBRO AL CATALOGO ➕📗\t\t5- MOSTRAR DATOS BIBLIOTECA 📖" +
                     "\n2- CREAR CATALOGO \uD83D\uDDC3\uFE0F\t\t4- ELIMINAR LIBRO DEL CATALOGO ➖📕\t\t6- MOSTRAR LIBROS DEL MUNDO" +
                     "\n9- SALIR 👋🏻");
-            opcionMenu = sc.nextInt();
-            switch (opcionMenu) {
+            opcionMenuInterior = sc.nextInt();
+            switch (opcionMenuInterior) {
                 case 1:
                     //Scanner sc = new Scanner(System.in);
                     System.out.println("Introduzca nombre de la Biblioteca");
@@ -81,7 +88,7 @@ public class Entrada {
                     break;
                 case 6:
                     ArrayList<Libro> listaGlobalLibros = DepositoLibros.crearLibros();
-                    for (Libro libro:listaGlobalLibros) {
+                    for (Libro libro : listaGlobalLibros) {
                         libro.mostrarDatos();
                     }
                     break;
@@ -92,8 +99,7 @@ public class Entrada {
                     System.out.println("OPCION NO CONTEMPLADA");
                     break;
             }
-        }while (opcionMenu != 9);
-
+        } while (opcionMenuInterior != 9);
 
 
     }
