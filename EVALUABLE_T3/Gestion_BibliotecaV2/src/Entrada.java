@@ -38,7 +38,7 @@ public class Entrada {
         //Biblioteca.Catalogo catalogo = b.new Catalogo();
 
         //b.mostrarGlobal(); sin implementar este metodo
-        Biblioteca biblioteca1 = new Biblioteca("Biblioteca Municipal", "Cooperativa");
+        Biblioteca<LibroComedia> biblioteca1 = new Biblioteca<>("Biblioteca Municipal", "Cooperativa");
 /*
         Biblioteca b = new Biblioteca("Biblioteca Municipal", "Cooperativa");
 

@@ -9,9 +9,9 @@ import java.util.Scanner;
 
 @Setter
 @Getter
-public class Biblioteca{
+public class Biblioteca<T extends Libro>{
     private String nombre, director;
-    private ArrayList<Libro> librosBiblio;
+    private ArrayList<T> librosBiblio;
     private Catalogo catalogo;
 
     public Biblioteca() {
