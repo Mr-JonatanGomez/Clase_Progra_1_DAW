@@ -57,7 +57,7 @@ public class Entrada {
                 "\n1- GENERAL (admite todo tipo de tematicas)" +
                 "\n2- TERROR (solo admite libros de terror)" +
                 "\n3- POLICIACA (solo admite novelas policiacas)" +
-                "\n4- COMEDIA (solo admite libros de comedia)");
+                "\n4- COMEDIA (solo admite libros de comedia)\n");
 
         int opcionMenuInterior;
         do {

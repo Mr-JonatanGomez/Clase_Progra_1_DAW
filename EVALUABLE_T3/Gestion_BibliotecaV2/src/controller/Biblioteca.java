@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 @Setter
 @Getter
-public class Biblioteca extends LibrosMundo{
+public class Biblioteca{
     private String nombre, director;
     private ArrayList<Libro> librosBiblio;
     private Catalogo catalogo;
@@ -59,7 +59,7 @@ public class Biblioteca extends LibrosMundo{
 
     public void mostrarGlobal() {
         //  librosBiblio.add(l);
-        getListaGlobalLibros();
+        //getListaGlobalLibros(); ELIMINANDO EL EXTEND LIBROSMUNDO
 
     }
 
