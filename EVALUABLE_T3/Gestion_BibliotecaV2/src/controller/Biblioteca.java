@@ -73,6 +73,10 @@ public class Biblioteca<T extends Libro> {
         this.catalogo.eliminarLibroAlCatalogo();
     }
 
+    public void buscarISBNEnCatalogo()throws NoExisteLibroEnBusqueda{
+        catalogo.busquedaISBNCatalogo();
+    }
+
     /*public void busquedaTitulo() throws NoExisteLibroEnBusqueda {
         ArrayList<Libro> listaGlobalLibros = DepositoLibros.crearLibros();
         System.out.println("Introduce parte del titulo, Encontrarás las coincidencias");
@@ -151,6 +155,25 @@ public class Biblioteca<T extends Libro> {
                 capacidadMaxAlcanzada = false;
             }
 
+
+        }
+
+        public void busquedaISBNCatalogo() throws NoExisteLibroEnBusqueda{
+
+            System.out.println("Introduce ISBN que quieres buscar");
+            Scanner sc = new Scanner(System.in);
+            String busqueda = sc.next();
+            boolean encontrado= false;
+            for (Libro item : listaLibrosEnCatalogo) {
+                if (item.getIsbn().equalsIgnoreCase(busqueda)) {
+                    encontrado=true;
+                    item.mostrarDatos();
+                    break;
+                }
+            }
+            if (!encontrado){
+                throw new NoExisteLibroEnBusqueda("🚫 El ISBN buscado no existe en Catalogo, o contiene errores🚫");
+            }
 
         }
 

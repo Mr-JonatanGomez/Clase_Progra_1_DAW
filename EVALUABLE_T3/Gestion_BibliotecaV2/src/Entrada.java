@@ -32,9 +32,9 @@ public class Entrada {
         do {
             try {//METIDO AQUI EL TRY, si lo pongo antes del DO, al cazar el error termina el programa
             System.out.println("\n\t\t\t\t\t\t\t\uD83C\uDFDB\uFE0F¿QUE QUIERES HACER?\uD83C\uDFDB\uFE0F" +
-                    "\n1- EDITAR BIBLIOTECA \uD83C\uDFDB\uFE0F\t\t3- AGREGAR LIBRO AL CATALOGO ➕📗\t\t5- MOSTRAR DATOS BIBLIOTECA 📖" +
-                    "\n2- CREAR CATALOGO \uD83D\uDDC3\uFE0F\t\t4- ELIMINAR LIBRO DEL CATALOGO ➖📕\t\t6- MOSTRAR LIBROS DEL MUNDO 📚" +
-                    "\n7- BUSCAR UN LIBRO ISBN🔢 \t9- SALIR 👋🏻");
+                    "\n1- EDITAR DATOS BIBLIOTECA \uD83C\uDFDB\uFE0F\t\t4- ELIMINAR LIBRO DEL CATALOGO ➖📕\t\t7- MOSTRAR UN LIBRO DEL MUNDO (ISBN)🔢" +
+                    "\n2- CREA/MOD. TAMAÑO CATALOGO \uD83D\uDDC3\uFE0F\t\t5- MOSTRAR DATOS BIBLIOTECA 📖\t\t\t8-MOSTRAR LIBRO DEL CATALOGO (ISBN) " +
+                    "\n3- AGREGA LIBRO AL CATALOGO ➕📗\t6- MOSTRAR LIBROS DEL MUNDO 📚\t\t\t9- SALIR 👋🏻");
             opcionMenuInterior = sc.nextInt();
 
 
@@ -67,9 +67,9 @@ public class Entrada {
                     case 7:
                         biblioteca1.busquedaISBN();
                         break;
-                    /*case 8:
-                        biblioteca1.busquedaTitulo();
-                        break;*/
+                    case 8:
+                        biblioteca1.buscarISBNEnCatalogo();
+                        break;
                     case 9:
                         System.out.println("CERRANDO PROGRAMA");
                         break;
