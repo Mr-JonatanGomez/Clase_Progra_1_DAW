@@ -6,4 +6,5 @@ public class TipoDatosNoContemplados extends InputMismatchException {
     public TipoDatosNoContemplados(String message) {
         super(message);
     }
+
 }

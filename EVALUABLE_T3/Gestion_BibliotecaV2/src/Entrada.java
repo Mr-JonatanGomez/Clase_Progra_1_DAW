@@ -2,6 +2,7 @@ import controller.Biblioteca;
 import model.*;
 
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Entrada {
@@ -27,14 +28,16 @@ public class Entrada {
                 "\n4- COMEDIA (solo admite libros de comedia)");
 
 
-        int opcionMenuInterior;
+        Integer opcionMenuInterior=0;
         do {
+            try {//METIDO AQUI EL TRY, si lo pongo antes del DO, al cazar el error termina el programa
             System.out.println("\t\t\t\t\t\t\t\uD83C\uDFDB\uFE0F¿QUE QUIERES HACER?\uD83C\uDFDB\uFE0F" +
                     "\n1- EDITAR BIBLIOTECA 📚\t\t3- AGREGAR LIBRO AL CATALOGO ➕📗\t\t5- MOSTRAR DATOS BIBLIOTECA 📖" +
                     "\n2- CREAR CATALOGO \uD83D\uDDC3\uFE0F\t\t4- ELIMINAR LIBRO DEL CATALOGO ➖📕\t\t6- MOSTRAR LIBROS DEL MUNDO" +
                     "\n9- SALIR 👋🏻");
             opcionMenuInterior = sc.nextInt();
-            try {//METIDO AQUI EL TRY, si lo pongo antes del DO, al cazar el error termina el programa
+
+
                 switch (opcionMenuInterior) {
                     case 1:
                         //Scanner sc = new Scanner(System.in);
@@ -71,8 +74,13 @@ public class Entrada {
             } catch (CatalogoNoExisteException e) {
                 System.out.println(e.getMessage());//AQUI VA EL RUNTIME JODER,
                 // MEJOR IR AL DETALLE DENTRO DEL METODO
-            } catch (TipoDatosNoContemplados e) {
-                System.out.println("🚫El tipo de datos introducido no es correcto🚫");
+            } catch (TipoDatosNoContemplados e){
+                System.out.println(e.getMessage());
+            } catch (InputMismatchException e) {
+                System.out.println("\n\t\t\t🚫 El tipo de dato introducido, no es valido 🚫\n");
+                sc.nextLine();
+            } catch (CatalogoLlenoException e){
+                System.out.println(e.getMessage());
             }
         } while (opcionMenuInterior != 9);
 

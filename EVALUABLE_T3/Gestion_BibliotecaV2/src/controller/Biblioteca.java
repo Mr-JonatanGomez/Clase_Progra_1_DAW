@@ -63,21 +63,26 @@ public class Biblioteca<T extends Libro> {
 
     }
 
-    public void crearCatalogo() /*throws TipoDatosNoContemplados*/{
+    public void crearCatalogo() /*throws TipoDatosNoContemplados*/ {
         Scanner sc = new Scanner(System.in);
         System.out.println("Que capacidad tiene este catalogo");
-        int capacidad = sc.nextInt();
-/*
-        if (){
+        int capacidad = -1;
 
-        }*/
+            if (!sc.hasNextInt()) { //introduccion de dato y verifica si sc es Int
+                throw new TipoDatosNoContemplados("" +
+                        "\n\t\t\t🚫 ¡ERROR! Capacidad del catalogo necesita Entero 🚫\n");
+            } else {
+                capacidad = sc.nextInt();
+                this.catalogo = new Catalogo(capacidad);
+            }
 
-        this.catalogo = new Catalogo(capacidad);
     }
 
-    public void agregarLibroEnCatalogo() throws CatalogoNoExisteException {//En catalogo es de biblio // al catalogo de catalogo
-        if (catalogo == null){
-            throw new CatalogoNoExisteException("🚫 !ERROR¡ No hay un catalogo creado 🚫. Debes crearlo antes de agregar libros");
+    public void agregarLibroEnCatalogo() throws CatalogoNoExisteException, CatalogoLlenoException {//En catalogo es de biblio // al catalogo de catalogo
+        if (catalogo == null) {
+            throw new CatalogoNoExisteException("\n🚫 !ERROR¡ No hay un catalogo creado 🚫. Debes crearlo antes de agregar libros\n");
+        } else if (catalogo.isCapacidadMaxAlcanzada()) {
+            throw new CatalogoLlenoException("\n📚📚EL CATALOGO ESTÁ LLENO, PARA AGREGAR UN LIBRO, HAY QUE SACAR OTRO PRIMERO\n");
         }
 
         this.catalogo.agregarLibroAlCatalogo();
@@ -121,8 +126,9 @@ public class Biblioteca<T extends Libro> {
             this.listaLibrosEnCatalogo = new ArrayList<>();
         }
 
-        //METODO CATALOGO LLENO
         public void catalogoLleno() {
+
+
             if (listaLibrosEnCatalogo.size() >= capacidad) {
                 System.out.println(" EL CATALOGO ESTÁ LLENO, PARA AGREGAR UN LIBRO, HAY QUE SACAR OTRO PRIMERO");
                 capacidadMaxAlcanzada = true;
@@ -130,10 +136,10 @@ public class Biblioteca<T extends Libro> {
                 System.out.println("EL CATALOGO DISPONE AÚN DE " + (capacidad - listaLibrosEnCatalogo.size()) + " HUECOS DISPONIBLES");
                 capacidadMaxAlcanzada = false;
             }
-        }//METODO CATALOGO LLENO
 
 
-        //NUEVO FORMATO AGREGAR... DE LIBROS MUNDO con instancia
+        }
+
         public void agregarLibroAlCatalogo() {
 
             Scanner sc = new Scanner(System.in);
@@ -142,7 +148,7 @@ public class Biblioteca<T extends Libro> {
             System.out.println("Comprobando capacidad del catálogo actual:..." +
                     "\n Actualmente hay " + listaLibrosEnCatalogo.size() + " libros en el catálogo");
 
-                catalogoLleno(); // Actualizar el estado de capacidadMaxAlcanzada con true o false
+            catalogoLleno();
 
             if (!isCapacidadMaxAlcanzada()) {
                 System.out.println("Introduce el ISBN del libro que quieres agregar al catálogo");
