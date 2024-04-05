@@ -63,14 +63,23 @@ public class Biblioteca<T extends Libro> {
 
     }
 
-    public void crearCatalogo() {
+    public void crearCatalogo() /*throws TipoDatosNoContemplados*/{
         Scanner sc = new Scanner(System.in);
         System.out.println("Que capacidad tiene este catalogo");
         int capacidad = sc.nextInt();
+/*
+        if (){
+
+        }*/
+
         this.catalogo = new Catalogo(capacidad);
     }
 
-    public void agregarLibroEnCatalogo() {//En catalogo es de biblio // al catalogo de catalogo
+    public void agregarLibroEnCatalogo() throws CatalogoNoExisteException {//En catalogo es de biblio // al catalogo de catalogo
+        if (catalogo == null){
+            throw new CatalogoNoExisteException("🚫 !ERROR¡ No hay un catalogo creado 🚫. Debes crearlo antes de agregar libros");
+        }
+
         this.catalogo.agregarLibroAlCatalogo();
     }
 
