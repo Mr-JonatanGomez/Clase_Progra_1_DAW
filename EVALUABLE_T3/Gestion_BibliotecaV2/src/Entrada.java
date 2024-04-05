@@ -31,10 +31,10 @@ public class Entrada {
         Integer opcionMenuInterior=0;
         do {
             try {//METIDO AQUI EL TRY, si lo pongo antes del DO, al cazar el error termina el programa
-            System.out.println("\t\t\t\t\t\t\t\uD83C\uDFDB\uFE0F¿QUE QUIERES HACER?\uD83C\uDFDB\uFE0F" +
+            System.out.println("\n\t\t\t\t\t\t\t\uD83C\uDFDB\uFE0F¿QUE QUIERES HACER?\uD83C\uDFDB\uFE0F" +
                     "\n1- EDITAR BIBLIOTECA 📚\t\t3- AGREGAR LIBRO AL CATALOGO ➕📗\t\t5- MOSTRAR DATOS BIBLIOTECA 📖" +
                     "\n2- CREAR CATALOGO \uD83D\uDDC3\uFE0F\t\t4- ELIMINAR LIBRO DEL CATALOGO ➖📕\t\t6- MOSTRAR LIBROS DEL MUNDO" +
-                    "\n9- SALIR 👋🏻");
+                    "\n7- BUSCAR UN LIBRO ISBN \t\t8- BUSCAR UN LIBRO POR TITULO 👋🏻\t\t9- SALIR 👋🏻");
             opcionMenuInterior = sc.nextInt();
 
 
@@ -64,6 +64,12 @@ public class Entrada {
                             libro.mostrarDatos();
                         }
                         break;
+                    case 7:
+                        biblioteca1.busquedaISBN();
+                        break;
+                    /*case 8:
+                        biblioteca1.busquedaTitulo();
+                        break;*/
                     case 9:
                         System.out.println("CERRANDO PROGRAMA");
                         break;
@@ -80,6 +86,8 @@ public class Entrada {
                 System.out.println("\n\t\t\t🚫 El tipo de dato introducido, no es valido 🚫\n");
                 sc.nextLine();
             } catch (CatalogoLlenoException e){
+                System.out.println(e.getMessage());
+            } catch (NoExisteLibroEnBusqueda e){
                 System.out.println(e.getMessage());
             }
         } while (opcionMenuInterior != 9);
