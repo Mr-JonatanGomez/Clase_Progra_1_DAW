@@ -25,10 +25,13 @@ public class Biblioteca<T extends Libro> {
     }
 
 
-    public void mostrarDatosBiblio() {
-        System.out.println("DATOS BIBLIOTECA");
+    public void mostrarDatosBiblio() throws CatalogoNoExisteException {
+        System.out.println("\n\uD83C\uDFDB\uFE0F DATOS BIBLIOTECA \uD83C\uDFDB\uFE0F");
         System.out.println("nombre = " + nombre);
         System.out.println("director = " + director);
+        if (catalogo == null) {
+            throw new CatalogoNoExisteException("🚫 No ha sido posible mostrar los datos del catalogo, porque no ha sido creado aún🚫\n");
+        }
         this.catalogo.mostrarDatosCatalogo();
     }
 
@@ -265,7 +268,7 @@ public class Biblioteca<T extends Libro> {
         }
 
         public void mostrarDatosCatalogo() {
-            System.out.println("\nDATOS DEL CATALOGO");
+            System.out.println("📚 DATOS DEL CATALOGO 📚");
             System.out.println("Este catalogo tiene una capacidad total de " + capacidad + " libros");
             System.out.println("El numero de libros en catalogo actualmente es: " + listaLibrosEnCatalogo.size());
 
