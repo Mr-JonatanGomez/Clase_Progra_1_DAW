@@ -8,10 +8,10 @@ public class Entrada {
 
         }catch (InputMismatchException e){
             System.out.println("Error de tipo de datos, solo digitos aceptados");
-        }catch (SaldoInsuficienteException e){
-            e.getMessage();
         }catch (IllegalArgumentException e){
-            e.getMessage();
+            System.out.println(e.getMessage());
+        }catch (SaldoInsuficienteException e){
+            System.out.println(e.getMessage());
         }
     }
 }
