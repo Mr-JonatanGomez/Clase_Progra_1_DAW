@@ -204,7 +204,7 @@ public class Biblioteca<T extends Libro> {
                 }
 
                 if (existeEnDeposito) {
-                    // Verificar si el libro (QUE SI EXISTE EN DEPOSITO) ya está en listaLibrosEnCatalogo
+                    // Verificar si el libro (QUE SÍ EXISTE EN DEPOSITO) ya está en listaLibrosEnCatalogo
                     boolean repetido = false;
                     for (Libro item : listaLibrosEnCatalogo) {
                         if (item.getIsbn().equalsIgnoreCase(isbnP)) {

@@ -14,7 +14,7 @@ public class Entrada {
         //b.mostrarGlobal(); sin implementar este metodo
         //biblioteca1.busquedaISBN();
         //Biblioteca biblioteca1 = new Biblioteca<>("Biblioteca Municipal", "Cooperativa");
-        Biblioteca<Libro> biblioteca1 = new Biblioteca("Biblioteca Municipal", "Cooperativa");
+        Biblioteca<LibroComedia> biblioteca1 = new Biblioteca<>("Biblioteca Municipal", "Cooperativa");
 /*
         Biblioteca b = new Biblioteca("Biblioteca Municipal", "Cooperativa");
 
