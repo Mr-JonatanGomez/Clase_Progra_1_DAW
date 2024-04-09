@@ -66,7 +66,7 @@ public class Biblioteca<T extends Libro> {
         this.catalogo.agregarLibroAlCatalogo();
     }
 
-    ///INDAGAR AQUI LAS PRUEBAS
+
     public void eliminarLibroEnCatalogo()throws CatalogoNoExisteException, CatalogoLlenoException {
         if (catalogo == null) {
             throw new CatalogoNoExisteException("\n🚫 !ERROR¡ No hay un catalogo creado 🚫. Debes crearlo antes de eliminar libros\n");
@@ -76,7 +76,10 @@ public class Biblioteca<T extends Libro> {
         this.catalogo.eliminarLibroAlCatalogo();
     }
 
-    public void buscarISBNEnCatalogo()throws NoExisteLibroEnBusqueda{
+    public void buscarISBNEnCatalogo()throws CatalogoNoExisteException, NoExisteLibroEnBusqueda{
+        if (catalogo==null){
+            throw new CatalogoNoExisteException("🚫 No puedes buscar un libro, NO EXISTE EL CATALOGO 🚫");
+        }
         catalogo.busquedaISBNCatalogo();
     }
 
@@ -146,7 +149,7 @@ public class Biblioteca<T extends Libro> {
 
         }
 
-        public void busquedaISBNCatalogo() throws NoExisteLibroEnBusqueda{
+        public void busquedaISBNCatalogo() throws NoExisteLibroEnBusqueda, CatalogoNoExisteException{
 
             System.out.println("Introduce ISBN que quieres buscar");
             Scanner sc = new Scanner(System.in);

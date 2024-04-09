@@ -9,10 +9,6 @@ public class Entrada {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        //b.busquedaISBN();
-
-        //b.mostrarGlobal(); sin implementar este metodo
-        //biblioteca1.busquedaISBN();
         //Biblioteca biblioteca1 = new Biblioteca<>("Biblioteca Municipal", "Cooperativa");
         Biblioteca<LibroComedia> biblioteca1 = new Biblioteca<>("Biblioteca Municipal", "Cooperativa");
 /*
