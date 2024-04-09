@@ -65,7 +65,7 @@ public class Entrada {
                         }
                         break;
                     case 7:
-                        biblioteca1.busquedaISBN();
+                        biblioteca1.busquedaISBNGlobal();
                         break;
                     case 8:
                         biblioteca1.buscarISBNEnCatalogo();

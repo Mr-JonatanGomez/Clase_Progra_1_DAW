@@ -80,22 +80,7 @@ public class Biblioteca<T extends Libro> {
         catalogo.busquedaISBNCatalogo();
     }
 
-    /*public void busquedaTitulo() throws NoExisteLibroEnBusqueda {
-        ArrayList<Libro> listaGlobalLibros = DepositoLibros.crearLibros();
-        System.out.println("Introduce parte del titulo, Encontrarás las coincidencias");
-        Scanner sc = new Scanner(System.in);
-        String busqueda = sc.next();
-        for (Libro item : listaGlobalLibros) {
-            if (item.getTitulo().contains(busqueda)) {
-                item.mostrarDatos();
-            }
-                throw new NoExisteLibroEnBusqueda("🚫 La busqueda no ha obtenido coincidencias 🚫");
-
-            //SI SE REPITEN QUIZAS PONER LAS EXCEPTION SIN ELSE, AQUI en otro IF
-        }
-
-    }*/
-    public void busquedaISBN() throws NoExisteLibroEnBusqueda{
+    public void busquedaISBNGlobal() throws NoExisteLibroEnBusqueda{
         ArrayList<Libro> listaGlobalLibros = DepositoLibros.crearLibros();
         System.out.println("Introduce ISBN que quieres buscar");
         Scanner sc = new Scanner(System.in);
@@ -175,10 +160,11 @@ public class Biblioteca<T extends Libro> {
                 }
             }
             if (!encontrado){
-                throw new NoExisteLibroEnBusqueda("🚫 El ISBN buscado no existe en Catalogo, o contiene errores🚫");
+                throw new NoExisteLibroEnBusqueda("🚫 El ISBN buscado no existe en Catalogo, o ISBN contiene errores🚫");
             }
 
         }
+
 
         public void agregarLibroAlCatalogo() {
 
@@ -214,7 +200,7 @@ public class Biblioteca<T extends Libro> {
                     }
 
                     if (!repetido) {
-                        // Agregar el libro al catálogo
+                        // Agregar el libro al catálogo EXISTE EN DEPOSITO, NO ESTA REPETIDO
                         for (Libro item : listaGlobalLibros) {
                             if (item.getIsbn().equalsIgnoreCase(isbnP)) {
                                 listaLibrosEnCatalogo.add(item);
