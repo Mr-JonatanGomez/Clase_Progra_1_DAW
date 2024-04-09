@@ -55,7 +55,6 @@ public class Biblioteca<T extends Libro> {
             }
 
     }
-
     public void agregarLibroEnCatalogo() throws CatalogoNoExisteException, CatalogoLlenoException {//En catalogo es de biblio // al catalogo de catalogo
         if (catalogo == null) {
             throw new CatalogoNoExisteException("\n🚫 !ERROR¡ No hay un catalogo creado 🚫. Debes crearlo antes de agregar libros\n");
