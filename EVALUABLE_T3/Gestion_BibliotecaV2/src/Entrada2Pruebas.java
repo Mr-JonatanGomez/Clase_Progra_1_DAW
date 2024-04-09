@@ -1,4 +1,5 @@
 import controller.Biblioteca;
+import controller.Biblioteca2P;
 import model.*;
 
 import java.util.ArrayList;
@@ -7,16 +8,33 @@ import java.util.Scanner;
 
 public class Entrada2Pruebas {
     public static void main(String[] args) {
+
+        ArrayList<Libro>listaGlobalLibros = new ArrayList<>();
+
+        LibroTerror l1= new LibroTerror("It", "Stephen King", "0001t", 317, 16);
+        LibroTerror l2= new LibroTerror("Joyland", "Stephen King", "0003t", 370, 14);
+        LibroTerror l3= new LibroTerror("The Silence of the Lambs", "Thomas Harris", "0005t", 368, 18);
+        LibroPoliciaco l4 = new LibroPoliciaco("Los hombres que no amaban a las mujeres", "Stieg Larsson", "0006p", 465, Trama.misterio);
+        LibroPoliciaco l5 = new LibroPoliciaco("La chica que soñaba con una cerilla y un bidón de gasolina", "Stieg Larsson", "0007p", 569, Trama.misterio);
+        LibroPoliciaco l6 = new LibroPoliciaco("La reina en el palacio de las corrientes de aire", "Stieg Larsson", "0008p", 602, Trama.misterio);
+        LibroComedia l7 = new LibroComedia("El club de la lucha", "Chuck Palahniuk", "0012c", 289, TipoHumor.amarillo);
+        LibroComedia l8 = new LibroComedia("La princesa prometida", "William Goldman", "0013c", 364, TipoHumor.amarillo);
+        LibroComedia l9 = new LibroComedia("Las ventajas de ser un marginado", "Stephen Chbosky", "0014c", 418, TipoHumor.amarillo);
+
+
         Scanner sc = new Scanner(System.in);
 
         //Biblioteca biblioteca1 = new Biblioteca<>("Biblioteca Municipal", "Cooperativa");
-        Biblioteca<LibroComedia> biblioteca1 = new Biblioteca<>("Biblioteca Municipal", "Cooperativa");
+        Biblioteca2P<Libro> biblioteca1 = new Biblioteca2P<>("Biblioteca Municipal", "Cooperativa");
+        Biblioteca2P<LibroTerror> biblioteca2 = new Biblioteca2P<>("Biblioteca Municipal", "Cooperativa");
+        Biblioteca2P<LibroPoliciaco> biblioteca3 = new Biblioteca2P<>("Biblioteca Municipal", "Cooperativa");
+        Biblioteca2P<LibroComedia> biblioteca4 = new Biblioteca2P<>("Biblioteca Municipal", "Cooperativa");
 
-        /*
-        Biblioteca b = new Biblioteca("Biblioteca Municipal", "Cooperativa");
+        biblioteca2.crearCatalogo2(4);
+        biblioteca2.agregarLibroEnCatalogo2(l1);
+        biblioteca2.agregarLibroEnCatalogo2(l3);
 
-        b.mostrarDatosBiblio();
-*/
+   /*
         int opcionMenuPrin;
         System.out.println("BIENVENIDO, ¿QUE TIPO DE BIBLIOTECA QUIERES CREAR?" +
                 "\n1- GENERAL (admite todo tipo de tematicas)" +
@@ -45,6 +63,7 @@ public class Entrada2Pruebas {
                         break;
                     case 2:
                         biblioteca1.crearCatalogo();
+
                         break;
                     case 3:
                         biblioteca1.agregarLibroEnCatalogo();
@@ -89,7 +108,7 @@ public class Entrada2Pruebas {
             }
         } while (opcionMenuInterior != 9);
 
-
+*/
     }
 
 }

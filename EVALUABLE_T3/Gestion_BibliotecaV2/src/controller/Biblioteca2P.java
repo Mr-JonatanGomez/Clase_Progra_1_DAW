@@ -9,16 +9,16 @@ import java.util.Scanner;
 
 @Setter
 @Getter
-public class Biblioteca<T extends Libro> {
+public class Biblioteca2P<T extends Libro> {
     private String nombre, director;
     private ArrayList<T> librosBiblio;
     private Catalogo catalogo;
 
-    public Biblioteca() {
+    public Biblioteca2P() {
         this.librosBiblio = new ArrayList<>();
     }
 
-    public Biblioteca(String nombre, String director) {
+    public Biblioteca2P(String nombre, String director) {
         this.nombre = nombre;
         this.director = director;
         //this.librosBiblio = new ArrayList<>();
@@ -34,6 +34,8 @@ public class Biblioteca<T extends Libro> {
         }
         this.catalogo.mostrarDatosCatalogo();
     }
+
+
 
     public void mostrarGlobal() {
         //  librosBiblio.add(l);
@@ -64,7 +66,12 @@ public class Biblioteca<T extends Libro> {
 
         this.catalogo.agregarLibroAlCatalogo();
     }
-
+    public void agregarLibroEnCatalogo2(T libro){
+        this.catalogo.agregarLibroAlCatalogo2(libro);
+    }
+    public void crearCatalogo2(int capacidad) /*throws TipoDatosNoContemplados*/ {
+            this.catalogo = new Catalogo(capacidad);
+    }
 
     public void eliminarLibroEnCatalogo()throws CatalogoNoExisteException, CatalogoLlenoException {
         if (catalogo == null) {
@@ -205,7 +212,6 @@ public class Biblioteca<T extends Libro> {
                         // Agregar el libro al catálogo EXISTE EN DEPOSITO, NO ESTA REPETIDO
                         for (Libro item : listaGlobalLibros) {
                             if (item.getIsbn().equalsIgnoreCase(isbnP)) {
-
                                 listaLibrosEnCatalogo.add(item);
                                 System.out.println("✅El libro: " + item.getTitulo() + " con ISBN: " + item.getIsbn() + ", ha sido agregado al catálogo✅");
                                 catalogoVacio=false;
@@ -223,6 +229,10 @@ public class Biblioteca<T extends Libro> {
             }
         }
 
+
+        public void agregarLibroAlCatalogo2(T libro) {
+            listaLibrosEnCatalogo.add(libro);
+        }
         public void eliminarLibroAlCatalogo() {
 
             if(capacidad >=1) {

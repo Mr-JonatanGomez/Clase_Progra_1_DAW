@@ -10,7 +10,7 @@ public class Entrada {
         Scanner sc = new Scanner(System.in);
 
         //Biblioteca biblioteca1 = new Biblioteca<>("Biblioteca Municipal", "Cooperativa");
-        Biblioteca<LibroComedia> biblioteca1 = new Biblioteca<>("Biblioteca Municipal", "Cooperativa");
+        Biblioteca<LibroTerror> biblioteca1 = new Biblioteca<>("Biblioteca Municipal", "Cooperativa");
 
         /*
         Biblioteca b = new Biblioteca("Biblioteca Municipal", "Cooperativa");

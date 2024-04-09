@@ -24,4 +24,6 @@ public abstract class Libro {
         System.out.println("ISBN: " + isbn);
         System.out.println("Paginas: " + paginas);
     }
+
+
 }
