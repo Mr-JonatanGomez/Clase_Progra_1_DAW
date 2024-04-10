@@ -8,8 +8,10 @@ import java.util.Scanner;
 
 public class Entrada2Pruebas {
     public static void main(String[] args) {
+        LibroTerror l1= new LibroTerror("It", "Stephen King", "0001t", 317, 16);
+        LibroComedia l9 = new LibroComedia("Las ventajas de ser un marginado", "Stephen Chbosky", "0014c", 418, TipoHumor.amarillo);
 
-        ArrayList<Libro>listaGlobalLibros = new ArrayList<>();
+        /*ArrayList<Libro>listaGlobalLibros = new ArrayList<>();
 
         LibroTerror l1= new LibroTerror("It", "Stephen King", "0001t", 317, 16);
         LibroTerror l2= new LibroTerror("Joyland", "Stephen King", "0003t", 370, 14);
@@ -22,7 +24,7 @@ public class Entrada2Pruebas {
         LibroComedia l9 = new LibroComedia("Las ventajas de ser un marginado", "Stephen Chbosky", "0014c", 418, TipoHumor.amarillo);
 
 
-        Scanner sc = new Scanner(System.in);
+
 
         //Biblioteca biblioteca1 = new Biblioteca<>("Biblioteca Municipal", "Cooperativa");
         Biblioteca2P<Libro> biblioteca1 = new Biblioteca2P<>("Biblioteca Municipal", "Cooperativa");
@@ -33,8 +35,10 @@ public class Entrada2Pruebas {
         biblioteca2.crearCatalogo2(4);
         biblioteca2.agregarLibroEnCatalogo2(l1);
         biblioteca2.agregarLibroEnCatalogo2(l3);
-
-   /*
+        biblioteca2.mostrarDatosBiblio();
+*/
+        Biblioteca2P <LibroTerror> biblioteca1 = new Biblioteca2P<>();
+        Scanner sc = new Scanner(System.in);
         int opcionMenuPrin;
         System.out.println("BIENVENIDO, ¿QUE TIPO DE BIBLIOTECA QUIERES CREAR?" +
                 "\n1- GENERAL (admite todo tipo de tematicas)" +
@@ -108,7 +112,7 @@ public class Entrada2Pruebas {
             }
         } while (opcionMenuInterior != 9);
 
-*/
+
     }
 
 }
