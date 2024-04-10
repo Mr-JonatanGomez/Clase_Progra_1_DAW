@@ -13,9 +13,11 @@ public class Biblioteca2P<T extends Libro> {
     private String nombre, director;
     private ArrayList<T> librosBiblio;
     private Catalogo catalogo;
+    private DepositoLibros depositoLibros;
 
     public Biblioteca2P() {
-        this.librosBiblio = new ArrayList<>();
+        this.depositoLibros=getDepositoLibros();
+
     }
 
     public Biblioteca2P(String nombre, String director) {
@@ -100,12 +102,12 @@ public class Biblioteca2P<T extends Libro> {
     }
 
     public void busquedaISBNGlobal() throws NoExisteLibroEnBusqueda{
-        ArrayList<Libro> listaGlobalLibros = DepositoLibros.crearLibros();
+        //ArrayList<Libro> listaGlobalLibros = DepositoLibros.crearLibros();
         System.out.println("Introduce ISBN que quieres buscar");
         Scanner sc = new Scanner(System.in);
         String busqueda = sc.next();
         boolean encontrado= false;
-        for (Libro item : listaGlobalLibros) {
+        for (Libro item : DepositoLibros.crearLibros()) {
             if (item.getIsbn().equalsIgnoreCase(busqueda)) {
                 encontrado=true;
                 item.mostrarDatos();
@@ -189,7 +191,7 @@ public class Biblioteca2P<T extends Libro> {
 
             Scanner sc = new Scanner(System.in);
 
-            ArrayList<Libro> listaGlobalLibros = DepositoLibros.crearLibros();//sobra esta linea o sobra en los atributos
+            DepositoLibros.crearLibros();//sobra esta linea o sobra en los atributos
             System.out.println("Comprobando capacidad del catálogo actual:..." +
                     "\n Actualmente hay " + listaLibrosEnCatalogo.size() + " libros en el catálogo");
 
@@ -201,7 +203,7 @@ public class Biblioteca2P<T extends Libro> {
                 boolean existeEnDeposito = false;
 
                 // Verificar si el ISBN existe en la listaGlobalLibros
-                for (Libro item : listaGlobalLibros) {
+                for (Libro item : DepositoLibros.crearLibros()) {
                     if (item.getIsbn().equalsIgnoreCase(isbnP)) {
                         existeEnDeposito = true;
                         break;
@@ -220,7 +222,7 @@ public class Biblioteca2P<T extends Libro> {
 
                     if (!repetido) {
                         // Agregar el libro al catálogo EXISTE EN DEPOSITO, NO ESTA REPETIDO
-                        for (Libro item : listaGlobalLibros) {
+                        for (Libro item : DepositoLibros.crearLibros()) {
                             if (item.getIsbn().equalsIgnoreCase(isbnP)) {
                                 listaLibrosEnCatalogo.add(item);
                                 System.out.println("✅El libro: " + item.getTitulo() + " con ISBN: " + item.getIsbn() + ", ha sido agregado al catálogo✅");
