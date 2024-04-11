@@ -9,8 +9,8 @@ public class Entrada {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        //Biblioteca biblioteca1 = new Biblioteca<>("Biblioteca Municipal", "Cooperativa");
-        Biblioteca<LibroTerror> biblioteca1 = new Biblioteca("Biblioteca Municipal", "Cooperativa");
+        //Biblioteca bibliotecaTerror = new Biblioteca<>("Biblioteca Municipal", "Cooperativa");
+        Biblioteca<LibroTerror> bibliotecaTerror = new Biblioteca("Biblioteca Municipal", "Cooperativa");
 
         /*
         Biblioteca b = new Biblioteca("Biblioteca Municipal", "Cooperativa");
@@ -39,21 +39,21 @@ public class Entrada {
                     case 1:
                         //Scanner sc = new Scanner(System.in);
                         System.out.println("Introduzca nombre de la Biblioteca");
-                        biblioteca1.setNombre(sc.next());
+                        bibliotecaTerror.setNombre(sc.next());
                         System.out.println("Introduzca director de la Biblioteca");
-                        biblioteca1.setDirector(sc.next());
+                        bibliotecaTerror.setDirector(sc.next());
                         break;
                     case 2:
-                        biblioteca1.crearCatalogo();
+                        bibliotecaTerror.crearCatalogo();
                         break;
                     case 3:
-                        biblioteca1.agregarLibroEnCatalogo();
+                        bibliotecaTerror.agregarLibroEnCatalogo();
                         break;
                     case 4:
-                        biblioteca1.eliminarLibroEnCatalogo();
+                        bibliotecaTerror.eliminarLibroEnCatalogo();
                         break;
                     case 5:
-                        biblioteca1.mostrarDatosBiblio();
+                        bibliotecaTerror.mostrarDatosBiblio();
                         break;
                     case 6:
                         ArrayList<Libro> listaGlobalLibros = DepositoLibros.crearLibros();//si se necesita mas veces instancias arriba
@@ -62,10 +62,10 @@ public class Entrada {
                         }
                         break;
                     case 7:
-                        biblioteca1.busquedaISBNGlobal();
+                        bibliotecaTerror.busquedaISBNGlobal();
                         break;
                     case 8:
-                        biblioteca1.buscarISBNEnCatalogo();
+                        bibliotecaTerror.buscarISBNEnCatalogo();
                         break;
                     case 9:
                         System.out.println("CERRANDO PROGRAMA");
