@@ -1,4 +1,5 @@
 import controller.Biblioteca;
+import controller.OperacionesFicheroObj;
 import model.*;
 
 import java.util.ArrayList;
@@ -8,9 +9,10 @@ import java.util.Scanner;
 public class Entrada {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
+       // OperacionesFicheroObj operacionesFicheroObj= new OperacionesFicheroObj();
         //Biblioteca bibliotecaTerror = new Biblioteca<>("Biblioteca Municipal", "Cooperativa");
         Biblioteca<LibroTerror> bibliotecaTerror = new Biblioteca("Biblioteca Municipal", "Cooperativa");
+
 
         /*
         Biblioteca b = new Biblioteca("Biblioteca Municipal", "Cooperativa");
@@ -47,6 +49,7 @@ public class Entrada {
                         bibliotecaTerror.crearCatalogo();
                         break;
                     case 3:
+
                         bibliotecaTerror.agregarLibroEnCatalogo();
                         break;
                     case 4:
@@ -56,6 +59,7 @@ public class Entrada {
                         bibliotecaTerror.mostrarDatosBiblio();
                         break;
                     case 6:
+
                         ArrayList<Libro> listaGlobalLibros = DepositoLibros.crearLibros();//si se necesita mas veces instancias arriba
                         for (Libro libro : listaGlobalLibros) {
                             libro.mostrarDatos();

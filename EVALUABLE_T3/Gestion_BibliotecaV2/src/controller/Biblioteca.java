@@ -14,9 +14,7 @@ public class Biblioteca<T extends Libro> {
     private ArrayList<T> librosBiblio;
     private Catalogo catalogo;
 
-    public Biblioteca() {
-        this.librosBiblio = new ArrayList<>();
-    }
+
 
     public Biblioteca(String nombre, String director) {
         this.nombre = nombre;
@@ -106,7 +104,7 @@ public class Biblioteca<T extends Libro> {
     // CATALOGO ANIDADO
     @Setter
     @Getter
-    class Catalogo {
+    class Catalogo<T extends Libro> {
         private ArrayList<Libro> listaLibrosEnCatalogo;
         private int capacidad;
         private boolean capacidadMaxAlcanzada;
@@ -169,12 +167,26 @@ public class Biblioteca<T extends Libro> {
 
 
         public void agregarLibroAlCatalogo() {
-
             Scanner sc = new Scanner(System.in);
 
             ArrayList<Libro> listaGlobalLibros = DepositoLibros.crearLibros();//sobra esta linea o sobra en los atributos
             System.out.println("Comprobando capacidad del catálogo actual:..." +
                     "\n Actualmente hay " + listaLibrosEnCatalogo.size() + " libros en el catálogo");
+
+
+
+
+
+            System.out.println("METODO ESPECIAL PARA VER DE QUE CALSE ES CADA LIBRO");
+            for (Libro libro:listaGlobalLibros) {
+                System.out.println("👩🏻‍🦰👱🏻‍♀️👩🏻‍🦰👱🏻‍♀️La clase "+libro.getClass()+"  isbn: "+libro.getIsbn());
+            }
+
+
+
+
+
+
 
             catalogoLleno();
 
@@ -202,13 +214,13 @@ public class Biblioteca<T extends Libro> {
                     }
 
                     if (!repetido) {
-                        // Agregar el libro al catálogo EXISTE EN DEPOSITO, NO ESTA REPETIDO
+                        // Agregar el libro al catálogo EXISTE Y EN DEPOSITO,Y NO ESTA REPETIDO
                         for (Libro item : listaGlobalLibros) {
                             if (item.getIsbn().equalsIgnoreCase(isbnP)) {
-
                                 listaLibrosEnCatalogo.add(item);
                                 System.out.println("✅El libro: " + item.getTitulo() + " con ISBN: " + item.getIsbn() + ", ha sido agregado al catálogo✅");
                                 catalogoVacio=false;
+                                System.out.println("👩🏻‍🦰👱🏻‍♀️👩🏻‍🦰👱🏻‍♀️La clase "+item.getClass()+"  isbn: "+item.getIsbn());
                                 break;
                             }
                         }

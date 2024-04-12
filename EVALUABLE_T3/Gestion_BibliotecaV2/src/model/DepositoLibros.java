@@ -1,8 +1,13 @@
 package model;
 
-import java.util.ArrayList;
+import lombok.Getter;
+import lombok.Setter;
 
-public class DepositoLibros {
+import java.util.ArrayList;
+@Setter
+@Getter
+public class DepositoLibros  {
+
     public static ArrayList<Libro>crearLibros() {
         ArrayList<Libro>listaGlobalLibros = new ArrayList<>();
 
