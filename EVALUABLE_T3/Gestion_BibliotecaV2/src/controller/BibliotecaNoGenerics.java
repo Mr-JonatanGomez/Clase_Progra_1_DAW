@@ -13,7 +13,7 @@ public class BibliotecaNoGenerics {
     private String nombre, director;
     private ArrayList librosBiblio;
     private Catalogo catalogo;
-   // Libro libroVariable=null;
+    Libro libroVariable = null;
 
     public BibliotecaNoGenerics(String nombre, String director) {
         this.nombre = nombre;
@@ -39,21 +39,23 @@ public class BibliotecaNoGenerics {
     }
 
     public void crearCatalogo() /*throws TipoDatosNoContemplados*/ {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Que capacidad tiene este catalogo");
-        int capacidad = -1;
+        while (catalogo == null) {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("¿Que capacidad tiene el catalogo?" +
+                    "⚠\uFE0F ATENCION, NO PODRÁ MODIFICARSE ESTE TAMAÑO ⚠\uFE0F");
+            int capacidad = -1;
 
-        if (!sc.hasNextInt()) { //introduccion de dato y verifica si sc es Int
-            throw new TipoDatosNoContemplados("" +
-                    "\n\t\t\t🚫 ¡ERROR! Capacidad del catalogo necesita número Entero 🚫\n");
-        } else {
-            capacidad = sc.nextInt();
-            this.catalogo = new Catalogo(capacidad);
+            if (!sc.hasNextInt()) { //introduccion de dato y verifica si sc es Int
+                throw new TipoDatosNoContemplados("" +
+                        "\n\t\t\t🚫 ¡ERROR! Capacidad del catalogo necesita número Entero 🚫\n");
+            } else {
+                capacidad = sc.nextInt();
+                this.catalogo = new Catalogo(capacidad);
+            }
         }
-
     }
 
-    //AQUI CREAR 4 UNO POR CADA
+
     public void agregarLibroEnCatalogoTerror() throws CatalogoNoExisteException, CatalogoLlenoException, ClassCastException {//En catalogo es de biblio // al catalogo de catalogo
         if (catalogo == null) {
             throw new CatalogoNoExisteException("\n🚫 !ERROR¡ No hay un catalogo creado 🚫. Debes crearlo antes de agregar libros\n");
@@ -85,6 +87,7 @@ public class BibliotecaNoGenerics {
             System.out.println("⛔El tipo de libro, no corresponde con el tipo de catalogo⛔");
         }
     }
+
     public void agregarLibroEnCatalogoComedia() throws CatalogoNoExisteException, CatalogoLlenoException, ClassCastException {//En catalogo es de biblio // al catalogo de catalogo
         if (catalogo == null) {
             throw new CatalogoNoExisteException("\n🚫 !ERROR¡ No hay un catalogo creado 🚫. Debes crearlo antes de agregar libros\n");
@@ -97,6 +100,7 @@ public class BibliotecaNoGenerics {
             System.out.println("⛔El tipo de libro, no corresponde con el tipo de catalogo⛔");
         }
     }
+
     public void agregarLibroEnCatalogoPoliciaco() throws CatalogoNoExisteException, CatalogoLlenoException, ClassCastException {//En catalogo es de biblio // al catalogo de catalogo
         if (catalogo == null) {
             throw new CatalogoNoExisteException("\n🚫 !ERROR¡ No hay un catalogo creado 🚫. Debes crearlo antes de agregar libros\n");
@@ -109,6 +113,7 @@ public class BibliotecaNoGenerics {
             System.out.println("⛔El tipo de libro, no corresponde con el tipo de catalogo⛔");
         }
     }
+
     public void agregarLibroEnCatalogoGeneral() throws CatalogoNoExisteException, CatalogoLlenoException, ClassCastException {//En catalogo es de biblio // al catalogo de catalogo
         if (catalogo == null) {
             throw new CatalogoNoExisteException("\n🚫 !ERROR¡ No hay un catalogo creado 🚫. Debes crearlo antes de agregar libros\n");
@@ -129,6 +134,7 @@ public class BibliotecaNoGenerics {
         } else if (catalogo.catalogoVacio) {
             throw new CatalogoLlenoException("\n🚫 !ERROR¡ No hay Libros en Catalogo 🚫. Por tanto, no puedes eliminarlos\n");
         }
+
         this.catalogo.eliminarLibroAlCatalogo();
     }
 
@@ -208,8 +214,13 @@ public class BibliotecaNoGenerics {
         }
 
         public void busquedaISBNCatalogo() throws NoExisteLibroEnBusqueda, CatalogoNoExisteException {
+            System.out.println("Los ISBN que dispone el catalogo son: ");
+            for (Libro item : listaLibrosEnCatalogo) {
+                System.out.print(item.getIsbn() + "    ");
+            }
 
-            System.out.println("Introduce ISBN que quieres buscar");
+
+            System.out.println("\nIntroduce ISBN que quieres buscar");
             Scanner sc = new Scanner(System.in);
             String busqueda = sc.next();
             boolean encontrado = false;
@@ -229,7 +240,7 @@ public class BibliotecaNoGenerics {
 
         public void agregarLibroAlCatalogoTerror() {
             Scanner sc = new Scanner(System.in);
-            LibroTerror libroVariable = null;
+            libroVariable = null;
 
             ArrayList<Libro> listaGlobalLibros = DepositoLibros.crearLibros();//sobra esta linea o sobra en los atributos
             System.out.println("Comprobando capacidad del catálogo actual:..." +
@@ -284,6 +295,7 @@ public class BibliotecaNoGenerics {
                 System.out.println("Catalogo lleno, No caben más libros en el catálogo");
             }
         }
+
         public void agregarLibroAlCatalogoComedia() {
             Scanner sc = new Scanner(System.in);
             LibroComedia libroVariable = null;
@@ -341,6 +353,7 @@ public class BibliotecaNoGenerics {
                 System.out.println("Catalogo lleno, No caben más libros en el catálogo");
             }
         }
+
         public void agregarLibroAlCatalogoPoliciaco() {
             Scanner sc = new Scanner(System.in);
             LibroPoliciaco libroVariable = null;
@@ -398,6 +411,7 @@ public class BibliotecaNoGenerics {
                 System.out.println("Catalogo lleno, No caben más libros en el catálogo");
             }
         }
+
         public void agregarLibroAlCatalogoGeneral() {
             Scanner sc = new Scanner(System.in);
             Libro libroVariable = null;

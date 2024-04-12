@@ -33,19 +33,19 @@ public class EntradaNoGenerics {
             switch (tipoBiblioteca) {
                 case 1:
                     bibliotecaGeneral = new BibliotecaNoGenerics("Biblioteca Municipal", "Cooperativa");
-                    System.out.println("🏛️Has creado una Biblioteca General🏛️");
+                    System.out.println("🏛️Has creado una Biblioteca General🏛️\n");
                     break;
                 case 2:
                     bibliotecaTerror = new BibliotecaNoGenerics("Biblioteca Municipal Terror", "Cooperativa");
-                    System.out.println("🏛️Has creado una Biblioteca de Novela Terror🏛️");
+                    System.out.println("🏛️Has creado una Biblioteca de Novela Terror🏛️\n");
                     break;
                 case 3:
                     bibliotecaPoliciaca = new BibliotecaNoGenerics("Biblioteca Municipal Policiaca", "Cooperativa");
-                    System.out.println("🏛️Has creado una Biblioteca de Novela Policiaca🏛️");
+                    System.out.println("🏛️Has creado una Biblioteca de Novela Policiaca🏛️\n");
                     break;
                 case 4:
                     bibliotecaComedia = new BibliotecaNoGenerics("Biblioteca Municipal Comedia", "Cooperativa");
-                    System.out.println("🏛️Has creado una Biblioteca de Comedia🏛️");
+                    System.out.println("🏛️Has creado una Biblioteca de Comedia🏛️\n");
                     break;
 
             }
@@ -57,14 +57,14 @@ public class EntradaNoGenerics {
             try {//METIDO AQUI EL TRY, si lo pongo antes del DO, al cazar el error termina el programa
                 System.out.println("\n\t\t\t\t\t\t\t\t\t\t\uD83C\uDFDB\uFE0F¿QUE QUIERES HACER?\uD83C\uDFDB\uFE0F" +
                         "\n1- OPCION LIBRE AUN DADDAD \uD83C\uDFDB\uFE0F\t\t4- ELIMINAR LIBRO DEL CATALOGO ➖📕\t\t7- MOSTRAR UN LIBRO DEL MUNDO (ISBN)🔢" +
-                        "\n2- CREA/MOD. TAMAÑO CATALOGO \uD83D\uDDC3\uFE0F\t\t5- MOSTRAR DATOS BIBLIOTECA 📖\t\t\t8-MOSTRAR LIBRO DEL CATALOGO (ISBN) " +
-                        "\n3- AGREGA LIBRO AL CATALOGO ➕📗\t6- MOSTRAR LIBROS DEL MUNDO 📚\t\t\t9- SALIR 👋🏻");
+                        "\n2- CREA y ESTABE TAMAÑO CATALOGO \uD83D\uDDC3\uFE0F\t\t5- MOSTRAR DATOS BIBLIOTECA 📖\t\t\t8-MOSTRAR LIBRO DEL CATALOGO (ISBN) " +
+                        "\n3- AGREGA LIBRO AL CATALOGO ➕📗\t6- D E S H A B I L I T A D O 📚\t\t\t9- SALIR 👋🏻");
                 opcionMenuInterior = sc.nextInt();
 
 
                 switch (opcionMenuInterior) {
                     case 1:
-
+                        break;
                     case 2:
                         if (tipoBiblioteca == 1) {
                             bibliotecaGeneral.crearCatalogo();
@@ -95,23 +95,53 @@ public class EntradaNoGenerics {
                         }
                         break;
                     case 4:
-                        bibliotecaTerror.eliminarLibroEnCatalogo();
+                        if (tipoBiblioteca == 1) {
+                            bibliotecaGeneral.eliminarLibroEnCatalogo();
+                        }
+                        if (tipoBiblioteca == 2) {
+                            bibliotecaTerror.eliminarLibroEnCatalogo();
+                        }
+                        if (tipoBiblioteca == 3) {
+                            bibliotecaPoliciaca.eliminarLibroEnCatalogo();
+                        }
+                        if (tipoBiblioteca == 4) {
+                            bibliotecaComedia.eliminarLibroEnCatalogo();
+                        }
+
                         break;
                     case 5:
-                        bibliotecaTerror.mostrarDatosBiblio();
+                        if (tipoBiblioteca == 1) {
+                            bibliotecaGeneral.mostrarDatosBiblio();
+                        }
+                        if (tipoBiblioteca == 2) {
+                            bibliotecaTerror.mostrarDatosBiblio();
+                        }
+                        if (tipoBiblioteca == 3) {
+                            bibliotecaPoliciaca.mostrarDatosBiblio();
+                        }
+                        if (tipoBiblioteca == 4) {
+                            bibliotecaComedia.mostrarDatosBiblio();
+                        }
                         break;
                     case 6:
 
-                        ArrayList<Libro> listaGlobalLibros = DepositoLibros.crearLibros();//si se necesita mas veces instancias arriba
-                        for (Libro libro : listaGlobalLibros) {
-                            libro.mostrarDatos();
-                        }
                         break;
                     case 7:
                         bibliotecaTerror.busquedaISBNGlobal();
                         break;
                     case 8:
-                        bibliotecaTerror.buscarISBNEnCatalogo();
+                        if (tipoBiblioteca == 1) {
+                            bibliotecaGeneral.buscarISBNEnCatalogo();
+                        }
+                        if (tipoBiblioteca == 2) {
+                            bibliotecaTerror.buscarISBNEnCatalogo();
+                        }
+                        if (tipoBiblioteca == 3) {
+                            bibliotecaPoliciaca.buscarISBNEnCatalogo();
+                        }
+                        if (tipoBiblioteca == 4) {
+                            bibliotecaComedia.buscarISBNEnCatalogo();
+                        }
                         break;
                     case 9:
                         System.out.println("CERRANDO PROGRAMA");
