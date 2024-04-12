@@ -1,5 +1,6 @@
 import controller.Biblioteca;
 import controller.BibliotecaNoGenerics;
+import controller.OperacionesFicheroObj;
 import model.*;
 
 import java.util.ArrayList;
@@ -18,6 +19,10 @@ public class EntradaNoGenerics {
         BibliotecaNoGenerics bibliotecaPoliciaca = null;
         BibliotecaNoGenerics bibliotecaComedia = null;
 
+        OperacionesFicheroObj operacionesFicheroObj= new OperacionesFicheroObj();
+
+
+
 
         int tipoBiblioteca = 0;
 
@@ -34,18 +39,22 @@ public class EntradaNoGenerics {
                 case 1:
                     bibliotecaGeneral = new BibliotecaNoGenerics("Biblioteca Municipal", "Cooperativa");
                     System.out.println("🏛️Has creado una Biblioteca General🏛️\n");
+                 //   bibliotecaGeneral.reinicio2();
                     break;
                 case 2:
                     bibliotecaTerror = new BibliotecaNoGenerics("Biblioteca Municipal Terror", "Cooperativa");
                     System.out.println("🏛️Has creado una Biblioteca de Novela Terror🏛️\n");
+                  //  bibliotecaTerror.reinicio2();
                     break;
                 case 3:
                     bibliotecaPoliciaca = new BibliotecaNoGenerics("Biblioteca Municipal Policiaca", "Cooperativa");
                     System.out.println("🏛️Has creado una Biblioteca de Novela Policiaca🏛️\n");
+                  //  bibliotecaPoliciaca.reinicio2();
                     break;
                 case 4:
                     bibliotecaComedia = new BibliotecaNoGenerics("Biblioteca Municipal Comedia", "Cooperativa");
                     System.out.println("🏛️Has creado una Biblioteca de Comedia🏛️\n");
+                   // bibliotecaComedia.reinicio2();
                     break;
 
             }
@@ -58,7 +67,7 @@ public class EntradaNoGenerics {
                 System.out.println("\n\t\t\t\t\t\t\t\t\t\t\uD83C\uDFDB\uFE0F¿QUE QUIERES HACER?\uD83C\uDFDB\uFE0F" +
                         "\n1- OPCION LIBRE AUN DADDAD \uD83C\uDFDB\uFE0F\t\t4- ELIMINAR LIBRO DEL CATALOGO ➖📕\t\t7- MOSTRAR UN LIBRO DEL MUNDO (ISBN)🔢" +
                         "\n2- CREA y ESTABE TAMAÑO CATALOGO \uD83D\uDDC3\uFE0F\t\t5- MOSTRAR DATOS BIBLIOTECA 📖\t\t\t8-MOSTRAR LIBRO DEL CATALOGO (ISBN) " +
-                        "\n3- AGREGA LIBRO AL CATALOGO ➕📗\t6- D E S H A B I L I T A D O 📚\t\t\t9- SALIR 👋🏻");
+                        "\n3- AGREGA LIBRO AL CATALOGO ➕📗\t6- S I N  D E F I N I R 📚\t\t\t9-HAY CAZAR EXCEPTION CATALOGO NO EXISTE GUARDAR EN .obj Y SALIR 👋🏻");
                 opcionMenuInterior = sc.nextInt();
 
 
@@ -124,10 +133,21 @@ public class EntradaNoGenerics {
                         }
                         break;
                     case 6:
-
+                        if (tipoBiblioteca == 1) {
+                            bibliotecaGeneral.leerFichero();
+                        }
+                        if (tipoBiblioteca == 2) {
+                            bibliotecaTerror.leerFichero();
+                        }
+                        if (tipoBiblioteca == 3) {
+                            bibliotecaPoliciaca.leerFichero();
+                        }
+                        if (tipoBiblioteca == 4) {
+                            bibliotecaComedia.leerFichero();
+                        }
                         break;
                     case 7:
-                        bibliotecaTerror.busquedaISBNGlobal();
+                        //bibliotecaTerror.busquedaISBNGlobal();
                         break;
                     case 8:
                         if (tipoBiblioteca == 1) {
@@ -144,6 +164,20 @@ public class EntradaNoGenerics {
                         }
                         break;
                     case 9:
+                        System.out.println("GUARDANDO ARCHIVOS...");
+
+                        if (tipoBiblioteca == 1) {
+                            bibliotecaGeneral.escribirObjetoBib();
+                        }
+                        if (tipoBiblioteca == 2) {
+                            bibliotecaTerror.escribirObjetoBib();
+                        }
+                        if (tipoBiblioteca == 3) {
+                            bibliotecaPoliciaca.escribirObjetoBib();
+                        }
+                        if (tipoBiblioteca == 4) {
+                            bibliotecaComedia.escribirObjetoBib();
+                        }
                         System.out.println("CERRANDO PROGRAMA");
                         break;
                     default:

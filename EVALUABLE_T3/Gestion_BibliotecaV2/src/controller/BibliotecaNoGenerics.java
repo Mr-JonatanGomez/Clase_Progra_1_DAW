@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 import model.*;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -22,6 +23,32 @@ public class BibliotecaNoGenerics {
     }
 
 
+    public void escribirObjetoBib(){
+        this.catalogo.escribirObjetoCat();
+    }
+
+    public void reiniciarFicheroObj(){
+        this.catalogo.reiniciarObjetoCat();
+    }
+    public void reinicio2(){
+        ObjectOutputStream objectOutputStream=null;
+        File file = new File("src/resources/libros.obj");
+
+        try {
+            objectOutputStream = new ObjectOutputStream(new FileOutputStream(file));
+            //EL TRUE NO ES NECESARIO, ASÍ REESCRIBO A VACIO
+            objectOutputStream.writeObject("");
+
+
+
+        } catch (IOException e) {
+            System.out.println("Error en la salida del file.obj");
+        }
+    }
+
+    public void leerFichero(){
+        this.catalogo.leerFicheroCat();
+    }
     public void mostrarDatosBiblio() throws CatalogoNoExisteException {
         System.out.println("\n\uD83C\uDFDB\uFE0F DATOS BIBLIOTECA \uD83C\uDFDB\uFE0F");
         System.out.println("nombre = " + nombre);
@@ -39,7 +66,7 @@ public class BibliotecaNoGenerics {
     }
 
     public void crearCatalogo() /*throws TipoDatosNoContemplados*/ {
-        while (catalogo == null) {
+        while (catalogo == null) {//evita modificar tamaño del catalogo en marcha
             Scanner sc = new Scanner(System.in);
             System.out.println("¿Que capacidad tiene el catalogo?" +
                     "⚠\uFE0F ATENCION, NO PODRÁ MODIFICARSE ESTE TAMAÑO ⚠\uFE0F");
@@ -189,6 +216,86 @@ public class BibliotecaNoGenerics {
             this.listaLibrosEnCatalogo = new ArrayList<>();
         }
 
+        public void escribirObjetoCat(){
+            ObjectOutputStream objectOutputStream=null;
+            File file = new File("src/resources/libros.obj");
+
+            try {
+                objectOutputStream = new ObjectOutputStream(new FileOutputStream(file,true));
+                //EL TRUE ES PARA NO SOBREESCRIBIR, NO HCAE FALTA PERO QUIERO PROBARLO
+                objectOutputStream.writeObject(listaLibrosEnCatalogo);
+
+
+
+            } catch (IOException e) {
+                System.out.println("Error en la salida del file.obj");
+            }finally {
+                try {
+                    objectOutputStream.close();
+                } catch (IOException e) {
+                    System.out.println("Error al cerrar flujo");
+                } catch (NullPointerException e){
+                    System.out.println("Cerrado en nulo");
+                }
+            }
+
+        }
+        public void reiniciarObjetoCat(){
+            ObjectOutputStream objectOutputStream=null;
+            File file = new File("src/resources/libros.obj");
+
+            try {
+                objectOutputStream = new ObjectOutputStream(new FileOutputStream(file));
+                //EL TRUE NO ES NECESARIO, ASÍ REESCRIBO A VACIO
+                objectOutputStream.writeObject("");
+
+
+
+            } catch (IOException e) {
+                System.out.println("Error en la salida del file.obj");
+            }finally {
+                try {
+                    objectOutputStream.close();
+                } catch (IOException e) {
+                    System.out.println("Error al cerrar flujo");
+                } catch (NullPointerException e){
+                    System.out.println("Cerrado en nulo");
+                }
+            }
+
+        }
+        public void leerFicheroCat(){
+            ObjectInputStream objectInputStream= null;
+            File file = new File("src/resources/libros.obj");
+
+
+            try {
+                objectInputStream = new ObjectInputStream(new FileInputStream(file));
+                listaLibrosEnCatalogo = (ArrayList<Libro>) objectInputStream.readObject();
+
+                for (Libro item:listaLibrosEnCatalogo) {
+                    item.mostrarDatos();
+                }
+
+            } catch (IOException e) {
+                System.out.println("El objeto no existe o no se puede leer");
+            } catch (ClassNotFoundException e) {
+                System.out.println("Error en casteo de clase");
+            } catch (ClassCastException e){
+                System.out.println("Error en casteo de clase");
+            }catch (NullPointerException e){
+                System.out.println("El catalogo no esta creado nulo y no se puede leer fichero");
+            } finally {
+                try {
+                    objectInputStream.close();
+                } catch (IOException e) {
+                    System.out.println("Error en el cerrado");
+                } finally {
+                    System.out.println("Cerrado a Nulo");
+                }
+            }
+
+        }
         public void catalogoLleno() {
 
 
