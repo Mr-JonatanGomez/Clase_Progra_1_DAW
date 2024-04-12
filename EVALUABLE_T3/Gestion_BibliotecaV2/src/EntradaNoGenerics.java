@@ -18,6 +18,7 @@ public class EntradaNoGenerics {
         BibliotecaNoGenerics bibliotecaTerror = null;
         BibliotecaNoGenerics bibliotecaPoliciaca = null;
         BibliotecaNoGenerics bibliotecaComedia = null;
+        BibliotecaNoGenerics bCOmprobar = new  BibliotecaNoGenerics("sd","sd");
 
         OperacionesFicheroObj operacionesFicheroObj= new OperacionesFicheroObj();
 
@@ -32,7 +33,8 @@ public class EntradaNoGenerics {
                     "\n1- GENERAL (admite todo tipo de tematicas)" +
                     "\n2- TERROR (solo admite libros de terror)" +
                     "\n3- POLICIACA (solo admite novelas policiacas)" +
-                    "\n4- COMEDIA (solo admite libros de comedia)");
+                    "\n4- COMEDIA (solo admite libros de comedia)" +
+                    "\n5- PROBAR LEER FICHERO");
             tipoBiblioteca = sc.nextInt();
 
             switch (tipoBiblioteca) {
@@ -56,6 +58,10 @@ public class EntradaNoGenerics {
                     System.out.println("🏛️Has creado una Biblioteca de Comedia🏛️\n");
                    // bibliotecaComedia.reinicio2();
                     break;
+                case 5:
+                    bCOmprobar.crearCatalogo();
+                    bCOmprobar.leerFichero();
+                    break;
 
             }
         } while (tipoBiblioteca < 1 || tipoBiblioteca > 4);
@@ -65,14 +71,28 @@ public class EntradaNoGenerics {
         do {
             try {//METIDO AQUI EL TRY, si lo pongo antes del DO, al cazar el error termina el programa
                 System.out.println("\n\t\t\t\t\t\t\t\t\t\t\uD83C\uDFDB\uFE0F¿QUE QUIERES HACER?\uD83C\uDFDB\uFE0F" +
-                        "\n1- OPCION LIBRE AUN DADDAD \uD83C\uDFDB\uFE0F\t\t4- ELIMINAR LIBRO DEL CATALOGO ➖📕\t\t7- MOSTRAR UN LIBRO DEL MUNDO (ISBN)🔢" +
+                        "\n1- GUARDAR FICHERO \uD83C\uDFDB\uFE0F\t\t4- ELIMINAR LIBRO DEL CATALOGO ➖📕\t\t7- MOSTRAR UN LIBRO DEL MUNDO (ISBN)🔢" +
                         "\n2- CREA y ESTABE TAMAÑO CATALOGO \uD83D\uDDC3\uFE0F\t\t5- MOSTRAR DATOS BIBLIOTECA 📖\t\t\t8-MOSTRAR LIBRO DEL CATALOGO (ISBN) " +
-                        "\n3- AGREGA LIBRO AL CATALOGO ➕📗\t6- S I N  D E F I N I R 📚\t\t\t9-HAY CAZAR EXCEPTION CATALOGO NO EXISTE GUARDAR EN .obj Y SALIR 👋🏻");
+                        "\n3- AGREGA LIBRO AL CATALOGO ➕📗\t6- LEER FICHERO 📚\t\t\t9-HAY CAZAR EXCEPTION CATALOGO NO EXISTE GUARDAR EN .obj Y SALIR 👋🏻");
                 opcionMenuInterior = sc.nextInt();
 
 
                 switch (opcionMenuInterior) {
                     case 1:
+                        System.out.println("GUARDANDO ARCHIVOS...");
+
+                        if (tipoBiblioteca == 1) {
+                            bibliotecaGeneral.escribirObjetoBib();
+                        }
+                        if (tipoBiblioteca == 2) {
+                            bibliotecaTerror.escribirObjetoBib();
+                        }
+                        if (tipoBiblioteca == 3) {
+                            bibliotecaPoliciaca.escribirObjetoBib();
+                        }
+                        if (tipoBiblioteca == 4) {
+                            bibliotecaComedia.escribirObjetoBib();
+                        }
                         break;
                     case 2:
                         if (tipoBiblioteca == 1) {
@@ -164,20 +184,7 @@ public class EntradaNoGenerics {
                         }
                         break;
                     case 9:
-                        System.out.println("GUARDANDO ARCHIVOS...");
 
-                        if (tipoBiblioteca == 1) {
-                            bibliotecaGeneral.escribirObjetoBib();
-                        }
-                        if (tipoBiblioteca == 2) {
-                            bibliotecaTerror.escribirObjetoBib();
-                        }
-                        if (tipoBiblioteca == 3) {
-                            bibliotecaPoliciaca.escribirObjetoBib();
-                        }
-                        if (tipoBiblioteca == 4) {
-                            bibliotecaComedia.escribirObjetoBib();
-                        }
                         System.out.println("CERRANDO PROGRAMA");
                         break;
                     default:

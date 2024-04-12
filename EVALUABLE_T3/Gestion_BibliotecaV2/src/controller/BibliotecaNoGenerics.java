@@ -271,11 +271,44 @@ public class BibliotecaNoGenerics {
 
             try {
                 objectInputStream = new ObjectInputStream(new FileInputStream(file));
-                listaLibrosEnCatalogo = (ArrayList<Libro>) objectInputStream.readObject();
+               ArrayList <Libro> listaLibrosEnCatalogo = (ArrayList<Libro>) objectInputStream.readObject();
 
                 for (Libro item:listaLibrosEnCatalogo) {
                     item.mostrarDatos();
                 }
+
+            } catch (IOException e) {
+                System.out.println("El objeto no existe o no se puede leer");
+            } catch (ClassNotFoundException e) {
+                System.out.println("Error en casteo de clase");
+            } catch (ClassCastException e){
+                System.out.println("Error en casteo de clase");
+            }catch (NullPointerException e){
+                System.out.println("El catalogo no esta creado nulo y no se puede leer fichero");
+            } finally {
+                try {
+                    objectInputStream.close();
+                } catch (IOException e) {
+                    System.out.println("Error en el cerrado");
+                } finally {
+                    System.out.println("Cerrado a Nulo");
+                }
+            }
+
+        }
+        public void leerFicheroCat2(){
+            ObjectInputStream objectInputStream= null;
+            File file = new File("src/resources/libros.obj");
+
+
+            try {
+                objectInputStream = new ObjectInputStream(new FileInputStream(file));
+
+                Libro libro =(Libro) objectInputStream.readObject();
+
+                System.out.println((Libro)libro);
+
+
 
             } catch (IOException e) {
                 System.out.println("El objeto no existe o no se puede leer");
