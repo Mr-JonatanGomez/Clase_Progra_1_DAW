@@ -16,17 +16,19 @@ public class EntradaNoGenerics {
         BibliotecaNoGenerics bibliotecaTerror = null;
         BibliotecaNoGenerics bibliotecaPoliciaca = null;
         BibliotecaNoGenerics bibliotecaComedia = null;
+        //biblio comprobacion
         BibliotecaNoGenerics bCOmprobar = new  BibliotecaNoGenerics("sd","sd");
 
         OperacionesFicheroObj operacionesFicheroObj= new OperacionesFicheroObj();
 
         // TODO: 13/04/2024 CODIGO PARA REESTABLECER FICHERO
-
-        /*BibliotecaNoGenerics b0 = new BibliotecaNoGenerics("0","0");
+/*
+        BibliotecaNoGenerics b0 = new BibliotecaNoGenerics("0","0");
+        b0.catalogoTesterMenu(100);
         b0.reiniciarFicheroObj();
         b0 = null;
-        */
 
+*/
 
 
         int tipoBiblioteca = 0;
