@@ -5,10 +5,11 @@ import lombok.Setter;
 
 @Setter
 @Getter
-public final class LibroComedia extends Libro{
+public final class LibroComedia extends Libro {
     private TipoHumor tipoHumor;
 
-    public LibroComedia() {}
+    public LibroComedia() {
+    }
 
 
     public LibroComedia(String titulo, String autor, String isbn, int paginas, TipoHumor tipoHumor) {
@@ -20,5 +21,16 @@ public final class LibroComedia extends Libro{
     public void mostrarDatos() {
         super.mostrarDatos();
         System.out.println("Tipo de humor: " + tipoHumor);
+    }
+
+    @Override
+    public String toString() {
+        return "LibroComedia{" +
+                "titulo='" + getTitulo() + '\'' +
+                ", autor='" + getAutor() + '\'' +
+                ", isbn='" + getIsbn() + '\'' +
+                ", paginas=" + getPaginas() + '\'' +
+                "tipoHumor=" + tipoHumor +
+                '}';
     }
 }

@@ -101,6 +101,8 @@ public class EntradaNoGenerics {
                         if (tipoBiblioteca == 4) {
                             bibliotecaComedia.escribirObjetoBib();
                         }
+
+                        System.out.println("ARCHIVOS GUARDADOS CON EXITO");
                         break;
                     case 2:
                         if (tipoBiblioteca == 1) {
@@ -213,7 +215,7 @@ public class EntradaNoGenerics {
             } catch (NoExisteLibroEnBusqueda e) {
                 System.out.println(e.getMessage());
             }finally {
-                System.out.println("Salida al menú por fallo.");
+                System.out.println("");//este Finally siempre me salia mensaje de fallo siendo mentira
             }
         } while (opcionMenuInterior != 9);
 

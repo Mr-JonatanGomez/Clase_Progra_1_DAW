@@ -22,4 +22,15 @@ public final class LibroTerror extends Libro{
         super.mostrarDatos();
         System.out.println("Calificacion: +" + calificacion+" años");
     }
+
+    @Override
+    public String toString() {
+        return "LibroTerror{" +
+                "titulo='" + getTitulo() + '\'' +
+                ", autor='" + getAutor() + '\'' +
+                ", isbn='" + getIsbn() + '\'' +
+                ", paginas=" + getPaginas() + '\'' +
+                "calificacion=" + calificacion +
+                '}';
+    }
 }

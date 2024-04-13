@@ -12,7 +12,6 @@ import java.util.Scanner;
 @Getter
 public class BibliotecaNoGenerics {
     private String nombre, director;
-    private ArrayList librosBiblio;
     private Catalogo catalogo;
     Libro libroVariable = null;
 
@@ -275,6 +274,7 @@ public class BibliotecaNoGenerics {
 
             try {
                 objectInputStream = new ObjectInputStream(new FileInputStream(file));
+
                 ArrayList<Libro> listaLibrosEnCatalogo = (ArrayList<Libro>) objectInputStream.readObject();
 
                 for (Libro item : listaLibrosEnCatalogo) {
@@ -286,7 +286,7 @@ public class BibliotecaNoGenerics {
             } catch (ClassNotFoundException e) {
                 System.out.println("Error en casteo de clase");
             } catch (ClassCastException e) {
-                System.out.println("Error en casteo de clase");
+                System.out.println("Error en casteo de clase (metodo LEERficheroCAT)");
             } catch (NullPointerException e) {
                 System.out.println("El catalogo no esta creado nulo y no se puede leer fichero");
             } finally {
@@ -649,13 +649,15 @@ public class BibliotecaNoGenerics {
         }
 
         public void mostrarDatosCatalogo() {
-            System.out.println("📚 DATOS DEL CATALOGO 📚");
+            System.out.println("\n📚 DATOS DEL CATALOGO 📚");
             System.out.println("Este catalogo tiene una capacidad total de " + capacidad + " libros");
             System.out.println("El numero de libros en catalogo actualmente es: " + listaLibrosEnCatalogo.size());
 
             for (Libro item : listaLibrosEnCatalogo) {
-                System.out.println("MOSTRANDO DATOS DE LIBRO");
+                int cont=1;
+                System.out.println("\nMOSTRANDO DATOS DEL" +cont+ "º LIBRO");
                 item.mostrarDatos();
+                cont++;
             }
             // System.out.println(librosEnCatalogo);
 

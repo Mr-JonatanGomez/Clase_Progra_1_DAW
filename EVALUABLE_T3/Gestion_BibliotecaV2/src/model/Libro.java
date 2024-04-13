@@ -28,5 +28,13 @@ public abstract class Libro implements Serializable {
         System.out.println("Paginas: " + paginas);
     }
 
-
+    @Override
+    public String toString() {
+        return "Libro{" +
+                "titulo='" + titulo + '\'' +
+                ", autor='" + autor + '\'' +
+                ", isbn='" + isbn + '\'' +
+                ", paginas=" + paginas +
+                '}';
+    }
 }

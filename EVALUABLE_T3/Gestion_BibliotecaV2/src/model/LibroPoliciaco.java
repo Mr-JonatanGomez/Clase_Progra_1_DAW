@@ -21,4 +21,15 @@ public final class LibroPoliciaco extends Libro{
         super.mostrarDatos();
         System.out.println("Trama: " + trama);
     }
+
+    @Override
+    public String toString() {
+        return "LibroPoliciaco{" +
+                "titulo='" + getTitulo() + '\'' +
+                ", autor='" + getAutor() + '\'' +
+                ", isbn='" + getIsbn() + '\'' +
+                ", paginas=" + getPaginas() +
+                "trama=" + trama +
+                '}';
+    }
 }
