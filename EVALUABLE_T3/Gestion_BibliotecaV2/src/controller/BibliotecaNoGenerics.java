@@ -23,22 +23,22 @@ public class BibliotecaNoGenerics {
     }
 
 
-    public void escribirObjetoBib(){
+    public void escribirObjetoBib() {
         this.catalogo.escribirObjetoCat();
     }
 
-    public void reiniciarFicheroObj(){
+    public void reiniciarFicheroObj() {
         this.catalogo.reiniciarObjetoCat();
     }
-    public void reinicio2(){
-        ObjectOutputStream objectOutputStream=null;
+
+    public void reinicio2CONLECTURA() {
+        ObjectOutputStream objectOutputStream = null;
         File file = new File("src/resources/libros.obj");
 
         try {
             objectOutputStream = new ObjectOutputStream(new FileOutputStream(file));
             //EL TRUE NO ES NECESARIO, ASÍ REESCRIBO A VACIO
-            objectOutputStream.writeObject("");
-
+            objectOutputStream.writeObject(new LibroComedia("sd","sd","sd",1,TipoHumor.amarillo));
 
 
         } catch (IOException e) {
@@ -46,9 +46,10 @@ public class BibliotecaNoGenerics {
         }
     }
 
-    public void leerFichero(){
+    public void leerFichero() {
         this.catalogo.leerFicheroCat();
     }
+
     public void mostrarDatosBiblio() throws CatalogoNoExisteException {
         System.out.println("\n\uD83C\uDFDB\uFE0F DATOS BIBLIOTECA \uD83C\uDFDB\uFE0F");
         System.out.println("nombre = " + nombre);
@@ -82,6 +83,9 @@ public class BibliotecaNoGenerics {
         }
     }
 
+    public void catalogoTesterMenu(int capacidad) {
+        this.catalogo = new Catalogo(capacidad);
+    }
 
     public void agregarLibroEnCatalogoTerror() throws CatalogoNoExisteException, CatalogoLlenoException, ClassCastException {//En catalogo es de biblio // al catalogo de catalogo
         if (catalogo == null) {
@@ -216,32 +220,32 @@ public class BibliotecaNoGenerics {
             this.listaLibrosEnCatalogo = new ArrayList<>();
         }
 
-        public void escribirObjetoCat(){
-            ObjectOutputStream objectOutputStream=null;
+        public void escribirObjetoCat() {
+            ObjectOutputStream objectOutputStream = null;
             File file = new File("src/resources/libros.obj");
 
             try {
-                objectOutputStream = new ObjectOutputStream(new FileOutputStream(file,true));
+                objectOutputStream = new ObjectOutputStream(new FileOutputStream(file, true));
                 //EL TRUE ES PARA NO SOBREESCRIBIR, NO HCAE FALTA PERO QUIERO PROBARLO
                 objectOutputStream.writeObject(listaLibrosEnCatalogo);
 
 
-
             } catch (IOException e) {
                 System.out.println("Error en la salida del file.obj");
-            }finally {
+            } finally {
                 try {
                     objectOutputStream.close();
                 } catch (IOException e) {
                     System.out.println("Error al cerrar flujo");
-                } catch (NullPointerException e){
+                } catch (NullPointerException e) {
                     System.out.println("Cerrado en nulo");
                 }
             }
 
         }
-        public void reiniciarObjetoCat(){
-            ObjectOutputStream objectOutputStream=null;
+
+        public void reiniciarObjetoCat() {
+            ObjectOutputStream objectOutputStream = null;
             File file = new File("src/resources/libros.obj");
 
             try {
@@ -250,30 +254,30 @@ public class BibliotecaNoGenerics {
                 objectOutputStream.writeObject("");
 
 
-
             } catch (IOException e) {
                 System.out.println("Error en la salida del file.obj");
-            }finally {
+            } finally {
                 try {
                     objectOutputStream.close();
                 } catch (IOException e) {
                     System.out.println("Error al cerrar flujo");
-                } catch (NullPointerException e){
+                } catch (NullPointerException e) {
                     System.out.println("Cerrado en nulo");
                 }
             }
 
         }
-        public void leerFicheroCat(){
-            ObjectInputStream objectInputStream= null;
+
+        public void leerFicheroCat() {
+            ObjectInputStream objectInputStream = null;
             File file = new File("src/resources/libros.obj");
 
 
             try {
                 objectInputStream = new ObjectInputStream(new FileInputStream(file));
-               ArrayList <Libro> listaLibrosEnCatalogo = (ArrayList<Libro>) objectInputStream.readObject();
+                ArrayList<Libro> listaLibrosEnCatalogo = (ArrayList<Libro>) objectInputStream.readObject();
 
-                for (Libro item:listaLibrosEnCatalogo) {
+                for (Libro item : listaLibrosEnCatalogo) {
                     item.mostrarDatos();
                 }
 
@@ -281,9 +285,9 @@ public class BibliotecaNoGenerics {
                 System.out.println("El objeto no existe o no se puede leer");
             } catch (ClassNotFoundException e) {
                 System.out.println("Error en casteo de clase");
-            } catch (ClassCastException e){
+            } catch (ClassCastException e) {
                 System.out.println("Error en casteo de clase");
-            }catch (NullPointerException e){
+            } catch (NullPointerException e) {
                 System.out.println("El catalogo no esta creado nulo y no se puede leer fichero");
             } finally {
                 try {
@@ -296,27 +300,27 @@ public class BibliotecaNoGenerics {
             }
 
         }
-        public void leerFicheroCat2(){
-            ObjectInputStream objectInputStream= null;
+
+        public void leerFicheroCat2() {
+            ObjectInputStream objectInputStream = null;
             File file = new File("src/resources/libros.obj");
 
 
             try {
                 objectInputStream = new ObjectInputStream(new FileInputStream(file));
 
-                Libro libro =(Libro) objectInputStream.readObject();
+                Libro libro = (Libro) objectInputStream.readObject();
 
-                System.out.println((Libro)libro);
-
+                System.out.println((Libro) libro);
 
 
             } catch (IOException e) {
                 System.out.println("El objeto no existe o no se puede leer");
             } catch (ClassNotFoundException e) {
                 System.out.println("Error en casteo de clase");
-            } catch (ClassCastException e){
+            } catch (ClassCastException e) {
                 System.out.println("Error en casteo de clase");
-            }catch (NullPointerException e){
+            } catch (NullPointerException e) {
                 System.out.println("El catalogo no esta creado nulo y no se puede leer fichero");
             } finally {
                 try {
@@ -329,6 +333,7 @@ public class BibliotecaNoGenerics {
             }
 
         }
+
         public void catalogoLleno() {
 
 

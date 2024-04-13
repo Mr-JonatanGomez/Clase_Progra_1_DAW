@@ -1,9 +1,7 @@
-import controller.Biblioteca;
 import controller.BibliotecaNoGenerics;
 import controller.OperacionesFicheroObj;
 import model.*;
 
-import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -22,6 +20,12 @@ public class EntradaNoGenerics {
 
         OperacionesFicheroObj operacionesFicheroObj= new OperacionesFicheroObj();
 
+        // TODO: 13/04/2024 CODIGO PARA REESTABLECER FICHERO
+
+        /*BibliotecaNoGenerics b0 = new BibliotecaNoGenerics("0","0");
+        b0.reiniciarFicheroObj();
+        b0 = null;
+        */
 
 
 
@@ -41,26 +45,30 @@ public class EntradaNoGenerics {
                 case 1:
                     bibliotecaGeneral = new BibliotecaNoGenerics("Biblioteca Municipal", "Cooperativa");
                     System.out.println("🏛️Has creado una Biblioteca General🏛️\n");
-                 //   bibliotecaGeneral.reinicio2();
+
                     break;
                 case 2:
                     bibliotecaTerror = new BibliotecaNoGenerics("Biblioteca Municipal Terror", "Cooperativa");
                     System.out.println("🏛️Has creado una Biblioteca de Novela Terror🏛️\n");
-                  //  bibliotecaTerror.reinicio2();
+
                     break;
                 case 3:
                     bibliotecaPoliciaca = new BibliotecaNoGenerics("Biblioteca Municipal Policiaca", "Cooperativa");
                     System.out.println("🏛️Has creado una Biblioteca de Novela Policiaca🏛️\n");
-                  //  bibliotecaPoliciaca.reinicio2();
+
                     break;
                 case 4:
                     bibliotecaComedia = new BibliotecaNoGenerics("Biblioteca Municipal Comedia", "Cooperativa");
                     System.out.println("🏛️Has creado una Biblioteca de Comedia🏛️\n");
-                   // bibliotecaComedia.reinicio2();
+
                     break;
                 case 5:
-                    bCOmprobar.crearCatalogo();
-                    bCOmprobar.leerFichero();
+                    try{
+                        bCOmprobar.catalogoTesterMenu(100);
+                        bCOmprobar.leerFichero();
+                    }catch (NullPointerException e){
+                        System.out.println("El fichero esta vacio, y no puede ser leido");
+                    }
                     break;
 
             }
@@ -153,6 +161,7 @@ public class EntradaNoGenerics {
                         }
                         break;
                     case 6:
+                        System.out.println("Probando a leer FICHERO");
                         if (tipoBiblioteca == 1) {
                             bibliotecaGeneral.leerFichero();
                         }
@@ -203,6 +212,8 @@ public class EntradaNoGenerics {
                 System.out.println(e.getMessage());
             } catch (NoExisteLibroEnBusqueda e) {
                 System.out.println(e.getMessage());
+            }finally {
+                System.out.println("Salida al menú por fallo.");
             }
         } while (opcionMenuInterior != 9);
 
