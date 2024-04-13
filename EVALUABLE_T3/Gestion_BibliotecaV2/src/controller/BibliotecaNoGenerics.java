@@ -281,6 +281,12 @@ public class BibliotecaNoGenerics {
                     item.mostrarDatos();
                 }
 
+                /*Libro item = (Libro) objectInputStream.readObject();
+
+                while ((item = (Libro) objectInputStream.readObject()) != null) {
+                    System.out.println(item);
+                }*/
+
             } catch (IOException e) {
                 System.out.println("El objeto no existe o no se puede leer");
             } catch (ClassNotFoundException e) {
@@ -291,7 +297,9 @@ public class BibliotecaNoGenerics {
                 System.out.println("El catalogo no esta creado nulo y no se puede leer fichero");
             } finally {
                 try {
+                    if (objectInputStream!=null){
                     objectInputStream.close();
+                    }
                 } catch (IOException e) {
                     System.out.println("Error en el cerrado");
                 } finally {
