@@ -10,12 +10,12 @@ import java.util.Scanner;
 
 @Setter
 @Getter
-public class BibliotecaNoGenerics {
+public class Biblioteca {
     private String nombre, director;
     private Catalogo catalogo;
     Libro libroVariable = null;
 
-    public BibliotecaNoGenerics(String nombre, String director) {
+    public Biblioteca(String nombre, String director) {
         this.nombre = nombre;
         this.director = director;
         //this.librosBiblio = new ArrayList<>();

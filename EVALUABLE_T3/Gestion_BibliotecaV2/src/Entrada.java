@@ -1,18 +1,18 @@
-import controller.BibliotecaNoGenerics;
+import controller.Biblioteca;
 import controller.OperacionesFicheroObj;
 import model.*;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-public class EntradaNoGenerics {
+public class Entrada {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        BibliotecaNoGenerics bibliotecaGeneral = null;
-        BibliotecaNoGenerics bibliotecaTerror = null;
-        BibliotecaNoGenerics bibliotecaPoliciaca = null;
-        BibliotecaNoGenerics bibliotecaComedia = null;
+        Biblioteca bibliotecaGeneral = null;
+        Biblioteca bibliotecaTerror = null;
+        Biblioteca bibliotecaPoliciaca = null;
+        Biblioteca bibliotecaComedia = null;
 
         OperacionesFicheroObj operacionesFicheroObj = new OperacionesFicheroObj();
 
@@ -41,22 +41,22 @@ public class EntradaNoGenerics {
 
             switch (tipoBiblioteca) {
                 case 1:
-                    bibliotecaGeneral = new BibliotecaNoGenerics("Biblioteca Municipal", "Cooperativa");
+                    bibliotecaGeneral = new Biblioteca("Biblioteca Municipal", "Cooperativa");
                     System.out.println("🏛️Has creado una Biblioteca General🏛️\n");
 
                     break;
                 case 2:
-                    bibliotecaTerror = new BibliotecaNoGenerics("Biblioteca Municipal Terror", "Cooperativa");
+                    bibliotecaTerror = new Biblioteca("Biblioteca Municipal Terror", "Cooperativa");
                     System.out.println("🏛️Has creado una Biblioteca de Novela Terror🏛️\n");
 
                     break;
                 case 3:
-                    bibliotecaPoliciaca = new BibliotecaNoGenerics("Biblioteca Municipal Policiaca", "Cooperativa");
+                    bibliotecaPoliciaca = new Biblioteca("Biblioteca Municipal Policiaca", "Cooperativa");
                     System.out.println("🏛️Has creado una Biblioteca de Novela Policiaca🏛️\n");
 
                     break;
                 case 4:
-                    bibliotecaComedia = new BibliotecaNoGenerics("Biblioteca Municipal Comedia", "Cooperativa");
+                    bibliotecaComedia = new Biblioteca("Biblioteca Municipal Comedia", "Cooperativa");
                     System.out.println("🏛️Has creado una Biblioteca de Comedia🏛️\n");
 
                     break;
