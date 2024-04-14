@@ -192,7 +192,7 @@ public class EntradaNoGenerics {
                         break;
                     case 9:
                         System.out.println("GUARDANDO ARCHIVOS...");
-
+                        try{
                         if (tipoBiblioteca == 1) {
                             bibliotecaGeneral.escribirObjetoBib();
                         }
@@ -205,8 +205,11 @@ public class EntradaNoGenerics {
                         if (tipoBiblioteca == 4) {
                             bibliotecaComedia.escribirObjetoBib();
                         }
-
                         System.out.println("ARCHIVOS GUARDADOS CON EXITO");
+
+                        } catch (NullPointerException e){
+                            System.out.println("El catalogo no existe, Saliendo sin guardar");
+                        }
 
                         System.out.println("CERRANDO PROGRAMA");
                         break;

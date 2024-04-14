@@ -26,14 +26,6 @@ public class BibliotecaNoGenerics {
         this.catalogo.escribirObjetoCat();
     }//viene de ESCRIBIRobjetoCAT y se usa para GUARDAR case1
 
-    public void reiniciarFicheroObj() {
-        this.catalogo.reiniciarObjetoCat();
-    }
-    public void reiniciarFicheroObjDELETEPRUEBA() {
-        this.catalogo.reiniciarObjetoCatDeletePRUEBA();
-    }
-
-
     public void mostrarDatosBiblio() throws CatalogoNoExisteException {
         System.out.println("\n\uD83C\uDFDB\uFE0F DATOS BIBLIOTECA \uD83C\uDFDB\uFE0F");
         System.out.println("nombre = " + nombre);
@@ -65,10 +57,6 @@ public class BibliotecaNoGenerics {
                 this.catalogo = new Catalogo(capacidad);
             }
         }
-    }
-
-    public void catalogoTesterMenu(int capacidad) {
-        this.catalogo = new Catalogo(capacidad);
     }
 
     public void agregarLibroEnCatalogoTerror() throws CatalogoNoExisteException, CatalogoLlenoException, ClassCastException {//En catalogo es de biblio // al catalogo de catalogo
@@ -142,7 +130,6 @@ public class BibliotecaNoGenerics {
         }
     }
 
-
     public void eliminarLibroEnCatalogo() throws CatalogoNoExisteException, CatalogoLlenoException {
         if (catalogo == null) {
             throw new CatalogoNoExisteException("\n🚫 !ERROR¡ No hay un catalogo creado 🚫. Debes crearlo antes de eliminar libros\n");
@@ -189,8 +176,6 @@ public class BibliotecaNoGenerics {
         private int capacidad;
         private boolean capacidadMaxAlcanzada;
         private boolean catalogoVacio;
-        //Libro libroVariable = null;
-        //private ArrayList<Libro> listaGlobalLibros = DepositoLibros.crearLibros(); //sobra esta linea o sobra en agregarLibroAlCatalogo
 
         public Catalogo() {
             this.listaLibrosEnCatalogo = new ArrayList<>();
@@ -228,55 +213,6 @@ public class BibliotecaNoGenerics {
             }
 
         }
-
-        public void reiniciarObjetoCat() {
-            ObjectOutputStream objectOutputStream = null;
-            File file = new File("src/resources/libros.obj");
-
-            try {
-                objectOutputStream = new ObjectOutputStream(new FileOutputStream(file));
-                //EL TRUE NO ES NECESARIO, ASÍ REESCRIBO A VACIO
-                objectOutputStream.writeObject("");
-
-
-            } catch (IOException e) {
-                System.out.println("Error en la salida del file.obj");
-            } finally {
-                try {
-                    objectOutputStream.close();
-                } catch (IOException e) {
-                    System.out.println("Error al cerrar flujo");
-                } catch (NullPointerException e) {
-                    System.out.println("Cerrado en nulo");
-                }
-            }
-
-        }
-
-        public void reiniciarObjetoCatDeletePRUEBA() {
-            ObjectOutputStream objectOutputStream = null;
-            File file = new File("src/resources/libros.obj");
-
-            try {
-                objectOutputStream = new ObjectOutputStream(new FileOutputStream(file));
-                //EL TRUE NO ES NECESARIO, ASÍ REESCRIBO A VACIO
-                file.delete();
-
-
-            } catch (IOException e) {
-                System.out.println("Error en la salida del file.obj");
-            } finally {
-                try {
-                    objectOutputStream.close();
-                } catch (IOException e) {
-                    System.out.println("Error al cerrar flujo");
-                } catch (NullPointerException e) {
-                    System.out.println("Cerrado en nulo");
-                }
-            }
-
-        }
-
 
         public void catalogoLleno() {
 
@@ -325,7 +261,6 @@ public class BibliotecaNoGenerics {
             }
 
         }
-
 
         public void agregarLibroAlCatalogoTerror() {
             Scanner sc = new Scanner(System.in);

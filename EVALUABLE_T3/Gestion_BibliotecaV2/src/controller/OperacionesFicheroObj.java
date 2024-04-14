@@ -7,21 +7,6 @@ import java.util.ArrayList;
 
 public class OperacionesFicheroObj {
 
-    public void escrituraLibros(){
-        ObjectOutputStream objectOutputStream= null;
-        File file = new File("src/resources/libros.obj");
-
-        try {
-            objectOutputStream=new ObjectOutputStream(new FileOutputStream(file));
-            ArrayList<Libro> listaObj = new ArrayList<>();
-
-
-
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
-    }
     public void borrarCrearObj(){
         File file = new File("src/resources/libros.obj");//ruta
         if (file.exists()){
