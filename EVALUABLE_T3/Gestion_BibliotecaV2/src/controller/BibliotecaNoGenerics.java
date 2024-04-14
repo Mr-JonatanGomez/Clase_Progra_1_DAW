@@ -24,7 +24,7 @@ public class BibliotecaNoGenerics {
 
     public void escribirObjetoBib() {
         this.catalogo.escribirObjetoCat();
-    }
+    }//viene de ESCRIBIRobjetoCAT y se usa para GUARDAR case1
 
     public void reiniciarFicheroObj() {
         this.catalogo.reiniciarObjetoCat();
@@ -209,7 +209,8 @@ public class BibliotecaNoGenerics {
             File file = new File("src/resources/libros.obj");
 
             try {
-                objectOutputStream = new ObjectOutputStream(new FileOutputStream(file, true));
+                //PROBANDO SIN EL TRUE BORRA AL METER 2 libros en una vez
+                objectOutputStream = new ObjectOutputStream(new FileOutputStream(file));//, true
                 //EL TRUE ES PARA NO SOBREESCRIBIR, NO HCAE FALTA PERO QUIERO PROBARLO
                 objectOutputStream.writeObject(listaLibrosEnCatalogo);
 

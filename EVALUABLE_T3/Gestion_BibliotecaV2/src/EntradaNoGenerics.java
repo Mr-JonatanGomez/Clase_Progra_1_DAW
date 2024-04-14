@@ -191,6 +191,22 @@ public class EntradaNoGenerics {
                         }
                         break;
                     case 9:
+                        System.out.println("GUARDANDO ARCHIVOS...");
+
+                        if (tipoBiblioteca == 1) {
+                            bibliotecaGeneral.escribirObjetoBib();
+                        }
+                        if (tipoBiblioteca == 2) {
+                            bibliotecaTerror.escribirObjetoBib();
+                        }
+                        if (tipoBiblioteca == 3) {
+                            bibliotecaPoliciaca.escribirObjetoBib();
+                        }
+                        if (tipoBiblioteca == 4) {
+                            bibliotecaComedia.escribirObjetoBib();
+                        }
+
+                        System.out.println("ARCHIVOS GUARDADOS CON EXITO");
 
                         System.out.println("CERRANDO PROGRAMA");
                         break;
