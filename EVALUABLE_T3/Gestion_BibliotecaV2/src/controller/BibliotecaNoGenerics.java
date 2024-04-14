@@ -29,6 +29,9 @@ public class BibliotecaNoGenerics {
     public void reiniciarFicheroObj() {
         this.catalogo.reiniciarObjetoCat();
     }
+    public void reiniciarFicheroObjDELETEPRUEBA() {
+        this.catalogo.reiniciarObjetoCatDeletePRUEBA();
+    }
 
     public void reinicio2CONLECTURA() {
         ObjectOutputStream objectOutputStream = null;
@@ -251,6 +254,30 @@ public class BibliotecaNoGenerics {
                 objectOutputStream = new ObjectOutputStream(new FileOutputStream(file));
                 //EL TRUE NO ES NECESARIO, ASÍ REESCRIBO A VACIO
                 objectOutputStream.writeObject("");
+
+
+            } catch (IOException e) {
+                System.out.println("Error en la salida del file.obj");
+            } finally {
+                try {
+                    objectOutputStream.close();
+                } catch (IOException e) {
+                    System.out.println("Error al cerrar flujo");
+                } catch (NullPointerException e) {
+                    System.out.println("Cerrado en nulo");
+                }
+            }
+
+        }
+
+        public void reiniciarObjetoCatDeletePRUEBA() {
+            ObjectOutputStream objectOutputStream = null;
+            File file = new File("src/resources/libros.obj");
+
+            try {
+                objectOutputStream = new ObjectOutputStream(new FileOutputStream(file));
+                //EL TRUE NO ES NECESARIO, ASÍ REESCRIBO A VACIO
+                file.delete();
 
 
             } catch (IOException e) {

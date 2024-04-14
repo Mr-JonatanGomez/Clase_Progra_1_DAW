@@ -22,4 +22,28 @@ public class OperacionesFicheroObj {
         }
 
     }
+    public void borrarCrearObj(){
+        File file = new File("src/resources/libros.obj");//ruta
+        if (file.exists()){
+            //si archhivo existe y es archivo (no directory)
+            file.delete();
+        } else {
+            try {
+                file.createNewFile();
+            } catch (IOException e) {
+                System.out.println("Fallo, No se puede crear el fichero");
+            }
+        }
+
+    }
+    public void crearObjLibros(){
+        File file = new File("src/resources/libros.obj");
+        if (!file.exists()){
+            try {
+                file.createNewFile();
+            } catch (IOException e) {
+                System.out.println("Fallo, No se puede crear el fichero o ya EXISTE");
+            }
+        }
+    }
 }

@@ -40,7 +40,9 @@ public class EntradaNoGenerics {
                     "\n2- TERROR (solo admite libros de terror)" +
                     "\n3- POLICIACA (solo admite novelas policiacas)" +
                     "\n4- COMEDIA (solo admite libros de comedia)" +
-                    "\n5- PROBAR LEER FICHERO");
+                    "\n5- PROBAR LEER FICHERO Y BORRARLO");
+            // TODO: 14/04/2024   //  aqui poner si quieres reiniciar biblioteca o trabajar con una nueva,
+            // si trabajas con la nueva, mostrar datos de la biblioteca
             tipoBiblioteca = sc.nextInt();
 
             switch (tipoBiblioteca) {
@@ -68,6 +70,8 @@ public class EntradaNoGenerics {
                     try{
                         bCOmprobar.catalogoTesterMenu(100);
                         bCOmprobar.leerFichero();
+                      //  operacionesFicheroObj.borrarCrearObj();
+                        operacionesFicheroObj.crearObjLibros();
                     }catch (NullPointerException e){
                         System.out.println("El fichero esta vacio, y no puede ser leido");
                     }
@@ -86,7 +90,7 @@ public class EntradaNoGenerics {
                         "\n3- AGREGA LIBRO AL CATALOGO ➕📗\t6- LEER FICHERO 📚\t\t\t9-HAY CAZAR EXCEPTION CATALOGO NO EXISTE GUARDAR EN .obj Y SALIR 👋🏻");
                 opcionMenuInterior = sc.nextInt();
 
-
+// TODO: 14/04/2024 IF opcion 2, si catalogo es !null  desaparece la opcion 2 XD MAGIA 
                 switch (opcionMenuInterior) {
                     case 1:
                         System.out.println("GUARDANDO ARCHIVOS...");
