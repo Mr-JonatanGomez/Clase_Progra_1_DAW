@@ -33,24 +33,6 @@ public class BibliotecaNoGenerics {
         this.catalogo.reiniciarObjetoCatDeletePRUEBA();
     }
 
-    public void reinicio2CONLECTURA() {
-        ObjectOutputStream objectOutputStream = null;
-        File file = new File("src/resources/libros.obj");
-
-        try {
-            objectOutputStream = new ObjectOutputStream(new FileOutputStream(file));
-            //EL TRUE NO ES NECESARIO, ASÍ REESCRIBO A VACIO
-            objectOutputStream.writeObject(new LibroComedia("sd","sd","sd",1,TipoHumor.amarillo));
-
-
-        } catch (IOException e) {
-            System.out.println("Error en la salida del file.obj");
-        }
-    }
-
-    public void leerFichero() {
-        this.catalogo.leerFicheroCat();
-    }
 
     public void mostrarDatosBiblio() throws CatalogoNoExisteException {
         System.out.println("\n\uD83C\uDFDB\uFE0F DATOS BIBLIOTECA \uD83C\uDFDB\uFE0F");
@@ -294,80 +276,6 @@ public class BibliotecaNoGenerics {
 
         }
 
-        public void leerFicheroCat() {
-            ObjectInputStream objectInputStream = null;
-            File file = new File("src/resources/libros.obj");
-
-
-            try {
-                objectInputStream = new ObjectInputStream(new FileInputStream(file));
-
-                ArrayList<Libro> listaLibrosEnCatalogo = (ArrayList<Libro>) objectInputStream.readObject();
-
-                for (Libro item : listaLibrosEnCatalogo) {
-                    item.mostrarDatos();
-                }
-
-                /*Libro item = (Libro) objectInputStream.readObject();
-
-                while ((item = (Libro) objectInputStream.readObject()) != null) {
-                    System.out.println(item);
-                }*/
-
-            } catch (IOException e) {
-                System.out.println("El objeto no existe o no se puede leer");
-            } catch (ClassNotFoundException e) {
-                System.out.println("Error en casteo de clase");
-            } catch (ClassCastException e) {
-                System.out.println("Error en casteo de clase (metodo LEERficheroCAT)");
-            } catch (NullPointerException e) {
-                System.out.println("El catalogo no esta creado nulo y no se puede leer fichero");
-            } finally {
-                try {
-                    if (objectInputStream!=null){
-                    objectInputStream.close();
-                    }
-                } catch (IOException e) {
-                    System.out.println("Error en el cerrado");
-                } finally {
-                    System.out.println("Cerrado a Nulo");
-                }
-            }
-
-        }
-
-        public void leerFicheroCat2() {
-            ObjectInputStream objectInputStream = null;
-            File file = new File("src/resources/libros.obj");
-
-
-            try {
-                objectInputStream = new ObjectInputStream(new FileInputStream(file));
-
-                Libro libro = (Libro) objectInputStream.readObject();
-
-                System.out.println((Libro) libro);
-
-
-            } catch (IOException e) {
-                System.out.println("El objeto no existe o no se puede leer");
-            } catch (ClassNotFoundException e) {
-                System.out.println("Error en casteo de clase");
-            } catch (ClassCastException e) {
-                System.out.println("Error en casteo de clase");
-            } catch (NullPointerException e) {
-                System.out.println("El catalogo no esta creado nulo y no se puede leer fichero");
-            } finally {
-                try {
-                    objectInputStream.close();
-                } catch (IOException e) {
-                    System.out.println("Error en el cerrado");
-                } finally {
-                    System.out.println("Cerrado a Nulo");
-                }
-            }
-
-        }
 
         public void catalogoLleno() {
 

@@ -17,16 +17,14 @@ public class EntradaNoGenerics {
         BibliotecaNoGenerics bibliotecaPoliciaca = null;
         BibliotecaNoGenerics bibliotecaComedia = null;
         //biblio comprobacion
-        BibliotecaNoGenerics bCOmprobar = new  BibliotecaNoGenerics("sd","sd");
+        BibliotecaNoGenerics bCOmprobar = new BibliotecaNoGenerics("sd", "sd");
 
-        OperacionesFicheroObj operacionesFicheroObj= new OperacionesFicheroObj();
+        OperacionesFicheroObj operacionesFicheroObj = new OperacionesFicheroObj();
 
         // TODO: 13/04/2024 CODIGO PARA REESTABLECER FICHERO
 /*
-        BibliotecaNoGenerics b0 = new BibliotecaNoGenerics("0","0");
-        b0.catalogoTesterMenu(100);
-        b0.reiniciarFicheroObj();
-        b0 = null;
+        //  operacionesFicheroObj.borrarCrearObj();
+        //  operacionesFicheroObj.crearObjLibros();
 
 */
 
@@ -67,12 +65,14 @@ public class EntradaNoGenerics {
 
                     break;
                 case 5:
-                    try{
+                    try {
                         bCOmprobar.catalogoTesterMenu(100);
-                        bCOmprobar.leerFichero();
-                      //  operacionesFicheroObj.borrarCrearObj();
-                        operacionesFicheroObj.crearObjLibros();
-                    }catch (NullPointerException e){
+
+                        operacionesFicheroObj.leerFichero();
+
+                        //  operacionesFicheroObj.borrarCrearObj();
+                        // operacionesFicheroObj.crearObjLibros();
+                    } catch (NullPointerException e) {
                         System.out.println("El fichero esta vacio, y no puede ser leido");
                     }
                     break;
@@ -170,18 +170,8 @@ public class EntradaNoGenerics {
                         break;
                     case 6:
                         System.out.println("Probando a leer FICHERO");
-                        if (tipoBiblioteca == 1) {
-                            bibliotecaGeneral.leerFichero();
-                        }
-                        if (tipoBiblioteca == 2) {
-                            bibliotecaTerror.leerFichero();
-                        }
-                        if (tipoBiblioteca == 3) {
-                            bibliotecaPoliciaca.leerFichero();
-                        }
-                        if (tipoBiblioteca == 4) {
-                            bibliotecaComedia.leerFichero();
-                        }
+                        operacionesFicheroObj.leerFichero();
+
                         break;
                     case 7:
                         //bibliotecaTerror.busquedaISBNGlobal();
@@ -220,7 +210,7 @@ public class EntradaNoGenerics {
                 System.out.println(e.getMessage());
             } catch (NoExisteLibroEnBusqueda e) {
                 System.out.println(e.getMessage());
-            }finally {
+            } finally {
                 System.out.println("");//este Finally siempre me salia mensaje de fallo siendo mentira
             }
         } while (opcionMenuInterior != 9);

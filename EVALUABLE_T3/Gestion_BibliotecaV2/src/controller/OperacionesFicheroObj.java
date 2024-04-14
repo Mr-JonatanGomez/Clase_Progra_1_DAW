@@ -46,4 +46,45 @@ public class OperacionesFicheroObj {
             }
         }
     }
+    public void leerFichero() {
+        ObjectInputStream objectInputStream = null;
+        File file = new File("src/resources/libros.obj");
+
+
+        try {
+            objectInputStream = new ObjectInputStream(new FileInputStream(file));
+
+            ArrayList<Libro> listaLibrosEnCatalogo = (ArrayList<Libro>) objectInputStream.readObject();
+
+            for (Libro item : listaLibrosEnCatalogo) {
+                item.mostrarDatos();
+            }
+
+                /*Libro item = (Libro) objectInputStream.readObject();
+
+                while ((item = (Libro) objectInputStream.readObject()) != null) {
+                    System.out.println(item);
+                }*/
+
+        } catch (IOException e) {
+            System.out.println("El objeto no existe o no se puede leer");
+        } catch (ClassNotFoundException e) {
+            System.out.println("Error en casteo de clase");
+        } catch (ClassCastException e) {
+            System.out.println("Error en casteo de clase (metodo LEERficheroCAT)");
+        } catch (NullPointerException e) {
+            System.out.println("El catalogo no esta creado nulo y no se puede leer fichero");
+        } finally {
+            try {
+                if (objectInputStream!=null){
+                    objectInputStream.close();
+                }
+            } catch (IOException e) {
+                System.out.println("Error en el cerrado");
+            } finally {
+                System.out.println("Cerrado a Nulo");
+            }
+        }
+
+    }
 }
