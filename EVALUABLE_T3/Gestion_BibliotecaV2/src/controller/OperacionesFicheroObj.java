@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class OperacionesFicheroObj {
 
-    public void borrarCrearObj(){
+    public void borrarObj(){
         File file = new File("src/resources/libros.obj");//ruta
         if (file.exists()){
             //si archhivo existe y es archivo (no directory)

@@ -8,28 +8,20 @@ import java.util.Scanner;
 public class EntradaNoGenerics {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        // OperacionesFicheroObj operacionesFicheroObj= new OperacionesFicheroObj();
-        //Biblioteca bibliotecaTerror = new Biblioteca<>("Biblioteca Municipal", "Cooperativa");
-
 
         BibliotecaNoGenerics bibliotecaGeneral = null;
         BibliotecaNoGenerics bibliotecaTerror = null;
         BibliotecaNoGenerics bibliotecaPoliciaca = null;
         BibliotecaNoGenerics bibliotecaComedia = null;
-        //biblio comprobacion
-        BibliotecaNoGenerics bCOmprobar = new BibliotecaNoGenerics("sd", "sd");
 
         OperacionesFicheroObj operacionesFicheroObj = new OperacionesFicheroObj();
 
-        // TODO: 13/04/2024 CODIGO PARA REESTABLECER FICHERO
-/*
-        //  operacionesFicheroObj.borrarCrearObj();
-        //  operacionesFicheroObj.crearObjLibros();
-
-*/
+        //BORRAR FICHERO Y CREARLO DE NUEVO
+        operacionesFicheroObj.borrarObj();
+        operacionesFicheroObj.crearObjLibros();
 
 
-        int tipoBiblioteca = 0;
+        int tipoBiblioteca = -1;
 
 
         do {
@@ -37,11 +29,15 @@ public class EntradaNoGenerics {
                     "\n1- GENERAL (admite todo tipo de tematicas)" +
                     "\n2- TERROR (solo admite libros de terror)" +
                     "\n3- POLICIACA (solo admite novelas policiacas)" +
-                    "\n4- COMEDIA (solo admite libros de comedia)" +
-                    "\n5- PROBAR LEER FICHERO Y BORRARLO");
-            // TODO: 14/04/2024   //  aqui poner si quieres reiniciar biblioteca o trabajar con una nueva,
-            // si trabajas con la nueva, mostrar datos de la biblioteca
-            tipoBiblioteca = sc.nextInt();
+                    "\n4- COMEDIA (solo admite libros de comedia)"/* +
+                    "\n5- PROBAR LEER FICHERO Y BORRARLO"*/);
+            try {
+                tipoBiblioteca = sc.nextInt();
+
+            } catch (InputMismatchException e) {
+                System.out.println("🚫 El tipo de dato introducido, no es valido 🚫");
+                sc.nextLine();
+            }
 
             switch (tipoBiblioteca) {
                 case 1:
@@ -64,19 +60,17 @@ public class EntradaNoGenerics {
                     System.out.println("🏛️Has creado una Biblioteca de Comedia🏛️\n");
 
                     break;
+                    /* PARA HACER PRUEBAS
                 case 5:
                     try {
-                        bCOmprobar.catalogoTesterMenu(100);
-
                         operacionesFicheroObj.leerFichero();
-
-                        //  operacionesFicheroObj.borrarCrearObj();
+                        //  operacionesFicheroObj.borrarObj();
                         // operacionesFicheroObj.crearObjLibros();
                     } catch (NullPointerException e) {
                         System.out.println("El fichero esta vacio, y no puede ser leido");
                     }
                     break;
-
+*/
             }
         } while (tipoBiblioteca < 1 || tipoBiblioteca > 4);
 
@@ -192,22 +186,22 @@ public class EntradaNoGenerics {
                         break;
                     case 9:
                         System.out.println("GUARDANDO ARCHIVOS...");
-                        try{
-                        if (tipoBiblioteca == 1) {
-                            bibliotecaGeneral.escribirObjetoBib();
-                        }
-                        if (tipoBiblioteca == 2) {
-                            bibliotecaTerror.escribirObjetoBib();
-                        }
-                        if (tipoBiblioteca == 3) {
-                            bibliotecaPoliciaca.escribirObjetoBib();
-                        }
-                        if (tipoBiblioteca == 4) {
-                            bibliotecaComedia.escribirObjetoBib();
-                        }
-                        System.out.println("ARCHIVOS GUARDADOS CON EXITO");
+                        try {
+                            if (tipoBiblioteca == 1) {
+                                bibliotecaGeneral.escribirObjetoBib();
+                            }
+                            if (tipoBiblioteca == 2) {
+                                bibliotecaTerror.escribirObjetoBib();
+                            }
+                            if (tipoBiblioteca == 3) {
+                                bibliotecaPoliciaca.escribirObjetoBib();
+                            }
+                            if (tipoBiblioteca == 4) {
+                                bibliotecaComedia.escribirObjetoBib();
+                            }
+                            System.out.println("ARCHIVOS GUARDADOS CON EXITO");
 
-                        } catch (NullPointerException e){
+                        } catch (NullPointerException e) {
                             System.out.println("El catalogo no existe, Saliendo sin guardar");
                         }
 
