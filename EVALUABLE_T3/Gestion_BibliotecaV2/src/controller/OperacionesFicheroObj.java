@@ -12,12 +12,6 @@ public class OperacionesFicheroObj {
         if (file.exists()){
             //si archhivo existe y es archivo (no directory)
             file.delete();
-        } else {
-            try {
-                file.createNewFile();
-            } catch (IOException e) {
-                System.out.println("Fallo, No se puede crear el fichero");
-            }
         }
 
     }
