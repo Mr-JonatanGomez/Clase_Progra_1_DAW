@@ -87,7 +87,7 @@ public class Biblioteca {
 */
 
         } catch (ClassCastException e) {
-            System.out.println("⛔El tipo de libro, no corresponde con el tipo de catalogo⛔");
+            System.err.println("⛔El tipo de libro, no corresponde con el tipo de catalogo⛔");
         }
     }
 
@@ -100,7 +100,7 @@ public class Biblioteca {
         try {
             this.catalogo.agregarLibroAlCatalogoComedia();
         } catch (ClassCastException e) {
-            System.out.println("⛔El tipo de libro, no corresponde con el tipo de catalogo⛔");
+            System.err.println("⛔El tipo de libro, no corresponde con el tipo de catalogo⛔");
         }
     }
 
@@ -113,7 +113,7 @@ public class Biblioteca {
         try {
             this.catalogo.agregarLibroAlCatalogoPoliciaco();
         } catch (ClassCastException e) {
-            System.out.println("⛔El tipo de libro, no corresponde con el tipo de catalogo⛔");
+            System.err.println("⛔El tipo de libro, no corresponde con el tipo de catalogo⛔");
         }
     }
 
@@ -126,7 +126,7 @@ public class Biblioteca {
         try {
             this.catalogo.agregarLibroAlCatalogoGeneral();
         } catch (ClassCastException e) {
-            System.out.println("⛔El tipo de libro, no corresponde con el tipo de catalogo⛔");
+            System.err.println("⛔El tipo de libro, no corresponde con el tipo de catalogo⛔");
         }
     }
 
@@ -205,14 +205,15 @@ public class Biblioteca {
 
 
             } catch (IOException e) {
-                System.out.println("Error en la salida del file.obj");
+                System.err.println("Error en la salida del file.obj");
             } finally {
                 try {
                     objectOutputStream.close();
                 } catch (IOException e) {
-                    System.out.println("Error al cerrar flujo");
+                    System.err.println("Error al cerrar flujo");
                 } catch (NullPointerException e) {
-                    System.out.println("Cerrado en nulo");
+                    //lo he dejado vacio, porque siempre imprime cerrado a nulo, sin ser cierto
+                    System.out.println("");
                 }
             }
 

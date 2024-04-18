@@ -35,7 +35,7 @@ public class Entrada {
                 tipoBiblioteca = sc.nextInt();
 
             } catch (InputMismatchException e) {
-                System.out.println("🚫 El tipo de dato introducido, no es valido 🚫");
+                System.err.println("🚫 El tipo de dato introducido, no es valido 🚫");
                 sc.nextLine();
             }
 
@@ -202,7 +202,7 @@ public class Entrada {
                             System.out.println("ARCHIVOS GUARDADOS CON EXITO");
 
                         } catch (NullPointerException e) {
-                            System.out.println("El catalogo no existe, Saliendo sin guardar");
+                            System.err.println("El catalogo no existe, Saliendo sin guardar");
                         }
 
                         System.out.println("CERRANDO PROGRAMA");
@@ -212,19 +212,19 @@ public class Entrada {
                         break;
                 }
             } catch (CatalogoNoExisteException e) {
-                System.out.println(e.getMessage());//AQUI VA EL RUNTIME JODER,
+                System.err.println(e.getMessage());//AQUI VA EL RUNTIME JODER,
                 // MEJOR IR AL DETALLE DENTRO DEL METODO
             } catch (TipoDatosNoContemplados e) {
-                System.out.println(e.getMessage());
+                System.err.println(e.getMessage());
             } catch (InputMismatchException e) {
-                System.out.println("\n\t\t\t🚫 El tipo de dato introducido, no es valido 🚫\n");
+                System.err.println("\n\t\t\t🚫 El tipo de dato introducido, no es valido 🚫\n");
                 sc.nextLine();
             } catch (CatalogoLlenoException e) {
-                System.out.println(e.getMessage());
+                System.err.println(e.getMessage());
             } catch (NoExisteLibroEnBusqueda e) {
-                System.out.println(e.getMessage());
+                System.err.println(e.getMessage());
             } finally {
-                System.out.println("");//este Finally siempre me salia mensaje de fallo siendo mentira
+                System.err.println("");//este Finally siempre me salia mensaje de fallo siendo mentira
             }
         } while (opcionMenuInterior != 9);
 
