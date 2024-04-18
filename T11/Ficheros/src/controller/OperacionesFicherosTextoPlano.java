@@ -80,13 +80,12 @@ public class OperacionesFicherosTextoPlano {
             //CON EL BUFFERED READER LEEMOS LINEA A LINEA (While sera diferente y el metodo readLine())
 
             // con el FileReader era  int codigo =....ahora es String linea...
-           // String linea = bufferedReader.readLine();
+            // String linea = bufferedReader.readLine();
             // System.out.println(linea);leeria 1ª linea, para leer entero:
-            String linea= null;
-            while ( (linea = bufferedReader.readLine())!= null ){
+            String linea = null;
+            while ((linea = bufferedReader.readLine()) != null) {
                 System.out.println(linea);
             }
-
 
 
             //LEER CARACTER A CARACTER con fileReader
@@ -166,7 +165,7 @@ public class OperacionesFicherosTextoPlano {
                 printWriter.close();//si no cierras no escribe, cerramos ultimo con print hay que cerrar ambos
             } catch (IOException e) {
                 System.out.println("Error al cerrar");
-            } catch (NullPointerException e){
+            } catch (NullPointerException e) {
                 System.out.println("Cerrado con nulo");
             }
         }

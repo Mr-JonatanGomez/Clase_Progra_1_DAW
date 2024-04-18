@@ -498,6 +498,8 @@ public class Biblioteca {
                 System.out.println("Catalogo lleno, No caben más libros en el catálogo");
             }
         }
+        // TODO: 18/04/2024 Si intento crear solo un agregarLibro, en lugar de 4, partir de General,
+        //  con el libroVariable
 
         public void eliminarLibroAlCatalogo() {
 
