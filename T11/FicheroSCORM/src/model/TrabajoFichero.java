@@ -1,3 +1,5 @@
+package model;
+
 import java.io.*;
 import java.util.Scanner;
 
@@ -228,43 +230,65 @@ public class TrabajoFichero {
         }
     }
 
-    //NO FUNCIONA EL BINARIO
-    public void leerYescribirBinario() {
-        File ficheroBinario = new File("src/resources/ficheroBinario.bin");
+    public void escribirObjetoEnBinarioPeroEnTxtYOUTUBER() {
 
+        String[] youtuber = {"", "", "", ""};
+        int[] fundacion = {2011, 2008, 2006, 2015};
+        double[] seguidores = {39.9, 32.5, 28.1, 25.0};
+
+        File file = new File("src/resources/youtubers.txt");
+        FileOutputStream fileOutputStream = null;
+        ObjectOutputStream objectOutputStream = null;
         try {
-            if (!ficheroBinario.exists()) {
-                ficheroBinario.createNewFile();
+            fileOutputStream = new FileOutputStream(file, true);
+            objectOutputStream = new ObjectOutputStream(fileOutputStream);
+
+            for (int i = 0; i < 4; i++) {
+                Youtuber item = new Youtuber(youtuber[i], fundacion[i], seguidores[i]);
+                objectOutputStream.writeObject(youtuber);
             }
 
 
-            ObjectOutputStream escribir = new ObjectOutputStream(new FileOutputStream(ficheroBinario));
-            //generamos variable escribir con var o ObjectOutputStream
-
-            escribir.writeBoolean(true);
-            escribir.writeDouble(7.77);
-            escribir.writeInt(978);
-            System.out.println("escrito queda");
-            escribir.close();
-
-            /// ABRIMOS LECTURA
-
-            ObjectInputStream leemos = new ObjectInputStream(new FileInputStream(ficheroBinario));
-
-            // ponemos que queremos leer
-
-            leemos.readBoolean();
-            leemos.readDouble();
-            leemos.readInt();
-
-            leemos.close();
-
-
+        } catch (FileNotFoundException e) {
+            System.err.println("Error file no existe");
         } catch (IOException e) {
-            System.err.println("problemas con fichero");
+            System.err.println("Error de escritura");
+            e.printStackTrace();
+        } finally {
+            try {
+                objectOutputStream.close();
+            } catch (IOException e) {
+                System.err.println("Error en el cerrado");
+            }
         }
+
+
     }
-    // TODO: 18/04/2024 PONTE A PRUEBA 3 parece interesante
+
+    public void lecturaObjBinTxtYoutuber() {
+        File file = new File("src/resources/youtubers.txt");
+        try {
+            if (file.exists()) {
+                FileInputStream fileInputStream = null;
+                ObjectInputStream objectInputStream = null;
+
+                while (true) {//mientras file existe
+                    Youtuber youtuber = (Youtuber) objectInputStream.readObject();
+                    System.out.println(youtuber);
+
+                }
 
 
+            } else {
+                System.out.println("FICHERO NO EXISTE");
+            }
+        } catch (EOFException e) {
+            System.err.println("FINAL ALCANZADO");
+        } catch (ClassNotFoundException e) {
+            System.err.println("TIPO OBJETO NO COMPATIBLE");
+        } catch (IOException e) {
+            System.err.println("Error IO");
+        }
+
+    }
 }

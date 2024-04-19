@@ -1,3 +1,5 @@
+import model.TrabajoFichero;
+
 public class Entrada {
     public static void main(String[] args) {
         TrabajoFichero lecturaInfoFichero = new TrabajoFichero();
@@ -9,6 +11,8 @@ public class Entrada {
         //lecturaInfoFichero.leerFicheroScanner();
         //lecturaInfoFichero.escribirBinario();
         //lecturaInfoFichero.leerBinario();
-        lecturaInfoFichero.buscarPalabra();
+        //lecturaInfoFichero.buscarPalabra();
+        lecturaInfoFichero.escribirObjetoEnBinarioPeroEnTxtYOUTUBER();
+        lecturaInfoFichero.lecturaObjBinTxtYoutuber();
     }
 }

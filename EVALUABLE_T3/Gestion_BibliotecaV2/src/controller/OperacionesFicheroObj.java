@@ -52,7 +52,7 @@ public class OperacionesFicheroObj {
         } catch (ClassCastException e) {
             System.out.println("Error en casteo de clase (metodo LEERficheroCAT)");
         } catch (NullPointerException e) {
-            System.out.println("El catalogo no esta creado nulo y no se puede leer fichero");
+            System.out.println("El catalogo no esta creado, es nulo y no se puede leer fichero");
         } finally {
             try {
                 if (objectInputStream!=null){
