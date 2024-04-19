@@ -23,6 +23,9 @@ public class Biblioteca {
 
 
     public void escribirObjetoBib() {
+        if (catalogo == null) {
+            throw new CatalogoNoExisteException("🚫 No ha sido posible Guardar datos en fichero, porque no existe el catalogo🚫\n");
+        }
         this.catalogo.escribirObjetoCat();
     }//viene de ESCRIBIRobjetoCAT y se usa para GUARDAR case1
 
@@ -34,6 +37,7 @@ public class Biblioteca {
             throw new CatalogoNoExisteException("🚫 No ha sido posible mostrar los datos del catalogo, porque no ha sido creado aún🚫\n");
         }
         this.catalogo.mostrarDatosCatalogo();
+        System.out.println("");
     }
 
     public void mostrarGlobal() {
@@ -539,11 +543,11 @@ public class Biblioteca {
             System.out.println("Este catalogo tiene una capacidad total de " + capacidad + " libros");
             System.out.println("El numero de libros en catalogo actualmente es: " + listaLibrosEnCatalogo.size());
 
+            int cont=1;
             for (Libro item : listaLibrosEnCatalogo) {
-                int cont=1;
-                System.out.println("\nMOSTRANDO DATOS DEL" +cont+ "º LIBRO");
-                item.mostrarDatos();
+                System.out.println("\nMOSTRANDO DATOS DEL " +cont+ "º LIBRO");
                 cont++;
+                item.mostrarDatos();
             }
             // System.out.println(librosEnCatalogo);
 

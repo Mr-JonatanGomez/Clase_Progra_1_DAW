@@ -156,7 +156,18 @@ public class Entrada {
                         break;
 
                     case 6:
-                        //bibliotecaTerror.busquedaISBNGlobal();
+                        if (tipoBiblioteca == 1) {
+                            bibliotecaGeneral.busquedaISBNGlobal();
+                        }
+                        if (tipoBiblioteca == 2) {
+                            bibliotecaTerror.busquedaISBNGlobal();
+                        }
+                        if (tipoBiblioteca == 3) {
+                            bibliotecaPoliciaca.busquedaISBNGlobal();
+                        }
+                        if (tipoBiblioteca == 4) {
+                            bibliotecaComedia.busquedaISBNGlobal();
+                        }
                         break;
 
                     case 7:
@@ -200,7 +211,7 @@ public class Entrada {
                                 bibliotecaComedia.escribirObjetoBib();
                             }
                             System.out.println("ARCHIVOS GUARDADOS CON EXITO");
-
+                            System.out.println("CERRANDO PROGRAMA");
                         } catch (NullPointerException e) {
                             System.err.println("El catalogo no existe, Saliendo sin guardar DATOS");
                         }
@@ -211,7 +222,7 @@ public class Entrada {
                         System.out.println("OPCION NO CONTEMPLADA");
                         break;
                 }
-                System.out.println("CERRANDO PROGRAMA");
+
 
             } catch (CatalogoNoExisteException e) {
                 System.err.println(e.getMessage());//AQUI VA EL RUNTIME JODER,
