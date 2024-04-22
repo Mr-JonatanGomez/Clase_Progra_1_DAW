@@ -11,10 +11,10 @@ public class DepositoLibros  {
     public static ArrayList<Libro>crearLibros() {
         ArrayList<Libro>listaGlobalLibros = new ArrayList<>();
 
-        listaGlobalLibros.add(new LibroTerror("It", "Stephen King", "0001t", 317, 16));
+        listaGlobalLibros.add(new LibroTerror("Secret of the Seventh Son", "Glenn Cooper", "0001t", 417, 16));
         listaGlobalLibros.add(new LibroTerror("Misery", "Stephen King", "0002t", 405, 16));
         listaGlobalLibros.add(new LibroTerror("Joyland", "Stephen King", "0003t", 370, 14));
-        listaGlobalLibros.add(new LibroTerror("El Exorcista", "William Peter Blatty", "0004t", 326, 18));
+        listaGlobalLibros.add(new LibroTerror("Book of Souls", "Glenn Cooper", "0004t", 376, 18));
         listaGlobalLibros.add(new LibroTerror("The Silence of the Lambs", "Thomas Harris", "0005t", 368, 18));
         listaGlobalLibros.add(new LibroPoliciaco("Los hombres que no amaban a las mujeres", "Stieg Larsson", "0006p", 465, Trama.misterio));
         listaGlobalLibros.add(new LibroPoliciaco("La chica que soñaba con una cerilla y un bidón de gasolina", "Stieg Larsson", "0007p", 569, Trama.misterio));
