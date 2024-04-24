@@ -1,4 +1,3 @@
-import controller.OperacionFichero;
 
 import controller.Registro;
 import model.Usuario;
@@ -10,47 +9,27 @@ import java.util.Scanner;
 public class Entrada {
 
     public static void main(String[] args) {
-        Registro reg = new Registro();
-        String opcion = null;
+        Scanner scanner =new Scanner(System.in);
+        Registro registro = new Registro();
 
-
-        do {
-            Scanner sc = new Scanner(System.in);
-            reg.registro();
-            System.out.println("¿QUIERES CREAR OTRO USUARIO?");
-            opcion = sc.next();
-        } while (opcion.equalsIgnoreCase("SI"));
-
-        if (opcion.equalsIgnoreCase("NO")) {
-
-            File file = new File("src/resources/usuarios.txt");
-            FileWriter fileWriter = null;
-            PrintWriter printWriter = null;
-
-
-            if (!file.exists()) {
-                try {
-                    file.createNewFile();
-                } catch (IOException e) {
-                    System.out.println("el FILE no puede crearse porque ya existe");
-                }
+        String registraMas="Si";
+        while(registraMas.equalsIgnoreCase("SI")) {
+            System.out.println("Introduce Nombre, Apellido, Dni, Telefono, edad");
+            registro.addUser(scanner.next(), scanner.next(), scanner.next(), scanner.nextInt(), scanner.nextInt());
+            System.out.println("Quieres introducir más usuarios? ( SI  o  NO )");
+            registraMas = scanner.next();
+            if (registraMas.equalsIgnoreCase("no")){
+               // metododo para volcar los users al fichero
+                registro.escribirFichero();
             }
-
-            try {
-                fileWriter = new FileWriter(file);
-                printWriter = new PrintWriter(fileWriter);
-            } catch (IOException e) {
-                System.out.println("Error ecritura");
-            }
-
-
-            printWriter.println();
-
         }
-        try {
-        } catch (Exception e) {
-            System.out.println("Tipo datos no valido");
-        }
-        reg.recorrer();
+
+
+       // registro.mostrarDatos();
+      //  System.out.println("sacando listaUser con get");
+       //2 System.out.println(registro.getListaUser());
+
+
+
     }
 }

@@ -1,31 +1,28 @@
 package model;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
-@NoArgsConstructor
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.Serializable;
+
 @Getter
 @Setter
-public class Usuario {
+public class Usuario implements Serializable {
+    private static final long serialVersionUID  = 188694844646455564L;
     private String nombre, apellido, dni;
     private int telefono, edad;
 
-    public Usuario(String nombre, String apellido, String dni, int telefono, int edad) {
+    public Usuario(String nombre, String apellido,String dni, int telefono, int edad) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
         this.telefono = telefono;
-        this.edad = edad;
+        this.edad=edad;
     }
 
-
-    public void mostrarDatos() {
-        System.out.println("nombre= " + nombre);
-        System.out.println("apellido=" + apellido);
-        System.out.println("dni=" + dni);
-        System.out.println("telefono=" + telefono);
-        System.out.println("edad=" + edad);
-
+    public Usuario() {
     }
 
     @Override
@@ -38,4 +35,6 @@ public class Usuario {
                 ", edad=" + edad +
                 '}';
     }
+
+
 }
