@@ -1,5 +1,6 @@
 package model;
 
+import enums.Trama;
 import lombok.Getter;
 import lombok.Setter;
 

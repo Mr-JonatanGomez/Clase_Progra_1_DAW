@@ -1,5 +1,9 @@
 package controller;
 
+import exceptions.CatalogoLlenoException;
+import exceptions.CatalogoNoExisteException;
+import exceptions.NoExisteLibroEnBusqueda;
+import exceptions.TipoDatosNoContemplados;
 import lombok.Getter;
 import lombok.Setter;
 import model.*;
@@ -13,14 +17,11 @@ import java.util.Scanner;
 public class Biblioteca {
     private String nombre, director;
     private Catalogo catalogo;
-    Libro libroVariable = null;
 
     public Biblioteca(String nombre, String director) {
         this.nombre = nombre;
         this.director = director;
-        //this.librosBiblio = new ArrayList<>();
     }
-
 
     public void escribirObjetoBib() {
         if (catalogo == null) {
@@ -38,12 +39,6 @@ public class Biblioteca {
         }
         this.catalogo.mostrarDatosCatalogo();
         System.out.println("");
-    }
-
-    public void mostrarGlobal() {
-        //  librosBiblio.add(l);
-        //getListaGlobalLibros(); ELIMINANDO EL EXTEND LIBROSMUNDO
-
     }
 
     public void crearCatalogo() /*throws TipoDatosNoContemplados*/ {
@@ -72,23 +67,6 @@ public class Biblioteca {
         try {
 
             this.catalogo.agregarLibroAlCatalogoTerror();
-
-            //AQUI VER COMO HACER
-           /* if (libroVariable instanceof LibroComedia){
-                this.catalogo.agregarLibroAlCatalogoComedia();
-            }
-            if (libroVariable instanceof LibroTerror){
-                this.catalogo.agregarLibroAlCatalogoTerror();
-            }
-            if (libroVariable instanceof LibroPoliciaco){
-                this.catalogo.agregarLibroAlCatalogoPoliciaco();
-            }
-            if(libroVariable instanceof Libro){
-                this.catalogo.agregarLibroAlCatalogoGeneral();
-                //AQUI QUIZAS TRATAR EXCEPCION CLASS NOT FOUND,
-                //siempre va a intentar agreagarlo aqui, TODOS SON instancia libro
-            }
-*/
 
         } catch (ClassCastException e) {
             System.err.println("⛔El tipo de libro, no corresponde con el tipo de catalogo⛔");
@@ -169,12 +147,12 @@ public class Biblioteca {
         }
 
     }
-/////////////////////////////////////////////////////////////////////////////////////////////
-    //////////////////////////////////////////////////////////////////////////////////////////
+
+
     ///////////////////////////////////////////////////////////////////////////////////////
     ///////////////////////////////////SECTOR CATALOGO/////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////
-    ///////////////////////////////////////////////////////////////////////////////////////////
+
 
     // CATALOGO ANIDADO
     @Setter
@@ -273,7 +251,7 @@ public class Biblioteca {
 
         public void agregarLibroAlCatalogoTerror() {
             Scanner sc = new Scanner(System.in);
-            libroVariable = null;
+            LibroTerror libroVariable = null;
 
             ArrayList<Libro> listaGlobalLibros = DepositoLibros.crearLibros();//sobra esta linea o sobra en los atributos
             System.out.println("Comprobando capacidad del catálogo actual:..." +
@@ -312,7 +290,6 @@ public class Biblioteca {
                                 listaLibrosEnCatalogo.add(libroVariable);
                                 System.out.println("✅El libro: " + item.getTitulo() + " con ISBN: " + item.getIsbn() + ", ha sido agregado al catálogo✅");
                                 catalogoVacio = false;
-                                System.out.println("👩🏻‍🦰👱🏻‍♀️👩🏻‍🦰👱🏻‍♀️La clase " + item.getClass() + "  isbn: " + item.getIsbn());
                                 break;
                             }
 
@@ -370,7 +347,6 @@ public class Biblioteca {
                                 listaLibrosEnCatalogo.add(libroVariable);
                                 System.out.println("✅El libro: " + item.getTitulo() + " con ISBN: " + item.getIsbn() + ", ha sido agregado al catálogo✅");
                                 catalogoVacio = false;
-                                System.out.println("👩🏻‍🦰👱🏻‍♀️👩🏻‍🦰👱🏻‍♀️La clase " + item.getClass() + "  isbn: " + item.getIsbn());
                                 break;
                             }
 
@@ -428,7 +404,6 @@ public class Biblioteca {
                                 listaLibrosEnCatalogo.add(libroVariable);
                                 System.out.println("✅El libro: " + item.getTitulo() + " con ISBN: " + item.getIsbn() + ", ha sido agregado al catálogo✅");
                                 catalogoVacio = false;
-                                System.out.println("👩🏻‍🦰👱🏻‍♀️👩🏻‍🦰👱🏻‍♀️La clase " + item.getClass() + "  isbn: " + item.getIsbn());
                                 break;
                             }
 
@@ -486,7 +461,6 @@ public class Biblioteca {
                                 listaLibrosEnCatalogo.add(libroVariable);
                                 System.out.println("✅El libro: " + item.getTitulo() + " con ISBN: " + item.getIsbn() + ", ha sido agregado al catálogo✅");
                                 catalogoVacio = false;
-                                System.out.println("👩🏻‍🦰👱🏻‍♀️👩🏻‍🦰👱🏻‍♀️La clase " + item.getClass() + "  isbn: " + item.getIsbn());
                                 break;
                             }
 
@@ -502,8 +476,6 @@ public class Biblioteca {
                 System.out.println("Catalogo lleno, No caben más libros en el catálogo");
             }
         }
-        // TODO: 18/04/2024 Si intento crear solo un agregarLibro, en lugar de 4, partir de General,
-        //  con el libroVariable
 
         public void eliminarLibroAlCatalogo() {
 
@@ -543,9 +515,9 @@ public class Biblioteca {
             System.out.println("Este catalogo tiene una capacidad total de " + capacidad + " libros");
             System.out.println("El numero de libros en catalogo actualmente es: " + listaLibrosEnCatalogo.size());
 
-            int cont=1;
+            int cont = 1;
             for (Libro item : listaLibrosEnCatalogo) {
-                System.out.println("\nMOSTRANDO DATOS DEL " +cont+ "º LIBRO");
+                System.out.println("\nMOSTRANDO DATOS DEL " + cont + "º LIBRO");
                 cont++;
                 item.mostrarDatos();
             }

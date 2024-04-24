@@ -1,5 +1,7 @@
 package model;
 
+import enums.TipoHumor;
+import enums.Trama;
 import lombok.Getter;
 import lombok.Setter;
 

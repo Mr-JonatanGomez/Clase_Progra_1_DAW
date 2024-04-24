@@ -1,6 +1,9 @@
 import controller.Biblioteca;
 import controller.OperacionesFicheroObj;
-import model.*;
+import exceptions.CatalogoLlenoException;
+import exceptions.CatalogoNoExisteException;
+import exceptions.NoExisteLibroEnBusqueda;
+import exceptions.TipoDatosNoContemplados;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -94,7 +97,6 @@ public class Entrada {
                         if (tipoBiblioteca == 4) {
                             bibliotecaComedia.crearCatalogo();
                         }
-
                         break;
                     case 2:
                         if (tipoBiblioteca == 1) {
@@ -123,7 +125,6 @@ public class Entrada {
                         if (tipoBiblioteca == 4) {
                             bibliotecaComedia.eliminarLibroEnCatalogo();
                         }
-
                         break;
 
                     case 4:
