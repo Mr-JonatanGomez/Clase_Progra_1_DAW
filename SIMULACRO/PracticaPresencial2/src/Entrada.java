@@ -25,15 +25,6 @@ public class Entrada {
             aleatorio = (int) (Math.random() * 10) + 1;
 
             numeroAleatorios[i] = aleatorio;//quitar para repe
-/*
-                for (int item : numeroAleatorios) {
-                    if (item == aleatorio) {
-                        repetido = true;
-                    } else { // parte c aciertos
-                        numeroAleatorios[i] = aleatorio;
-                    }
-                }
-          */
 
 
             //CUENTA ACIERTOS
