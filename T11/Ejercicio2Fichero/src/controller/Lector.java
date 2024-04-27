@@ -77,7 +77,7 @@ public class Lector {
         }
     }
 
-    public void conversorASCII() {
+    public void conversorTexto_ASCII() {
         //FILE-FILEREADER
         File file = new File("src/resources/texto.txt");
         FileReader fileReader = null;
@@ -112,21 +112,26 @@ public class Lector {
     public void conversorASCIIconEscritura() {
         //FILE-FILEREADER
         File file = new File("src/resources/texto.txt");
-        File fileASCII = new File("src/resources/texto2.txt");
         FileReader fileReader = null;
+        File file2 = new File("src/resources/texto2.txt");
         FileWriter fileWriter = null;
 
+
         try {
-            if (!fileASCII.exists()) {
-                fileASCII.createNewFile();
+            if (!file2.exists()) {
+                file2.createNewFile();
             }
-            fileWriter = new FileWriter(fileASCII, true);
 
             fileReader = new FileReader(file);
+            fileWriter = new FileWriter(file2);
+
             int codigo = -1;
+
             while ((codigo = fileReader.read()) != -1) {
                 System.out.println(codigo);
-                fileWriter.write(codigo);
+                fileWriter.write(codigo+ " ");
+
+
 
             }
 
@@ -139,6 +144,7 @@ public class Lector {
             try {
                 assert fileReader != null;
                 fileReader.close();
+                assert fileWriter != null;
                 fileWriter.close();
             } catch (IOException e) {
                 System.err.println("Error de cerrado");
