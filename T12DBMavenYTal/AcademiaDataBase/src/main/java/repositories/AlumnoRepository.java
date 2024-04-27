@@ -12,7 +12,7 @@ import java.util.Scanner;
 public class AlumnoRepository {
     //todas las acciones CRUD que necesitamos de alumno, Create, Read, Update, Delete--> CONNECTION
     private Connection connection;
-
+    Scanner sc = new Scanner(System.in);
     public void insertarAlumnoStatment(Alumno alumno) {
         //Lo 1º necesitamos la conexion que es Static y se puede llamar abiertamente
         //abrir conex
@@ -51,6 +51,9 @@ public class AlumnoRepository {
         PreparedStatement preparedStatement = null;
         Scanner sc = new Scanner(System.in);
 
+        String masAlumnos = null;
+
+        do {
         try {
             String query = "INSERT INTO alumnos (nombre, apellido, correo, telefono) VALUES (?,?,?,?)";
             preparedStatement = connection.prepareStatement(query);//pide directamente la QUERY
@@ -76,7 +79,9 @@ public class AlumnoRepository {
         } catch (SQLException e) {
             System.err.println("fallo en sentencia SQL");
         }
-
+        System.out.println("Quieres registrar más alumnos?");
+        masAlumnos= sc.next();
+    }while(masAlumnos.equalsIgnoreCase("SI"));
 
         // - cerrar
         DBConecction.closeConnection();
@@ -93,34 +98,42 @@ public class AlumnoRepository {
         //VALUES ('borja','martin','correo',1234)
         Statement statement = null;
         PreparedStatement preparedStatement = null;
+        String masAlumnos = null;
 
-        try {
-            Scanner sc = new Scanner(System.in);
-            String query = "INSERT INTO alumnos (nombre, apellido, telefono) VALUES (?,?,?)";
-            preparedStatement = connection.prepareStatement(query);//pide directamente la QUERY
+        do {
+            try {
+                Scanner sc = new Scanner(System.in);
+                String query = "INSERT INTO alumnos (nombre, apellido, telefono) VALUES (?,?,?)";
+                preparedStatement = connection.prepareStatement(query);//pide directamente la QUERY
 
-            String nombre, apellido, correo;
-            int telefono;
-            System.out.println("Introduce nombre");
-            alumno.setNombre(sc.next());
-            System.out.println("Introduce apellido");
-            alumno.setApellido(sc.next());
-            System.out.println("Introduce telefono");
-            alumno.setTelefono(sc.nextInt());
+                String nombre, apellido, correo;
+                int telefono;
+                System.out.println("Introduce nombre");
+                alumno.setNombre(sc.next());
+                System.out.println("Introduce apellido");
+                alumno.setApellido(sc.next());
+                System.out.println("Introduce telefono");
+                alumno.setTelefono(sc.nextInt());
 
-            preparedStatement.setString(1, alumno.getNombre());
-            preparedStatement.setString(2, alumno.getApellido());
-            preparedStatement.setInt(3, alumno.getTelefono());
-            preparedStatement.execute();
-            preparedStatement.close();
+                preparedStatement.setString(1, alumno.getNombre());
+                preparedStatement.setString(2, alumno.getApellido());
+                preparedStatement.setInt(3, alumno.getTelefono());
+                preparedStatement.execute();
+                preparedStatement.close();
 
-        } catch (SQLException e) {
-            System.err.println("fallo en sentencia SQL");
-        }
+            } catch (SQLException e) {
+                System.err.println("fallo en sentencia SQL");
+            }
+
+            System.out.println("Quieres registrar más alumnos?");
+            masAlumnos= sc.next();
+        }while(masAlumnos.equalsIgnoreCase("SI"));
+
 
 
         // - cerrar
         DBConecction.closeConnection();
+        sc.close();
     }
 
     public void editarCorreoAlumno(Alumno alumno) {
@@ -234,6 +247,34 @@ public class AlumnoRepository {
 
         DBConecction.closeConnection();
         sc.close();
+
+
+    }
+    public void editarNombre(Alumno alumno){
+        connection = DBConecction.getConnection();
+        Statement statement= null;
+
+        try {
+            statement= connection.createStatement();
+
+            System.out.println("Introduce el nuevo nombre");
+            String nombre=sc.next();
+            System.out.println("Introduce el id del nombre a modificar");
+            String id=sc.next();
+            String query = "UPDATE alumnos SET nombre = '" + nombre + "' WHERE id = " + id;
+
+            statement.execute(query);
+
+        } catch (SQLException e) {
+            System.err.println("Error al crear el statment");
+            System.out.println(e.getMessage());
+        }finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                System.err.println("Error al cerrar conex");
+            }
+        }
 
 
     }

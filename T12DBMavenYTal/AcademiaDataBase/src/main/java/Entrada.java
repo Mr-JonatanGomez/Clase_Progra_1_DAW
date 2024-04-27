@@ -37,10 +37,11 @@ public class Entrada {
         alumnoRepository.insertarAlumno(new Alumno("Eduardo", "Prieto", "no",1234));
         */
         //alumnoRepository.editarCorreoAlumno(); //si va por parametro hay que darle otra vuelta
-        // alumnoRepository.insertarAlumnoPreparedStatment(new Alumno());
         // alumnoRepository.insertarAlumnoPreparedStatmentSinCorreo(new Alumno());
         //alumnoRepository.editarCorreoAlumnoPorIDsc();
         //alumnoRepository.deleteAlumno();
-        alumnoRepository.deleteAlumnosTODOS();
+        //alumnoRepository.insertarAlumnoPreparedStatment(new Alumno());
+        //alumnoRepository.deleteAlumnosTODOS();
+        alumnoRepository.editarNombre(new Alumno());
     }
 }
