@@ -13,7 +13,7 @@ import java.util.Scanner;
 public class JuegoYFicheros {
     private ArrayList<Jugador> listaJugadores;
     private Jugador jugador;
-    private int mejorRecord=150;
+    private int mejorRecord = 150;
 
     public void leerRecordActual() {
 
@@ -50,12 +50,14 @@ public class JuegoYFicheros {
 
         } catch (IOException e) {
             System.err.println("Error en IO");
-        }catch (NullPointerException e) {
+        } catch (NullPointerException e) {
             System.err.println("jugador no existe aun");
-        }  finally {
+        } finally {
             try {
                 assert objectOutputStream != null;
                 objectOutputStream.close();
+                assert objectOutputStream2 != null;
+                objectOutputStream2.close();
             } catch (IOException e) {
                 System.err.println("Error de cerrado");
             }
@@ -84,22 +86,22 @@ public class JuegoYFicheros {
             System.err.println("Error en IO");
         } catch (ClassNotFoundException e) {
             System.err.println("Class no encontrada");
-        }catch (NullPointerException e) {
+        } catch (NullPointerException e) {
             System.err.println("NullObject");
-        }  finally {
+        } finally {
             try {
                 assert objectInputStream != null;
                 objectInputStream.close();
             } catch (IOException e) {
                 System.err.println("Error de cerrado");
-            }catch (NullPointerException e) {
+            } catch (NullPointerException e) {
                 System.err.println("Error de cerrado por objeto nulo");
             }
         }
 
     }
 
-    public void leerRecordPersonales(){
+    public void leerRecordPersonales() {
         //ObjectOutputStream - FileOutputStream -file
         ObjectInputStream objectInputStream = null;
 
@@ -119,15 +121,15 @@ public class JuegoYFicheros {
             System.err.println("Error en IO");
         } catch (ClassNotFoundException e) {
             System.err.println("Class no encontrada");
-        }catch (NullPointerException e) {
+        } catch (NullPointerException e) {
             System.err.println("NullObject");
-        }  finally {
+        } finally {
             try {
                 assert objectInputStream != null;
                 objectInputStream.close();
             } catch (IOException e) {
                 System.err.println("Error de cerrado");
-            }catch (NullPointerException e) {
+            } catch (NullPointerException e) {
                 System.err.println("Error de cerrado por objeto nulo");
             }
         }
@@ -161,14 +163,14 @@ public class JuegoYFicheros {
             do {
                 System.out.println("Introduce un numero (1-50) intentando adivinar el número oculto");
                 numeroUser = sc.nextInt();
-                if(numeroUser <1 || numeroUser > 50){
+                if (numeroUser < 1 || numeroUser > 50) {
                     System.err.println("numero invalido sobrepasa limite");
                 }
-            } while(numeroUser <1 || numeroUser > 50);
+            } while (numeroUser < 1 || numeroUser > 50);
 
 
             if (numeroUser == numeroAleatorio) {
-                System.out.println("Enhorabuena, has acertado el número oculto ("+ numeroAleatorio+") en un total de " + intentos);
+                System.out.println("Enhorabuena, has acertado el número oculto (" + numeroAleatorio + ") en un total de " + intentos);
                 record = intentos;
 
                 jugador.setPuntuacionAct(intentos);
@@ -177,11 +179,11 @@ public class JuegoYFicheros {
 
         } while (numeroUser != numeroAleatorio);
         //guardar mejor record del jugador si su puntuacion supera su record
-        if (jugador.getPuntuacionAct()<jugador.getRecordPersonal()){
+        if (jugador.getPuntuacionAct() < jugador.getRecordPersonal()) {
             jugador.setRecordPersonal(jugador.getPuntuacionAct());
         }
 
-        if (jugador.getRecordPersonal()<mejorRecord){
+        if (jugador.getRecordPersonal() < mejorRecord) {
             escribirObjetoJugador(jugador);
         }
 
