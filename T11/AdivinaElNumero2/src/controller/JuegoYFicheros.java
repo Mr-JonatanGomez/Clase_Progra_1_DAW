@@ -40,26 +40,22 @@ public class JuegoYFicheros {
         }
     }
 
-    public void escribirObjetoJugador(Jugador jugador) {
+    public void escribirObjetoJugadorRecord(Jugador jugador) {
         //ObjectOutputStream - FileOutputStream -file
         ObjectOutputStream objectOutputStream = null;
-        ObjectOutputStream objectOutputStream2 = null;
+
 
         File file = new File("src/resources/record.obj");
-        File file2 = new File("src/resources/historial.obj");
+
 
         try {
             objectOutputStream = new ObjectOutputStream(new FileOutputStream(file));
-            objectOutputStream2 = new ObjectOutputStream(new FileOutputStream(file2,true));
+
 //INSCRIBIR RECORD
             if (jugador.getPuntuacionAct() < mejorRecord) {
                 objectOutputStream.writeObject(jugador);
             }
-//INSCRIBIR HISTORIAL RECORD PERSONAL con arrayList
-            //if name jugador item = al leer otro if con puntos <  hacemos set puntos o nada
-            //else (name! pues escribimos de nuevas
 
-            objectOutputStream2.writeObject(jugador);
 
         } catch (IOException e) {
             System.err.println("Error en IO");
@@ -69,8 +65,40 @@ public class JuegoYFicheros {
             try {
                 assert objectOutputStream != null;
                 objectOutputStream.close();
-                assert objectOutputStream2 != null;
-                objectOutputStream2.close();
+            } catch (IOException e) {
+                System.err.println("Error de cerrado");
+            }
+        }
+
+    }
+    public void escribirObjetoJugadorHistorial(Jugador jugador) {
+        //ObjectOutputStream - FileOutputStream -file
+        ObjectOutputStream objectOutputStream = null;
+
+
+
+        File file = new File("src/resources/historial.obj");
+
+        try {
+
+            objectOutputStream = new ObjectOutputStream(new FileOutputStream(file,true));
+
+
+//INSCRIBIR HISTORIAL RECORD PERSONAL con arrayList
+            //if name jugador item = al leer otro if con puntos <  hacemos set puntos o nada
+            //else (name! pues escribimos de nuevas
+
+            objectOutputStream.writeObject(jugador);
+
+        } catch (IOException e) {
+            System.err.println("Error en IO");
+        } catch (NullPointerException e) {
+            System.err.println("jugador no existe aun");
+        } finally {
+            try {
+                assert objectOutputStream != null;
+                objectOutputStream.close();
+
 
             } catch (IOException e) {
                 System.err.println("Error de cerrado");
@@ -78,7 +106,6 @@ public class JuegoYFicheros {
         }
 
     }
-
     public void leerQuienRecordTotal() {
         //ObjectOutputStream - FileOutputStream -file
         ObjectInputStream objectInputStream = null;
@@ -128,7 +155,7 @@ public class JuegoYFicheros {
             // mejorRecord = jugador.getRecordPersonal();
             System.out.println("🏆 Los records personales de cada jugador son:");
             jugador.mostrarDatos();
-           
+
             /*
             ArrayList<Jugador> listaJugadores = (ArrayList<Jugador>) objectInputStream.readObject();
 
@@ -199,16 +226,20 @@ public class JuegoYFicheros {
 
         } while (numeroUser != numeroAleatorio);
         //guardar mejor record del jugador si su puntuacion supera su record
+
+        // este if la segunda condicion habria que cambiarla sacando el record del array
         if (jugador.getPuntuacionAct() < jugador.getRecordPersonal()) {
             jugador.setRecordPersonal(jugador.getPuntuacionAct());
         }
 
         if (jugador.getRecordPersonal() < mejorRecord) {
-            escribirObjetoJugador(jugador);
+            escribirObjetoJugadorRecord(jugador);
         }
 
         // AÑADIR DESPUES UN IF jugador no existe guardar jugador
+        // GUARDAR JUGADOR...mas adelante meter if para no repetir jugador
 
+        escribirObjetoJugadorHistorial(jugador);
 
     }
 

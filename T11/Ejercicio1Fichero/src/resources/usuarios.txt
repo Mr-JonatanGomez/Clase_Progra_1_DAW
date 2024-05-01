@@ -1,0 +1,1 @@
+Usuario{nombre='7', apellido='7', dni='7', telefono=7, edad=7}

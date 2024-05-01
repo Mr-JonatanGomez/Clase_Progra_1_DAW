@@ -15,16 +15,6 @@ public class JuegoYFicheros {
     private Jugador jugador;
     private int mejorRecord = 150;
 
-    public JuegoYFicheros(ArrayList<Jugador> listaJugadores, Jugador jugador, int mejorRecord) {
-        this.listaJugadores = new ArrayList<>();
-        this.jugador = jugador;
-        this.mejorRecord = mejorRecord;
-    }
-
-    public JuegoYFicheros() {
-        this.listaJugadores = new ArrayList<>();
-    }
-
     public void leerRecordActual() {
 
     }
@@ -50,16 +40,15 @@ public class JuegoYFicheros {
 
         try {
             objectOutputStream = new ObjectOutputStream(new FileOutputStream(file));
-            objectOutputStream2 = new ObjectOutputStream(new FileOutputStream(file2,true));
+            objectOutputStream2 = new ObjectOutputStream(new FileOutputStream(file2, true));
 //INSCRIBIR RECORD
             if (jugador.getPuntuacionAct() < mejorRecord) {
                 objectOutputStream.writeObject(jugador);
-            }
-//INSCRIBIR HISTORIAL RECORD PERSONAL con arrayList
-            //if name jugador item = al leer otro if con puntos <  hacemos set puntos o nada
-            //else (name! pues escribimos de nuevas
 
+            }
+//INSCRIBIR HISTORIAL RECORD PERSONAL
             objectOutputStream2.writeObject(jugador);
+            System.out.println("jugador guardado");
 
         } catch (IOException e) {
             System.err.println("Error en IO");
@@ -69,9 +58,8 @@ public class JuegoYFicheros {
             try {
                 assert objectOutputStream != null;
                 objectOutputStream.close();
-                assert objectOutputStream2 != null;
-                objectOutputStream2.close();
 
+                objectOutputStream2.close();
             } catch (IOException e) {
                 System.err.println("Error de cerrado");
             }
@@ -125,17 +113,11 @@ public class JuegoYFicheros {
             objectInputStream = new ObjectInputStream(new FileInputStream(file));
 
             Jugador jugador = (Jugador) objectInputStream.readObject();
-            // mejorRecord = jugador.getRecordPersonal();
+            mejorRecord = jugador.getRecordPersonal();
             System.out.println("🏆 Los records personales de cada jugador son:");
-            jugador.mostrarDatos();
-           
-            /*
-            ArrayList<Jugador> listaJugadores = (ArrayList<Jugador>) objectInputStream.readObject();
 
-            for (Jugador item:listaJugadores) {
-                item.mostrarDatos();
-            }
-            */
+            jugador.mostrarDatos();
+
 
         } catch (IOException e) {
             System.err.println("Error en IO");
@@ -151,6 +133,89 @@ public class JuegoYFicheros {
                 System.err.println("Error de cerrado");
             } catch (NullPointerException e) {
                 System.err.println("Error de cerrado por objeto nulo");
+            }
+        }
+
+    }
+
+    public void leerRecordPersonalesMeterlosArrayList() {
+        //ObjectOutputStream - FileOutputStream -file
+        ObjectInputStream objectInputStream = null;
+
+        File file = new File("src/resources/historial.obj");
+
+        try {
+
+            objectInputStream = new ObjectInputStream(new FileInputStream(file));
+
+            // Leer objetos del archivo hasta que se llegue al final
+            while (true) {
+                try {
+                    Jugador jugador = (Jugador) objectInputStream.readObject();
+                    listaJugadores.add(jugador);
+                } catch (EOFException e) {
+                    // Se ha llegado al final del archivo
+                    break;
+                }
+            }
+
+            ////////////////////////////////////////////
+
+        } catch (IOException e) {
+            System.err.println("Error en IO");
+        } catch (ClassNotFoundException e) {
+            System.err.println("Class no encontrada");
+        } catch (NullPointerException e) {
+            System.err.println("NullObject");
+        } finally {
+            try {
+                assert objectInputStream != null;
+                objectInputStream.close();
+            } catch (IOException e) {
+                System.err.println("Error de cerrado");
+            } catch (NullPointerException e) {
+                System.err.println("Error de cerrado por objeto nulo");
+            }
+        }
+
+    }
+
+    public void escribirObjetoJugadorConArrayList() {
+        //ObjectOutputStream - FileOutputStream -file
+        ObjectOutputStream objectOutputStream = null;
+        ObjectOutputStream objectOutputStream2 = null;
+
+        File file = new File("src/resources/record.obj");
+        File file2 = new File("src/resources/historial.obj");
+        for (Jugador item:listaJugadores) {
+            item.mostrarDatos();
+        }
+        try {
+            objectOutputStream = new ObjectOutputStream(new FileOutputStream(file));
+            objectOutputStream2 = new ObjectOutputStream(new FileOutputStream(file2, true));
+//INSCRIBIR RECORD
+            if (jugador.getPuntuacionAct() < mejorRecord) {
+                objectOutputStream.writeObject(jugador);
+            }
+//INSCRIBIR HISTORIAL RECORD PERSONAL con arrayList
+            objectOutputStream2.writeObject(jugador);
+
+            for (Jugador item:listaJugadores) {
+                item.mostrarDatos();
+            }
+
+        } catch (IOException e) {
+            System.err.println("Error en IO");
+        } catch (NullPointerException e) {
+            System.err.println("jugador no existe aun");
+        } finally {
+            try {
+                assert objectOutputStream != null;
+                objectOutputStream.close();
+                assert objectOutputStream2 != null;
+                objectOutputStream2.close();
+            } catch (IOException e) {
+                System.err.println("Error de cerrado");
             }
         }
 
@@ -207,10 +272,16 @@ public class JuegoYFicheros {
             escribirObjetoJugador(jugador);
         }
 
-        // AÑADIR DESPUES UN IF jugador no existe guardar jugador
-
 
     }
 
+    public JuegoYFicheros(ArrayList<Jugador> listaJugadores, Jugador jugador, int mejorRecord) {
+        this.listaJugadores = new ArrayList<>();
+        this.jugador = jugador;
+        this.mejorRecord = mejorRecord;
+    }
 
+    public JuegoYFicheros() {
+        this.listaJugadores = new ArrayList<>();
+    }
 }
