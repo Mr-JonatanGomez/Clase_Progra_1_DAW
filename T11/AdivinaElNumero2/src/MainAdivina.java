@@ -8,8 +8,10 @@ public class MainAdivina {
 
         JuegoYFicheros juegoYFicheros = new JuegoYFicheros();
 
+
         juegoYFicheros.leerRecordPersonales();//lee los records de cada
         juegoYFicheros.partida();
+
 
 
     }

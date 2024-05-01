@@ -33,4 +33,11 @@ public class Jugador implements Serializable {
         System.out.println("Menor nº de intentos para acertar: "+getRecordPersonal()+ " 🏆");
     }
 
+    @Override
+    public String toString() {
+        return "Jugador{" +
+                "Nombre: " + nombre  +
+                ", Record Personal: " + recordPersonal +
+                '}';
+    }
 }

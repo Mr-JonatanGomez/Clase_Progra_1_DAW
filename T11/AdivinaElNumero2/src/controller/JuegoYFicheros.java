@@ -71,17 +71,17 @@ public class JuegoYFicheros {
         }
 
     }
+
     public void escribirObjetoJugadorHistorial(Jugador jugador) {
         //ObjectOutputStream - FileOutputStream -file
         ObjectOutputStream objectOutputStream = null;
-
 
 
         File file = new File("src/resources/historial.obj");
 
         try {
 
-            objectOutputStream = new ObjectOutputStream(new FileOutputStream(file,true));
+            objectOutputStream = new ObjectOutputStream(new FileOutputStream(file, true));
 
 
 //INSCRIBIR HISTORIAL RECORD PERSONAL con arrayList
@@ -106,6 +106,8 @@ public class JuegoYFicheros {
         }
 
     }
+
+
     public void leerQuienRecordTotal() {
         //ObjectOutputStream - FileOutputStream -file
         ObjectInputStream objectInputStream = null;
@@ -117,7 +119,7 @@ public class JuegoYFicheros {
 
             Jugador jugador = (Jugador) objectInputStream.readObject();
             mejorRecord = jugador.getRecordPersonal();
-            System.out.println("🏆 El record actual lo ostenta:");
+            System.out.println("\n🏆 El record actual lo ostenta:");
 
             jugador.mostrarDatos();
 
@@ -151,19 +153,26 @@ public class JuegoYFicheros {
         try {
             objectInputStream = new ObjectInputStream(new FileInputStream(file));
 
-            Jugador jugador = (Jugador) objectInputStream.readObject();
-            // mejorRecord = jugador.getRecordPersonal();
-            System.out.println("🏆 Los records personales de cada jugador son:");
-            jugador.mostrarDatos();
+
+            System.out.println("\n🏆 Los records personales de cada jugador son:");
 
             /*
-            ArrayList<Jugador> listaJugadores = (ArrayList<Jugador>) objectInputStream.readObject();
+            Jugador jugador = (Jugador) objectInputStream.readObject();
+            jugador.mostrarDatos();
+*/
 
-            for (Jugador item:listaJugadores) {
-                item.mostrarDatos();
+
+            Jugador item;
+            while ((item = (Jugador) objectInputStream.readObject()) != null) {
+                System.out.println((Jugador)item);
             }
-            */
 
+
+
+
+
+        } catch (EOFException e) {
+            System.err.println("NullObject");
         } catch (IOException e) {
             System.err.println("Error en IO");
         } catch (ClassNotFoundException e) {
