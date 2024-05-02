@@ -5,10 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ee34f9a-01d8-4a33-b51f-7004329fdd61" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../AdivinaElNumeroV4/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AdivinaElNumeroV4/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AdivinaElNumeroV4/src/controller/Fichero.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AdivinaElNumeroV4/src/controller/Fichero.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../EVALUABLE_T3/ReBibliotecaV4/ReBibliotecaV4.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AdivinaElNumeroV3ArrayList/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AdivinaElNumeroV3ArrayList/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AdivinaElNumeroV3ArrayList/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AdivinaElNumeroV3ArrayList/.idea/libraries/lombok.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AdivinaElNumeroV3ArrayList/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AdivinaElNumeroV3ArrayList/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AdivinaElNumeroV3ArrayList/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AdivinaElNumeroV3ArrayList/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AdivinaElNumeroV3ArrayList/src/controller/Fichero.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AdivinaElNumeroV3ArrayList/src/controller/JuegoYGuardadoFicheros.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AdivinaElNumeroV3ArrayList/src/model/Jugador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AdivinaElNumeroV3ArrayList/src/resources/historialJugadores.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AdivinaElNumeroV3ArrayList/src/resources/recordMaximo.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AdivinaElNumeroV4/AdivinaElNumeroV4.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Adivinas2/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Adivinas2/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Adivinas2/Adivinas2.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AdivinaElNumeroV4/src/controller/JuegoYGuardadoFicheros.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AdivinaElNumeroV4/src/controller/JuegoYGuardadoFicheros.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AdivinaElNumeroV4/src/model/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AdivinaElNumeroV4/src/model/Jugador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AdivinaElNumeroV4/src/resources/historialJugadores.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../AdivinaElNumeroV4/src/resources/historialJugadores.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AdivinaElNumeroV4/src/resources/recordMaximo.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../AdivinaElNumeroV4/src/resources/recordMaximo.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

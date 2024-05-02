@@ -3,6 +3,7 @@ package controller;
 import model.Jugador;
 
 import java.io.*;
+import java.util.ArrayList;
 
 public class Fichero {
     public void crearFicheros() {
@@ -85,36 +86,136 @@ public class Fichero {
         }
     }
 
-    public void leerQuienRecordTotal() {
-        //ObjectOutputStream - FileOutputStream -file
+    public void leerFicheroArray() {
         ObjectInputStream objectInputStream = null;
+        File file = new File("src/resources/historialJugadores.obj");
 
-        File file = new File("src/resources/recordMaximo.obj");
 
         try {
             objectInputStream = new ObjectInputStream(new FileInputStream(file));
 
-            Jugador jugador = (Jugador) objectInputStream.readObject();
-           // mejorRecord = jugador.getRecordPersonal();
-            System.out.println("🏆 El record actual lo ostenta:");
+            ArrayList<Jugador> listadoJugadores = (ArrayList<Jugador>) objectInputStream.readObject();
 
-            jugador.mostrarDatos();
+            for (Jugador item : listadoJugadores) {
+                item.mostrarDatos();
+            }
+
+                /*Libro item = (Libro) objectInputStream.readObject();
+
+                while ((item = (Libro) objectInputStream.readObject()) != null) {
+                    System.out.println(item);
+                }*/
+
+        } catch (IOException e) {
+            System.out.println("El objeto no existe o no se puede leer");
+        } catch (ClassNotFoundException e) {
+            System.out.println("Error en casteo de clase");
+        } catch (ClassCastException e) {
+            System.out.println("Error en casteo de clase (metodo LEERficheroCAT)");
+        } catch (NullPointerException e) {
+            System.out.println("El catalogo no esta creado, es nulo y no se puede leer fichero");
+        } finally {
+            try {
+                if (objectInputStream!=null){
+                    objectInputStream.close();
+                }
+            } catch (IOException e) {
+                System.out.println("Error en el cerrado");
+            } finally {
+                System.out.println("Cerrado a Nulo");
+            }
+        }
+
+    }
+ArrayList<Jugador>listadoJugadores;
+    public void escribirHistorial() {
+        ObjectOutputStream objectOutputStream = null;
+        File file = new File("src/resources/historialJugadores.obj");
+
+        try {
+            //PROBANDO SIN EL TRUE BORRA AL METER 2 libros en una vez
+            objectOutputStream = new ObjectOutputStream(new FileOutputStream(file, true));//, true
+            //EL TRUE ES PARA NO SOBREESCRIBIR, NO HCAE FALTA PERO QUIERO PROBARLO
+            objectOutputStream.writeObject(listadoJugadores);
 
 
         } catch (IOException e) {
-            System.err.println("Error en IO");
-        } catch (ClassNotFoundException e) {
-            System.err.println("Class no encontrada");
-        } catch (NullPointerException e) {
-            System.err.println("NullObject");
+            System.err.println("Error en la salida del file.obj");
         } finally {
             try {
-                assert objectInputStream != null;
-                objectInputStream.close();
+                objectOutputStream.close();
             } catch (IOException e) {
-                System.err.println("Error de cerrado flujo");
+                System.err.println("Error al cerrar flujo");
             } catch (NullPointerException e) {
-                System.err.println("Error de cerrado por objeto nulo");
+                //lo he dejado vacio, porque siempre imprime cerrado a nulo, sin ser cierto
+                System.out.println("");
+            }
+        }
+
+    }
+
+    public void guardarHistorialArray() {
+        ObjectOutputStream objectOutputStream = null;
+        File file = new File("src/resources/historialJugadores.obj");
+
+        try {
+            //PROBANDO SIN EL TRUE BORRA AL METER 2 libros en una vez
+            objectOutputStream = new ObjectOutputStream(new FileOutputStream(file, true));//, true
+            //EL TRUE ES PARA NO SOBREESCRIBIR, NO HCAE FALTA PERO QUIERO PROBARLO
+            objectOutputStream.writeObject(listadoJugadores);
+
+
+        } catch (IOException e) {
+            System.err.println("Error en la salida del file.obj");
+        } finally {
+            try {
+                objectOutputStream.close();
+            } catch (IOException e) {
+                System.err.println("Error al cerrar flujo");
+            } catch (NullPointerException e) {
+                //lo he dejado vacio, porque siempre imprime cerrado a nulo, sin ser cierto
+                System.out.println("");
+            }
+        }
+
+    }
+    public void leerHistorialArray() {
+        ObjectInputStream objectInputStream = null;
+        File file = new File("src/resources/historialJugadores.obj");
+
+
+        try {
+            objectInputStream = new ObjectInputStream(new FileInputStream(file));
+
+            ArrayList<Jugador> listadoJugadores = (ArrayList<Jugador>) objectInputStream.readObject();
+
+            for (Jugador item : listadoJugadores) {
+                item.mostrarDatos();
+            }
+
+                /*Libro item = (Libro) objectInputStream.readObject();
+
+                while ((item = (Libro) objectInputStream.readObject()) != null) {
+                    System.out.println(item);
+                }*/
+
+        } catch (IOException e) {
+            System.out.println("El objeto no existe o no se puede leer");
+        } catch (ClassNotFoundException e) {
+            System.out.println("Error en casteo de clase");
+        } catch (ClassCastException e) {
+            System.out.println("Error en casteo de clase (metodo LEERficheroCAT)");
+        } catch (NullPointerException e) {
+            System.out.println("El catalogo no esta creado, es nulo y no se puede leer fichero");
+        } finally {
+            try {
+                if (objectInputStream!=null){
+                    objectInputStream.close();
+                }
+            } catch (IOException e) {
+                System.out.println("Error en el cerrado");
+            } finally {
+                System.out.println("Cerrado a Nulo");
             }
         }
 

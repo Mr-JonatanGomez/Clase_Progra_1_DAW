@@ -128,11 +128,11 @@ public class JuegoYGuardadoFicheros {
             System.out.println("Los records de los participantes son: ");
             System.out.println(jugador.getNombre() + "\tacertó el numero oculto en " + jugador.getRecordPersonal() + " intentos");
 
-/*
+
             while ((jugador = (Jugador) leerHistorial.readObject()) != null) {
                 System.out.println(jugador);
             }
-*/
+
 
         } catch (IOException e) {
             System.err.println("");
@@ -151,10 +151,6 @@ public class JuegoYGuardadoFicheros {
             }
         }
     }
-
-
-
-
 
     public void partida() {
         // antes de iniciar creamos instancia a fichero
@@ -217,7 +213,6 @@ public class JuegoYGuardadoFicheros {
         // -SI EXISTE, SOLO SI MEJORA RECORD
 
         guardarHistorial(jugador);
-        //guardarHistorial();
 
     }
 
