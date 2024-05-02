@@ -25,6 +25,6 @@ public class Fichero {
     }
 
     public void guardarRecord (){
-        var guardarRecord = new ObjectOutputStream();
+      //  var guardarRecord = new ObjectOutputStream();
     }
 }
