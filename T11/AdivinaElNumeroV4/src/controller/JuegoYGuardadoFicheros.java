@@ -20,26 +20,10 @@ public class JuegoYGuardadoFicheros {
         this.listadoJugadores = new ArrayList<>();
     }
 
-    public void crearFicheros() {
-        File fileRecord = new File("src/resources/recordMaximo.obj");
-        File fileHistorial = new File("src/resources/historialJugadores.obj");
-        if (!fileRecord.exists()) {
-            try {
-                fileRecord.createNewFile();
-            } catch (IOException e) {
-                System.out.println("Fallo, No se puede crear el fichero o ya EXISTE");
-            }
-        }
-        if (!fileHistorial.exists()) {
-            try {
-                fileRecord.createNewFile();
-            } catch (IOException e) {
-                System.out.println("Fallo, No se puede crear el fichero o ya EXISTE");
-            }
-        }
-    }
+
 
     public void partida() {
+
         Scanner sc = new Scanner(System.in);
         System.out.println("Introduce el nombre del jugador");
         String nombre = sc.next();
