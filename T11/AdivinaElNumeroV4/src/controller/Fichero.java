@@ -1,6 +1,9 @@
 package controller;
 
+import model.Jugador;
+
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectOutputStream;
 
@@ -24,7 +27,16 @@ public class Fichero {
         }
     }
 
-    public void guardarRecord (){
+    public void guardarRecord (Jugador jugador){
       //  var guardarRecord = new ObjectOutputStream();
+        ObjectOutputStream guardarRecord = null;
+        File file = new File("src/resources/recordMaximo.obj");
+
+
+        try {
+            guardarRecord=new ObjectOutputStream(new FileOutputStream(file));
+        } catch (IOException e) {
+            System.err.println("error en la escritura");//
+        }
     }
 }
