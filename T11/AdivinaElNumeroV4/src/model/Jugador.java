@@ -13,7 +13,7 @@ public class Jugador implements Serializable {
     @Serial
     private static final long serialVersionUID = 1245893670852L;
     private String nombre;
-    private int recordPersonal;
+    private int recordPersonal=100;
     private int puntuacionActual;
 
     public void mostrarDatos(){
@@ -26,8 +26,8 @@ public class Jugador implements Serializable {
     }
 
     public Jugador(String nombre) {
-        this.nombre = getNombre();
-        this.recordPersonal=getRecordPersonal();
+        this.nombre = nombre;
+
 
     }
 }
