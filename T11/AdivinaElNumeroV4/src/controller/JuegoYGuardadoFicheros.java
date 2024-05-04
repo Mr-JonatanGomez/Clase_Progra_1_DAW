@@ -173,7 +173,7 @@ public class JuegoYGuardadoFicheros {
         Scanner sc = new Scanner(System.in);
         System.out.println("Introduce el nombre del jugador");
         String nombre = sc.next();
-        Jugador jugador = new Jugador(nombre);
+        jugador = new Jugador(nombre);
 
 
         int numeroAleatorio;

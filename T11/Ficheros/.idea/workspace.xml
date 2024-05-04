@@ -5,19 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ee34f9a-01d8-4a33-b51f-7004329fdd61" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../AdivinaConTxt/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AdivinaConTxt/.idea/libraries/lombok.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AdivinaConTxt/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AdivinaConTxt/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AdivinaConTxt/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AdivinaConTxt/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AdivinaConTxt/src/controller/GameAndSave.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AdivinaConTxt/src/model/Jugador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AdivinaConTxt/src/resources/historial.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AdivinaConTxt/src/resources/record.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AdivinaElNumeroV4/src/controller/JuegoYGuardadoFicheros.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AdivinaElNumeroV4/src/controller/JuegoYGuardadoFicheros.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AdivinaElNumeroV4/src/resources/historialJugadores.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../AdivinaElNumeroV4/src/resources/historialJugadores.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AdivinaElNumeroV4/src/resources/recordMaximo.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../AdivinaElNumeroV4/src/resources/recordMaximo.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AdivinaConTxt/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AdivinaConTxt/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AdivinaConTxt/src/controller/GameAndSave.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AdivinaConTxt/src/controller/GameAndSave.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AdivinaConTxt/src/resources/historial.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../AdivinaConTxt/src/resources/historial.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../AdivinaConTxt/src/resources/record.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../AdivinaConTxt/src/resources/record.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
