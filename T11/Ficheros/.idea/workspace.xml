@@ -5,26 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ee34f9a-01d8-4a33-b51f-7004329fdd61" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../EVALUABLE_T3/ReBibliotecaV4/ReBibliotecaV4.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AdivinaElNumeroV3ArrayList/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AdivinaElNumeroV3ArrayList/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AdivinaElNumeroV3ArrayList/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AdivinaElNumeroV3ArrayList/.idea/libraries/lombok.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AdivinaElNumeroV3ArrayList/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AdivinaElNumeroV3ArrayList/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AdivinaElNumeroV3ArrayList/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AdivinaElNumeroV3ArrayList/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AdivinaElNumeroV3ArrayList/src/controller/Fichero.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AdivinaElNumeroV3ArrayList/src/controller/JuegoYGuardadoFicheros.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AdivinaElNumeroV3ArrayList/src/model/Jugador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AdivinaElNumeroV3ArrayList/src/resources/historialJugadores.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AdivinaElNumeroV3ArrayList/src/resources/recordMaximo.obj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AdivinaElNumeroV4/AdivinaElNumeroV4.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Adivinas2/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Adivinas2/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Adivinas2/Adivinas2.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AdivinaConTxt/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AdivinaConTxt/.idea/libraries/lombok.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AdivinaConTxt/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AdivinaConTxt/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AdivinaConTxt/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AdivinaConTxt/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AdivinaConTxt/src/controller/GameAndSave.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AdivinaConTxt/src/model/Jugador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AdivinaConTxt/src/resources/historial.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AdivinaConTxt/src/resources/record.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AdivinaElNumeroV4/src/controller/JuegoYGuardadoFicheros.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AdivinaElNumeroV4/src/controller/JuegoYGuardadoFicheros.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AdivinaElNumeroV4/src/model/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AdivinaElNumeroV4/src/model/Jugador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AdivinaElNumeroV4/src/resources/historialJugadores.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../AdivinaElNumeroV4/src/resources/historialJugadores.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AdivinaElNumeroV4/src/resources/recordMaximo.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../AdivinaElNumeroV4/src/resources/recordMaximo.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -44,22 +35,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 1
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
   <component name="ProjectId" id="2fuPXDHkjF5BoO4iP0nRHp0lYWW" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/gomez/Documents/GitHub/Clase_Progra_1_DAW/T11/Ficheros/src"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/gomez/Documents/GitHub/Clase_Progra_1_DAW/T11/Ficheros/src&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\gomez\Documents\GitHub\Clase_Progra_1_DAW\T11\Ficheros\src" />

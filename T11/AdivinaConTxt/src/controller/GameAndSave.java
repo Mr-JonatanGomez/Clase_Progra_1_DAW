@@ -4,24 +4,26 @@ import lombok.Getter;
 import lombok.Setter;
 import model.Jugador;
 
+
 import java.io.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 @Getter
 @Setter
-public class JuegoYGuardadoFicheros {
+public class GameAndSave {
     private Jugador jugador;
     private ArrayList<Jugador> listadoJugadores;
-    private int mejorRecord = 150;
+    private int mejorRecord = 9999;
 
-    public JuegoYGuardadoFicheros() {
-        this.listadoJugadores = new ArrayList<>();
+    public GameAndSave() {
+
     }
 
     public void crearFicheros() {
-        File fileRecord = new File("src/resources/recordMaximo.obj");
-        File fileHistorial = new File("src/resources/historialJugadores.obj");
+        File fileRecord = new File("src/resources/record.txt");
+        File fileHistorial = new File("src/resources/historial.txt");
         if (!fileRecord.exists()) {
             try {
                 fileRecord.createNewFile();
@@ -39,58 +41,63 @@ public class JuegoYGuardadoFicheros {
     }
 
     public void guardarRecord(Jugador jugador) {
-        //  var guardarRecord = new ObjectOutputStream();
-        ObjectOutputStream fileRecord = null;
-        File file = new File("src/resources/recordMaximo.obj");
+        //  file-fileWrite-PrintWrite
 
+        File file = new File("src/resources/record.txt");
+
+        PrintWriter printWriter = null;
 
         try {
-            fileRecord = new ObjectOutputStream(new FileOutputStream(file));
-            fileRecord.writeObject(jugador);
-            System.out.println("JUGADOR ESCRITO");
+            printWriter = new PrintWriter(new FileWriter(file));
+            printWriter.write(jugador.getNombre() + " " + jugador.getRecordPersonal());
         } catch (IOException e) {
-            System.err.println("error en la escritura");//
-        } catch (NullPointerException e) {
-            System.err.println("error NullPointer");
+            System.err.println("Error en la escritura de datos");
         } finally {
-            try {
-                assert fileRecord != null;
-                fileRecord.close();
-            } catch (IOException e) {
-                System.err.println("Error en cierre de fichero");
-            }
+            assert printWriter != null;
+            printWriter.close();
         }
+
+
     }
 
     public void leerRecord() {
         //HACER SIEMPRE AL COMENZAR PARTIDA para IGUALAR RECORD
-        ObjectInputStream objectRecord = null;
-        File file = new File("src/resources/recordMaximo.obj");
+
+        File file = new File("src/resources/record.txt");
+        BufferedReader bufferedReader = null;
 
         try {
-            objectRecord = new ObjectInputStream(new FileInputStream(file));
-            Jugador jugador = (Jugador) objectRecord.readObject();
-            mejorRecord = jugador.getRecordPersonal();//igualamos record al mejor guardado
-            System.out.println("El actual record lo ostenta: ");
-            System.out.println(jugador.getNombre());
-            System.out.println("Acertando el numero oculto en " + jugador.getRecordPersonal() + " intentos");
+            bufferedReader = new BufferedReader(new FileReader(file));
+            String jugadorYrecord;
+            jugadorYrecord = bufferedReader.readLine();
+            String [] separarRecord = jugadorYrecord.split(" ");
 
+            // [0] nombre y [1] puntuacion
+
+            int pasandoRecordInt =Integer.parseInt(separarRecord[1]);
+
+            mejorRecord = pasandoRecordInt;//igualamos record leido al mejor guardado, para cuando se inicie el juego
+
+            System.out.println("El actual record lo ostenta: ");
+            System.out.println(separarRecord[0] +" acertando el numero oculto en "+separarRecord[1]+" intentos");
+
+
+
+
+        } catch (FileNotFoundException e) {
+            System.err.println("Archivo no existe, y no se puede leer");
         } catch (IOException e) {
-            System.err.println("");
-        } catch (NullPointerException e) {
-            System.err.println("Error Null Pointer");
-        } catch (ClassNotFoundException e) {
-            System.err.println("Error Class Not Found");
+            System.err.println("Error en la lectura IO");
         } finally {
             try {
-                assert objectRecord != null;
-                objectRecord.close();
+                assert bufferedReader != null;
+                bufferedReader.close();
             } catch (IOException e) {
-                System.err.println("Error al cerrar flujo lectura");
-            } catch (NullPointerException e) {
-                System.err.println("1ª PARTIDA, NO EXISTE RECORD");
+                System.err.println("Error cerrando el flujo");
             }
         }
+
+
     }
 
     public void guardarHistorial(Jugador jugador) {
@@ -137,14 +144,13 @@ public class JuegoYGuardadoFicheros {
 */
 
 
-
         } catch (IOException e) {
             System.err.println("");
         } catch (NullPointerException e) {
             System.err.println("Error Null Pointer");
         } catch (ClassCastException e) {
             System.err.println("Error Class Cast");
-        }catch (ClassNotFoundException e) {
+        } catch (ClassNotFoundException e) {
             System.err.println("Error Class Not Found");
         } finally {
             try {
@@ -159,16 +165,13 @@ public class JuegoYGuardadoFicheros {
     }
 
 
-
-
     public void partida() {
         // antes de iniciar creamos instancia a fichero
 
-
         crearFicheros();
 
-        leerHistorial();
-        leerRecord();
+        //leerHistorial();
+        // leerRecord();
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Introduce el nombre del jugador");
@@ -180,7 +183,7 @@ public class JuegoYGuardadoFicheros {
         int intentos = 0;
         int numeroUser = 0;
         int puntosPartida = -1;
-        int recordActual = -1;
+
 
         numeroAleatorio = (int) (Math.random() * 20) + 1;
         System.out.println(numeroAleatorio);
@@ -200,19 +203,19 @@ public class JuegoYGuardadoFicheros {
                 System.out.println("Enhorabuena, has acertado el número oculto (" + numeroAleatorio + ") en un total de " + intentos);
                 puntosPartida = intentos;
 
-                jugador.setPuntuacionActual(intentos);
+                jugador.setPuntuacionPartidaActual(intentos);
             }
 
         } while (numeroUser != numeroAleatorio);
 
         // SI SUPERA RECORD PERSONAL LO ESTABLECEMOS
-        if (jugador.getPuntuacionActual() < jugador.getRecordPersonal()) {
-            jugador.setRecordPersonal(jugador.getPuntuacionActual());
+        if (jugador.getPuntuacionPartidaActual() < jugador.getRecordPersonal()) {
+            jugador.setRecordPersonal(jugador.getPuntuacionPartidaActual());
 
         }
 
         //SI SE SUPERA EL RECORD INSCRIBIR RECORD
-        if (jugador.getPuntuacionActual() <= mejorRecord) {
+        if (jugador.getPuntuacionPartidaActual() <= mejorRecord) {
             guardarRecord(jugador);
         }
 
@@ -221,7 +224,7 @@ public class JuegoYGuardadoFicheros {
         // -SIEMPRE SI NO HAY NADIE CON ESE NOMBRE
         // -SI EXISTE, SOLO SI MEJORA RECORD
 
-        guardarHistorial(jugador);
+        //guardarHistorial(jugador);
         //guardarHistorial();
 
     }
