@@ -109,12 +109,13 @@ public class GameAndSave {
             printWriter =new PrintWriter(new FileWriter(file, true));
             // AQUI METER CONDICIONALES LEER RECORD PARA VER SI EXISTE YA ESTE USER...hacer luego
             printWriter.write(jugador.getNombre() + " " + jugador.getRecordPersonal());
-            printWriter.flush();
+
 
         } catch (IOException e) {
             System.err.println("Error en el guardado Out");
         } finally {
             assert printWriter != null;
+            printWriter.flush();
             printWriter.close();
         }
 
