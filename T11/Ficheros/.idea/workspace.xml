@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6ee34f9a-01d8-4a33-b51f-7004329fdd61" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../AdivinaConTxt/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AdivinaConTxt/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AdivinaConTxt/src/controller/GameAndSave.java" beforeDir="false" afterPath="$PROJECT_DIR$/../AdivinaConTxt/src/controller/GameAndSave.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AdivinaConTxt/src/MainArrayL.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../AdivinaConTxt/src/controller/GameAndSaveArrayL.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CifradoDescifrado/CifradoDescifrado.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CifradoDescifrado/src/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CifradoDescifrado/src/controller/OperacionesFichero.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../CifradoDescifrado/src/resources/fichero.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AdivinaConTxt/src/resources/historial.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../AdivinaConTxt/src/resources/historial.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AdivinaConTxt/src/resources/record.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../AdivinaConTxt/src/resources/record.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -34,14 +38,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/gomez/Documents/GitHub/Clase_Progra_1_DAW/T11/Ficheros/src&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/gomez/Documents/GitHub/Clase_Progra_1_DAW/T11/Ficheros/src"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\gomez\Documents\GitHub\Clase_Progra_1_DAW\T11\Ficheros\src" />
