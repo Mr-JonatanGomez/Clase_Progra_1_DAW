@@ -4,29 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ee34f9a-01d8-4a33-b51f-7004329fdd61" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../T0_500ejercicios/Los500/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../T0_500ejercicios/Los_500_Ejercicios/src/Main.java" afterDir="false" />
+    <list default="true" id="9489d786-ec2a-42ae-a4af-fd3dde680e27" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Los_500_Ejercicios/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 1
-}</component>
-  <component name="ProjectId" id="2fuPXDHkjF5BoO4iP0nRHp0lYWW" />
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
+  <component name="ProjectId" id="2g5Vkdhm5wjPsHTn9seIub9zoZU" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -35,24 +28,20 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/gomez/Documents/GitHub/Clase_Progra_1_DAW/T11/Ficheros/src"
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\gomez\Documents\GitHub\Clase_Progra_1_DAW\T11\Ficheros\src" />
-    </key>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="6ee34f9a-01d8-4a33-b51f-7004329fdd61" name="Changes" comment="" />
-      <created>1714648027744</created>
+      <changelist id="9489d786-ec2a-42ae-a4af-fd3dde680e27" name="Changes" comment="" />
+      <created>1714987570055</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1714648027744</updated>
+      <updated>1714987570055</updated>
     </task>
     <servers />
   </component>
