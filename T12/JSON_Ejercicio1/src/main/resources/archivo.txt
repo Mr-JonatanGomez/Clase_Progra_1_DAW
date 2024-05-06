@@ -1,0 +1,1 @@
+{alumnos:[{nombre:"Sergio", apellido: "Gomez", edad:20}, {nombre:"Daniel", apellido: "Jimenez", edad:24},{nombre: "Jorge", apellido: "Sánchez", edad: 21},{nombre:"Cristina", apellido:"García", edad:25}], curso:"Desarrollo de Aplicacciones Multiplataforma",siglas:"DAM", nivel:1}

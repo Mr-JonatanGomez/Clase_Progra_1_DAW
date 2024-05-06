@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ee34f9a-01d8-4a33-b51f-7004329fdd61" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../AdivinaConTxt/src/MainArrayL.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AdivinaConTxt/src/controller/GameAndSaveArrayL.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CifradoDescifrado/CifradoDescifrado.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CifradoDescifrado/src/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CifradoDescifrado/src/controller/OperacionesFichero.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CifradoDescifrado/src/resources/fichero.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AdivinaConTxt/src/resources/historial.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../AdivinaConTxt/src/resources/historial.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../AdivinaConTxt/src/resources/record.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../AdivinaConTxt/src/resources/record.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="6ee34f9a-01d8-4a33-b51f-7004329fdd61" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
