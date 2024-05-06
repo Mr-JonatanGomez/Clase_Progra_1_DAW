@@ -79,9 +79,9 @@ public class AlumnoRepository {
         } catch (SQLException e) {
             System.err.println("fallo en sentencia SQL");
         }
-        System.out.println("Quieres registrar más alumnos?");
-        masAlumnos= sc.next();
-    }while(masAlumnos.equalsIgnoreCase("SI"));
+            System.out.println("Quieres registrar más alumnos?");
+            masAlumnos = sc.next();
+        } while (masAlumnos.equalsIgnoreCase("SI"));
 
         // - cerrar
         DBConecction.closeConnection();
@@ -278,4 +278,6 @@ public class AlumnoRepository {
 
 
     }
+
+
 }

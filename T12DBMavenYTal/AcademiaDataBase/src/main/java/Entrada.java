@@ -1,9 +1,11 @@
 import database.DBConecction;
 import model.Alumno;
+import model.Profesor;
 import repositories.AlumnoRepository;
+import repositories.GeneralRepository;
+import repositories.ProfesorRepository;
 
 import java.sql.Connection;
-import java.sql.SQLException;
 
 public class Entrada {
     public static void main(String[] args) {
@@ -27,6 +29,8 @@ public class Entrada {
 
         //instanciamos el repositories para poder usarlo
         AlumnoRepository alumnoRepository = new AlumnoRepository();
+        GeneralRepository generalRepository = new GeneralRepository();
+        ProfesorRepository profesorRepository=new ProfesorRepository();
         /* POR STATMENT concat
         alumnoRepository.insertarAlumno(new Alumno("Jonatan", "Gomez", "no",1234));
         alumnoRepository.insertarAlumno(new Alumno("Juanjo", "Avila", "no",1234));
@@ -42,6 +46,8 @@ public class Entrada {
         //alumnoRepository.deleteAlumno();
         //alumnoRepository.insertarAlumnoPreparedStatment(new Alumno());
         //alumnoRepository.deleteAlumnosTODOS();
-        alumnoRepository.editarNombre(new Alumno());
+        //alumnoRepository.editarNombre(new Alumno());
+        // generalRepository.crearTabla();
+        profesorRepository.agregarProfesor(new Profesor());
     }
 }
