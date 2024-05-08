@@ -71,6 +71,8 @@ public class Entrada {
                     4- EDITAR PROFESOR
                     5- ELIMINAR ALUMNO
                     6- ELIMINAR PROFESOR
+                    7- LEER ALUMNOS
+                    8- LEER PROFESORES
                     0- SALIR""");
 
 
