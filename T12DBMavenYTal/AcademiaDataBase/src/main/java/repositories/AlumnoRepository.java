@@ -7,6 +7,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class AlumnoRepository {
@@ -21,7 +22,7 @@ public class AlumnoRepository {
         //INSERT INTO alumnos (nombre, apellido, correo, telefono) si no insertamos todas hay que especificar cuales
         //VALUES ('borja','martin','correo',1234)
         Statement statement = null;
-        PreparedStatement preparedStatement = null;
+
 
         try {
 
@@ -47,7 +48,7 @@ public class AlumnoRepository {
         // trabajar
         //INSERT INTO alumnos (nombre, apellido, correo, telefono) si no insertamos todas hay que especificar cuales
         //VALUES ('borja','martin','correo',1234)
-        Statement statement = null;
+
         PreparedStatement preparedStatement = null;
         Scanner sc = new Scanner(System.in);
 
@@ -277,6 +278,107 @@ public class AlumnoRepository {
         }
 
 
+    }
+
+//
+    public void addNewAlumn(Alumno alumno){
+        connection=DBConecction.getConnection();
+        Statement statement = null;
+
+        try {
+            statement=connection.createStatement();
+            String nombre, apellido, correo;
+            int telefono;
+
+            System.out.println("Agregando nuevo alumno a la database");
+            System.out.println("Introduce su nombre");
+            nombre = sc.next();
+            System.out.println("Introduce su apellido");
+            apellido = sc.next();
+            System.out.println("Introduce su correo");
+            correo = sc.next();
+            System.out.println("Introduce su telefono");
+            telefono = sc.nextInt();
+
+            String queryData="USE curso_ue;";
+            String query = "INSERT INTO alumnos (nombre, apellido, correo, telefono) VALUES ('"+nombre+"','"+apellido+"','"+correo+"',"+telefono+");";
+
+            statement.execute(queryData);
+            statement.execute(query);
+            statement.close();
+
+        } catch (SQLException e) {
+            System.err.println("Error al crear statment");
+            System.out.println(e.getMessage());
+        } catch (InputMismatchException e){
+            System.err.println("El tipo de datos introducido no es correcto");
+        }
+
+        DBConecction.closeConnection();
+    }
+
+    public void deleteAlumn(Alumno alumno){
+        connection=DBConecction.getConnection();
+        Statement statement= null;
+
+        try {
+            statement= connection.createStatement();
+
+            System.out.println("¿Cual es el ID del alumno que deseas eliminar?");
+            int idDelete = sc.nextInt();
+            System.out.println("Por seguridad, ¿cual es el nombre del alumno a eliminar?");
+            String nombreD= sc.next();
+
+            String query="DELETE FROM alumnos WHERE id="+idDelete+" AND nombre ='"+nombreD+"';";
+
+            statement.execute(query);
+            statement.close();
+            System.out.println("Alumno eliminado correctamente");
+
+        } catch (SQLException e) {
+            System.err.println("Error en el statement");
+            System.out.println(e.getMessage());
+        } catch (InputMismatchException e){
+            System.err.println("Tipo de dato no valido");
+            System.out.println(e.getMessage());
+        }
+
+        DBConecction.closeConnection();
+    }
+
+    public void updateAlumn(Alumno alumno){
+        connection=DBConecction.getConnection();
+        Statement statement= null;
+
+        try {
+            statement=connection.createStatement();
+            System.out.println("Introduce el ID del alumno que quieras editar sus datos");
+            int idChan= sc.nextInt();
+            System.out.println("Por seguridad, introduce el nombre del alumno que quieras modificar los datos");
+            String nameChan= sc.next();
+
+            System.out.println("Introduce el nuevo nombre");
+            String nombre= sc.next();
+            System.out.println("Introduce el nuevo apellido");
+            String apellido= sc.next();
+            System.out.println("Introduce el nuevo correo");
+            String correo= sc.next();
+            System.out.println("Introduce el nuevo telefono");
+            int telefono= sc.nextInt();
+
+            String query= "UPDATE alumnos SET nombre ='"+nombre+"', apellido ='"+apellido+"',correo ='"+correo+"',telefono ="+telefono+" WHERE id= "+idChan+" AND nombre='"+nameChan+"';";
+
+            statement.execute(query);
+            statement.close();
+            System.out.println(" Los datos fuero cambiado con exito!");
+
+        } catch (SQLException e) {
+            System.err.println("Error SQL");
+            System.out.println(e.getMessage());
+        }
+
+
+        DBConecction.closeConnection();
     }
 
 

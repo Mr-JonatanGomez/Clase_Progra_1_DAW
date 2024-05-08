@@ -20,4 +20,9 @@ public class Profesor {
         this.correo = correo;
         this.sueldo = sueldo;
     }
+
+    public Profesor(int id, String nombre) {
+        this.nombre = nombre;
+        this.id = id;
+    }
 }
