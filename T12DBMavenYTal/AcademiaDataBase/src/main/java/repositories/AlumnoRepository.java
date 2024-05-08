@@ -1,12 +1,10 @@
 package repositories;
 
 import database.DBConecction;
+import database.EsquemaDB;
 import model.Alumno;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -380,6 +378,65 @@ public class AlumnoRepository {
 
         DBConecction.closeConnection();
     }
+
+    public void obtenerAlumnos(){
+        // SELECT * FROM alumnos
+        //necesitamos el RESULTSET--> que es el conjunto de datos que se obtienen de una seleccion
+        // r1,R2,R3...
+        //R1-> [id, nombre, apellido, correo, telefono]
+        connection= DBConecction.getConnection();
+        try {
+            Statement statement = connection.createStatement();
+          //  statement.executeQuery("SELECT * FROM alumnos;"); HAY QUE IGUALARLO
+            ResultSet resultado = statement.executeQuery("SELECT * FROM alumnos;");
+            while(resultado.next()){
+
+                String nombre =resultado.getString("nombre");//tambien puedes decirle el index
+                String apellido=resultado.getString("apellido");
+                int telefono= resultado.getInt("telefono");
+                // SE PUEDE CREAR OBJETO ALUMNO y darle esos datos
+                // TODO: 08/05/2024  minuto 26 de grabacion
+                //Alumno alumno = new Alumno(nombre, apellido, telefono)
+
+                System.out.println(nombre+", "+apellido+", "+telefono);
+            }
+        } catch (SQLException e) {
+            System.err.println("Error SQL");
+        }finally{
+            DBConecction.closeConnection();
+            connection=null;
+        }
+    }
+    public void obtenerAlumno(){
+
+    }
+    public boolean estaAlumno(String nombre, String correo){
+        //SIRVE PARA VERIFICAR SI YA EXISTE EL ALUMNO
+
+        //por si se cambia la database no hay que cambiar aqui PONEMOS BANDERAS
+        //metemos enter para aclara
+        boolean hayAlumno=false;
+        String query = String.format("SELECT * FROM %s WHERE %s = '%s' AAND %s = '%s' ",
+                EsquemaDB.TAB_ALUMNOS,
+                EsquemaDB.COL_NAME, nombre,
+                EsquemaDB.COL_MAIL, correo);
+
+        connection=DBConecction.getConnection();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            hayAlumno= resultSet.next();
+            // el retorno no se pone aqui porque no cerraria la conex
+        } catch (SQLException e) {
+            System.err.println("ERROR SQL");
+        } finally {
+            DBConecction.closeConnection();
+            connection=null;
+        }
+//true cuando usuarios cumplen condicion
+        return hayAlumno;
+    }
+
 
 
 }

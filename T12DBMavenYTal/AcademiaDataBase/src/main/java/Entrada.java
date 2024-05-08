@@ -97,6 +97,9 @@ public class Entrada {
                 case 6:
                     profesorRepository.deleteProfesor(new Profesor());
                     break;
+                case 7:
+                    alumnoRepository.obtenerAlumnos();
+                    break;
                 case 0:
                     System.out.println("saliendo");
                     break;
