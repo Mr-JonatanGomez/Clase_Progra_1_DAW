@@ -344,7 +344,7 @@ public class AlumnoRepository {
         DBConecction.closeConnection();
     }
 
-    public void updateAlumn(Alumno alumno){
+    public void updateAlumn(Alumno alumno){//
         connection=DBConecction.getConnection();
         Statement statement= null;
 
@@ -365,9 +365,11 @@ public class AlumnoRepository {
             int telefono= sc.nextInt();
 
             String query= "UPDATE alumnos SET nombre ='"+nombre+"', apellido ='"+apellido+"',correo ='"+correo+"',telefono ="+telefono+" WHERE id= "+idChan+" AND nombre='"+nameChan+"';";
-
-            statement.execute(query);
+// ME LO HA SACADO 1 VEZ BIEN
+            statement.executeUpdate(query);
+            System.out.println(statement.executeUpdate(query));
             statement.close();
+
             System.out.println(" Los datos fuero cambiado con exito!");
 
         } catch (SQLException e) {
@@ -387,9 +389,10 @@ public class AlumnoRepository {
         connection= DBConecction.getConnection();
         try {
             Statement statement = connection.createStatement();
-          //  statement.executeQuery("SELECT * FROM alumnos;"); HAY QUE IGUALARLO
+          //  statement.executeQuery("SELECT * FROM alumnos;"); HAY QUE IGUALARLO con ResultSet
             ResultSet resultado = statement.executeQuery("SELECT * FROM alumnos;");
             while(resultado.next()){
+                //el bucle se realiza mientras haya sigueinte
 
                 String nombre =resultado.getString("nombre");//tambien puedes decirle el index
                 String apellido=resultado.getString("apellido");
@@ -410,13 +413,15 @@ public class AlumnoRepository {
     public void obtenerAlumno(){
 
     }
-    public boolean estaAlumno(String nombre, String correo){
+    public boolean existeAlumno(String nombre, String correo){
         //SIRVE PARA VERIFICAR SI YA EXISTE EL ALUMNO
 
         //por si se cambia la database no hay que cambiar aqui PONEMOS BANDERAS
         //metemos enter para aclara
         boolean hayAlumno=false;
-        String query = String.format("SELECT * FROM %s WHERE %s = '%s' AAND %s = '%s' ",
+        String query = String.format("SELECT * FROM %s " +
+                        "WHERE %s = '%s' " +
+                        "AND %s = '%s' ",
                 EsquemaDB.TAB_ALUMNOS,
                 EsquemaDB.COL_NAME, nombre,
                 EsquemaDB.COL_MAIL, correo);

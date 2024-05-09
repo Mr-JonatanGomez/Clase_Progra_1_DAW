@@ -1,12 +1,10 @@
 package repositories;
 
 import database.DBConecction;
+import database.EsquemaDB;
 import model.Profesor;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -132,5 +130,36 @@ public class ProfesorRepository {
 
 
         DBConecction.closeConnection();
+    }
+
+    public void obtenerProfesores() {
+        connection = DBConecction.getConnection();
+        Statement statement = null;
+
+        try {
+            String query = String.format("SELECT * FROM %s", EsquemaDB.TAB_PROFESORES);
+
+            statement = connection.createStatement();
+            //tras statment, luego el resulSet
+            ResultSet resultado= statement.executeQuery(query);
+            //para imprimirlo, while con .next como condicion
+            while(resultado.next()){
+                //   System.out.println(resultado
+                // SI SACAMOS ESTO es la posicion de memoria...
+                // HAY QUE GUARDAR VARIABLES, CON CADA DATO QUE SE QUIERA OBTENER
+                String nombre= resultado.getString("nombre");
+                String correo= resultado.getString("correo");
+                double sueldo= resultado.getDouble("sueldo");
+                System.out.println(nombre +", "+ correo +" ,"+sueldo);
+
+            }
+
+        } catch (SQLException e) {
+            System.err.println("Error SQL");
+        } finally {
+            connection = null;
+            DBConecction.closeConnection();
+        }
+
     }
 }

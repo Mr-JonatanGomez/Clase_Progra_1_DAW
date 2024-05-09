@@ -65,14 +65,16 @@ public class Entrada {
         do {
             System.out.println("""
                     MENÚ CUD, ELIGE QUE QUIERES HACER:
-                    1- AGREGAR NUEVO ALUMNO
-                    2- AGREGAR NUEVO PROFESOR
-                    3- EDITAR ALUMNO
-                    4- EDITAR PROFESOR
-                    5- ELIMINAR ALUMNO
-                    6- ELIMINAR PROFESOR
-                    7- LEER ALUMNOS
-                    8- LEER PROFESORES
+                     1- AGREGAR NUEVO ALUMNO
+                     2- AGREGAR NUEVO PROFESOR
+                     3- EDITAR ALUMNO
+                     4- EDITAR PROFESOR
+                     5- ELIMINAR ALUMNO
+                     6- ELIMINAR PROFESOR
+                     7- LEER TODOS ALUMNOS
+                     8- LEER 1 ALUMNO
+                     9- LEER TODOS PROFESORES
+                    10- LEER TODOS PROFESORES
                     0- SALIR""");
 
 
@@ -99,6 +101,15 @@ public class Entrada {
                     break;
                 case 7:
                     alumnoRepository.obtenerAlumnos();
+                    break;
+                case 8:
+
+                    break;
+                case 9:
+                   profesorRepository.obtenerProfesores();
+                    break;
+                case 10:
+
                     break;
                 case 0:
                     System.out.println("saliendo");
