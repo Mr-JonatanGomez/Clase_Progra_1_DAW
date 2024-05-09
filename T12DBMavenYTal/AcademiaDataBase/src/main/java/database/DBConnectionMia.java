@@ -22,7 +22,7 @@ public class DBConnectionMia {
             // PRIMERO CREAR URI, y LUEGO ABRIR CONEX con USER y PASS
 
             // jdbc:mysql:direccionSERVER:nºPUERTO/NombreDATABASE
-        // TODO: 09/05/2024 aqui me quede 
+        // TODO: 09/05/2024 aqui me quede con la conex
         String uri=("jdbc:mysql://127.0.0.1:3304/curso_ue");
 
         return connectionMia;
