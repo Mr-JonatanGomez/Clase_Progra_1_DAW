@@ -72,7 +72,7 @@ public class Entrada {
                      5- ELIMINAR ALUMNO
                      6- ELIMINAR PROFESOR
                      7- LEER TODOS ALUMNOS
-                     8- LEER 1 ALUMNO
+                     8- LEER ALUMNOS CON ID ENTRE LOS RANGOS
                      9- LEER TODOS PROFESORES
                     10- LEER TODOS PROFESORES
                     0- SALIR""");
@@ -103,7 +103,7 @@ public class Entrada {
                     alumnoRepository.obtenerAlumnos();
                     break;
                 case 8:
-
+alumnoRepository.obtenerAlumnosRangoId();
                     break;
                 case 9:
                    profesorRepository.obtenerProfesores();

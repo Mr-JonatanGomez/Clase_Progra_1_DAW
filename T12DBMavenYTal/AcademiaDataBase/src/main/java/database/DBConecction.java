@@ -17,6 +17,8 @@ public class DBConecction {
     private static void createConnection() {
         //cargar el driver en memoria
         try {
+
+            //driver cargarlo en el pom
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
             System.err.println("Driver NO DISPONIBLE o NO DESCARGADO");

@@ -150,7 +150,11 @@ public class ProfesorRepository {
                 String nombre= resultado.getString("nombre");
                 String correo= resultado.getString("correo");
                 double sueldo= resultado.getDouble("sueldo");
+                //FORMA 1 CREAR CONCATENAR
                 System.out.println(nombre +", "+ correo +" ,"+sueldo);
+                //FORMA 2 CREAR CONSTRUCTOR
+                Profesor profesor = new Profesor(nombre, correo, sueldo);
+                System.out.println(profesor.getNombre()+profesor.getCorreo()+profesor.getSueldo());
 
             }
 

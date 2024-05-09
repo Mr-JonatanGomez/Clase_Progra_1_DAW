@@ -364,10 +364,28 @@ public class AlumnoRepository {
             System.out.println("Introduce el nuevo telefono");
             int telefono= sc.nextInt();
 
-            String query= "UPDATE alumnos SET nombre ='"+nombre+"', apellido ='"+apellido+"',correo ='"+correo+"',telefono ="+telefono+" WHERE id= "+idChan+" AND nombre='"+nameChan+"';";
-// ME LO HA SACADO 1 VEZ BIEN
-            statement.executeUpdate(query);
-            System.out.println(statement.executeUpdate(query));
+            String query= "UPDATE alumnos SET nombre ='"+nombre+"', apellido ='"+apellido+"',correo ='"+correo+"',telefono ="+telefono+" WHERE nombre='"+nameChan+"';";
+            //String query= "UPDATE alumnos SET nombre ='"+nombre+"', apellido ='"+apellido+"',correo ='"+correo+"',telefono ="+telefono;
+            // TODO: 09/05/2024 probar esto
+            String query2 = String.format("UPDATE %s " +
+                    "SET %s = '%s', " +
+                            "%s = '%s'," +
+                            "%s = '%s'," +
+                            "%s = %s " +
+                            "WHERE %s = %s " +
+                            "AND %s = '%s'",
+                    EsquemaDB.TAB_ALUMNOS,//update
+                    EsquemaDB.COL_NAME, nombre,
+                    EsquemaDB.COL_SURNAME,apellido,
+                    EsquemaDB.COL_MAIL, correo,
+                    EsquemaDB.COL_PHONE, telefono,
+                    EsquemaDB.COL_ID,idChan,
+                    EsquemaDB.COL_NAME,nameChan
+                    );
+
+// Sacamos variable, e igualamos el update
+            int numero = statement.executeUpdate(query2);
+            System.out.println("El numero de filas afectadas por el update fue: "+numero+"");
             statement.close();
 
             System.out.println(" Los datos fuero cambiado con exito!");
@@ -410,7 +428,45 @@ public class AlumnoRepository {
             connection=null;
         }
     }
-    public void obtenerAlumno(){
+    public void obtenerAlumnosRangoId(){
+        connection=DBConecction.getConnection();
+        Statement statement= null;
+
+        try {
+
+            System.out.println("Introduce el primer numero del rango");
+            int rango1= sc.nextInt();
+            System.out.println("Introduce el final del rango");
+            int rango2= sc.nextInt();
+            System.out.println(" SACANDO LOS ALUMNOS CON ID COMPRENDIDOS ENTRE "+rango1+" y"+rango2+" inclusive");
+
+            statement=connection.createStatement();
+            String query = String.format("SELECT * FROM %s WHERE %s BETWEEN %s AND %s",
+                    EsquemaDB.TAB_ALUMNOS,
+                    EsquemaDB.COL_ID, rango1, rango2);
+
+            ResultSet resultado = statement.executeQuery(query);
+
+            while(resultado.next()){
+                //Aqui metemos los datos que queremos obtener con variables
+                int id = resultado.getInt("id");
+                String nombre = resultado.getString("nombre");
+                String apellido = resultado.getString("apellido");
+                String correo = resultado.getString("correo");
+                int telefono = resultado.getInt("telefono");
+
+                Alumno alumno = new Alumno(id, nombre, apellido, correo, telefono);
+                System.out.println(alumno.getId()+", "+alumno.getNombre()+", "+alumno.getApellido()+", "+alumno.getCorreo()+", "+alumno.getTelefono()+", ");
+
+            }
+        } catch (SQLException e) {
+            System.err.println("Error SQL");
+        }catch (InputMismatchException e){
+            System.err.println("Tipo de dato no valido");
+        } finally {
+            connection=null;
+            DBConecction.closeConnection();
+        }
 
     }
     public boolean existeAlumno(String nombre, String correo){
