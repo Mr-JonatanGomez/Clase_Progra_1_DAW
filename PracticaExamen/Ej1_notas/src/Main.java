@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Scanner;
 
 public class Main {
@@ -13,7 +14,7 @@ public class Main {
         int sumaNotas=0;
         int notaMayor=0;
         int notaMenor=0;
-        double notaMedia=(double)sumaNotas/notasAlumnos.size();
+        double notaMedia=0;
 
         for (int i = 0; i <20 ; i++) {
             int nota=sc.nextInt();
@@ -40,12 +41,37 @@ public class Main {
 
         }
 
+        notaMedia=(double)sumaNotas/(double)notasAlumnos.size();
+
         System.out.println("La nota mas alta fue: "+notaMayor );
         System.out.println("La nota mas baja fue: "+notaMenor );
         System.out.println("La cantidad de aprobados : "+aprobados );
         System.out.println("La cantidad de suspensos : "+suspensos );
         System.out.println("La cantidad de alumnos es de: "+notasAlumnos.size());
         System.out.println("La nota media fue: " +notaMedia);
+
+
+
+        // HECHO DESPUES PARA PROBAR CON SORT DE NUEVO
+        System.out.println("ORDENACION");
+        notasAlumnos.sort(new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                if (o1>o2){
+                    return -1;
+                }else if(o1<o2){
+                    return 1;
+                }else {
+                    return 0;
+                }
+            }
+        });
+
+        for (Integer item:notasAlumnos) {
+            System.out.print(item+", ");
+        }
+        System.out.println(notasAlumnos.get(0));
+        System.out.println(notasAlumnos.get(19));
 
     }
 }
