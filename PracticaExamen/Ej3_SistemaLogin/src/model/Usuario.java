@@ -23,4 +23,7 @@ public class Usuario {
                 "password = " + password);
 
     }
+    /**
+     *
+     */
 }
