@@ -4,11 +4,9 @@ import lombok.Getter;
 import lombok.Setter;
 import model.Usuario;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 @Setter
 @Getter
@@ -37,7 +35,7 @@ public class Registro {
     public void escribirFichero(){
         //FILE - FILE WRITER - PrintWriter
         var file = new File("src/resources/usuarios.txt");
-        FileWriter fileWriter = null;
+
         PrintWriter printWriter= null;
 
         //CREAMOS FICHERO SI NO EXISTE
@@ -51,8 +49,7 @@ public class Registro {
         }
 
         try {
-            fileWriter = new FileWriter(file);
-            printWriter = new PrintWriter(fileWriter);
+            printWriter = new PrintWriter(new FileWriter(file, true));
 
             for (Usuario user:listaUser) {
                 printWriter.println(user);
@@ -70,5 +67,44 @@ public class Registro {
         }
 
 
+    }
+
+    public void leerFichero(){
+        File file = new File("src/resources/usuarios.txt");
+        FileReader fileReader= null;
+        BufferedReader bufferedReader= null;
+
+        try {
+            bufferedReader=new BufferedReader(new FileReader(file));
+            String linea = null;
+            while ((linea = bufferedReader.readLine())!=null){
+                System.out.println(linea);
+            }
+            //
+        } catch (FileNotFoundException e) {
+            System.err.println("File Not Found");
+        } catch (IOException e) {
+            System.err.println("Error IO");
+        } finally {
+            try {
+                assert bufferedReader != null;
+                bufferedReader.close();
+            } catch (IOException e) {
+                System.err.println("Error Salida");
+            }
+        }
+    }
+    public  void registroUser(){
+        Scanner scanner =new Scanner(System.in);
+        String registraMas="Si";
+        while(registraMas.equalsIgnoreCase("SI")) {
+            System.out.println("Introduce Nombre, Apellido, Dni, Telefono, edad");
+
+            addUser(scanner.next(), scanner.next(), scanner.next(), scanner.nextInt(), scanner.nextInt());
+            System.out.println("Quieres introducir más usuarios? ( SI  o  NO )");
+            registraMas = scanner.next();
+            escribirFichero();
+
+        }
     }
 }
