@@ -8,6 +8,7 @@ public class Main {
         int numeroUser=-1;
         int numIntentosR=5;
         boolean cajaAbierta= false;
+        boolean bloqueo= false;
 
         aleatorioCombinacion = (int)(Math.random()*4001)+1000;
         System.out.println(aleatorioCombinacion);
@@ -24,6 +25,8 @@ public class Main {
             } else{
                 numIntentosR--;
                 System.out.println("Error, te quedan "+numIntentosR+" intentos");
+
+
             }
         }while(!cajaAbierta && numIntentosR>0);
 

@@ -5,6 +5,7 @@ public class Main {
         Lector lector = new Lector();
         //lector.lectorTexto();
         //lector.conversorASCII();
+        //sfasdgsrf
         lector.conversorASCIIconEscritura();
     }
 }
