@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main_Formulario {
@@ -11,7 +12,11 @@ public class Main_Formulario {
         String apellido = null;
         String DNI = null;
 
+
+
+
         do {
+            try {
             Scanner sc = new Scanner(System.in);
 
             System.out.println("""
@@ -36,22 +41,31 @@ public class Main_Formulario {
                     break;
 
                 case 3:
-                    String [] dniComprob=null;
+                    //String dniComprob=null;
+                    char dniCompro;
                     System.out.println("Escriba el DNI");
                     DNI = sc.next();
-/*
-                    if (DNI.length() != 9) {
-                        System.err.println("DNI no tiene 9 caracteres");
-                        // throw LongitudDNINoValidaException;
-                    }
-                    for (int i = 0; i < DNI.length(); i++) {
-                        dniComprob[i]= String.valueOf((i));
-                        //if (DNI[8].){
+                    dniCompro=DNI.charAt(DNI.length()-1);
 
+                    if (!Character.isLetter(dniCompro)){
+                        try {
+                            throw new DigitoNoLetraException("Exception");
+                        } catch (DigitoNoLetraException e) {
+                            System.err.println("El ultimo caracter debe ser una letra");
                         }
                     }
 
- */
+                    if (DNI.length() != 9) {
+                        try {
+                            throw new LongitudDNINoValidaException("Long. No OK");
+                        } catch (LongitudDNINoValidaException e) {
+                            System.err.println("DNI no tiene 9 caracteres");
+                        }
+                        // throw LongitudDNINoValidaException;
+                    }
+
+
+
                     break;
 
                 case 4:
@@ -64,8 +78,13 @@ public class Main_Formulario {
                     System.out.println("opcion no contemplada");
                     break;
             }
+            }catch (InputMismatchException e){
+                System.err.println("Tipo de datos erroneo");
+            }
         } while (opcion != 4 || nombre == null || apellido == null || DNI == null);
 
         System.out.println(nombre + " " + apellido + " " + DNI);
+
+
     }
 }
