@@ -39,7 +39,7 @@ public class Main_Formulario {
                     String [] dniComprob=null;
                     System.out.println("Escriba el DNI");
                     DNI = sc.next();
-
+/*
                     if (DNI.length() != 9) {
                         System.err.println("DNI no tiene 9 caracteres");
                         // throw LongitudDNINoValidaException;
@@ -50,6 +50,8 @@ public class Main_Formulario {
 
                         }
                     }
+
+ */
                     break;
 
                 case 4:
