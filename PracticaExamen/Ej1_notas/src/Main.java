@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.Scanner;
 
@@ -50,7 +51,7 @@ public class Main {
         System.out.println("La cantidad de alumnos es de: "+notasAlumnos.size());
         System.out.println("La nota media fue: " +notaMedia);
 
-
+        //Collections.sort(notasAlumnos);
 
         // HECHO DESPUES PARA PROBAR CON SORT DE NUEVO
         System.out.println("ORDENACION");

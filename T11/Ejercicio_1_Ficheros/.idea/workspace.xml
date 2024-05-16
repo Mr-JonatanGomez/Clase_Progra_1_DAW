@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="37024e11-29c3-4a74-b33c-6fee6980bae1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../Ejercicio1Fichero/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entrada.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entrada.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/Registro.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/Registro.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PracticaExamen/Ej3_SistemaLogin/src/controller/Sistema.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../PracticaExamen/Ej3_SistemaLogin/src/controller/Sistema.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PracticaExamen/Ej4_CajaSeguridad/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../PracticaExamen/Ej4_CajaSeguridad/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Ejercicio2Fichero/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Ejercicio2Fichero/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,9 +39,8 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/gomez/Documents/Libraries/lombok.jar",
+    "last_opened_file_path": "C:/Users/gomez/Documents/GitHub/Clase_Progra_1_DAW/T11/Ejercicio2Fichero",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0"
@@ -73,11 +71,20 @@
       <option name="project" value="LOCAL" />
       <updated>1715795518595</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="nuevo Ej_ficheros_1 del notion, el otro estaba corrompido, mejorado para leer fichero">
+      <option name="closed" value="true" />
+      <created>1715850635126</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1715850635126</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="nuevo Ej_ficheros_1 del notion, el otro estaba corrompido" />
-    <option name="LAST_COMMIT_MESSAGE" value="nuevo Ej_ficheros_1 del notion, el otro estaba corrompido" />
+    <MESSAGE value="nuevo Ej_ficheros_1 del notion, el otro estaba corrompido, mejorado para leer fichero" />
+    <option name="LAST_COMMIT_MESSAGE" value="nuevo Ej_ficheros_1 del notion, el otro estaba corrompido, mejorado para leer fichero" />
   </component>
 </project>
