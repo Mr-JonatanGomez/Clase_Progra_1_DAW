@@ -1,7 +1,7 @@
 import controller.Operaciones;
 
 public class Entrada {
-    //COMIENZO A LAS 10:52
+    //COMIENZO A LAS 10:52 11:17     24 MINUTOS
 
 
     /*2.	Crea un fichero llamado alumnos.txt con el siguiente contenido
