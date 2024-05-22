@@ -11,6 +11,7 @@ public class Entrada {
         operaciones.leerFichero();
         operaciones.mostrarTodos();
         operaciones.mostrarAlumnoMejorNota();
+        operaciones.mostrarAlumnoPeorNota();
 
     }
 }

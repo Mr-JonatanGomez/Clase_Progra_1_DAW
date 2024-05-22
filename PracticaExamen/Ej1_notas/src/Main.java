@@ -42,6 +42,7 @@ public class Main {
 
         }
 
+
         notaMedia=(double)sumaNotas/(double)notasAlumnos.size();
 
         System.out.println("La nota mas alta fue: "+notaMayor );

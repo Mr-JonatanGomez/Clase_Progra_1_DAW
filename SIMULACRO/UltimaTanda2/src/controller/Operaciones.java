@@ -35,16 +35,7 @@ public class Operaciones {
             while ((linea = bufferedReader.readLine()) != null) {
 
                 String[] alumniEdit= linea.split(",");
-                Alumno alumno = new Alumno((alumniEdit[0]), (alumniEdit[1]),(alumniEdit[2]), (Integer.valueOf(alumniEdit[3])));
-               /*
-
-
-
-                alumno.setNombre(alumniEdit[0]);
-                alumno.setApellido(alumniEdit[1]);
-                alumno.setCorreo(alumniEdit[2]);
-                alumno.setMedia(Integer.valueOf(alumniEdit[3]));
-                */
+                Alumno alumno = new Alumno(alumniEdit[0], alumniEdit[1],alumniEdit[2], (Integer.valueOf(alumniEdit[3])));
 
                 listadoAlumnos.add(alumno);
                 System.out.println(linea);
@@ -61,7 +52,7 @@ public class Operaciones {
     }
 
     public void mostrarAlumnoMejorNota() {
-        System.out.println("MOSTRAREMOS ALUMNO CON MEJOR NOTA");
+        System.out.println("\n\nMOSTRAREMOS ALUMNO CON MEJOR NOTA");
         listadoAlumnos.sort(new Comparator<Alumno>() {
             @Override
             public int compare(Alumno o1, Alumno o2) {
@@ -78,6 +69,25 @@ public class Operaciones {
             }
         });
         System.out.println(listadoAlumnos.get(0));
+    }
+    public void mostrarAlumnoPeorNota() {
+        System.out.println("\n\nMOSTRAREMOS ALUMNO CON PEOR NOTA");
+        listadoAlumnos.sort(new Comparator<Alumno>() {
+            @Override
+            public int compare(Alumno o1, Alumno o2) {
+                if (o1.getMedia() > o2.getMedia()) {
+                    return -1;
+                }
+                if (o1.getMedia() < o2.getMedia()) {
+                    return 1;
+                }
+                else {
+
+                    return 0;
+                }
+            }
+        });
+        System.out.println(listadoAlumnos.get(listadoAlumnos.size()-1));
     }
 
     public void mostrarTodos(){
