@@ -21,7 +21,7 @@ public class Entrada {
         Alumno alumno3 = new Alumno("San","Niv","14c");
         Alumno alumno4 = new Alumno("Lai","Gom","15d");
 
-        Colegio colegio = new Colegio(new ArrayList<>());
+        Colegio colegio = new Colegio();
 
         colegio.inscribirAlumno(alumno1);
         colegio.inscribirAlumno(alumno2);

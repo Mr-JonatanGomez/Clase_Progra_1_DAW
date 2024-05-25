@@ -12,41 +12,42 @@ d.	Si la longitud es mayor igual a 11 se deberá dar la vuelta a la palabra()REV
 
 
         Scanner sc = new Scanner(System.in);
-        String palabra= null;
-        String conversion=null;
+        String palabra = null;
+        String conversion = null;
         System.out.println("Mete una palabra por teclado (SIN ACENTOS)");
-        palabra=sc.next();
+        palabra = sc.next();
 
-        if (palabra.length()<4){
-            conversion=palabra.toUpperCase();
+        if (palabra.length() < 4) {
+            conversion = palabra.toUpperCase();
             System.out.println(conversion);
             // tambien se puede System.out.println(palabra.toUpperCase());
-           //
-        }
-        if (palabra.length()>=4 && palabra.length()<8){
-            conversion=palabra.toLowerCase();
+            //
+        } else if (palabra.length() < 8) {
+            conversion = palabra.toLowerCase();
             System.out.println(conversion);
-        }
-        if (palabra.length()>=8 && palabra.length()<11){
-            conversion=palabra.replace("a","á").replace("e","é")
-                    .replace("i","í").replace("o","ó")
-                    .replace("u","ú");
-           // conversion=palabra.replace("a","áéíóú");
+        } else if (palabra.length() < 11) {
+            conversion = palabra.replace("a", "á").replace("e", "é")
+                    .replace("i", "í").replace("o", "ó")
+                    .replace("u", "ú");
+            // conversion=palabra.replace("a","áéíóú");
             System.out.println(conversion);
-        }
-        if (palabra.length()>11){
+        } else if (palabra.length() > 11) {
 
-            String[]conver2=palabra.split("");
-            String reverse="";
+            String[] conver2 = palabra.split("");
+            String reverse = "";
 
 
-            for (int i = palabra.length()-1; i >=0; i--) {
-                reverse+= conver2[i];
+            for (int i = palabra.length() - 1; i >= 0; i--) {
+                reverse += conver2[i];
             }
 
             System.out.println(reverse);
+            StringBuilder builder = new StringBuilder(palabra);
+            System.out.println(builder.reverse());
             // conversion=palabra.replace("a","áéíóú")  murcielagueños;
 
+        } else {
+            System.err.println("palabra rara");
         }
     }
 }

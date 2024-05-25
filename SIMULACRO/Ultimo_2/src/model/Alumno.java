@@ -8,8 +8,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class Alumno {
-    String nombre, apellido, correo;
-    double notaMedia;
+    private String nombre, apellido, correo;
+    private double notaMedia;
 
     public Alumno(String nombre, String apellido, String correo, double notaMedia) {
         this.nombre = nombre;

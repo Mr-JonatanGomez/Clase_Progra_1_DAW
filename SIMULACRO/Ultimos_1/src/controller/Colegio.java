@@ -42,7 +42,14 @@ public class Colegio {
     public void calificarAlumnos(){
         for (Alumno item:listadoAlumnos) {
 
-            item.setCalificacion((Math.random()*11)+1);
+            item.setCalificacion((Math.random()*11));
+        }
+    }
+//mejorar
+    public void calificaAlumno(int matricula, double calificacion){
+        for (Alumno item:listadoAlumnos) {
+
+            item.setCalificacion((Math.random()*11));
         }
     }
 }
