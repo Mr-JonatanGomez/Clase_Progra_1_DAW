@@ -27,6 +27,7 @@ public class Formulario {
                     case 1:
                         System.out.println("Introduce el nombre");
                         nombre=sc.next();
+
                         break;
                     case 2:
                         System.out.println("Introduce el apellido");
